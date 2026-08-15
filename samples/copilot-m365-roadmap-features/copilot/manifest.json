@@ -1,10 +1,10 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.29/MicrosoftTeams.schema.json",
   "manifestVersion": "1.29",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "id": "95831204-8adf-42e8-b26c-869dcabbd2f3",
   "developer": {
-    "name": "Contoso",
+    "name": "Mohammad Amer",
     "websiteUrl": "https://www.contoso.com",
     "privacyUrl": "https://www.contoso.com/privacy",
     "termsOfUseUrl": "https://www.contoso.com/terms"
@@ -14,12 +14,12 @@
     "outline": "outline.png"
   },
   "name": {
-    "short": "copilotM365Roadmap Agent",
-    "full": "copilotM365Roadmap Agent"
+    "short": "Copilot M365 Roadmap",
+    "full": " Microsoft 365 roadmap features agent"
   },
   "description": {
-    "short": "copilotM365Roadmap description",
-    "full": "copilotM365Roadmap description"
+    "short": "Stay up to date with Microsoft 365 roadmap features",
+    "full": "Microsoft 365 Roadmap Copilot Agent helps you to stay up to date with the latest Microsoft 365 roadmap features. It uses a Microsoft Graph Connector that ingests Microsoft 365 roadmap features. It keeps teams informed about updates on Microsoft 365 Roadmap features, facilitating proactive adaptation to changes, new releases, and deployments across Microsoft Teams, SharePoint, Outlook, and more"
   },
   "accentColor": "#FFFFFF",
   "copilotAgents": {
@@ -31,5 +31,5 @@
     ]
   },
   "permissions": ["identity"],
-  "validDomains": []
+  "validDomains": ["www.microsoft.com"]
 }
