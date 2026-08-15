@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "copilot-m-365-roadmap-features-client-side-solution",
+    "id": "7da8676e-6368-4b3b-9c58-ea4f6f4ea4d1",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.24.0-beta.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "copilot-m365-roadmap-features description"
+      },
+      "longDescription": {
+        "default": "copilot-m365-roadmap-features description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "copilot-m-365-roadmap-features Feature",
+        "description": "The feature that activates elements of the copilot-m-365-roadmap-features solution.",
+        "id": "935293f2-bf9e-40d0-82c8-cab1afe8ba1c",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/copilot-m-365-roadmap-features.sppkg"
+  }
+}
