@@ -1,14 +1,18 @@
-# copilot-m-365-roadmap-features
+# Microsoft 365 Roadmap Copilot Agent
 
 ## Summary
 
-Short summary on functionality and used technologies.
+A SharePoint Framework-based Copilot Agent that helps teams stay informed about the latest Microsoft 365 roadmap features. This solution leverages Microsoft 365 roadmap features, enabling proactive adaptation to new releases, updates, and deployments across Microsoft Teams, SharePoint, Outlook, and other Microsoft 365 applications.
 
-[picture of the solution in action, if possible]
+[![Microsoft 365 roadmap features agent](./assets/fullscreen-roadmap-features.png)](https://youtu.be/tP7Wm7DnGv0)
+
+
+**Technologies Used**: React, TypeScript, SharePoint Framework (SPFx), Fluent UI
+
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.24.0--beta.2-yellow.svg)
+![version](https://img.shields.io/badge/version-1.24.0--beta.2-blue.svg)
 
 ## Applies to
 
@@ -19,20 +23,19 @@ Short summary on functionality and used technologies.
 
 ## Prerequisites
 
-> Any special pre-requisites?
+> No pre-requisites?
 
 ## Solution
 
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
+| Solution                           | Author(s)                                               |
+| --------------------------------- | ------------------------------------------------------- |
+| copilot-m365-roadmap-features     | [Mohammed Amer](https://github.com/mohammadamer)           |
 
 ## Version history
 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
+| 1.0     | August 26, 2026 | Initial release |
 
 ## Disclaimer
 
@@ -55,13 +58,14 @@ Other build commands can be listed using `heft --help`.
 
 ## Features
 
-Description of the extension that expands upon high-level summary above.
+This Microsoft 365 Roadmap Copilot Agent provides the following capabilities:
 
-This extension illustrates the following concepts:
-
-- topic 1
-- topic 2
-- topic 3
+- **Roadmap Feature Tracking**: Leverages Microsoft Graph Connector to ingest and index the latest Microsoft 365 roadmap features
+- **Intelligent Search**: Enables natural language queries about upcoming Microsoft 365 features and updates
+- **Cross-Platform Access**: Integrates seamlessly across Microsoft Teams, SharePoint, Outlook, and other Microsoft 365 applications
+- **Proactive Notifications**: Keeps teams informed about feature releases and changes relevant to their organization
+- **Schema Validation**: Uses Zod for robust schema validation of roadmap feature data
+- **Modern UI**: Built with Fluent UI components for a consistent Microsoft 365 experience
 
 > Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
 
