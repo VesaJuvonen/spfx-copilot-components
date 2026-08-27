@@ -1,0 +1,19 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "useGulp": false,
+    "plusBeta": true,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.20.6",
+    "sdksVersions": {},
+    "version": "1.24.0-beta.2",
+    "libraryName": "zava-innovation-portfolio",
+    "libraryId": "bc6e845d-3252-407d-918d-9c8994491126",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "zava-innovation-portfolio",
+    "solutionShortDescription": "zava-innovation-portfolio description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "copilotComponent"
+  }
+}

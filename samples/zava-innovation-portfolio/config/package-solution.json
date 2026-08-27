@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "zava-innovation-portfolio-client-side-solution",
+    "id": "bc6e845d-3252-407d-918d-9c8994491126",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.24.0-beta.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "zava-innovation-portfolio description"
+      },
+      "longDescription": {
+        "default": "zava-innovation-portfolio description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "zava-innovation-portfolio Feature",
+        "description": "The feature that activates elements of the zava-innovation-portfolio solution.",
+        "id": "d8c506a2-31e3-4315-b097-dcb203e878d1",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/zava-innovation-portfolio.sppkg"
+  }
+}

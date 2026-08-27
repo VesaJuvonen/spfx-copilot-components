@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+  "schema_version": "v2.4",
+  "namespace": "innovation",
+  "name_for_human": "Innovation Agent",
+  "description_for_human": "Innovation description",
+  "description_for_model": "Innovation description",
+  "contact_email": "publisher@contoso.com"
+}

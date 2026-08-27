@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "innovation-copilot-component": {
+      "components": [
+        {
+          "entrypoint": "./lib/copilotComponents/innovation/InnovationCopilotComponent.js",
+          "manifest": "./src/copilotComponents/innovation/InnovationCopilotComponent.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "InnovationCopilotComponentStrings": "lib/copilotComponents/innovation/loc/{locale}.js"
+  }
+}
