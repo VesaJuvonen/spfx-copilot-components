@@ -27,6 +27,19 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event_name == 'pull_request' && format('refs/pull/{0}/head', github.event.pull_request.number) || github.ref }}
+
+      - name: Merge current base for validation
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+        run: |
+          git fetch --no-tags origin "+refs/heads/${BASE_REF}:refs/remotes/origin/${BASE_REF}"
+          git -c user.name="github-actions[bot]" \
+            -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            merge --no-edit "refs/remotes/origin/${BASE_REF}"
 
       - name: Set up Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -49,9 +62,7 @@ jobs:
 
       - name: Record deployment identity
         working-directory: site
-        env:
-          EXPECTED_COMMIT_SHA: ${{ github.sha }}
-        run: npm run deployment:mark
+        run: EXPECTED_COMMIT_SHA="$(git rev-parse HEAD)" npm run deployment:mark
 
       - name: Install Chromium
         working-directory: site
