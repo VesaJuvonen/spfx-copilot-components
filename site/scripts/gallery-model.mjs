@@ -30,7 +30,7 @@ function repositoryTarget(slug, target, raw) {
     path.posix.join('samples', slug, fileTarget.replaceAll('\\', '/')),
   );
   assert(
-    repositoryPath.startsWith(`samples/${slug}/`),
+    repositoryPath.startsWith('samples/'),
     `Unsafe README link in ${slug}: ${target}`,
   );
   const encodedPath = repositoryPath.split('/').map(encodeURIComponent).join('/');

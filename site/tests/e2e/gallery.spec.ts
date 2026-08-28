@@ -1,22 +1,31 @@
 import AxeBuilder from '@axe-core/playwright';
-import { expect, test } from '@playwright/test';
+import { expect, test, type APIRequestContext } from '@playwright/test';
 
-test('catalog loads and filters without layout navigation', async ({ page }) => {
+async function fetchCatalog(request: APIRequestContext) {
+  const response = await request.get('./catalog.json');
+  expect(response.ok()).toBeTruthy();
+  return response.json();
+}
+
+test('catalog loads and filters without layout navigation', async ({ page, request }) => {
+  const catalog = await fetchCatalog(request);
   await page.goto('./');
 
   await expect(page.getByRole('heading', { level: 1, name: 'Copilot Components' })).toBeVisible();
-  await expect(page.locator('[data-component-card]')).toHaveCount(17);
+  await expect(page.locator('[data-component-card]')).toHaveCount(catalog.components.length);
   await page.getByRole('searchbox', { name: 'Search components' }).fill('Work IQ');
   await expect(page.locator('[data-component-card]:visible')).toHaveCount(1);
   await expect(page.getByRole('heading', { level: 3, name: 'Work IQ Answers' })).toBeVisible();
   await expect(page).toHaveURL(/\?q=Work(?:%20|\+)IQ$/);
 });
 
-test('events sample increments catalog and contributor counts', async ({ page }) => {
+test('events sample increments catalog and contributor counts', async ({ page, request }) => {
+  const catalog = await fetchCatalog(request);
   await page.goto('./');
 
-  await expect(page.locator('.catalog-stat')).toContainText('17community components');
-  await expect(page.locator('#result-count')).toHaveText('Showing 17 components');
+  await expect(page.locator('.catalog-stat'))
+    .toHaveAttribute('aria-label', `${catalog.components.length} community components`);
+  await expect(page.locator('#result-count')).toHaveText(`Showing ${catalog.components.length} components`);
   await expect(page.getByRole('heading', { level: 3, name: 'SharePoint Events Copilot Agent' })).toBeVisible();
 
   await page.getByRole('combobox', { name: 'Contributor' }).selectOption('joaojmendes');
@@ -53,12 +62,10 @@ test('mobile navigation exposes all primary destinations', async ({ page }, test
   await expect(page.getByRole('navigation', { name: 'Mobile navigation' }).getByRole('link', { name: 'Getting started' })).toBeVisible();
 });
 
-test('public catalog matches the rendered component count', async ({ request }) => {
-  const response = await request.get('./catalog.json');
-  expect(response.ok()).toBeTruthy();
-  const catalog = await response.json();
+test('public catalog includes expected sample metadata', async ({ request }) => {
+  const catalog = await fetchCatalog(request);
   expect(catalog.version).toBe(1);
-  expect(catalog.components).toHaveLength(17);
+  expect(catalog.components.length).toBeGreaterThan(0);
   expect(catalog.components).toEqual(expect.arrayContaining([
     expect.objectContaining({
       slug: 'events',
@@ -67,7 +74,5 @@ test('public catalog matches the rendered component count', async ({ request }) 
       authors: [expect.objectContaining({ gitHubAccount: 'joaojmendes' })],
     }),
   ]));
-  expect(catalog.excludedSamples).toEqual([
-    { slug: 'm365-service-health', reason: 'Missing assets/sample.json' },
-  ]);
+  expect(catalog.excludedSamples).toEqual([]);
 });
