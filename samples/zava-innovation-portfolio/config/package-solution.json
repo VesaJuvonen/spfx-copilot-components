@@ -8,27 +8,29 @@
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "developer": {
-      "name": "",
-      "websiteUrl": "",
-      "privacyUrl": "",
-      "termsOfUseUrl": "",
+      "name": "Contoso",
+      "websiteUrl": "https://www.contoso.com",
+      "privacyUrl": "https://www.contoso.com/privacy",
+      "termsOfUseUrl": "https://www.contoso.com/terms",
       "mpnId": "Undefined-1.24.0-beta.2"
     },
     "metadata": {
       "shortDescription": {
-        "default": "zava-innovation-portfolio description"
+        "default": "Govern innovation from strategic challenge to measurable impact in Microsoft 365 Copilot."
       },
       "longDescription": {
-        "default": "zava-innovation-portfolio description"
+        "default": "Zava Innovation Hub provides 17 intent-routed Copilot Components and five connected workspaces using deterministic offline sample data."
       },
       "screenshotPaths": [],
       "videoUrl": "",
-      "categories": []
+      "categories": [
+        "Productivity"
+      ]
     },
     "features": [
       {
-        "title": "zava-innovation-portfolio Feature",
-        "description": "The feature that activates elements of the zava-innovation-portfolio solution.",
+        "title": "Zava Innovation Hub",
+        "description": "Activates the Zava Innovation Hub Copilot Components and connected innovation workspaces.",
         "id": "d8c506a2-31e3-4315-b097-dcb203e878d1",
         "version": "1.0.0.0"
       }

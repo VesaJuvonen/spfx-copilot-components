@@ -1,0 +1,158 @@
+{
+  "$schema": "./asset-provenance.schema.json",
+  "reviewedOn": "2026-08-28",
+  "assets": [
+    {
+      "path": "src/shared/assets/faces/Diego-Siciliani.jpg",
+      "source": "../zava-project-tracker/assets/faces/Diego-Siciliani.jpeg",
+      "sourceCopy": "assets/faces/Diego-Siciliani.jpeg",
+      "sha256": "0b8e0fba5a48f6efe7c0ec402e503a066c8796061860ecaf0be730eae5261c47",
+      "sourceCopySha256": "0b8e0fba5a48f6efe7c0ec402e503a066c8796061860ecaf0be730eae5261c47",
+      "intendedUse": "Fictional Microsoft 365 demo persona portrait for Diego Siciliani in accountable innovation roles.",
+      "note": "Byte-identical package-source JPG and approved sibling-sample JPEG; initials remain the runtime fallback.",
+      "redistributionStatus": "Pending final public media-rights review."
+    },
+    {
+      "path": "src/shared/assets/faces/Grady-Archie.jpg",
+      "source": "../zava-project-tracker/assets/faces/Grady-Archie.jpeg",
+      "sourceCopy": "assets/faces/Grady-Archie.jpeg",
+      "sha256": "f6b4b4c05ee271e5bdff427ecca346652ca1a84a8e619c8679851ba9489ddfb6",
+      "sourceCopySha256": "f6b4b4c05ee271e5bdff427ecca346652ca1a84a8e619c8679851ba9489ddfb6",
+      "intendedUse": "Fictional Microsoft 365 demo persona portrait for Grady Archie in accountable innovation roles.",
+      "note": "Byte-identical package-source JPG and approved sibling-sample JPEG; initials remain the runtime fallback.",
+      "redistributionStatus": "Pending final public media-rights review."
+    },
+    {
+      "path": "src/shared/assets/faces/Isaiah-Langer.jpg",
+      "source": "../zava-project-tracker/assets/faces/Isaiah-Langer.jpeg",
+      "sourceCopy": "assets/faces/Isaiah-Langer.jpeg",
+      "sha256": "cb512f0199596bc889b1679b809d2391e6b0663e88c1e5b6cc2de5f1ffef4a96",
+      "sourceCopySha256": "cb512f0199596bc889b1679b809d2391e6b0663e88c1e5b6cc2de5f1ffef4a96",
+      "intendedUse": "Fictional Microsoft 365 demo persona portrait for Isaiah Langer in accountable innovation roles.",
+      "note": "Byte-identical package-source JPG and approved sibling-sample JPEG; initials remain the runtime fallback.",
+      "redistributionStatus": "Pending final public media-rights review."
+    },
+    {
+      "path": "src/shared/assets/faces/Johanna-Lorenz.jpg",
+      "source": "../zava-project-tracker/assets/faces/Johanna-Lorenz.jpeg",
+      "sourceCopy": "assets/faces/Johanna-Lorenz.jpeg",
+      "sha256": "5bf7cd5d0115794459a798fbbed8c162b2e25602628483444556a4798b53af5c",
+      "sourceCopySha256": "5bf7cd5d0115794459a798fbbed8c162b2e25602628483444556a4798b53af5c",
+      "intendedUse": "Fictional Microsoft 365 demo persona portrait for Johanna Lorenz in accountable innovation roles.",
+      "note": "Byte-identical package-source JPG and approved sibling-sample JPEG; initials remain the runtime fallback.",
+      "redistributionStatus": "Pending final public media-rights review."
+    },
+    {
+      "path": "src/shared/assets/faces/Joni-Sherman.jpg",
+      "source": "../zava-project-tracker/assets/faces/Joni-Sherman.jpeg",
+      "sourceCopy": "assets/faces/Joni-Sherman.jpeg",
+      "sha256": "c134c8a4d54866eb36cdbce726b8c5af6426f996d877502fc53cbf3ac1559acf",
+      "sourceCopySha256": "c134c8a4d54866eb36cdbce726b8c5af6426f996d877502fc53cbf3ac1559acf",
+      "intendedUse": "Fictional Microsoft 365 demo persona portrait for Joni Sherman in accountable innovation roles.",
+      "note": "Byte-identical package-source JPG and approved sibling-sample JPEG; initials remain the runtime fallback.",
+      "redistributionStatus": "Pending final public media-rights review."
+    },
+    {
+      "path": "src/shared/assets/faces/Lee-Gu.jpg",
+      "source": "../zava-project-tracker/assets/faces/Lee-Gu.jpeg",
+      "sourceCopy": "assets/faces/Lee-Gu.jpeg",
+      "sha256": "8660f6067343ad1ee3818d460564af1da1c1645d9014229ccb12cbf4aad6a898",
+      "sourceCopySha256": "8660f6067343ad1ee3818d460564af1da1c1645d9014229ccb12cbf4aad6a898",
+      "intendedUse": "Fictional Microsoft 365 demo persona portrait for Lee Gu in accountable innovation roles.",
+      "note": "Byte-identical package-source JPG and approved sibling-sample JPEG; initials remain the runtime fallback.",
+      "redistributionStatus": "Pending final public media-rights review."
+    },
+    {
+      "path": "src/shared/assets/faces/Megan-Bowen.jpg",
+      "source": "../zava-project-tracker/assets/faces/Megan-Bowen.jpeg",
+      "sourceCopy": "assets/faces/Megan-Bowen.jpeg",
+      "sha256": "0c8ce4462299c22bc84a4908d1634ad5773d8391b9666296288fdbbfc46a7f2c",
+      "sourceCopySha256": "0c8ce4462299c22bc84a4908d1634ad5773d8391b9666296288fdbbfc46a7f2c",
+      "intendedUse": "Fictional Microsoft 365 demo persona portrait for Megan Bowen in accountable innovation roles.",
+      "note": "Byte-identical package-source JPG and approved sibling-sample JPEG; initials remain the runtime fallback.",
+      "redistributionStatus": "Pending final public media-rights review."
+    },
+    {
+      "path": "src/shared/assets/faces/Miriam-Graham.jpg",
+      "source": "../zava-project-tracker/assets/faces/Miriam-Graham.jpeg",
+      "sourceCopy": "assets/faces/Miriam-Graham.jpeg",
+      "sha256": "a0a47ef464b33e90163070cadbc9821eabe1a4980180d1166e8b5903d0b4454b",
+      "sourceCopySha256": "a0a47ef464b33e90163070cadbc9821eabe1a4980180d1166e8b5903d0b4454b",
+      "intendedUse": "Fictional Microsoft 365 demo persona portrait for Miriam Graham in accountable innovation roles.",
+      "note": "Byte-identical package-source JPG and approved sibling-sample JPEG; initials remain the runtime fallback.",
+      "redistributionStatus": "Pending final public media-rights review."
+    },
+    {
+      "path": "src/shared/assets/faces/Nestor-Wilke.jpg",
+      "source": "../zava-project-tracker/assets/faces/Nestor-Wilke.jpeg",
+      "sourceCopy": "assets/faces/Nestor-Wilke.jpeg",
+      "sha256": "9dbebc4cb78f41ba658fe1bb277895fbe410b6159fd6745253716fe052a9439e",
+      "sourceCopySha256": "9dbebc4cb78f41ba658fe1bb277895fbe410b6159fd6745253716fe052a9439e",
+      "intendedUse": "Fictional Microsoft 365 demo persona portrait for Nestor Wilke in accountable innovation roles.",
+      "note": "Byte-identical package-source JPG and approved sibling-sample JPEG; initials remain the runtime fallback.",
+      "redistributionStatus": "Pending final public media-rights review."
+    },
+    {
+      "path": "src/shared/assets/faces/Patti-Fernandez.jpg",
+      "source": "../zava-project-tracker/assets/faces/Patti-Fernandez.jpeg",
+      "sourceCopy": "assets/faces/Patti-Fernandez.jpeg",
+      "sha256": "5b7e8ba18571e464af634acbfbdad54b45a70baffb72c1a15d0b537f012d2ead",
+      "sourceCopySha256": "5b7e8ba18571e464af634acbfbdad54b45a70baffb72c1a15d0b537f012d2ead",
+      "intendedUse": "Fictional Microsoft 365 demo persona portrait for Patti Fernandez in accountable innovation roles.",
+      "note": "Byte-identical package-source JPG and approved sibling-sample JPEG; initials remain the runtime fallback.",
+      "redistributionStatus": "Pending final public media-rights review."
+    },
+    {
+      "path": "src/shared/assets/faces/Pradeep-Gupta.jpg",
+      "source": "../zava-project-tracker/assets/faces/Pradeep-Gupta.jpeg",
+      "sourceCopy": "assets/faces/Pradeep-Gupta.jpeg",
+      "sha256": "a96d2477ea1d7c5c33d348639e17e4a07a0c14144370a59e055fa88f75c486ff",
+      "sourceCopySha256": "a96d2477ea1d7c5c33d348639e17e4a07a0c14144370a59e055fa88f75c486ff",
+      "intendedUse": "Fictional Microsoft 365 demo persona portrait for Pradeep Gupta in accountable innovation roles.",
+      "note": "Byte-identical package-source JPG and approved sibling-sample JPEG; initials remain the runtime fallback.",
+      "redistributionStatus": "Pending final public media-rights review."
+    },
+    {
+      "path": "copilot/color.png",
+      "source": "Generated locally by scripts/generate-agent-icons.ps1",
+      "sha256": "322fbe8a77a3d6289661eb7d5bb10af8c499fe521f0f3a7bb08c8a671ed8f900",
+      "intendedUse": "192 by 192 Zava Innovation Hub color app icon.",
+      "note": "Original geometric lightbulb, creative spark, and narrowing stage-gate motif on the grape brand field."
+    },
+    {
+      "path": "copilot/outline.png",
+      "source": "Generated locally by scripts/generate-agent-icons.ps1",
+      "sha256": "b8cc02f48c878e8855d900713398b3ba0c9c6e7a39d1b360ad1ad7926cd09cbd",
+      "intendedUse": "32 by 32 monochrome Zava Innovation Hub outline icon.",
+      "note": "White transparent small-size form generated from the same source mark."
+    },
+    {
+      "path": "assets/innovation-portfolio-command-center.png",
+      "source": "User-supplied design brief",
+      "sha256": "fd276cd1aede944015288828de524ba9d93996d229335f72b73ef90f701999f2",
+      "intendedUse": "Design reference only.",
+      "note": "Not presented as an implementation screenshot and not loaded at runtime."
+    },
+    {
+      "path": "assets/innovation-portfolio-funding-workspace.png",
+      "source": "User-supplied design brief",
+      "sha256": "051d114bea67e22b966bbcb1012c67bd6ad508aaeaa3a2bacd70acd18e3b7ced",
+      "intendedUse": "Design reference only.",
+      "note": "Not presented as an implementation screenshot and not loaded at runtime."
+    },
+    {
+      "path": "assets/innovation-portfolio-inline-canvas.png",
+      "source": "User-supplied design brief",
+      "sha256": "ecd50216fdec6d1a7e152b68056c28953a49c127d89ae8997790161ed77c5a8d",
+      "intendedUse": "Design reference only.",
+      "note": "Not presented as an implementation screenshot and not loaded at runtime."
+    },
+    {
+      "path": "assets/innovation-portfolio-my-innovation-view.png",
+      "source": "User-supplied design brief",
+      "sha256": "f02182646c13c097a8acfc52b9ec598743cf02c9c612c5c39a81125b0d71a534",
+      "intendedUse": "Design reference only.",
+      "note": "Not presented as an implementation screenshot and not loaded at runtime."
+    }
+  ]
+}

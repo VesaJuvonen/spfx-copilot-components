@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "e7ae060e-774c-406d-96c8-0565f2b19af3",
+  "alias": "ExploreAgentCapabilitiesCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ExploreAgentCapabilities",
+      "description": {
+        "default": "Use for discovering available innovation scenarios. Do not use for a specific operational request."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/exploreAgentCapabilities/ExploreAgentCapabilitiesCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

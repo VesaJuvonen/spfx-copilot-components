@@ -1,0 +1,68 @@
+{
+  "capturedAt": "2026-08-28T10:50:00Z",
+  "harness": "tenant-free production React tree with Fluent UI and compiled CSS Modules over local HTTP",
+  "states": 58,
+  "coverage": {
+    "inlineStandard": 17,
+    "inlineNarrow": 17,
+    "fullscreenDesktop": 5,
+    "fullscreenMobile": 5,
+    "darkRepresentatives": 2,
+    "uniqueInlineLayouts": 17,
+    "reviewDecisionVariants": 7,
+    "portfolioRecognitionVariants": 1,
+    "designerStressStates": 3,
+    "demoResetStates": 1
+  },
+  "failures": {
+    "horizontalOverflow": 0,
+    "brokenImages": 0,
+    "consoleErrors": 0,
+    "pageErrors": 0
+  },
+  "captures": {
+    "inline": "ux-inline-<IntentName>.png for all 17 catalog intents at 760px",
+    "fullscreen": [
+      "ux-fullscreen-my.png",
+      "ux-fullscreen-programs.png",
+      "ux-fullscreen-reviews.png",
+      "ux-fullscreen-investment.png",
+      "ux-fullscreen-enterprise.png"
+    ],
+    "additional": [
+      "ux-reviews-mobile.png",
+      "ux-enterprise-dark.png",
+      "ux-recognition-dark.png",
+      "ux-inline-review-detail.png",
+      "ux-inline-review-approve-confirm.png",
+      "ux-inline-review-approve-receipt.png",
+      "ux-inline-review-send-back-confirm.png",
+      "ux-inline-review-send-back-receipt.png",
+      "ux-inline-review-decline-confirm.png",
+      "ux-inline-review-decline-receipt.png",
+      "ux-fullscreen-enterprise-recognition.png",
+      "ux-designer-reduced-motion.png",
+      "ux-designer-forced-colors.png",
+      "ux-designer-200-percent.png"
+    ]
+  },
+  "interactions": {
+    "verticalTabArrowNavigation": "passed",
+    "growthMetricChangesGeometry": "passed",
+    "workflowEvidenceAndConfirmation": "passed",
+    "capabilitySelectionChangesPreview": "passed",
+    "compactDensityChangesSpacing": "passed",
+    "reviewApproveUpdatesQueue": "passed: action items 4 to 3",
+    "reviewSendBackRequiresRationale": "passed: disabled before rationale, action items 4 to 3",
+    "reviewDeclineRequiresRationale": "passed: disabled before rationale, action items 4 to 3",
+    "portfolioImpactAcknowledgement": "passed: visible acknowledgement, disabled repeated action, session receipt stored",
+    "demoReset": "passed: acknowledgement removed, session receipt cleared, active workspace remounted",
+    "reducedMotion": "passed: stage-gate animation resolves to none",
+    "forcedColors": "passed: active selected state and zero horizontal overflow",
+    "pageScale200Percent": "passed: zero horizontal overflow and keyboard focus remains visible"
+  },
+  "limitations": [
+    "Local evidence does not prove authenticated model routing, tenant CSP, host display-mode return, iframe focus, high contrast, or screen-reader output.",
+    "Confirmation and receipt variants for every consequential workflow remain a Phase 6/7 evidence task."
+  ]
+}

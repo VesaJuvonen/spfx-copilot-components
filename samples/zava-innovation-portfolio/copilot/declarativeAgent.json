@@ -1,13 +1,33 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.7/schema.json",
   "version": "v1.7",
-  "name": "Innovation Agent",
-  "description": "Innovation description",
+  "name": "Zava Innovation Hub",
+  "description": "Turn strategic challenges into governed, measurable innovation outcomes.",
   "instructions": "$[file('instruction.txt')]",
   "conversation_starters": [
     {
-      "title": "Get started",
-      "text": "What can you do?"
+      "title": "Submit an idea",
+      "text": "Submit an idea to reduce new-hire onboarding time by half."
+    },
+    {
+      "title": "My ideas",
+      "text": "Show the ideas that need my attention."
+    },
+    {
+      "title": "Portfolio funnel",
+      "text": "Show stage conversion in our innovation portfolio funnel."
+    },
+    {
+      "title": "Review queue",
+      "text": "Show my innovation gate review queue."
+    },
+    {
+      "title": "Funding decision",
+      "text": "Review the funding request for Smart Onboarding Journey."
+    },
+    {
+      "title": "Explore capabilities",
+      "text": "Explore what this agent can do."
     }
   ],
   "actions": [

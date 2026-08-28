@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "706c3d9a-4bbb-4ea3-a34a-d7f6166bf2ed",
+  "alias": "ReviewInnovationFundingCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ReviewInnovationFunding",
+      "description": {
+        "default": "Use for deciding one funding request and its consequences. Do not use for budget overview."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/reviewInnovationFunding/ReviewInnovationFundingCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

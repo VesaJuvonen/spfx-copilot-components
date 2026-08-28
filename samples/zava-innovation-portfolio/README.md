@@ -1,10 +1,20 @@
 # Zava Innovation Hub - Copilot Components sample
 
-> **Planning brief:** This offline, mock-data sample demonstrates how Microsoft 365 Copilot can turn
+> **Release candidate:** This offline, mock-data sample demonstrates how Microsoft 365 Copilot can turn
 > natural-language intent into focused, interactive business UX. Inline components complete immediate
 > work; full screen preserves that context while adding application-scale comparison and governance.
-> Implementation is gated on approval of [todo.md](todo.md) and follows
-> [agentic-creation-rules.md](agentic-creation-rules.md).
+> The implementation follows [agentic-creation-rules.md](agentic-creation-rules.md); current validation
+> status and external prerequisites are tracked in [todo.md](todo.md).
+
+## Screenshots
+
+| Enterprise Insights | Global participation |
+| --- | --- |
+| ![Enterprise Insights command center with stage-gate funnel, portfolio charts, and realized value](assets/ux-fullscreen-enterprise.png) | ![Global innovation view with a Natural Earth map and regional conversion markers](assets/ux-inline-ExploreGlobalInnovation.png) |
+
+| Idea submission | Review queue |
+| --- | --- |
+| ![Inline idea canvas with editable evidence and readiness](assets/ux-inline-SubmitInnovationIdea.png) | ![Inline review queue with phase, evidence, and decision signals](assets/ux-inline-GetInnovationReviewQueue.png) |
 
 ## Business story
 
@@ -197,7 +207,7 @@ health remain independent because they answer different roles, decisions, time h
 | 3 | `BuildIdeaBusinessCase` | Editable investment model with benefit drivers, 36-month cash flow, payback, ROI/NPV, uncertainty, and milestones. Assumptions recalculate the model live. | `my-innovation/business-case`, preserving idea and scenario. |
 | 4 | `CelebrateInnovationImpact` | Evidence-grounded recognition composer with recipients, collaborators, outcome, badge, praise theme, audience, and polished share preview. Review precedes a mock share receipt. | `my-innovation/recognition`, preserving composition. |
 | 5 | `GetInnovationReviewQueue` | Ranked reviewer inbox with owner, age, gate, evidence completeness, score, conflicts, and due state. Filters alter ranking and counts; selection opens concise evidence. | `reviews-gates/review-queue`, preserving filters and selection. |
-| 6 | `ReviewIdeaGate` | Cohort comparison and gate decision with rubric, radar, unresolved evidence, sponsor, and consequence. Rubric weights and cohort update ranking; prompt decisions remain drafts. | `reviews-gates/gate-review`, preserving cohort, rubric, rationale, and draft. |
+| 6 | `ReviewIdeaGate` | One-at-a-time submission review with phase criteria, evidence completeness, strengths, gaps, owner, score, and consequence. Approve advances, Send back requests more evaluation, and Decline closes the submission; every outcome requires review, confirmation, and a session receipt. | `reviews-gates/gate-review`, preserving phase, submission, rationale, and decision draft. |
 | 7 | `ReviewInnovationFunding` | Signature decision: business economics beside before/after portfolio balance and funding controls. Proposed amounts update mix, budget, value, and milestone scope before confirmation. | `investment/funding-committee`, preserving request and amount scenario. |
 | 8 | `ExploreInnovationPortfolio` | Executive analytical canvas that switches among living funnel, bubbles, horizon balance, theme map, and funding bridge based on intent or direct control. Filters rebuild the analytical model. | `enterprise-insights/command-center`, preserving filters, mode, and selected mark. |
 | 9 | `TrackInnovationValue` | Funded-pilot milestones, projected-vs-actual value, variance, risk to value, and accountable owner. Filters and selection coordinate timeline and value evidence. | `enterprise-insights/value-realization`, preserving cohort, metric, and pilot. |
@@ -307,9 +317,12 @@ competing with the executive command center.
 
 ### Reviews & Gates
 
-The default dashboard coordinates the gate queue, due pressure, reviewer load, evidence gaps, and cohort
-funnel. Gate review adds comparison, criteria, unresolved risks, accountability, rationale,
-confirmation, and receipt. Wide layouts support queue + evidence + decision; mobile becomes sequential.
+The default dashboard coordinates incoming submissions through Screening, Business case, and Pilot
+phase buckets with live action/approved/declined/sent-back counts. Review opens one submission at a time
+with evidence completeness, strategic fit, expected value, strengths, gaps, and accountable owner.
+Approve advances it, Send back requests named evidence before resubmission, and Decline closes it with
+a recorded rationale. Every path uses consequence review, explicit confirmation, a semantic session
+receipt, and an updated queue. Wide layouts show queue plus phase guidance; mobile becomes sequential.
 
 ### Investment
 
@@ -333,6 +346,12 @@ models. The default leadership dashboard stays concise; focused growth and geogr
 space required for cohort comparison and map detail in Programs & Pilots. Enterprise Insights retains
 read-only leadership rollups and deep-links to those operational routes with period, region, cohort, and
 selected evidence preserved.
+
+The dashboard closes with **Top performing ideas by value realized**: a ranked, people-centered view of
+idea, contributor, verified value, ROI, current phase, and earned impact badge. Leaders can acknowledge
+an outcome directly; the React experience creates a session receipt and prepares the recognition story.
+This is deliberately not a popularity leaderboard. Rank requires measured value, evidence confidence,
+and named contribution; raw submission volume, reactions, and votes do not create status.
 
 Joni can initiate a new challenge or inspect an experiment from portfolio evidence, but the typed
 destination moves to Johanna's Programs & Pilots lens with the selected objective, region, idea, or
@@ -372,8 +391,9 @@ dashboard template.
   sparkles. Portrait redistribution remains gated on recorded source rights.
 - **Motion:** 200-320 ms gate-opening, bounded chart entrance, cross-highlighting, and settled funding
   updates. Reduced motion reveals final state immediately; no perpetual animation or fake waiting.
-- **Signature visuals:** living funnel at three scales, funding consequence, impact constellation, and
-  a share-ready recognition artifact grounded in a person and realized outcome.
+- **Signature visuals:** living funnel at three scales, funding consequence, impact constellation,
+  share-ready recognition artifact, and the company impact-recognition board grounded in verified
+  people, phases, ROI, and realized outcomes.
 
 ## Visualization decisions
 
@@ -418,12 +438,12 @@ workflow transitions, and the session action store. Live adapters remain deferre
 ## Architecture and routing
 
 - One typed intent catalog owns names, GUIDs, operations, schemas, positive/negative routing boundaries,
-  previews, education metadata, starters, and full-screen destinations.
+  previews, education metadata, and full-screen destinations. One ordered starter configuration owns
+  visible prompts and their expected inline-component targets.
 - Each final component receives an immutable Yeoman-generated scaffold when its phase starts. The
   existing `Innovation` placeholder is retired, not renamed or repurposed.
 - One shared React 17 + Fluent UI v9 + Griffel host renders into the component `ownerDocument`.
-- Components share a measured SPFx bundle where practical; full-screen code is lazy-loaded behind the
-  explicit host display-mode boundary.
+- Components share one measured SPFx bundle to avoid repeating React, Fluent, media, and domain data.
 - Deterministic signatures separate fresh invocation from passive rerender. Transient selection,
   filters, drafts, and review state survive Expand; confirmed actions alone enter the session overlay.
 - Full-screen destinations are catalog metadata, never component-name conditionals.
@@ -433,14 +453,14 @@ workflow transitions, and the session action store. Live adapters remain deferre
 
 Use exactly six starters. Starters 1-5 target distinct operational tools; starter 6 targets discovery.
 
-| # | Starter | Expected tool |
-| ---: | --- | --- |
-| 1 | Launch an employee challenge to reduce new-hire onboarding time. | `LaunchInnovationChallenge` |
-| 2 | Show the ideas that need my attention. | `GetMyInnovation` |
-| 3 | Show my innovation gate review queue. | `GetInnovationReviewQueue` |
-| 4 | Review the funding request for Smart Onboarding Journey. | `ReviewInnovationFunding` |
-| 5 | Show leadership the health of our innovation portfolio. | `GetInnovationPortfolioHealth` |
-| 6 | Explore what this agent can do. | `ExploreAgentCapabilities` |
+| # | Title | Starter | Expected inline component |
+| ---: | --- | --- | --- |
+| 1 | Submit an idea | Submit an idea to reduce new-hire onboarding time by half. | `SubmitInnovationIdea` |
+| 2 | My ideas | Show the ideas that need my attention. | `GetMyInnovation` |
+| 3 | Portfolio funnel | Show stage conversion in our innovation portfolio funnel. | `ExploreInnovationPortfolio` |
+| 4 | Review queue | Show my innovation gate review queue. | `GetInnovationReviewQueue` |
+| 5 | Funding decision | Review the funding request for Smart Onboarding Journey. | `ReviewInnovationFunding` |
+| 6 | Explore capabilities | Explore what this agent can do. | `ExploreAgentCapabilities` |
 
 Every request selects one primary tool. Related evidence appears inside that component rather than
 invoking score, sponsor, ROI, and balance tools in parallel. Local collision tests validate authored
@@ -463,6 +483,60 @@ The longer business demo adds business-case sensitivity, reviewer calibration, v
 brief generation, and capability discovery. The technical walkthrough shows catalog, mock graph, chart
 models, workflows, host state, exact continuation, accessibility, evidence, and package audits.
 
+## Designer and demo review
+
+- [Designer review guide](Zava-Innovation-Designer-Review.md)
+- [4-minute keynote](Zava-Innovation-4-Minute-Keynote.md)
+- [10-minute business demo](Zava-Innovation-10-Minute-Business-Demo.md)
+- [5-minute technical demo](Zava-Innovation-5-Minute-Technical-Demo.md)
+- [Prompt and routing matrix](Zava-Innovation-Routing-Matrix.md)
+- [Machine-readable visual evidence](assets/visual-evidence.json)
+- [Publication gallery evidence](assets/gallery-evidence.json)
+- [Authenticated Workbench evidence](assets/workbench-evidence-2026-08-28.json)
+- [Production package evidence](assets/release-evidence.json)
+
+Build the local review harness with `npm run build:visual`, then serve `temp/visual-harness` over a local
+HTTP server. Query parameters select `intent`, `mode=fullscreen`, and `theme=dark`. The design guide
+lists the primary screenshots, interaction paths, accessibility states, and feedback format.
+
+## Prerequisites and setup
+
+- Node.js 22.14 through 22.x and npm 10.x.
+- A SharePoint tenant with Copilot Component Workbench access for authenticated host validation.
+- The trusted SPFx development certificate for localhost Workbench testing.
+
+```powershell
+npm ci
+npx playwright install chromium
+npm run validate
+npm run build
+```
+
+`npm run build` validates the 17 manifests and six starters, agent icons, media provenance, byte-exact
+routing documentation, current-source gallery screenshots, production tests, generated API plugin, and
+final package contents. It emits the deployable package at
+`sharepoint/solution/zava-innovation-portfolio.sppkg` and release hashes in
+`assets/release-evidence.json`.
+
+For deterministic UX review, run `npm run capture:visual`. For authenticated Workbench development,
+set `SPFX_SERVE_TENANT_DOMAIN`, run `npm start -- --nobrowser`, and load the emitted
+`debugManifestsFile` query string in the tenant Copilot Workbench. Direct component selection proves
+host rendering and interaction; natural-language model routing must be rehearsed separately.
+
+## Validation and limitations
+
+- All 17 inline components render in authenticated Workbench with owner-document Fluent styling,
+  light/dark theme updates, zero horizontal overflow, and representative workflow interaction.
+- The local publication matrix contains 11 source-hash-backed captures with zero runtime, image, or
+  overflow failures. Broader deterministic evidence covers all inline defaults and five workspaces.
+- The production dependency graph has zero known vulnerabilities. Nine moderate findings remain in the
+  pinned SPFx/Heft development toolchain; npm offers only a breaking downgrade that does not support
+  this Copilot Component preview.
+- Live Dataverse, SharePoint, Graph, Fabric, finance, durable workflow, and notification adapters are
+  intentionally deferred. Mock actions remain session-local and do not write tenant data.
+- Natural-language starter routing, tenant screen-reader coverage, and portrait redistribution approval
+  remain external release prerequisites and are not claimed by the local build.
+
 ## Scope and definition of done
 
 The current showcase includes 16 operational inline components, one education component, five shared
@@ -470,14 +544,12 @@ full-screen lenses, one isolated gallery, deterministic mock workflows, full res
 catalog/routing/asset/visual/plugin/package automation. Live Dataverse, SharePoint, Graph, Teams praise,
 Fabric, finance, durable workflow, authorization, audit, provisioning, and notifications are deferred.
 
-Done means all 17 immutable identities are catalog-derived; every inline default is distinct; every
-control has a tested effect; actions use validation/review/confirmation/receipt/reset; exact context
-survives Expand; all dashboards are useful at mobile through keynote widths; visuals are deterministic,
-accessible, nonblank, and paired with exact values; the explorer safely advertises all 16 tools;
-authenticated Workbench proves routing/display/focus; and the zero-warning canonical build emits an
-audited committed `.sppkg` with no stale bundles or duplicate media.
+The release candidate has 17 immutable identities, distinct inline defaults, guarded mock actions,
+responsive workspaces, deterministic visuals, a safe capability explorer, authenticated direct-selection
+Workbench evidence, and an audited `.sppkg` with no stale bundles or duplicate media. Final publication
+still requires the external prerequisites listed above.
 
 ---
 
-This brief supersedes the earlier 30-inline-component, interim 10-tool, and 14-tool proposals. No implementation should begin until
-the reduced catalog, names, full-screen topology, and open decisions in [todo.md](todo.md) are approved.
+This implementation supersedes the earlier 30-inline-component, interim 10-tool, and 14-tool proposals.
+The approved 16 operational tools plus one capability explorer are the current release catalog.

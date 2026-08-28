@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "3faa0e3a-7ed9-4538-8df6-3ea14edaed09",
+  "alias": "CelebrateInnovationImpactCopilotComponen",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "CelebrateInnovationImpact",
+      "description": {
+        "default": "Use for recognizing people behind measured innovation impact. Do not use for general announcements."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/celebrateInnovationImpact/CelebrateInnovationImpactCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

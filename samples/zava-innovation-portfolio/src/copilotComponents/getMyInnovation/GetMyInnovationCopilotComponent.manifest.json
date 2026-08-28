@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "819527e1-2ab3-4e7a-b71c-7fe63dcd2101",
+  "alias": "GetMyInnovationCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "GetMyInnovation",
+      "description": {
+        "default": "Use for the signed-in person’s ideas and next actions. Do not use for enterprise portfolio analysis."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/getMyInnovation/GetMyInnovationCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

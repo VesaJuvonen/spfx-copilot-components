@@ -1,0 +1,138 @@
+{
+  "capturedAt": "2026-08-28T13:10:00+03:00",
+  "host": "https://span001.sharepoint.com/_layouts/15/copilotworkbench.aspx",
+  "method": "authenticated Copilot Component Workbench direct component and tool selection",
+  "debugManifest": "https://localhost:4321/temp/build/manifests.js",
+  "routingClaim": "Direct selection validates component registration, properties, rendering, interaction, and display modes. It does not validate natural-language model routing.",
+  "components": {
+    "expected": 17,
+    "mounted": 17,
+    "readyWithoutTimeout": 17,
+    "layouts": [
+      "SubmitInnovationIdea-idea",
+      "GetMyInnovation-personal",
+      "BuildIdeaBusinessCase-case",
+      "CelebrateInnovationImpact-recognition",
+      "review-decision-queue",
+      "review-decision-detail",
+      "ReviewInnovationFunding-funding",
+      "ExploreInnovationPortfolio-command",
+      "TrackInnovationValue-realization",
+      "GenerateInnovationBrief-brief",
+      "GetInnovationGrowth-trend",
+      "ExploreGlobalInnovation-map",
+      "TrackInnovationBudget-finance",
+      "GetInnovationPortfolioHealth-scorecard",
+      "LaunchInnovationChallenge-challenge",
+      "ManageInnovationExperiment-experiment",
+      "ExploreAgentCapabilities-gallery"
+    ]
+  },
+  "inlineHost": {
+    "measuredWidth": "700-715px",
+    "maximumVisibleFrameHeight": "953-955px",
+    "horizontalOverflowFailures": 0,
+    "brokenImageFailures": 0,
+    "fontFamilyPasses": 17,
+    "themeVariablePasses": 17,
+    "nonSegoeVisibleControlsAfterFix": 0,
+    "internallyScrollingLayouts": [
+      {
+        "layout": "review-decision-detail",
+        "contentHeight": 1069,
+        "assessment": "All decision actions remain above the fold."
+      },
+      {
+        "layout": "ExploreInnovationPortfolio-command",
+        "contentHeight": 2184,
+        "assessment": "Functional and visually complete, but long for an inline first state; recognition actions require scrolling."
+      },
+      {
+        "layout": "GetInnovationPortfolioHealth-scorecard",
+        "contentHeight": 1086,
+        "assessment": "Informational content scrolls without horizontal overflow."
+      },
+      {
+        "layout": "ExploreAgentCapabilities-gallery",
+        "contentHeight": 1417,
+        "assessment": "Search and first 14 scenarios are above the fold; remaining scenarios require scrolling."
+      }
+    ]
+  },
+  "themes": {
+    "light": {
+      "foreground": "#242424",
+      "background": "#ffffff",
+      "passes": 17
+    },
+    "dark": {
+      "foreground": "#ffffff",
+      "background": "#292929",
+      "passes": 17,
+      "horizontalOverflowFailures": 0
+    },
+    "broadcastWithoutRemount": "passed"
+  },
+  "interactions": {
+    "responsiveExpand": "passed: 17/17 inline tools show icon plus Expand at 700-715px; the same control becomes 36x36 icon-only at 620px and 390px while preserving title and aria-label",
+    "submitPrefill": "passed: prompt properties populated title/theme/focus",
+    "submitEditedDraftReview": "passed: edited title appeared in consequence review",
+    "submitReceipt": "passed: session-only receipt states no tenant data changed",
+    "growthMetric": "passed: conversion selection changed SVG geometry",
+    "capabilityFilter": "passed: funding query reduced results and updated safe preview",
+    "reviewSafeguard": "passed: Send back confirmation disabled before rationale",
+    "reviewReceipt": "passed: rationale, submission, decision maker, and next step recorded",
+    "reviewQueueUpdate": "passed: pending action total changed from 4 to 3",
+    "portfolioCharts": "passed: four accessible chart names rendered",
+    "fullscreenExpand": "passed: portfolio expanded from 700px to 1432px without overflow",
+    "fullscreenReturn": "passed: returned to the same portfolio layout at 700px"
+  },
+  "runtime": {
+    "freshPostFixConsoleErrors": 0,
+    "freshPostFixConsoleWarnings": 0,
+    "freshPostFixFluentIdConflicts": 0,
+    "tenantInstalledNameCollision": {
+      "tool": "ExploreAgentCapabilities",
+      "assessment": "Workbench contained another component with the same alias/tool label. The Zava Innovation component was identified by manifest component ID e7ae060e-774c-406d-96c8-0565f2b19af3."
+    }
+  },
+  "localParity": {
+    "submitLayout": "SubmitInnovationIdea-idea",
+    "submitFont": "Segoe UI",
+    "submitHorizontalOverflow": false,
+    "portfolioFullscreenWidth": 1425,
+    "tenantPortfolioFullscreenWidth": 1432,
+    "portfolioChartNamesMatched": true
+  },
+  "globalInnovationMap": {
+    "renderer": "React SVG with d3-geo Natural Earth projection and packaged world-atlas country topology",
+    "runtimeNetworkRequests": 0,
+    "countryPathCharacters": 160974,
+    "regionalMarkers": 4,
+    "markerSemantics": "size shows submissions; color shows stage conversion",
+    "keyboardSelection": "passed with Enter and Space; focus retained and exact region detail updated",
+    "tenantMapSize": "675x330px",
+    "tenantLightTheme": "passed",
+    "tenantDarkTheme": "passed",
+    "narrow390px": "passed with static legend and zero horizontal overflow",
+    "tenantHorizontalOverflow": false,
+    "tenantBrokenImages": 0,
+    "tenantConsoleErrors": 0
+  },
+  "issuesResolved": [
+    {
+      "issue": "FluentProvider generated fui-FluentProvider1, colliding with the SharePoint portable host provider. The theme style was empty and all component text/controls fell back to Times New Roman.",
+      "resolution": "Wrapped the component provider in IdPrefixProvider with the zih- namespace and moved provider-local useStyles under the owner-document RendererProvider."
+    },
+    {
+      "issue": "Twenty-five native buttons used browser-default Arial while Fluent controls used Segoe UI.",
+      "resolution": "Native buttons now inherit the application root font family."
+    }
+  ],
+  "remaining": [
+    "Run all six conversation starters and routing-matrix prompts in fresh authenticated Copilot conversations to validate model-selected tools and extracted properties.",
+    "Complete tenant keyboard, screen-reader, forced-colors, mobile-width, and 200 percent zoom checks.",
+    "Consider reducing ExploreInnovationPortfolio inline height while preserving the signature funnel as the first useful state.",
+    "Validate exact transient draft/selection preservation through Expand for stateful routes beyond the portfolio route identity."
+  ]
+}

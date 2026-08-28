@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "a05b1d44-825e-4bd6-afb5-b5a87a23d06f",
+  "alias": "BuildIdeaBusinessCaseCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "BuildIdeaBusinessCase",
+      "description": {
+        "default": "Use for modeling one idea’s financial case. Do not use for approving funding."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/buildIdeaBusinessCase/BuildIdeaBusinessCaseCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

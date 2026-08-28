@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
   "schema_version": "v2.4",
   "namespace": "innovation",
-  "name_for_human": "Innovation Agent",
-  "description_for_human": "Innovation description",
-  "description_for_model": "Innovation description",
+  "name_for_human": "Zava Innovation",
+  "description_for_human": "Govern innovation from strategic challenge to measurable impact.",
+  "description_for_model": "Use one focused innovation tool for the user's primary job. Specific submit, review, funding, budget, experiment, growth, geography, value, and recognition requests must use their owning tool instead of a broad portfolio summary. Consequential actions require component review and confirmation.",
   "contact_email": "publisher@contoso.com"
 }

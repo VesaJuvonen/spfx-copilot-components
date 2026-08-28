@@ -28,6 +28,10 @@ the defaults.
 
 - One shared inline header shows the agent/brand name with the literal current action title. One
   accessible **View in full screen** control sits in the top-right corner when the host supports it.
+  Follow the proven responsive command pattern: show the expand icon plus a short visible **Expand**
+  label when the component canvas has room, then collapse to a stable square icon-only control at the
+  measured narrow breakpoint. Preserve the full action in `aria-label` and `title` in both states; hide
+  only the visible label, never the accessible name or focus target.
 - The body begins with domain work. Do not add generic prompt echo, extracted-property dumps,
   `From your prompt`, generic `Decision insight`, chatbot bubbles, sparkle/robot chrome, or a second
   prompt box inside the component.
@@ -42,7 +46,9 @@ the defaults.
 - Expose exactly six conversation starters by default. Starters 1-5 open five distinct, high-value
   operational tools; starter 6 is capability discovery and targets the generated
   `ExploreAgentCapabilities` experience. Each starter contains one primary task and is expected to fire
-  exactly one tool.
+  exactly one tool. Treat order as first-run product design: lead with a high-value create/do task,
+  follow with the user's own work, place the signature analytical/visual experience in the first three,
+  then expose governed review/decision work before capability discovery.
 - Include `ExploreAgentCapabilities` as the default education experience. It is searchable and
   filterable, advertises every operational tool from the canonical catalog, excludes itself, offers
   realistic copyable prompts and safe previews, and never applies a submit/review action from preview.
@@ -129,6 +135,12 @@ implementation order, component identities, evidence, and approved exceptions.
 - In React SVG charts, D3 may calculate scales, ticks, bins, stacks, arcs, paths, projections, and
   deterministic layouts, but React owns the SVG elements, events, selection state, and lifecycle.
   D3 never selects or mutates DOM and never owns transitions, timers, drag, brush, or zoom.
+- **Use real geography for geographic questions.** A regional/country map uses an approved local
+  boundary dataset and a deliberate tested projection; do not imply geography with decorative blobs,
+  arbitrary CSS shapes, or percentage-positioned dots on an empty panel. Package topology locally
+  (for example, Natural Earth data through `world-atlas`), project it with `d3-geo`, and render land,
+  borders, optional graticule, markers, labels, and selection as React SVG without runtime map/tile
+  requests. Record the dataset source, version, license/public-domain status, and package impact.
 - In Babylon scenes, Babylon owns cameras, lights, thin/regular instances, meshes, picking, scene/camera
   animation, and rendering. React still owns business state, filters, selected IDs, accessible content,
   and lifecycle. Keep primary labels, controls, legends, evidence, and keyboard commands in Fluent DOM.
@@ -176,6 +188,12 @@ implementation order, component identities, evidence, and approved exceptions.
   A 3D chart also has
   Reset view and an adjacent 2D table/list equivalent. Perspective, depth, color,
   lighting, hover, and motion are never the only carriers of exact values or status.
+- A proportional-symbol map defines each channel explicitly: marker position is longitude/latitude,
+  size represents one bounded quantitative metric, and color represents one thresholded metric or
+  semantic state. Every marker has an exact accessible name, Enter/Space selection, visible focus,
+  selected-state detail, and adjacent regional comparison/table. Test coordinate bounds, nonblank
+  country geometry, all markers inside the view, narrow legend reflow, dark/forced-color contrast, and
+  zero horizontal overflow in the actual Portable Component host.
 - Provide WebGL capability detection and a complete SVG/2D fallback. Constrain camera motion, expose
   keyboard-operable selection outside the canvas, and retain visible focus. Reduced motion renders the
   settled scene immediately and disables auto-rotation, pulsing, or camera flights.
@@ -344,9 +362,11 @@ approved sample values, but keep the actions and gates.
   missing actor/trigger/job/outcome fields, scenario-to-prompt ambiguity, placeholder descriptions/properties, missing
   registrations, missing generated files, duplicate bundle membership, a manifest absent from the
   approved bundle strategy, preview/property type drift, a starter without one declared target, a
-  duplicate starter target unless explicitly approved, or a stale generated routing matrix. Derive
+  duplicate starter target unless explicitly approved, a starter whose promised experience is not its
+  deterministic first rendered state, or a stale generated routing matrix. Derive
   expected component, manifest, inline-default, and starter counts from that catalog/configuration;
-  never repeat a sample-specific numeric count across validators.
+  never repeat a sample-specific numeric count or ordered target tuple across validators. Validation
+  reads and compares expected output in memory; it never runs a writer first and thereby hides drift.
 4. **Install and pin the shared stack once.** React 17, Fluent v9, Griffel, Jest, and only approved
   optional libraries. Add modular Babylon and focused D3 modules only when the renderer decision and
   measured spike justify them. Run a clean compile before feature implementation.
@@ -386,7 +406,11 @@ approved sample values, but keep the actions and gates.
 15. **Run the complete tenant-host matrix separately.** Exercise every current tool inline and through
   its full-screen continuation, then save dated machine-readable Workbench evidence. Record whether the
   method used real natural-language prompts or direct component/tool selection; never use direct
-  selection evidence to claim model-routing quality.
+  selection evidence to claim model-routing quality. Match turns by immutable manifest component ID,
+  not picker text: installed samples can expose identical tool/alias labels, and Workbench truncates
+  long aliases. Remove unrelated disambiguation turns, then require exactly the catalog ID set, one
+  unique Ready turn per ID, expected `data-layout`, owner-document theme/font tokens, zero overflow,
+  and zero broken media before leaving the page open for human review.
 16. **Package only after all executable gates pass.** Run catalog/media/gallery audits, clean tests with
   zero warnings, production build, Teams/Copilot package generation, `.sppkg` generation,
   generated-plugin validation, final package-output/size audit, diagnostics, and `git diff --check`.
@@ -399,7 +423,9 @@ approved sample values, but keep the actions and gates.
   boundary and names nearby exclusions. Every conversation starter has one expected target, one primary
   task, and no compound request that invites parallel tools. Generate the all-tool prompt/property/
   collision matrix from the catalog and check it in the build. Actual model selection is rehearsed in
-  an authenticated tenant and must show exactly one selected tool per starter/request.
+  an authenticated tenant and must show exactly one selected tool per starter/request. A starter that
+  advertises a signature chart or workflow MUST render that exact useful state by default or from
+  deterministic extracted properties; merely routing to the right broad component is insufficient.
 19. **Publish from verified evidence.** Preserve the approved product specification as a design brief
   before converting README to PnP publication format. Generate or validate the routing matrix,
   `assets/sample.json`, visual evidence, release evidence, demo scripts, package hashes, and the final
@@ -439,9 +465,11 @@ Recommended scripts for future samples:
   "check:gallery": "node scripts/validate-gallery-assets.mjs",
   "check:generated-plugin": "node scripts/validate-generated-ai-plugin.mjs",
   "check:package-output": "node scripts/validate-package-output.mjs",
+  "audit:production": "npm audit --omit=dev --audit-level=moderate",
+  "check:diff": "git diff --check",
   "start:visual": "node scripts/visual-harness/start.mjs",
-  "validate": "npm run validate:intents && npm run check:agent-icons && npm run validate:assets && npm run check:routing-matrix && npm run check:gallery && heft test --clean",
-  "build": "npm run validate:intents && npm run check:agent-icons && npm run validate:assets && npm run check:routing-matrix && npm run check:gallery && heft test --clean --production && heft package-solution --production && npm run check:generated-plugin && npm run check:package-output"
+  "validate": "npm run validate:intents && npm run check:agent-icons && npm run validate:assets && npm run check:routing-matrix && npm run check:gallery && npm run audit:production && npm run check:diff",
+  "build": "npm run validate && heft test --clean --production && heft package-solution --production && npm run check:generated-plugin && npm run check:package-output"
 }
 ```
 
@@ -598,7 +626,9 @@ phased implementation. If only planning is requested, stop before dependency or 
   comes from the same live draft state. No hard-coded review labels that can drift from a selector.
 - **G18 - Host-document styling is mandatory.** Griffel/Fluent styles render into
   `context.domElement.ownerDocument` through `RendererProvider`; parent-document style injection is not
-  sufficient for Copilot Workbench (§8.1).
+  sufficient for Copilot Workbench. Namespace nested Fluent IDs with `IdPrefixProvider`, and execute
+  provider-local style hooks beneath the target renderer so SharePoint's own provider cannot capture or
+  collide with their generated styles (§8.1).
 - **G19 - Evidence before completion.** Checkboxes become complete only after executable validation and,
   for visual work, saved evidence. Local harness results never substitute for tenant-authenticated CSP,
   iframe focus, or screen-reader host checks.
@@ -641,10 +671,14 @@ phased implementation. If only planning is requested, stop before dependency or 
 - **G29 - One catalog drives generated surfaces.** Manifests, Zod bindings, bundle membership, agent
   registration, starter definitions, explorer education, preview properties, routing matrix, and
   expected counts derive from one typed catalog or catalog-owned configuration. Generated output is
-  never fixed by hand; update the source and regenerate.
+  never fixed by hand; update the source and regenerate. Package/plugin validators derive expected
+  names, counts, bundle IDs, and artifact paths from that same configuration rather than copying sample-
+  specific constants from an earlier release.
 - **G30 - UX evidence is an artifact.** Real implementation screenshots and machine-readable visual
   evidence are versioned publication inputs. Historical design references are labeled and stored
-  separately and never presented as current implementation screenshots.
+  separately and never presented as current implementation screenshots. Publication checks recompute a
+  source fingerprint and verify every PNG dimension and hash; a renderer, theme, media, or browser-
+  revision change requires intentional recapture before the canonical build can pass.
 - **G31 - Agent icons are designed assets, not scaffold residue.** Approve one brand/domain mark, derive
   `color.png` and `outline.png` from the same deterministic source, validate their dimensions,
   transparency/color treatment, manifest mapping, provenance, and packaged bytes, and inspect them at
@@ -662,6 +696,15 @@ phased implementation. If only planning is requested, stop before dependency or 
   business outcome, operation model, distinct inline UX, and exact full-screen continuation. Component
   count is derived from this approved map and is never a quota. Merge overlapping candidates or keep
   supporting states as internal routes when a realistic prompt cannot distinguish their ownership.
+- **G35 - Validation detects drift; generation is explicit.** Canonical builds and check commands
+  compute expected generated content in memory and fail on differences without writing source or
+  artifacts. Run generation only as an intentional authoring step, then run the non-writing check.
+  Never place a repair/generate command before its validator in the same build chain.
+- **G36 - A starter promise matches its first rendered state.** Reaching the expected tool is only the
+  routing half of the contract. The resolved default or deterministic prompt properties MUST open the
+  named chart, selected scope, editable draft, actionable queue, or decision state immediately. Test
+  both target ownership and rendered `data-layout`/mode; prove natural-language extraction separately
+  in authenticated Workbench.
 
 ---
 
@@ -1091,8 +1134,17 @@ reach a planned number. Conversely, do not hide distinct roles and decisions ins
 - Store one typed ordered starter collection in the catalog module or adjacent catalog-owned
   configuration. Each entry contains `title`, `text`, and `targetName`; generator, validator, routing
   matrix, README table, and tests import that same collection. Never duplicate expected starter tuples
-  in generator and validator code. Generate `declarativeAgent.json` from this source and validate exact
-  title/text/order/target coverage.
+  in generator and validator code. Put approved positional roles/invariants beside the collection when
+  they need enforcement; do not restate the ordered target list inside a validator. Generate
+  `declarativeAgent.json` from this source and validate exact title/text/order/target coverage.
+- Design the order as a compact first-run narrative, not a random menu. By default, begin with a
+  high-value create/do task, follow with the user's own work, and include the sample's signature
+  analytical/visual inline experience within the first three. Follow with distinct governed review or
+  decision work. Record a different approved sequence in the brief when the domain calls for it.
+- A starter title and prompt are a UX promise. Its target's deterministic first useful state MUST show
+  the named form, queue, decision, selected scope, or chart without requiring an unrelated click. When
+  the state depends on extracted properties, add a resolver fixture and verify extraction in tenant;
+  direct harness invocation proves rendering only.
 - Prefer distinct high-value first-run tasks across operation types and audiences. Do not repeat the
   same target merely to expose more phrasing unless the product owner explicitly approves that trade-off.
 - Expose exactly six starters by default. Starters 1-5 target five distinct high-value operational
@@ -1117,7 +1169,9 @@ that the file exists.
 1. Local validator: exactly one owner per operational scenario; complete actor/trigger/intent/question/
   outcome/inline/full-screen fields; unique descriptions; every description has positive/negative boundaries; all
    starter expected targets exist; starter title/text/order match generated JSON; explorer is last when
-   required; preview values match schema types; routing matrix is current.
+  required; each starter target is inline-capable; each promised first state matches its expected
+  layout/mode fixture; preview values match schema types; routing matrix is current. The validator is
+  non-writing and derives expected order from the canonical starter source rather than a copied array.
 2. Collision tests: every nearest-sibling pair has positive and exclusion prompts mapping to one expected
   name in deterministic routing fixtures/documentation. Fail duplicate scenario keys, equivalent prompt
   sets, generic tools that absorb specific scenario prompts, and tools reachable only by component name.
@@ -1393,6 +1447,14 @@ metadata, routes, and preview adapters rather than copying Zava-specific UI/data
 - **Always target the component document.** Resolve
   `const targetDocument = context.domElement.ownerDocument` in the component base and pass it into the
   shared provider. Workbench may host the component in an iframe; parent-document styles do not apply.
+- **Isolate provider IDs from the host.** Wrap the component `FluentProvider` in an `IdPrefixProvider`
+  with a stable sample-specific prefix. `PortableComponent.aspx` already contains Fluent providers; an
+  unprefixed nested provider can reuse `fui-FluentProvider1`, bind to the host style element, emit a
+  conflicting-ID error, and leave its theme rule empty. Verify a distinct prefixed style ID and at
+  least one CSS rule in authenticated Workbench.
+- **Run style hooks under the target renderer.** A component that calls `useStyles()` before returning
+  its own `RendererProvider` still resolves that hook against the outer/default renderer. Put those
+  hooks in a child rendered beneath `RendererProvider`, or use static CSS for the provider wrapper.
 - **Iframe style insertion + flicker-free theme flips.** Create one Griffel DOM renderer for the target
   document, wrap with `RendererProvider`, and remount the Fluent provider **exactly once** after the
   first commit via a key that changes 0→1. Keep the key stable thereafter so theme flips preserve
@@ -1437,7 +1499,9 @@ Define this vocabulary before building route bodies and keep it in one shared th
 - **Typography and density:** use the host/product type family; 19-22 px compact headings, 12-14 px
   operational body text, 9-11 px supporting metadata, and tabular numerals for money/counts/percentages.
   Queue and roster rows stay compact; dashboards gain whitespace between regions rather than padding
-  every item into a large card.
+  every item into a large card. Native `button`, `input`, `textarea`, and `select` elements do not
+  reliably inherit the application family across browsers/SharePoint hosts; set inheritance where a
+  Fluent control is not used and audit computed fonts for every visible control in Workbench.
 - **Shape and elevation:** 4-8 px radii for bounded tools and repeated records, restrained elevation for
   overlays/selected evidence, one-pixel separators for dense lists. Do not nest cards or float every
   page section in a card.
@@ -1793,6 +1857,11 @@ evidence, safeguards, rationale, confirmation, semantic receipt, updated queue, 
 - **Long labels are a required responsive state.** Test the longest status/filter label with a nonzero
   count. Use equal segmented tracks and stack the filter group below its heading before truncating or
   reducing text to unreadable sizes.
+- **Responsive expand command.** Prefer an icon + `Expand` label at normal inline widths so the primary
+  continuation is discoverable. At the measured compact breakpoint, hide the label and constrain the
+  same button to a 36-44px square without changing its `aria-label`, title/tooltip, click handler, or
+  top-right alignment. Test one pixel above and at the breakpoint, a mobile width, every inline default
+  in the real Workbench width, keyboard focus, and zero header/content overflow.
 
 ---
 
@@ -1820,6 +1889,12 @@ evidence, safeguards, rationale, confirmation, semantic receipt, updated queue, 
   Allow `topojson-client` only with approved local geographic boundaries. Reject D3 selection,
   axis, transition, timer, interpolate/ease, brush, drag, zoom, fetch, formatting, and full-bundle imports.
   Pure calculation functions return typed immutable models and never receive DOM/Babylon references.
+- **Packaged geographic topology** - use a pinned, reviewable dataset such as
+  `world-atlas/countries-110m.json` when real country context materially answers the question. Cast the
+  imported JSON once at the typed TopoJSON boundary, derive country and border geometry with
+  `topojson-client`, and fit the approved projection to a stable SVG view box. Never fetch topology,
+  map tiles, geocoding, or marker media at runtime. Do not install unrelated D3 modules merely because
+  a sibling map used them; retain only the projection/topology packages the current renderer executes.
 - Prefer reusable React SVG components for compact trend/ribbon, capacity, waterfall, radial, Pareto,
   and journey forms. Prefer typed Babylon scene adapters for spatial landscape, dense network, geographic,
   flow, or dimensional forms that earn camera/depth behavior. Headless calculations prepare scales,
@@ -1871,7 +1946,7 @@ evidence, safeguards, rationale, confirmation, semantic receipt, updated queue, 
 - The future-sample `build` script MUST run this order as one command:
 
   ```bash
-  npm run validate:intents && npm run check:agent-icons && npm run validate:assets && npm run check:routing-matrix && npm run check:gallery && heft test --clean --production && heft package-solution --production && npm run check:generated-plugin && npm run check:package-output
+  npm run validate && heft test --clean --production && heft package-solution --production && npm run check:generated-plugin && npm run check:package-output
   ```
 
   Keep both generated-output checks after `package-solution`: `check:generated-plugin` validates
@@ -1955,6 +2030,11 @@ evidence, safeguards, rationale, confirmation, semantic receipt, updated queue, 
   destinations and returns, preserved/missing origin context, console diagnostics, and unresolved
   findings. State explicitly whether the run used natural-language prompts or direct component/tool
   selection; only the former can support a model-routing claim.
+- For the final direct-selection review, clear prior turns, instantiate the catalog in approved order,
+  and verify frame URLs against manifest component IDs. Picker labels are not identity: another installed
+  sample may use the same alias/tool name, and aliases longer than the manifest limit may be truncated.
+  If candidate turns are fired to disambiguate a collision, remove every unrelated turn before evidence
+  capture. Leave the validated tool set open only while the matching localhost server remains running.
 - Required test families:
   - catalog/layout uniqueness and registration/schema/media audits;
   - intent resolver normalization, compact params, deterministic signatures, and fresh-versus-passive
@@ -2282,8 +2362,10 @@ samples/<name>/
 - [ ] One generated `ExploreAgentCapabilities` education experience exists by default, complete
   education metadata validates, it advertises all operational tools while excluding itself, and exactly
   six starters validate with five distinct operational targets plus the explorer as starter 6.
-- [ ] Single stable-key theme provider; Griffel renderer targets `ownerDocument`; shared semantic custom
-  properties plus Fluent tokens; CSS Modules/Griffel ownership is explicit; no static inline styles.
+- [ ] Single stable-key theme provider; Griffel renderer targets `ownerDocument`; nested Fluent IDs use
+  a stable sample prefix; provider-local style hooks run below that renderer; shared semantic custom
+  properties plus Fluent tokens resolve in `PortableComponent.aspx`; native controls inherit the
+  application font; computed fonts/colors pass in light/dark Workbench; no static inline styles.
 - [ ] Typed service contracts + Mock impl; source-appropriate raw data; canonical view models; mappers;
   relative-time resolution.
 - [ ] Standard M365 demo personas; host identity/photo when already available; bundled fallback; one
@@ -2305,6 +2387,10 @@ samples/<name>/
 - [ ] DOM, React SVG, and Babylon render from typed analytical models; metric/group selectors redraw
   materially different data; accessible names, exact values/context, keyboard behavior, and text/list
   equivalent are supplied.
+- [ ] Every geographic question that needs a map uses approved locally packaged topology and a tested
+  projection rather than abstract blobs/empty-map dots; longitude/latitude positions, size/color
+  channels, threshold legend, exact marker names, Enter/Space selection, selected detail, coordinate
+  bounds, nonblank country geometry, narrow legend reflow, dark/forced colors, and package impact pass.
 - [ ] Approved deterministic signature experiences provide immediate decision value and reduced-motion safety.
 - [ ] Optional session-persisted settings that reshape the UX; visibility-driven re-flow layout.
 - [ ] Staggered entrance + reduced-motion guards; large-display scaling; positive empty states.
@@ -2313,8 +2399,10 @@ samples/<name>/
 - [ ] Capability explorer search/categories/prompt actions/read-only previews/tour pass; every advertised
   intent has deterministic preview coverage and the explorer does not advertise itself.
 - [ ] Tenant-authenticated Workbench smoke passes CSP, display-mode request, iframe focus, and screen-reader
-  output, or the missing tenant/auth prerequisite is explicitly recorded; dated machine-readable
-  evidence states whether prompts or direct component selection were used.
+  output, or the missing tenant/auth prerequisite is explicitly recorded; final direct-selection review
+  contains exactly one Ready turn per immutable catalog component ID with expected `data-layout`, theme,
+  font, overflow, and media checks. Duplicate labels/truncated aliases are resolved by ID, unrelated
+  disambiguation turns are removed, and dated evidence states whether prompts or direct selection were used.
 - [ ] Catalog/media audits and `heft test --clean` green (zero warnings); current agent ZIP and committed
   `.sppkg` inspected and regenerated; generated plugin v2.4 metadata/functions/MCP tools and length
   limits pass against the actual SharePoint-embedded ZIP; no stale package artifacts.

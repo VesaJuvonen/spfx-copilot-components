@@ -14,14 +14,14 @@
     "outline": "outline.png"
   },
   "name": {
-    "short": "Innovation Agent",
-    "full": "Innovation Agent"
+    "short": "Zava Innovation",
+    "full": "Zava Innovation Hub"
   },
   "description": {
-    "short": "Innovation description",
-    "full": "Innovation description"
+    "short": "Govern innovation from challenge to impact.",
+    "full": "Turn strategic challenges into governed ideas, investments, experiments, and measurable outcomes."
   },
-  "accentColor": "#FFFFFF",
+  "accentColor": "#5B2B82",
   "copilotAgents": {
     "declarativeAgents": [
       {

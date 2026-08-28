@@ -36,3 +36,8 @@ obj
 
 # Styles Generated Code
 *.scss.ts
+
+# Commit the deployable release package, but keep generated package diagnostics ignored.
+!sharepoint/solution/
+sharepoint/solution/*
+!sharepoint/solution/zava-innovation-portfolio.sppkg

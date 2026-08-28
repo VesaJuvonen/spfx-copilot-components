@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "773f79b5-d80b-4c3f-b549-864d8e752ff1",
+  "alias": "GetInnovationPortfolioHealthCopilotCompo",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "GetInnovationPortfolioHealth",
+      "description": {
+        "default": "Use for leadership portfolio health and exceptions. Do not use for one metric only."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/getInnovationPortfolioHealth/GetInnovationPortfolioHealthCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

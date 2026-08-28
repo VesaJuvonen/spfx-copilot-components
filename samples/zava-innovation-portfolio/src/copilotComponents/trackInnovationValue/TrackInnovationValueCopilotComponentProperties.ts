@@ -1,0 +1,10 @@
+import { z } from 'zod';
+import zodToJsonSchema from 'zod-to-json-schema';
+
+const schema=z.object({
+  ideaId: z.string().optional().describe('ideaId extracted from the user request when provided.'),
+  period: z.string().optional().describe('period extracted from the user request when provided.'),
+  theme: z.string().optional().describe('theme extracted from the user request when provided.')
+});
+export type ITrackInnovationValueCopilotComponentProperties=z.infer<typeof schema>;
+export default zodToJsonSchema(schema);

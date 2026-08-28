@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "acbbd25c-f077-432a-85fb-fcad242539bd",
+  "alias": "GetInnovationGrowthCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "GetInnovationGrowth",
+      "description": {
+        "default": "Use for participation, throughput, and conversion trends. Do not use for budget health."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/getInnovationGrowth/GetInnovationGrowthCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "c2507292-ca17-4958-9fdb-961bcce967c6",
+  "alias": "TrackInnovationBudgetCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "TrackInnovationBudget",
+      "description": {
+        "default": "Use for allocated, committed, spent, forecast, and available funding. Do not use for one funding decision."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/trackInnovationBudget/TrackInnovationBudgetCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

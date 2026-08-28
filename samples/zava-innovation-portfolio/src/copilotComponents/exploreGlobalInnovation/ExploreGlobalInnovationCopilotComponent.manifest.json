@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "e744fd21-86ae-4735-910a-360419c4b583",
+  "alias": "ExploreGlobalInnovationCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ExploreGlobalInnovation",
+      "description": {
+        "default": "Use for regional participation and conversion gaps. Do not use for individual ideas."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/exploreGlobalInnovation/ExploreGlobalInnovationCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

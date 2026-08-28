@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "e4451f88-9139-4452-ae6a-3d052fd49a40",
+  "alias": "ManageInnovationExperimentCopilotCompone",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ManageInnovationExperiment",
+      "description": {
+        "default": "Use for pilot hypotheses, evidence, and learning recommendations. Do not use for funding approval."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/manageInnovationExperiment/ManageInnovationExperimentCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

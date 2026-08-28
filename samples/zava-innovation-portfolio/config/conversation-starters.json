@@ -1,0 +1,34 @@
+{
+  "starters": [
+    {
+      "title": "Submit an idea",
+      "text": "Submit an idea to reduce new-hire onboarding time by half.",
+      "targetName": "SubmitInnovationIdea"
+    },
+    {
+      "title": "My ideas",
+      "text": "Show the ideas that need my attention.",
+      "targetName": "GetMyInnovation"
+    },
+    {
+      "title": "Portfolio funnel",
+      "text": "Show stage conversion in our innovation portfolio funnel.",
+      "targetName": "ExploreInnovationPortfolio"
+    },
+    {
+      "title": "Review queue",
+      "text": "Show my innovation gate review queue.",
+      "targetName": "GetInnovationReviewQueue"
+    },
+    {
+      "title": "Funding decision",
+      "text": "Review the funding request for Smart Onboarding Journey.",
+      "targetName": "ReviewInnovationFunding"
+    },
+    {
+      "title": "Explore capabilities",
+      "text": "Explore what this agent can do.",
+      "targetName": "ExploreAgentCapabilities"
+    }
+  ]
+}

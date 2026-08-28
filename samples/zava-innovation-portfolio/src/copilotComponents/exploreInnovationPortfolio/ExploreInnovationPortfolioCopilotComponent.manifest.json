@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "7111dea5-f6e1-453b-b155-fd4dbc1198f9",
+  "alias": "ExploreInnovationPortfolioCopilotCompone",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ExploreInnovationPortfolio",
+      "description": {
+        "default": "Use for multi-dimensional portfolio funnel and balance analysis. Do not use for personal idea status."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/exploreInnovationPortfolio/ExploreInnovationPortfolioCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-28T12:25:53.425Z",
+  "sourceFiles": [
+    "src/shared/InnovationApp.tsx",
+    "src/shared/InnovationCopilotComponentBase.tsx",
+    "src/shared/InnovationThemeProvider.tsx",
+    "src/shared/PremiumInnovationApp.module.scss",
+    "src/shared/PremiumInnovationApp.tsx",
+    "src/shared/ReviewDecisionCenter.tsx",
+    "src/shared/WorldInnovationMap.module.scss",
+    "src/shared/WorldInnovationMap.tsx",
+    "src/shared/catalog.ts",
+    "src/shared/domain.ts",
+    "src/shared/media.ts",
+    "src/shared/sessionStore.ts",
+    "package-lock.json"
+  ],
+  "sourceSha256": "fd978e7da325b403815d7c0ca2bd8d662140162717f92db35415cdffa2782fc6",
+  "totalCaptures": 11,
+  "failureCount": 0,
+  "captures": [
+    {
+      "name": "ux-inline-SubmitInnovationIdea.png",
+      "intent": "SubmitInnovationIdea",
+      "width": 760,
+      "height": 900,
+      "alt": "Inline innovation idea canvas with editable outcome, strategic theme, accountable owner, evidence, and readiness score",
+      "capturedWidth": 760,
+      "capturedHeight": 900,
+      "bytes": 41462,
+      "sha256": "36d96b17d36c5330536d0dd241fc07488ecf44c3c84822d7381072e59599c949",
+      "layouts": [
+        "SubmitInnovationIdea-idea"
+      ]
+    },
+    {
+      "name": "ux-inline-GetInnovationReviewQueue.png",
+      "intent": "GetInnovationReviewQueue",
+      "width": 900,
+      "height": 900,
+      "alt": "Inline innovation review queue with phase buckets, status filters, evidence signals, and pending decisions",
+      "capturedWidth": 900,
+      "capturedHeight": 900,
+      "bytes": 54690,
+      "sha256": "1a6e9e46c3e88334b4d52ae375e5bf5529804f4731f2671b5eb8149364400fa9",
+      "layouts": [
+        "review-decision-queue"
+      ]
+    },
+    {
+      "name": "ux-inline-ExploreGlobalInnovation.png",
+      "intent": "ExploreGlobalInnovation",
+      "width": 760,
+      "height": 900,
+      "alt": "Inline global innovation view with a Natural Earth world map, regional participation markers, and conversion comparison",
+      "capturedWidth": 760,
+      "capturedHeight": 1102,
+      "bytes": 102982,
+      "sha256": "054fd3bce724768d8e18bb516827fac5e6ea08c49cb9d1caff95fbb6363678ca",
+      "layouts": [
+        "ExploreGlobalInnovation-map"
+      ]
+    },
+    {
+      "name": "ux-inline-ExploreAgentCapabilities.png",
+      "intent": "ExploreAgentCapabilities",
+      "width": 760,
+      "height": 900,
+      "alt": "Inline searchable catalog of Zava Innovation Hub operational scenarios and safe prompt previews",
+      "capturedWidth": 760,
+      "capturedHeight": 1540,
+      "bytes": 82413,
+      "sha256": "0e11e8a62fe8339c73c41d7f7ac01db66b0394735ea55480f94fe2db099aa66b",
+      "layouts": [
+        "ExploreAgentCapabilities-gallery"
+      ]
+    },
+    {
+      "name": "ux-fullscreen-my.png",
+      "intent": "GetMyInnovation",
+      "mode": "fullscreen",
+      "width": 1440,
+      "height": 950,
+      "alt": "Full-screen My Innovation workspace with personal idea progress, readiness, feedback, and next actions",
+      "capturedWidth": 1440,
+      "capturedHeight": 950,
+      "bytes": 173820,
+      "sha256": "80076b7223686bb51c19464776d88ad21f8392842f379ebe20fab44c8572168a",
+      "layouts": [
+        "GetMyInnovation-personal"
+      ]
+    },
+    {
+      "name": "ux-fullscreen-programs.png",
+      "intent": "GetInnovationGrowth",
+      "mode": "fullscreen",
+      "width": 1440,
+      "height": 950,
+      "alt": "Full-screen Programs and Pilots workspace with innovation growth, participation, and conversion evidence",
+      "capturedWidth": 1440,
+      "capturedHeight": 950,
+      "bytes": 165549,
+      "sha256": "dae9a0326f808f47d1e94310ea8cb56dbeb6c0c50bd2ac9eb778f26f6b78260f",
+      "layouts": [
+        "GetInnovationGrowth-trend"
+      ]
+    },
+    {
+      "name": "ux-fullscreen-reviews.png",
+      "intent": "GetInnovationReviewQueue",
+      "mode": "fullscreen",
+      "width": 1440,
+      "height": 950,
+      "alt": "Full-screen Reviews and Gates workspace with prioritized submissions and evidence-backed decision controls",
+      "capturedWidth": 1440,
+      "capturedHeight": 950,
+      "bytes": 165994,
+      "sha256": "6633fecebe71034792ef93fbe369153c64debebdc5814d309680839c6916e469",
+      "layouts": [
+        "review-decision-queue"
+      ]
+    },
+    {
+      "name": "ux-fullscreen-investment.png",
+      "intent": "TrackInnovationBudget",
+      "mode": "fullscreen",
+      "width": 1440,
+      "height": 950,
+      "alt": "Full-screen Investment workspace with budget stewardship, funding position, and portfolio allocation evidence",
+      "capturedWidth": 1440,
+      "capturedHeight": 950,
+      "bytes": 157198,
+      "sha256": "3d3c7a62aabe01daa4c8a6f4c38e3de91d8c68df682ed793847ccae755f725f2",
+      "layouts": [
+        "TrackInnovationBudget-finance"
+      ]
+    },
+    {
+      "name": "ux-fullscreen-enterprise.png",
+      "intent": "ExploreInnovationPortfolio",
+      "mode": "fullscreen",
+      "width": 1440,
+      "height": 950,
+      "alt": "Full-screen Enterprise Insights command center with stage-gate funnel, portfolio charts, themes, and realized value",
+      "capturedWidth": 1440,
+      "capturedHeight": 1838,
+      "bytes": 306389,
+      "sha256": "2e405a379323014c8b953327e3b7a22527e0e8bd8cb75c1a4750173eca518049",
+      "layouts": [
+        "ExploreInnovationPortfolio-command"
+      ]
+    },
+    {
+      "name": "ux-fullscreen-enterprise-mobile.png",
+      "intent": "ExploreInnovationPortfolio",
+      "mode": "fullscreen",
+      "width": 390,
+      "height": 844,
+      "alt": "Enterprise Insights command center adapted to a narrow mobile viewport with accessible icon navigation",
+      "capturedWidth": 390,
+      "capturedHeight": 3328,
+      "bytes": 223011,
+      "sha256": "bcb4b35f0b02f6c9fa133ba2aad059cad6c3400a366dcd6eb73c1dac61ea7b9f",
+      "layouts": [
+        "ExploreInnovationPortfolio-command"
+      ]
+    },
+    {
+      "name": "ux-enterprise-dark.png",
+      "intent": "ExploreInnovationPortfolio",
+      "mode": "fullscreen",
+      "theme": "dark",
+      "width": 1440,
+      "height": 950,
+      "alt": "Enterprise Insights command center in dark theme with readable analytical charts and semantic status colors",
+      "capturedWidth": 1440,
+      "capturedHeight": 1838,
+      "bytes": 297057,
+      "sha256": "f34e2f950375f4a13771af98343c2fd25891a81063b07799bbac73d6e04b7c4b",
+      "layouts": [
+        "ExploreInnovationPortfolio-command"
+      ]
+    }
+  ]
+}

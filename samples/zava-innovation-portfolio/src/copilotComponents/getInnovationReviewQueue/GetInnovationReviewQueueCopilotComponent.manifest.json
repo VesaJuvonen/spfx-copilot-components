@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "0e9545d8-c203-4781-9a4d-aebed2d4c257",
+  "alias": "GetInnovationReviewQueueCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "GetInnovationReviewQueue",
+      "description": {
+        "default": "Use for prioritizing pending innovation reviews. Do not use to decide a selected gate."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/getInnovationReviewQueue/GetInnovationReviewQueueCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

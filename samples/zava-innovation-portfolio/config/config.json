@@ -2,17 +2,79 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
   "bundles": {
-    "innovation-copilot-component": {
+    "zava-innovation-components": {
       "components": [
         {
-          "entrypoint": "./lib/copilotComponents/innovation/InnovationCopilotComponent.js",
-          "manifest": "./src/copilotComponents/innovation/InnovationCopilotComponent.manifest.json"
+          "entrypoint": "./lib/copilotComponents/submitInnovationIdea/SubmitInnovationIdeaCopilotComponent.js",
+          "manifest": "./src/copilotComponents/submitInnovationIdea/SubmitInnovationIdeaCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/getMyInnovation/GetMyInnovationCopilotComponent.js",
+          "manifest": "./src/copilotComponents/getMyInnovation/GetMyInnovationCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/buildIdeaBusinessCase/BuildIdeaBusinessCaseCopilotComponent.js",
+          "manifest": "./src/copilotComponents/buildIdeaBusinessCase/BuildIdeaBusinessCaseCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/celebrateInnovationImpact/CelebrateInnovationImpactCopilotComponent.js",
+          "manifest": "./src/copilotComponents/celebrateInnovationImpact/CelebrateInnovationImpactCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/getInnovationReviewQueue/GetInnovationReviewQueueCopilotComponent.js",
+          "manifest": "./src/copilotComponents/getInnovationReviewQueue/GetInnovationReviewQueueCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/reviewIdeaGate/ReviewIdeaGateCopilotComponent.js",
+          "manifest": "./src/copilotComponents/reviewIdeaGate/ReviewIdeaGateCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/reviewInnovationFunding/ReviewInnovationFundingCopilotComponent.js",
+          "manifest": "./src/copilotComponents/reviewInnovationFunding/ReviewInnovationFundingCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/exploreInnovationPortfolio/ExploreInnovationPortfolioCopilotComponent.js",
+          "manifest": "./src/copilotComponents/exploreInnovationPortfolio/ExploreInnovationPortfolioCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/trackInnovationValue/TrackInnovationValueCopilotComponent.js",
+          "manifest": "./src/copilotComponents/trackInnovationValue/TrackInnovationValueCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/generateInnovationBrief/GenerateInnovationBriefCopilotComponent.js",
+          "manifest": "./src/copilotComponents/generateInnovationBrief/GenerateInnovationBriefCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/getInnovationGrowth/GetInnovationGrowthCopilotComponent.js",
+          "manifest": "./src/copilotComponents/getInnovationGrowth/GetInnovationGrowthCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/exploreGlobalInnovation/ExploreGlobalInnovationCopilotComponent.js",
+          "manifest": "./src/copilotComponents/exploreGlobalInnovation/ExploreGlobalInnovationCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/trackInnovationBudget/TrackInnovationBudgetCopilotComponent.js",
+          "manifest": "./src/copilotComponents/trackInnovationBudget/TrackInnovationBudgetCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/getInnovationPortfolioHealth/GetInnovationPortfolioHealthCopilotComponent.js",
+          "manifest": "./src/copilotComponents/getInnovationPortfolioHealth/GetInnovationPortfolioHealthCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/launchInnovationChallenge/LaunchInnovationChallengeCopilotComponent.js",
+          "manifest": "./src/copilotComponents/launchInnovationChallenge/LaunchInnovationChallengeCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/manageInnovationExperiment/ManageInnovationExperimentCopilotComponent.js",
+          "manifest": "./src/copilotComponents/manageInnovationExperiment/ManageInnovationExperimentCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/exploreAgentCapabilities/ExploreAgentCapabilitiesCopilotComponent.js",
+          "manifest": "./src/copilotComponents/exploreAgentCapabilities/ExploreAgentCapabilitiesCopilotComponent.manifest.json"
         }
       ]
     }
   },
   "externals": {},
-  "localizedResources": {
-    "InnovationCopilotComponentStrings": "lib/copilotComponents/innovation/loc/{locale}.js"
-  }
+  "localizedResources": {}
 }

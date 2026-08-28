@@ -3,13 +3,29 @@
   "agents": [
     {
       "name": {
-        "default": "Innovation Agent"
+        "default": "Zava Innovation Hub"
       },
       "description": {
-        "default": "Innovation description"
+        "default": "Turn challenges into governed innovation outcomes."
       },
       "components": [
-        "8bae7a35-00a1-4ff4-8b35-a48f1266b9ab"
+        "4a3c9bc8-46a9-4089-985f-45eddf35c84f",
+        "819527e1-2ab3-4e7a-b71c-7fe63dcd2101",
+        "a05b1d44-825e-4bd6-afb5-b5a87a23d06f",
+        "3faa0e3a-7ed9-4538-8df6-3ea14edaed09",
+        "0e9545d8-c203-4781-9a4d-aebed2d4c257",
+        "0b0dd332-88f6-4a60-bfe1-443e2a54f31b",
+        "706c3d9a-4bbb-4ea3-a34a-d7f6166bf2ed",
+        "7111dea5-f6e1-453b-b155-fd4dbc1198f9",
+        "4a318161-373f-4fd6-bedf-c9a611920580",
+        "792c7ad7-9880-4f62-8f3c-076d0fd2023f",
+        "acbbd25c-f077-432a-85fb-fcad242539bd",
+        "e744fd21-86ae-4735-910a-360419c4b583",
+        "c2507292-ca17-4958-9fdb-961bcce967c6",
+        "773f79b5-d80b-4c3f-b549-864d8e752ff1",
+        "e21937cc-345f-4839-8ebb-9f349180b98d",
+        "e4451f88-9139-4452-ae6a-3d052fd49a40",
+        "e7ae060e-774c-406d-96c8-0565f2b19af3"
       ]
     }
   ]

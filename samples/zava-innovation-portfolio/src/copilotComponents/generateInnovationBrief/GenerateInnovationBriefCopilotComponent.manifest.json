@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "792c7ad7-9880-4f62-8f3c-076d0fd2023f",
+  "alias": "GenerateInnovationBriefCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "GenerateInnovationBrief",
+      "description": {
+        "default": "Use for an evidence-grounded executive innovation brief. Do not use for raw analysis."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/generateInnovationBrief/GenerateInnovationBriefCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "e21937cc-345f-4839-8ebb-9f349180b98d",
+  "alias": "LaunchInnovationChallengeCopilotComponen",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "LaunchInnovationChallenge",
+      "description": {
+        "default": "Use for framing and launching a measurable strategic challenge. Do not use for idea submission."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/launchInnovationChallenge/LaunchInnovationChallengeCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

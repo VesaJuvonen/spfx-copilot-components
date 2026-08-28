@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "4a318161-373f-4fd6-bedf-c9a611920580",
+  "alias": "TrackInnovationValueCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "TrackInnovationValue",
+      "description": {
+        "default": "Use for projected-versus-realized value and pilot accountability. Do not use for future business cases."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/trackInnovationValue/TrackInnovationValueCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}
