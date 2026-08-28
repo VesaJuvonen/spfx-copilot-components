@@ -11,6 +11,8 @@
     "check": "npm run generate && astro check",
     "test": "vitest run",
     "test:e2e": "playwright test",
+    "deployment:mark": "node scripts/deployment-verification.mjs create",
+    "deployment:verify": "node scripts/deployment-verification.mjs verify",
     "preview": "astro preview",
     "preview:test": "node scripts/serve-test.mjs",
     "astro": "astro"
