@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "copilot-m-365-roadmap-features-client-side-solution",
+    "id": "7da8676e-6368-4b3b-9c58-ea4f6f4ea4d1",
+    "version": "1.0.0.2",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.24.0-beta.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Stay up to date with Microsoft 365 roadmap features"
+      },
+      "longDescription": {
+        "default": "Microsoft 365 Roadmap Copilot Agent helps you to stay up to date with the latest Microsoft 365 roadmap features. It uses a Microsoft Graph Connector that ingests Microsoft 365 roadmap features. It keeps teams informed about updates on Microsoft 365 Roadmap features, facilitating proactive adaptation to changes, new releases, and deployments across Microsoft Teams, SharePoint, Outlook, and more"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "copilot-m-365-roadmap-features Feature",
+        "description": "The feature that activates elements of the copilot-m-365-roadmap-features solution.",
+        "id": "935293f2-bf9e-40d0-82c8-cab1afe8ba1c",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/copilot-m-365-roadmap-features.sppkg"
+  }
+}

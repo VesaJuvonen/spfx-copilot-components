@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.7/schema.json",
+  "version": "v1.7",
+  "name": "Copilot M365 Roadmap",
+  "description": "Microsoft 365 Roadmap Copilot Agent helps you to stay up to date with the latest Microsoft 365 roadmap features. It uses a Microsoft Graph Connector that ingests Microsoft 365 roadmap features. It keeps teams informed about updates on Microsoft 365 Roadmap features, facilitating proactive adaptation to changes, new releases, and deployments across Microsoft Teams, SharePoint, Outlook, and more",
+  "instructions": "$[file('instruction.txt')]",
+  "conversation_starters": [
+    {
+      "title": "Get started",
+      "text": "Run the tool CopilotM365RoadmapTool"
+    }
+  ],
+  "actions": [
+    {
+      "id": "copilotM365RoadmapAction",
+      "file": "ai-plugin.json"
+    }
+  ]
+}
