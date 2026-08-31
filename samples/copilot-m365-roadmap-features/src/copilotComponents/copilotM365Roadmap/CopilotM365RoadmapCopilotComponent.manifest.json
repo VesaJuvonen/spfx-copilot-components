@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "9f15ef9d-9826-4250-8576-e208b738a381",
+  "alias": "CopilotM365RoadmapCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+
+  "capabilities": {
+    "availableDisplayModes": ["inline", "fullscreen"]
+  },
+
+  "tools": [
+       {
+      "name": "CopilotM365RoadmapTool",
+      "description": {
+        "default": "Browse and search Microsoft 365 roadmap features by status, product, ID, or name."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/copilotM365Roadmap/CopilotM365RoadmapCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

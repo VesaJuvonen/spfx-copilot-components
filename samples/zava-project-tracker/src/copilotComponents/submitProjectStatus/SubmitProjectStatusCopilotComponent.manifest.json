@@ -16,7 +16,7 @@
     {
       "name": "SubmitProjectStatus",
       "description": {
-        "default": "Prepare an editable project status report for review before mock submission."
+        "default": "Show an editable five-dimension project status report or status update for human review before submission."
       },
       "propertiesSchema": {
         "id": "$../../../lib/copilotComponents/submitProjectStatus/SubmitProjectStatusCopilotComponentProperties.js:default;"

@@ -1,0 +1,61 @@
+[
+  {
+    "name": "pnp-sp-dev-spfx-copilot-apps-copilot-m365-roadmap-features",
+    "source": "pnp",
+    "title": "Copilot M365 Roadmap Features",
+    "shortDescription": "A Copilot Agent that helps teams stay informed about the latest Microsoft 365 roadmap features.",
+    "url": "https://github.com/pnp/spfx-copilot-apps/tree/main/samples/copilot-m365-roadmap-features",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/spfx-copilot-apps/tree/main/samples/copilot-m365-roadmap-features",
+    "longDescription": [
+      "Copilot M365 Roadmap Features demonstrates a SharePoint Framework-based Copilot Agent that helps teams stay informed about the latest Microsoft 365 roadmap features. This solution leverages Microsoft 365 roadmap features, enabling proactive adaptation to new releases, updates, and deployments across Microsoft Teams, SharePoint, Outlook, and other Microsoft 365 applications."
+    ],
+    "creationDateTime": "2026-08-26",
+    "updateDateTime": "2026-08-26",
+    "products": [
+      "SharePoint",
+      "Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE-TYPE",
+        "value": "SPFx-CopilotComponent"
+      },
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.24.0-beta.2"
+      }
+    ],
+    "thumbnails": [
+      { "name": "fullscreen-roadmap-features.png", "type": "image", "order": 100, "url": "https://github.com/pnp/spfx-copilot-apps/raw/main/samples/copilot-m365-roadmap-features/assets/fullscreen-roadmap-features.png", "alt": "Zava full-screen roadmap features dashboard" },
+      { "name": "inline-roadmap-features.png", "type": "image", "order": 101, "url": "https://github.com/pnp/spfx-copilot-apps/raw/main/samples/copilot-m365-roadmap-features/assets/inline-roadmap-features.png", "alt": "Zava inline roadmap features dashboard" }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "mohammadamer",
+        "pictureUrl": "https://github.com/mohammadamer.png",
+        "name": "Mohammad Amer"
+      }
+    ],
+    "references": [
+      {
+        "name": "Build your first SharePoint Copilot App",
+        "description": "Learn how to build and package an SPFx Copilot Component with inline and full-screen experiences.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/copilot/get-started/build-your-first-copilot-app"
+      },
+      {
+        "name": "Microsoft 365 Copilot",
+        "description": "Microsoft 365 Copilot combines large language models with organizational context and extensibility.",
+        "url": "https://www.microsoft.com/microsoft-365/copilot"
+      },
+      {
+        "name": "Overview of the SharePoint Framework",
+        "description": "The SharePoint Framework supports client-side solutions and tenant-hosted assets for Microsoft 365 experiences.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview"
+      }
+    ]
+  }
+]

@@ -1,18 +1,17 @@
-# Zava AI Project Portfolio Agent: 10-minute business value demo
+# Copilot Components for agents: 10-minute business value demo
 
 ## Purpose
 
-Use this version when the audience needs more than the three-minute keynote. It proves the breadth of dynamic inline UX, the connected project/portfolio story, governed decisions, and the value of one full-screen workspace without becoming a feature inventory.
+Use this version when the audience needs more than the three-minute keynote. Zava Project Tracker provides the example scenario; the demo proves how Copilot Components let an agent move beyond generated text into dynamic inline UX, deterministic interaction, progressive full-screen context, and human-governed action.
 
-> **Conversation identifies the moment. Purpose-built UX makes the evidence and action trustworthy.**
+> **AI interprets. Deterministic UX makes the interpretation actionable. Governance defines when people decide.**
 
 ## Audience
 
-- PMO and portfolio leaders
-- Project sponsors and governance boards
-- Finance and resource managers
+- Business and process owners
+- Decision makers in governance, finance, risk, and operations
 - Microsoft 365 and Copilot adoption leaders
-- Product owners evaluating agentic UX patterns
+- Product and technology leaders evaluating agentic UX patterns
 
 ## Before presenting
 
@@ -23,22 +22,23 @@ Use this version when the audience needs more than the three-minute keynote. It 
 - Open Decisions once and select **Reset demo decisions**.
 - Keep the host at desktop width for the full-screen section.
 - Describe every person, project, value, and receipt as deterministic sample data.
+- Present project tracking as the example domain; keep the narrative on the reusable Copilot Component model.
 
 ## Demo arc
 
 ```text
-Discover -> Diagnose -> Compare -> Model -> Expand -> Govern -> Widen -> Personalize -> Confirm
+Discover -> Interpret -> Render -> Interact -> Expand -> Govern -> Confirm
 ```
 
-The first half stays inline. Full screen appears only after the audience sees three different intent-driven UX shapes.
+The first half stays inline so the audience sees the agent render several task-specific UX shapes. Full screen appears only when the human asks for more context to make a consequential decision.
 
 ## Timed script
 
-### 0:00-0:40 - Set the business problem
+### 0:00-0:40 - Set the component opportunity
 
 **Say:**
 
-> "Project leaders do not need another chatbot that summarizes whatever system they already know how to open. They need the right evidence and controls at the moment a question becomes a decision. Zava lets the conversation choose the experience. We will move from one project question to a portfolio trade-off and a governed resource decision, all in one Copilot conversation."
+> "Generated prose is not the right experience for every task. AI is excellent at interpreting intent and context, while important work often benefits from visible evidence, predictable controls, and accountable decisions. Copilot Components bridge those strengths. Zava Project Tracker is our example, with human control deliberately designed into the governed steps."
 
 ### 0:40-1:15 - Optional discovery for a first-time user
 
@@ -56,15 +56,15 @@ The first half stays inline. Full screen appears only after the audience sees th
 
 **Say:**
 
-> "A complex agent should not depend on users memorizing thirty tools. The explorer organizes business outcomes, provides realistic prompts, and previews each experience without applying an action."
+> "Components can make the agent itself discoverable. Instead of asking users to memorize tools or read a generated feature list, this experience organizes outcomes, offers realistic prompts, and previews governed actions without applying them."
 
 If the audience already knows the agent, skip this section and use the time for Q&A.
 
-### 1:15-2:05 - Diagnose project health inline
+### 1:15-2:05 - Make AI interpretation inspectable
 
 **Paste:**
 
-> **How is Customer Service Copilot doing financially compared with baseline?**
+> **Show the overall project health for Customer Service Copilot.**
 
 **Expected tool:** `GetProjectHealth`
 
@@ -78,25 +78,29 @@ If the audience already knows the agent, skip this section and use the time for 
 
 **Say:**
 
-> "The answer is not simply amber. It explains which dimension drives amber and gives me the evidence needed to challenge that conclusion."
+> "The AI interpreted a broad health question, but the result is not hidden in prose. The component exposes the selected project, the dimensions, and the evidence. I can inspect and correct that interpretation through deterministic controls without asking the model to try again."
 
-### 2:05-3:00 - Compare two investments inline
+### 2:05-3:00 - Turn generated context into an editable form
 
 **Paste:**
 
-> **Compare Customer Service Copilot with Contract Intelligence on delivery and value, including forecast.**
+> **Submit a project status report for Customer Service Copilot for 2026-08-21.**
 
-**Expected tool:** `CompareProjects`
+**Expected tool:** `SubmitProjectStatus`
 
-**Do:** Change the highlighted dimension from **delivery** to **capacity**.
+**Do:** Change **Risk** from red to amber, select **Review submission**, and stop before **Submit status report**.
 
 **Business points:**
 
-- Common measures prevent two unrelated scorecards from masquerading as a comparison.
-- Customer Service Copilot has stronger value; Contract Intelligence has less capacity flexibility.
-- The audience sees why the next question is about Pradeep, not generic hiring.
+- Five RAG dimensions turn a broad status statement into structured, inspectable data.
+- Prompt context prefills the project and reporting date without locking the human into the draft.
+- Editing, review, and final submission are distinct deterministic stages.
 
-### 3:00-4:10 - Model a safe resource decision inline
+**Say:**
+
+> "I explicitly asked to submit, but this workflow is designed to stop at a draft. The AI selects and prefills a structured status form; I correct Risk to amber and review the exact report. For this scenario, publishing is deliberately configured as a separate human decision that I am not taking."
+
+### 3:00-4:10 - Bring governed action inline
 
 **Paste:**
 
@@ -112,7 +116,7 @@ If the audience already knows the agent, skip this section and use the time for 
 
 **Say:**
 
-> "The conversational model proposes the context. The component applies the deterministic rules. A prompt can never assign a person. It can only prepare a scenario for deliberate review."
+> "The non-deterministic model extracts the scenario, and the component applies deterministic capacity rules and safeguards. We have designed this governed workflow so the prompt prepares visible context and a person reviews the assignment before it is applied."
 
 ### 4:10-5:15 - Expand into governed Decisions
 
@@ -129,6 +133,10 @@ If the audience already knows the agent, skip this section and use the time for 
 - The same twelve review records back inline queues and the unified manager inbox.
 - Selection-first design prevents accidental decisions.
 
+**Say:**
+
+> "Full screen is progressive disclosure, not a handoff to an unrelated application. The component carries the task into a workspace with more context, but still selects nothing and exposes no decision controls until I choose Review."
+
 ### 5:15-6:15 - Widen to project delivery
 
 **Do:** Select the **Project** tab and choose **Customer Service Copilot**.
@@ -143,7 +151,7 @@ If the audience already knows the agent, skip this section and use the time for 
 
 **Say:**
 
-> "The resource decision is not isolated. The project cockpit shows the schedule, money, AI usage, work, risks, milestones, and benefit position that make the assignment consequential."
+> "Components are not limited to isolated cards. In full screen, the same interaction model can coordinate a richer workspace and show the surrounding evidence that makes one action consequential. The domain happens to be project delivery; the pattern applies anywhere a decision needs connected context."
 
 **Presenter guardrail:** Current full-screen dashboards preserve invoked workspace/scope and session receipts. Do not claim that every inline slider/filter is already mapped into every route-specific dashboard module.
 
@@ -161,7 +169,7 @@ If the audience already knows the agent, skip this section and use the time for 
 
 **Say:**
 
-> "At portfolio scale, the question changes from 'can this project have the person?' to 'where does scarce review capacity protect the most value?' The dashboard shows the company trade-off rather than repeating project cards."
+> "The UX can also change its visual structure as the decision scale changes. Here it moves from one record to an investment landscape so the user can evaluate a company trade-off. Purpose-built does not mean one dashboard resized for every intent."
 
 ### 7:15-8:10 - Bring the consequence back to My Work
 
@@ -179,7 +187,7 @@ If the audience already knows the agent, skip this section and use the time for 
 
 **Say:**
 
-> "Portfolio choices eventually become personal commitments. My Work converts governance into what Megan needs to do this week, while reusing the same reviewed submission experiences available inline."
+> "The same component architecture can personalize the experience and reuse governed actions across entry points. Context changes from portfolio to individual work, while review and confirmation stay consistent and predictable."
 
 ### 8:10-9:20 - Complete the decision with a receipt
 
@@ -187,29 +195,29 @@ If the audience already knows the agent, skip this section and use the time for 
 
 1. Return to **Decisions**.
 2. Select **Review** on **Customer Service Copilot / AI review**.
-3. Select **Approve 20%**.
+3. Select **Approve** for the 20% scenario.
 4. Inspect the consequence.
 5. Select **Confirm decision**.
 6. Show the updated row and session-only receipt.
 
 **Say:**
 
-> "The action boundary is explicit. The sample records an immutable browser-session receipt, updates the manager inbox, and performs no external write. A production service can later replace the mock store without changing this review contract."
+> "This is the action boundary we chose for this workflow. The AI prepared the context; by design, recording the decision requires my explicit Review, Approve, and Confirm actions. The component creates a browser-session receipt and performs no external write. A production service can replace the mock store later without changing that governance contract."
 
 ### 9:20-10:00 - Close on business value
 
 **Say:**
 
-> "Zava demonstrates a reusable Copilot pattern: conversation resolves to trusted UX, evidence stays visible, consequential actions require confirmation, and full screen adds context only when the user asks for it. The opportunity is larger than project management. Any domain with many intents, governed actions, and fragmented systems can use the same architecture."
+> "Project tracking is only the example. The larger opportunity is to combine non-deterministic AI for understanding with deterministic UX for interaction and safeguards. Copilot Components make interpretations visible, adapt the experience to the task, and let each solution place human checkpoints wherever its governance requires them."
 
-## Business value summary
+## Copilot Component value summary
 
-- **Faster understanding:** questions resolve directly to the right visualization or workflow.
-- **Better decisions:** comparisons and consequences use coherent records and calculations.
-- **Safer actions:** prompts prefill but never confirm; safeguards remain deterministic.
-- **Less navigation:** users begin with intent rather than knowing which application owns the task.
-- **Portfolio context:** personal, project, portfolio, and governance views share one data story.
-- **Demo reliability:** all runtime data is bundled, deterministic, and offline.
+- **Adaptive experiences:** one agent can render the visualization, workflow, or controls each intent needs.
+- **Inspectable AI:** extracted context becomes visible and correctable instead of remaining hidden in generated prose.
+- **Predictable interaction:** controls, calculations, constraints, and state transitions remain deterministic and testable.
+- **Configurable governance:** this solution uses human review and confirmation for consequential actions; other scenarios can choose different levels of automation.
+- **Progressive context:** users begin inline and expand into a workspace only when the task requires it.
+- **Reusable governance:** the same review contract can sit over sample data today and production services later.
 
 ## Optional extension prompts
 
@@ -223,17 +231,19 @@ Use these only when the audience asks for more depth:
 
 ## Fallback path
 
-If full-screen mode is unavailable, complete the three inline turns, show the portfolio-health inline component, and end on the resource confirmation screen without confirming. This still proves dynamic routing, interactive evidence, and governed action.
+If full-screen mode is unavailable, complete the three inline turns and end on the resource confirmation screen without confirming. This still proves AI-driven component selection, deterministic interaction, and human-governed action.
 
 ## Rehearsal checklist
 
 - [ ] Reset demo decisions and start a fresh conversation.
 - [ ] Each prompt selects the expected tool without manual correction.
-- [ ] Health and comparison controls visibly change evidence.
+- [ ] Project health changes focus; project status changes Risk to amber and carries it into review.
+- [ ] The status report remains unsubmitted after review.
 - [ ] Resource scenario shows 20% and 98% load.
 - [ ] Full screen opens Decisions without automatic item selection.
 - [ ] Project selector coordinates all cockpit regions.
 - [ ] Portfolio shows eight projects and a twelve-month run-rate.
 - [ ] My Work action opens and closes without losing the dashboard.
 - [ ] Confirmed decision survives navigation and Reset clears it.
+- [ ] Each transition explains a reusable Copilot Component capability rather than only a Zava feature.
 - [ ] The story completes in ten minutes with inline UX receiving at least half the time.

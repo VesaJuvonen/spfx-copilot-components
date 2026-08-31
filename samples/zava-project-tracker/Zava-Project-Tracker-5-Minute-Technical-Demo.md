@@ -1,12 +1,14 @@
-# Zava AI Project Portfolio Agent: 5-minute developer and architecture demo
+# Copilot Components for agents: 5-minute developer and architecture demo
 
 ## Purpose
 
-Use this walkthrough after the business demo or in a developer session. It pairs live UX with the source files that implement routing, host integration, deterministic state, safe actions, shared packaging, and release validation.
+Use this walkthrough after the business demo or in a developer session. Zava Project Tracker is the reference implementation used to explain how Copilot Components combine AI routing with deterministic interaction, human-controlled actions, host integration, shared architecture, and release validation.
 
 The technical message is:
 
-> **Many independently routed tools can share one maintainable React application, one coherent data model, and one optimized deployment package.**
+> **Let non-deterministic AI choose and configure the experience; let the component own deterministic interaction and safeguards; apply human authorization where the scenario's governance requires it.**
+
+The implementation message is that many independently routed components can still share one maintainable React application, one coherent data model, and one optimized deployment package.
 
 ## Presenter setup
 
@@ -35,13 +37,13 @@ Pin these files in editor tabs:
 
 **In UX:** Ask:
 
-> **Compare Customer Service Copilot with Contract Intelligence on delivery and value.**
+> **Submit a project status report for Customer Service Copilot for 2026-08-21.**
 
-**Expected component:** `CompareProjects`
+**Expected component:** `SubmitProjectStatus`
 
 **Say:**
 
-> "The orchestrator selects one tool. The chat stays concise because the Copilot Component is the primary response. This is not one generic dashboard with a view parameter; every prompt-addressable intent has its own generated component identity and metadata."
+> "Natural language is flexible, so the AI interprets the prompt and selects one independently registered component. That is the non-deterministic boundary. Once rendered, the component becomes the primary response and owns visible, deterministic interaction rather than forcing the user through more generated text."
 
 ### 0:35-1:10 - Show the catalog and generated identities
 
@@ -57,7 +59,7 @@ Pin these files in editor tabs:
 
 **Say:**
 
-> "The catalog is the product contract. Generated component folders remain immutable, while shared behavior comes from metadata and common React modules. One validator prevents manifest, schema, bundle, and registration drift."
+> "The catalog is this example's component contract. Explicit identities and schemas give the AI clear choices and constrain the context each component receives. Generated folders remain immutable, shared behavior comes from common React modules, and one validator prevents routing metadata, schema, bundle, and registration drift."
 
 ### 1:10-1:50 - Show the shared Copilot host boundary
 
@@ -74,7 +76,7 @@ Pin these files in editor tabs:
 
 **Say:**
 
-> "Each manifest and class remains independently callable, but every component delegates to one tested host adapter. The host remains authoritative for display mode. The app never optimistically pretends it entered full screen."
+> "Each component remains independently callable by the agent, but selection ends at a tested host boundary. The adapter receives prompt properties and host state, then hands deterministic rendering and interaction to the shared application. The host remains authoritative for display mode, so the UX never invents state the platform has not granted."
 
 ### 1:50-2:25 - Show host-document theming
 
@@ -91,7 +93,7 @@ Pin these files in editor tabs:
 
 **Say:**
 
-> "Workbench can host a component in another document. Styling the parent page is not enough. The renderer targets the actual component document, and tests verify that boundary."
+> "A useful agent experience must behave like native host UX, including inside another document. The renderer targets the actual component document, derives the host theme, and has tests around that boundary. Component value depends on trustworthy integration as much as visual design."
 
 ### 2:25-3:05 - Show fresh invocation versus passive rerender
 
@@ -107,7 +109,7 @@ Pin these files in editor tabs:
 
 **Say:**
 
-> "This prevents a host resize or theme change from wiping a draft. A genuinely fresh prompt intentionally reapplies defaults. The distinction is explicit and tested rather than inferred inside every form."
+> "This separates probabilistic invocation from deterministic local state. A resize or theme change cannot wipe a human edit, while a genuinely fresh prompt intentionally reapplies extracted defaults. The boundary is explicit and tested instead of being reinterpreted inside every control."
 
 ### 3:05-3:40 - Show governed session actions
 
@@ -125,7 +127,7 @@ Pin these files in editor tabs:
 
 **Say:**
 
-> "Prompt text never crosses the action boundary. Components review and confirm first, then record a browser-session receipt. A future live service can replace this store while preserving the UX contract."
+> "In this implementation, prompt text stops at the action boundary. We configured the component to require a person to review and confirm before recording a browser-session receipt. A future live service can replace this store while preserving that deliberate human-in-the-loop contract."
 
 ### 3:40-4:20 - Show one optimized package
 
@@ -140,7 +142,7 @@ Pin these files in editor tabs:
 
 **Say:**
 
-> "Independent routing does not require thirty-one copies of React, Fluent, the data service, and the icon subset. The shared bundle reduced the package from the early 10.7 MB baseline to about 0.41 MiB while preserving every component identity."
+> "Purpose-built components do not require thirty-one duplicated applications. Independent identities preserve precise agent routing, while the shared bundle reuses React, Fluent, services, media, and icons. That reduced the package from the early 10.7 MB baseline to about 0.41 MiB without collapsing the experiences into one generic dashboard."
 
 ### 4:20-5:00 - Run the release gates
 
@@ -164,19 +166,20 @@ npm run build
 
 **Say:**
 
-> "The package is not considered done because Webpack completed. Source identity, gallery assets, behavior, generated plugin output, and the final archive are all independently validated."
+> "The package is not done merely because it renders. Tests verify deterministic behavior and human-action safeguards; validators verify component identity, schemas, gallery assets, generated plugin output, and the archive that actually ships."
 
 ## Architecture map
 
 ```text
 Natural-language prompt
+  -> non-deterministic intent interpretation
   -> declarative agent routing instructions
   -> one generated Copilot Component/tool
   -> shared BaseCopilotComponent adapter
   -> normalized invocation + version + transient state
   -> inline operation router OR shared/isolated full-screen root
   -> deterministic services/calculations
-  -> explicit review/confirmation
+  -> configured human review + explicit confirmation
   -> session action receipt
 ```
 
@@ -184,13 +187,14 @@ Natural-language prompt
 
 | Decision | Why |
 | --- | --- |
-| One intent per generated component/tool | Clear orchestration metadata and immutable deployment identity |
+| Keep AI flexibility at the intent boundary | Use natural-language understanding without making controls or actions probabilistic |
+| One intent per generated component/tool | Give orchestration clear metadata and each experience an immutable deployment identity |
 | Shared React host and operation routers | Avoid duplicated lifecycle, theming, workflow, and error handling |
 | Catalog-owned routes and education metadata | Prevent tool/help/full-screen drift |
 | Owner-document Griffel renderer | Correct styling in Copilot-hosted iframe documents |
 | Normalized invocation signatures | Preserve edits on passive rerenders and reset on fresh prompts |
 | Mock service interfaces and immutable seeds | Offline reliability and later live-service replacement |
-| Explicit confirmation and session receipts | Safe action semantics without external writes |
+| Explicit confirmation and session receipts | Implement the chosen human-in-the-loop policy and safe action semantics without external writes |
 | One shared production bundle | Deduplicate common runtime, UI, media, and icon code |
 | Post-package validators | Validate what is actually shipped, not only source files |
 
@@ -213,8 +217,10 @@ Natural-language prompt
 
 ## Presenter guardrails
 
+- Present Zava as a reference implementation, not as the limit of the Copilot Component pattern.
 - This is SPFx `1.24.0-beta.2` preview code; confirm target-tenant support before production adoption.
 - Data, people, calculations, and receipts are deterministic mock records.
+- Describe component calculations and the explicit action boundary as implementation and governance choices, not as limits of AI capability.
 - The local harness proves UX behavior but not authenticated tenant CSP, iframe focus, high contrast, or screen-reader output.
 - Supported transient continuation exists for representative operation state; not every specialized slider/filter is mapped into every full-screen module yet.
 - Do not describe session receipts as writes to Planner, Project, SharePoint, Dataverse, Fabric, or finance systems.
@@ -223,10 +229,12 @@ Natural-language prompt
 
 - [ ] Keep the ten source tabs open in the listed order.
 - [ ] Reset demo decisions before showing session persistence.
-- [ ] Confirm the comparison prompt routes correctly.
+- [ ] Confirm the status-report prompt routes correctly and renders the editable five-dimension form.
+- [ ] Identify the non-deterministic routing boundary before demonstrating deterministic controls.
 - [ ] Toggle dark theme to demonstrate owner-document styling.
 - [ ] Show invocation signature/version fields without reading the whole file.
 - [ ] Confirm a decision and show the receipt surviving remount/navigation.
+- [ ] State that this implementation requires explicit human confirmation at the action boundary.
 - [ ] Show the single shared bundle and 31 manifest entries.
 - [ ] Keep recent `npm run build` output visible.
 - [ ] Finish within five minutes and leave detailed code questions for Q&A.

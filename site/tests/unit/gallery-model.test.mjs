@@ -37,4 +37,17 @@ describe('gallery metadata', () => {
     expect(html).not.toContain('<script>');
     expect(html).toContain('rel="noopener noreferrer"');
   });
+
+  it('allows README links within samples and rejects repository escapes', () => {
+    const html = renderReadme(
+      'copilot-readiness-action-centre',
+      '[Rules](../my-day/agentic-creation-rules.md)',
+    );
+
+    expect(html).toContain(
+      'href="https://github.com/pnp/spfx-copilot-components/blob/main/samples/my-day/agentic-creation-rules.md"',
+    );
+    expect(() => renderReadme('demo', '[Root](../../README.md)'))
+      .toThrow('Unsafe README link in demo: ../../README.md');
+  });
 });
