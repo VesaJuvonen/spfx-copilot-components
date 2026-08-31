@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "aa8bc838-7074-4ad4-a1e9-ba3fc7d9f235",
+  "alias": "RunServiceQualityReviewCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "RunServiceQualityReview",
+      "description": {
+        "default": "Review transparent service quality findings. Do not use opaque AI scores."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/runServiceQualityReview/RunServiceQualityReviewCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

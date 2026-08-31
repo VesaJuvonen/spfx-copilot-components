@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "2a9a3ef9-fd95-4857-8c84-ae4d4c857f1d",
+  "alias": "PlanCustomerWinBackCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "PlanCustomerWinBack",
+      "description": {
+        "default": "Build a guarded trust-recovery plan. Do not initiate outreach automatically."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/planCustomerWinBack/PlanCustomerWinBackCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "59a2dc26-13f5-4a7e-a1a8-09734281fc5b",
+  "alias": "DiscoverAccountOpportunityCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "DiscoverAccountOpportunity",
+      "description": {
+        "default": "Use for account growth signal discovery. Do not create a lead automatically."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/discoverAccountOpportunity/DiscoverAccountOpportunityCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "686af508-76e8-40e3-b02d-a874a2306292",
+  "alias": "BuildAccountBriefCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "BuildAccountBrief",
+      "description": {
+        "default": "Use for sourced account context and whitespace. Do not use for one meeting."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/buildAccountBrief/BuildAccountBriefCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

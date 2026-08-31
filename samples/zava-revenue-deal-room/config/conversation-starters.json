@@ -1,0 +1,34 @@
+{
+  "starters": [
+    {
+      "title": "Advance a deal",
+      "text": "Help me get Contoso's global expansion deal to signature this quarter.",
+      "targetName": "GetDealRisk"
+    },
+    {
+      "title": "Buying committee",
+      "text": "Map the buying committee for the Contoso expansion.",
+      "targetName": "MapBuyingCommittee"
+    },
+    {
+      "title": "Commercial scenario",
+      "text": "Model a three-year ramped offer that protects 68% margin.",
+      "targetName": "SimulateCommercialOffer"
+    },
+    {
+      "title": "Meeting preparation",
+      "text": "Prepare me for tomorrow's Contoso steering meeting.",
+      "targetName": "PrepareCustomerMeeting"
+    },
+    {
+      "title": "Forecast decision",
+      "text": "Should Contoso remain in commit for Q4?",
+      "targetName": "InspectForecastCommit"
+    },
+    {
+      "title": "Explore capabilities",
+      "text": "Explore what the Revenue Deal Room agent can do.",
+      "targetName": "ExploreAgentCapabilities"
+    }
+  ]
+}

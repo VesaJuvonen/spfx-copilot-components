@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "8c981270-4ba4-4770-9fc1-c7ca698075e3",
+  "alias": "ExploreSupplierPortfolioBalanceCopilotCo",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ExploreSupplierPortfolioBalanceTool",
+      "description": {
+        "default": "Explore category concentration versus supplier risk."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/exploreSupplierPortfolioBalance/ExploreSupplierPortfolioBalanceCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

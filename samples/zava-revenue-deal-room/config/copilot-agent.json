@@ -1,0 +1,36 @@
+{
+  "$schema": "../node_modules/@microsoft/spfx-heft-plugins/lib-commonjs/plugins/copilotAgentPlugin/copilot-agent.schema.json",
+  "agents": [
+    {
+      "name": {
+        "default": "Zava Revenue Deal Room"
+      },
+      "description": {
+        "default": "Turn buyer evidence into coordinated deal action and a defensible forecast."
+      },
+      "components": [
+        "686af508-76e8-40e3-b02d-a874a2306292",
+        "fcd34bcd-53e3-4b7f-9220-18697a3d405b",
+        "bc4e7fec-145c-4166-82dd-7750ba0d80a2",
+        "ef6bbfdc-7cb3-461e-ad89-0a941edc5d9e",
+        "384e463d-628a-4b0f-ab1f-f8384066ea45",
+        "10891983-3442-4106-ac78-70e061280e0b",
+        "e8d43c67-6ca8-41cb-8427-e481e7c33b86",
+        "217474c1-9246-4b84-8a5f-a6cea16e81a7",
+        "c47dc6ac-727b-4a49-8c42-c35392fbbf34",
+        "bd518690-7f0e-4b74-8175-ee317a11721d",
+        "62ba51f0-aa49-4ba5-9aff-1185f352717a",
+        "da28c605-ab4d-4352-8b0b-9e879eec1a82",
+        "59a2dc26-13f5-4a7e-a1a8-09734281fc5b",
+        "9d6b0bf4-6a56-40c6-8059-96e413d0ee78",
+        "653a2901-d18e-41e0-b264-4643d10c1b33",
+        "ecf9177c-e82d-4c39-a78c-ac15521387ef",
+        "9583f333-a214-448b-b7b5-bb0c0f3b1fdc",
+        "088868c8-9948-47e7-932c-4cc9acca0f1e",
+        "fd309a8e-faea-4d38-a683-67d1313b7f4c",
+        "89f48b2b-b5c8-4c8a-8aec-0518b4be6cce",
+        "e4e5bdc2-bc81-4b28-be64-6f3c59d87e41"
+      ]
+    }
+  ]
+}

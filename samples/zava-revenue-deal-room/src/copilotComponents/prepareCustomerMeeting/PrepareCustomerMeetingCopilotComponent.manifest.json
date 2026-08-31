@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "384e463d-628a-4b0f-ab1f-f8384066ea45",
+  "alias": "PrepareCustomerMeetingCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "PrepareCustomerMeeting",
+      "description": {
+        "default": "Use for preparing one upcoming customer meeting. Do not use for meeting results."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/prepareCustomerMeeting/PrepareCustomerMeetingCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "e1ed27eb-37f9-4099-80e7-366ee5a55755",
+  "alias": "BalanceServiceWorkloadCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "BalanceServiceWorkload",
+      "description": {
+        "default": "Simulate skill-aware workload changes. Do not silently reassign cases."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/balanceServiceWorkload/BalanceServiceWorkloadCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "7d218419-3215-45fb-b1f9-e7dbab939a0f",
+  "alias": "CompareBuyingOptionsCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "CompareBuyingOptionsTool",
+      "description": {
+        "default": "Compare catalog, contract, reuse, and sourcing routes."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/compareBuyingOptions/CompareBuyingOptionsCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

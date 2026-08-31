@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "fd309a8e-faea-4d38-a683-67d1313b7f4c",
+  "alias": "ReviewProposalReadinessCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ReviewProposalReadiness",
+      "description": {
+        "default": "Use for proposal evidence and readiness decisions. Do not write the proposal."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/reviewProposalReadiness/ReviewProposalReadinessCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

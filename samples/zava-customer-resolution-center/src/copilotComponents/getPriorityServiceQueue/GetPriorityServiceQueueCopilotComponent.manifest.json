@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "476453a3-b3fd-430a-90b4-e43c7c8599b0",
+  "alias": "GetPriorityServiceQueueCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "GetPriorityServiceQueue",
+      "description": {
+        "default": "Rank cases needing judgment. Do not use for detailed diagnosis of one case."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/getPriorityServiceQueue/GetPriorityServiceQueueCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

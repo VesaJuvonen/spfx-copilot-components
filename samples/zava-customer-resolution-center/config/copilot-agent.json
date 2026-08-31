@@ -1,0 +1,36 @@
+{
+  "$schema": "../node_modules/@microsoft/spfx-heft-plugins/lib-commonjs/plugins/copilotAgentPlugin/copilot-agent.schema.json",
+  "agents": [
+    {
+      "name": {
+        "default": "Zava Customer Resolution"
+      },
+      "description": {
+        "default": "Turn fragmented customer evidence into safe, accountable resolution action."
+      },
+      "components": [
+        "8518dd90-bbff-4fd6-bf56-4be246dfec35",
+        "476453a3-b3fd-430a-90b4-e43c7c8599b0",
+        "84bfa913-7730-424b-a07a-a526dc45e4be",
+        "4a43d0ef-dc7b-4c73-a16d-dc5763d75f26",
+        "fa88d100-3711-4e7f-b0db-a119fa598ba3",
+        "afca3e7a-d1b0-44d9-baac-a87f52389cc3",
+        "f6db80d2-fa87-45b1-91ff-8075ade6d6c3",
+        "7ef97622-7881-4757-9c0f-d8995a4d272c",
+        "1255fbbe-fded-4c3b-b6fe-00a8cf300b5d",
+        "3cead1e8-c228-4666-b0fc-52b5126fea5a",
+        "b0b3d4ca-a937-4abc-9e9a-aa5518a442d5",
+        "dd15aaac-8110-4c60-b67a-cfd168899099",
+        "3f15e414-e2aa-48b3-b5ab-a5016eb4c0db",
+        "e74fc4d5-1c0a-4114-aa36-87ab75e163db",
+        "90d34fdc-b732-4d09-b343-7410bdaa20d7",
+        "e1ed27eb-37f9-4099-80e7-366ee5a55755",
+        "4d4c8a3d-ef2a-4d45-a2ce-877069106e83",
+        "95cd1968-02cb-4459-99f5-d2d2421ac3b1",
+        "aa8bc838-7074-4ad4-a1e9-ba3fc7d9f235",
+        "2a9a3ef9-fd95-4857-8c84-ae4d4c857f1d",
+        "8b7cf79e-96f6-4469-9037-e0134b2c703f"
+      ]
+    }
+  ]
+}

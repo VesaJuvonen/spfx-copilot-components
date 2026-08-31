@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.29/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.29",
+  "version": "1.0.0",
+  "id": "c1f4c0ca-8c2e-4e5b-871e-71637b7440c5",
+  "developer": {
+    "name": "Contoso",
+    "websiteUrl": "https://www.contoso.com",
+    "privacyUrl": "https://www.contoso.com/privacy",
+    "termsOfUseUrl": "https://www.contoso.com/terms"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "Zava Procurement",
+    "full": "Zava Procurement Command Center"
+  },
+  "description": {
+    "short": "Govern buying and supplier decisions with evidence.",
+    "full": "Turn business intent into governed buying, sourcing, supplier, invoice, and spend decisions."
+  },
+  "accentColor": "#173F35",
+  "copilotAgents": {
+    "declarativeAgents": [
+      {
+        "id": "copilotComponentAgent",
+        "file": "declarativeAgent.json"
+      }
+    ]
+  },
+  "permissions": ["identity"],
+  "validDomains": []
+}

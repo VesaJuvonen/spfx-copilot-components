@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "bc4e7fec-145c-4166-82dd-7750ba0d80a2",
+  "alias": "MapBuyingCommitteeCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "MapBuyingCommittee",
+      "description": {
+        "default": "Use for buyer roles, influence, stance, and access. Do not use for contact lists."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/mapBuyingCommittee/MapBuyingCommitteeCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

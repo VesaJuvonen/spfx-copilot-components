@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "f6db80d2-fa87-45b1-91ff-8075ade6d6c3",
+  "alias": "ReviewIncidentResponseCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ReviewIncidentResponse",
+      "description": {
+        "default": "Review a consequential incident decision. Do not use for exploratory clustering."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/reviewIncidentResponse/ReviewIncidentResponseCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

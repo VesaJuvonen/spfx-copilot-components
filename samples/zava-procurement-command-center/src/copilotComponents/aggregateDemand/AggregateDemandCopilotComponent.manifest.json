@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "62abc9cc-b463-4227-8955-445fe36081f4",
+  "alias": "AggregateDemandCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "AggregateDemandTool",
+      "description": {
+        "default": "Find and simulate consolidatable purchase demand."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/aggregateDemand/AggregateDemandCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

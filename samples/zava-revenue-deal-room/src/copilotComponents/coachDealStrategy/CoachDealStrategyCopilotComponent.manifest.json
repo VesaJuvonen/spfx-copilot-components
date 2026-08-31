@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "653a2901-d18e-41e0-b264-4643d10c1b33",
+  "alias": "CoachDealStrategyCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "CoachDealStrategy",
+      "description": {
+        "default": "Use for explainable deal coaching plays. Do not make a forecast decision."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/coachDealStrategy/CoachDealStrategyCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

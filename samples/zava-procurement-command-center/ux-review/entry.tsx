@@ -1,0 +1,5 @@
+import * as React from 'react';import {createRoot} from 'react-dom/client';
+import ProcurementThemeProvider from '../src/shared/ProcurementThemeProvider';import ProcurementApp from '../src/shared/ProcurementApp';import {getIntent,type ProcurementIntentKey} from '../src/shared/catalog';
+const params=new URLSearchParams(location.search),intent=(params.get('intent')||'CompareSupplierBids') as ProcurementIntentKey,mode=params.get('mode')||'fullscreen',theme=params.get('theme')||'light';
+document.documentElement.style.colorScheme=theme;
+createRoot(document.getElementById('root')!).render(<ProcurementThemeProvider theme={theme} targetDocument={document}><ProcurementApp definition={getIntent(intent)} properties={{eventId:'ZPC-RFP-31',invoiceId:'ZPC-8831'}} currentUserName="Grady Archie" displayMode={mode}/></ProcurementThemeProvider>);

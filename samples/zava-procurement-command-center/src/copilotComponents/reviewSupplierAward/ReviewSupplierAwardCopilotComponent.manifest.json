@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "ff616e7f-a082-48e1-9a02-6a69becddd95",
+  "alias": "ReviewSupplierAwardCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ReviewSupplierAwardTool",
+      "description": {
+        "default": "Review supplier award evidence, alternatives, and consequences."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/reviewSupplierAward/ReviewSupplierAwardCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

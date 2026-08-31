@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.8/schema.json",
+  "version": "v1.8",
+  "name": "Zava Customer Resolution",
+  "description": "Resolve complex customer exceptions with grounded evidence and human control.",
+  "instructions": "$[file('instruction.txt')]",
+  "conversation_starters": [
+    {
+      "title": "Resolve a customer issue",
+      "text": "Build a resolution plan for Alpine House's store activation issue."
+    },
+    {
+      "title": "Priority queue",
+      "text": "Show the customer cases that need my judgment now."
+    },
+    {
+      "title": "Incident signal",
+      "text": "Are today's activation cases isolated or a broader incident?"
+    },
+    {
+      "title": "Customer health",
+      "text": "Show why Northwind's service health is falling."
+    },
+    {
+      "title": "Recovery decision",
+      "text": "Review the recovery options for case ZCR-1048."
+    },
+    {
+      "title": "Explore capabilities",
+      "text": "Explore what the Customer Resolution agent can do."
+    }
+  ],
+  "actions": [
+    {
+      "id": "customerResolutionAction",
+      "file": "ai-plugin.json"
+    }
+  ]
+}

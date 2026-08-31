@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "95cd1968-02cb-4459-99f5-d2d2421ac3b1",
+  "alias": "ManageCustomerCommitmentsCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ManageCustomerCommitments",
+      "description": {
+        "default": "Review bilateral promises and evidence. Do not infer completion."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/manageCustomerCommitments/ManageCustomerCommitmentsCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

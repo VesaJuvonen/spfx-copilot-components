@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "84bfa913-7730-424b-a07a-a526dc45e4be",
+  "alias": "ExploreCustomerHealthCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ExploreCustomerHealth",
+      "description": {
+        "default": "Explain relationship health. Do not use for aggregate service operations."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/exploreCustomerHealth/ExploreCustomerHealthCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

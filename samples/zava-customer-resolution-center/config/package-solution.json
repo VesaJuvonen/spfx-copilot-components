@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "zava-customer-resolution-center-client-side-solution",
+    "id": "0a393708-8e57-4169-808b-af1a2c873d88",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.24.0-beta.3-55937989"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "zava-customer-resolution-center description"
+      },
+      "longDescription": {
+        "default": "zava-customer-resolution-center description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "zava-customer-resolution-center Feature",
+        "description": "The feature that activates elements of the zava-customer-resolution-center solution.",
+        "id": "dd98a7a9-58c5-40a8-9f36-70537f82aab5",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/zava-customer-resolution-center.sppkg"
+  }
+}

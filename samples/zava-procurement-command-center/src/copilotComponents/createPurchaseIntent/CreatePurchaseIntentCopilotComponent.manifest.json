@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "601f84ee-b553-452a-86bf-8be16be93aa6",
+  "alias": "CreatePurchaseIntentCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "CreatePurchaseIntentTool",
+      "description": {
+        "default": "Create a governed purchase intent from an outcome and constraints."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/createPurchaseIntent/CreatePurchaseIntentCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

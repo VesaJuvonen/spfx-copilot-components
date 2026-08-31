@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "b367b9f0-1426-41a4-b508-cc438664ba9e",
+  "alias": "ReviewPurchaseRequestCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ReviewPurchaseRequestTool",
+      "description": {
+        "default": "Review need, budget, policy, and downstream commitment."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/reviewPurchaseRequest/ReviewPurchaseRequestCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

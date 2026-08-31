@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "1255fbbe-fded-4c3b-b6fe-00a8cf300b5d",
+  "alias": "ComposeCustomerUpdateCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ComposeCustomerUpdate",
+      "description": {
+        "default": "Draft a customer-safe localized update. Do not expose internal evidence."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/composeCustomerUpdate/ComposeCustomerUpdateCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

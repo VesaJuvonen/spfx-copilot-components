@@ -42,7 +42,7 @@ runtime, overflow, label, chart, and focus results are in
 - Twenty-eight Playwright captures pass with zero browser runtime, overflow, button-label, layout, or
   focus failures.
 - Audited [zava-procurement-command-center.sppkg](sharepoint/solution/zava-procurement-command-center.sppkg):
-  440,680 bytes, one shared JavaScript asset, one current agent ZIP, and 22 generated plugin functions.
+  441,766 bytes, one shared JavaScript asset, one current agent ZIP, and 22 generated plugin functions.
   See [assets/release-evidence.json](assets/release-evidence.json).
 
 Authenticated tenant validation remains required for Workbench CSP, iframe focus restoration,
@@ -82,6 +82,7 @@ archive. `npm run capture:visual` rebuilds the tenant-free harness and publicati
 - [Routing matrix](Zava-Procurement-Routing-Matrix.md)
 - [Designer and rehearsal review](Zava-Procurement-Designer-Review.md)
 - [PnP gallery metadata](assets/sample.json)
+- [Asset provenance](assets/asset-provenance.json)
 
 The scripts include setup, deterministic story values, expected tool routing, human checkpoints,
 fallback screenshots, and explicit boundaries between local evidence and authenticated tenant proof.

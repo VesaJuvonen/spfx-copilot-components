@@ -1,0 +1,123 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "zava-procurement-components": {
+      "components": [
+        {
+          "entrypoint": "./lib/copilotComponents/createPurchaseIntent/CreatePurchaseIntentCopilotComponent.js",
+          "manifest": "./src/copilotComponents/createPurchaseIntent/CreatePurchaseIntentCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/compareBuyingOptions/CompareBuyingOptionsCopilotComponent.js",
+          "manifest": "./src/copilotComponents/compareBuyingOptions/CompareBuyingOptionsCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/checkPurchasePolicy/CheckPurchasePolicyCopilotComponent.js",
+          "manifest": "./src/copilotComponents/checkPurchasePolicy/CheckPurchasePolicyCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/reviewPurchaseRequest/ReviewPurchaseRequestCopilotComponent.js",
+          "manifest": "./src/copilotComponents/reviewPurchaseRequest/ReviewPurchaseRequestCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/aggregateDemand/AggregateDemandCopilotComponent.js",
+          "manifest": "./src/copilotComponents/aggregateDemand/AggregateDemandCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/buildSourcingEvent/BuildSourcingEventCopilotComponent.js",
+          "manifest": "./src/copilotComponents/buildSourcingEvent/BuildSourcingEventCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/compareSupplierBids/CompareSupplierBidsCopilotComponent.js",
+          "manifest": "./src/copilotComponents/compareSupplierBids/CompareSupplierBidsCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/reviewSupplierAward/ReviewSupplierAwardCopilotComponent.js",
+          "manifest": "./src/copilotComponents/reviewSupplierAward/ReviewSupplierAwardCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/exploreSupplier360/ExploreSupplier360CopilotComponent.js",
+          "manifest": "./src/copilotComponents/exploreSupplier360/ExploreSupplier360CopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/reviewContractRenewal/ReviewContractRenewalCopilotComponent.js",
+          "manifest": "./src/copilotComponents/reviewContractRenewal/ReviewContractRenewalCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/detectSpendLeakage/DetectSpendLeakageCopilotComponent.js",
+          "manifest": "./src/copilotComponents/detectSpendLeakage/DetectSpendLeakageCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/trackSupplierRisk/TrackSupplierRiskCopilotComponent.js",
+          "manifest": "./src/copilotComponents/trackSupplierRisk/TrackSupplierRiskCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/resolveInvoiceException/ResolveInvoiceExceptionCopilotComponent.js",
+          "manifest": "./src/copilotComponents/resolveInvoiceException/ResolveInvoiceExceptionCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/exploreSpendPerformance/ExploreSpendPerformanceCopilotComponent.js",
+          "manifest": "./src/copilotComponents/exploreSpendPerformance/ExploreSpendPerformanceCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/onboardSupplier/OnboardSupplierCopilotComponent.js",
+          "manifest": "./src/copilotComponents/onboardSupplier/OnboardSupplierCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/reviewSupplierQualification/ReviewSupplierQualificationCopilotComponent.js",
+          "manifest": "./src/copilotComponents/reviewSupplierQualification/ReviewSupplierQualificationCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/planSupplierRiskMitigation/PlanSupplierRiskMitigationCopilotComponent.js",
+          "manifest": "./src/copilotComponents/planSupplierRiskMitigation/PlanSupplierRiskMitigationCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/negotiateContractTerms/NegotiateContractTermsCopilotComponent.js",
+          "manifest": "./src/copilotComponents/negotiateContractTerms/NegotiateContractTermsCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/managePurchaseOrderChange/ManagePurchaseOrderChangeCopilotComponent.js",
+          "manifest": "./src/copilotComponents/managePurchaseOrderChange/ManagePurchaseOrderChangeCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/trackLeakageRecovery/TrackLeakageRecoveryCopilotComponent.js",
+          "manifest": "./src/copilotComponents/trackLeakageRecovery/TrackLeakageRecoveryCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/exploreSupplierPortfolioBalance/ExploreSupplierPortfolioBalanceCopilotComponent.js",
+          "manifest": "./src/copilotComponents/exploreSupplierPortfolioBalance/ExploreSupplierPortfolioBalanceCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/exploreAgentCapabilities/ExploreAgentCapabilitiesCopilotComponent.js",
+          "manifest": "./src/copilotComponents/exploreAgentCapabilities/ExploreAgentCapabilitiesCopilotComponent.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CreatePurchaseIntentCopilotComponentStrings": "lib/copilotComponents/createPurchaseIntent/loc/{locale}.js",
+    "CompareBuyingOptionsCopilotComponentStrings": "lib/copilotComponents/compareBuyingOptions/loc/{locale}.js",
+    "CheckPurchasePolicyCopilotComponentStrings": "lib/copilotComponents/checkPurchasePolicy/loc/{locale}.js",
+    "ReviewPurchaseRequestCopilotComponentStrings": "lib/copilotComponents/reviewPurchaseRequest/loc/{locale}.js",
+    "AggregateDemandCopilotComponentStrings": "lib/copilotComponents/aggregateDemand/loc/{locale}.js",
+    "BuildSourcingEventCopilotComponentStrings": "lib/copilotComponents/buildSourcingEvent/loc/{locale}.js",
+    "CompareSupplierBidsCopilotComponentStrings": "lib/copilotComponents/compareSupplierBids/loc/{locale}.js",
+    "ReviewSupplierAwardCopilotComponentStrings": "lib/copilotComponents/reviewSupplierAward/loc/{locale}.js",
+    "ExploreSupplier360CopilotComponentStrings": "lib/copilotComponents/exploreSupplier360/loc/{locale}.js",
+    "ReviewContractRenewalCopilotComponentStrings": "lib/copilotComponents/reviewContractRenewal/loc/{locale}.js",
+    "DetectSpendLeakageCopilotComponentStrings": "lib/copilotComponents/detectSpendLeakage/loc/{locale}.js",
+    "TrackSupplierRiskCopilotComponentStrings": "lib/copilotComponents/trackSupplierRisk/loc/{locale}.js",
+    "ResolveInvoiceExceptionCopilotComponentStrings": "lib/copilotComponents/resolveInvoiceException/loc/{locale}.js",
+    "ExploreSpendPerformanceCopilotComponentStrings": "lib/copilotComponents/exploreSpendPerformance/loc/{locale}.js",
+    "OnboardSupplierCopilotComponentStrings": "lib/copilotComponents/onboardSupplier/loc/{locale}.js",
+    "ReviewSupplierQualificationCopilotComponentStrings": "lib/copilotComponents/reviewSupplierQualification/loc/{locale}.js",
+    "PlanSupplierRiskMitigationCopilotComponentStrings": "lib/copilotComponents/planSupplierRiskMitigation/loc/{locale}.js",
+    "NegotiateContractTermsCopilotComponentStrings": "lib/copilotComponents/negotiateContractTerms/loc/{locale}.js",
+    "ManagePurchaseOrderChangeCopilotComponentStrings": "lib/copilotComponents/managePurchaseOrderChange/loc/{locale}.js",
+    "TrackLeakageRecoveryCopilotComponentStrings": "lib/copilotComponents/trackLeakageRecovery/loc/{locale}.js",
+    "ExploreSupplierPortfolioBalanceCopilotComponentStrings": "lib/copilotComponents/exploreSupplierPortfolioBalance/loc/{locale}.js",
+    "ExploreAgentCapabilitiesCopilotComponentStrings": "lib/copilotComponents/exploreAgentCapabilities/loc/{locale}.js"
+  }
+}

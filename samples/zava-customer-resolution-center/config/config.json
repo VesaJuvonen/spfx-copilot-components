@@ -1,0 +1,96 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "zava-customer-resolution-components": {
+      "components": [
+        {
+          "entrypoint": "./lib/copilotComponents/triageCustomerIssue/TriageCustomerIssueCopilotComponent.js",
+          "manifest": "./src/copilotComponents/triageCustomerIssue/TriageCustomerIssueCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/getPriorityServiceQueue/GetPriorityServiceQueueCopilotComponent.js",
+          "manifest": "./src/copilotComponents/getPriorityServiceQueue/GetPriorityServiceQueueCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/exploreCustomerHealth/ExploreCustomerHealthCopilotComponent.js",
+          "manifest": "./src/copilotComponents/exploreCustomerHealth/ExploreCustomerHealthCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/buildResolutionPlan/BuildResolutionPlanCopilotComponent.js",
+          "manifest": "./src/copilotComponents/buildResolutionPlan/BuildResolutionPlanCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/startExpertSwarm/StartExpertSwarmCopilotComponent.js",
+          "manifest": "./src/copilotComponents/startExpertSwarm/StartExpertSwarmCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/detectServiceIncident/DetectServiceIncidentCopilotComponent.js",
+          "manifest": "./src/copilotComponents/detectServiceIncident/DetectServiceIncidentCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/reviewIncidentResponse/ReviewIncidentResponseCopilotComponent.js",
+          "manifest": "./src/copilotComponents/reviewIncidentResponse/ReviewIncidentResponseCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/reviewServiceRecovery/ReviewServiceRecoveryCopilotComponent.js",
+          "manifest": "./src/copilotComponents/reviewServiceRecovery/ReviewServiceRecoveryCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/composeCustomerUpdate/ComposeCustomerUpdateCopilotComponent.js",
+          "manifest": "./src/copilotComponents/composeCustomerUpdate/ComposeCustomerUpdateCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/trackResolutionOutcome/TrackResolutionOutcomeCopilotComponent.js",
+          "manifest": "./src/copilotComponents/trackResolutionOutcome/TrackResolutionOutcomeCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/createKnowledgeFromResolution/CreateKnowledgeFromResolutionCopilotComponent.js",
+          "manifest": "./src/copilotComponents/createKnowledgeFromResolution/CreateKnowledgeFromResolutionCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/exploreServicePerformance/ExploreServicePerformanceCopilotComponent.js",
+          "manifest": "./src/copilotComponents/exploreServicePerformance/ExploreServicePerformanceCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/diagnoseCaseEvidence/DiagnoseCaseEvidenceCopilotComponent.js",
+          "manifest": "./src/copilotComponents/diagnoseCaseEvidence/DiagnoseCaseEvidenceCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/reviewEntitlementCoverage/ReviewEntitlementCoverageCopilotComponent.js",
+          "manifest": "./src/copilotComponents/reviewEntitlementCoverage/ReviewEntitlementCoverageCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/manageCaseEscalation/ManageCaseEscalationCopilotComponent.js",
+          "manifest": "./src/copilotComponents/manageCaseEscalation/ManageCaseEscalationCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/balanceServiceWorkload/BalanceServiceWorkloadCopilotComponent.js",
+          "manifest": "./src/copilotComponents/balanceServiceWorkload/BalanceServiceWorkloadCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/coordinateFieldService/CoordinateFieldServiceCopilotComponent.js",
+          "manifest": "./src/copilotComponents/coordinateFieldService/CoordinateFieldServiceCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/manageCustomerCommitments/ManageCustomerCommitmentsCopilotComponent.js",
+          "manifest": "./src/copilotComponents/manageCustomerCommitments/ManageCustomerCommitmentsCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/runServiceQualityReview/RunServiceQualityReviewCopilotComponent.js",
+          "manifest": "./src/copilotComponents/runServiceQualityReview/RunServiceQualityReviewCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/planCustomerWinBack/PlanCustomerWinBackCopilotComponent.js",
+          "manifest": "./src/copilotComponents/planCustomerWinBack/PlanCustomerWinBackCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/exploreAgentCapabilities/ExploreAgentCapabilitiesCopilotComponent.js",
+          "manifest": "./src/copilotComponents/exploreAgentCapabilities/ExploreAgentCapabilitiesCopilotComponent.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {}
+}

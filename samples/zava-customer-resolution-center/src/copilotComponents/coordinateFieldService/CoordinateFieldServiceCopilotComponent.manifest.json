@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "4d4c8a3d-ef2a-4d45-a2ce-877069106e83",
+  "alias": "CoordinateFieldServiceCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "CoordinateFieldService",
+      "description": {
+        "default": "Plan reviewed site visits, parts, people, and windows."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/coordinateFieldService/CoordinateFieldServiceCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

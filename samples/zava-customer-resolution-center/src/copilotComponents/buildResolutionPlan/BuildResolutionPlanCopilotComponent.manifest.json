@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "4a43d0ef-dc7b-4c73-a16d-dc5763d75f26",
+  "alias": "BuildResolutionPlanCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "BuildResolutionPlan",
+      "description": {
+        "default": "Build an evidence-linked resolution plan. Do not declare incidents or approve recovery."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/buildResolutionPlan/BuildResolutionPlanCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

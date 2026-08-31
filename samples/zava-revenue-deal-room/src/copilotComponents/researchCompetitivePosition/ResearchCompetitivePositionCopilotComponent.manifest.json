@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "9d6b0bf4-6a56-40c6-8059-96e413d0ee78",
+  "alias": "ResearchCompetitivePositionCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ResearchCompetitivePosition",
+      "description": {
+        "default": "Use for evidence-grounded competitive strategy. Do not invent competitor claims."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/researchCompetitivePosition/ResearchCompetitivePositionCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

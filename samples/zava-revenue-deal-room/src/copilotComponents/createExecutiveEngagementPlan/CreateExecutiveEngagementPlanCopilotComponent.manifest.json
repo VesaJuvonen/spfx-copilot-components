@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "ecf9177c-e82d-4c39-a78c-ac15521387ef",
+  "alias": "CreateExecutiveEngagementPlanCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "CreateExecutiveEngagementPlan",
+      "description": {
+        "default": "Use for reviewed executive engagement planning. Do not contact customers."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/createExecutiveEngagementPlan/CreateExecutiveEngagementPlanCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

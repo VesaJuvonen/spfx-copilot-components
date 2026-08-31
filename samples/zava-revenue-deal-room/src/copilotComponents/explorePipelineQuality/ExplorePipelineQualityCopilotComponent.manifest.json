@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "da28c605-ab4d-4352-8b0b-9e879eec1a82",
+  "alias": "ExplorePipelineQualityCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ExplorePipelineQuality",
+      "description": {
+        "default": "Use for aggregate pipeline quality and intervention. Do not use for one deal."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/explorePipelineQuality/ExplorePipelineQualityCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

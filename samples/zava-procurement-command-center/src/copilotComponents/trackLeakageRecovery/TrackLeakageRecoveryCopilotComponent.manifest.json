@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "58d7bf10-6aa0-4f37-a760-53a2e4682401",
+  "alias": "TrackLeakageRecoveryCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "TrackLeakageRecoveryTool",
+      "description": {
+        "default": "Review intervention progress and verified recovered value."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/trackLeakageRecovery/TrackLeakageRecoveryCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

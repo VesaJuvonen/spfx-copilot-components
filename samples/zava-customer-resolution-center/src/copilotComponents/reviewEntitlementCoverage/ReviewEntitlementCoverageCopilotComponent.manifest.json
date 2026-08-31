@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "e74fc4d5-1c0a-4114-aa36-87ab75e163db",
+  "alias": "ReviewEntitlementCoverageCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ReviewEntitlementCoverage",
+      "description": {
+        "default": "Explain entitlement and SLA coverage. Do not approve compensation."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/reviewEntitlementCoverage/ReviewEntitlementCoverageCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

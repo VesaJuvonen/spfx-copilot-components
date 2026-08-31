@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "612e61d0-fa1f-4754-9af4-5c418dc43096",
+  "alias": "ManagePurchaseOrderChangeCopilotComponen",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ManagePurchaseOrderChangeTool",
+      "description": {
+        "default": "Review before-and-after purchase order consequences."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/managePurchaseOrderChange/ManagePurchaseOrderChangeCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

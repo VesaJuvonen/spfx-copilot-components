@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.8/schema.json",
+  "version": "v1.8",
+  "name": "Zava Revenue Deal Room",
+  "description": "Turn buyer evidence into coordinated deal action and a defensible forecast.",
+  "instructions": "$[file('instruction.txt')]",
+  "conversation_starters": [
+    {
+      "title": "Advance a deal",
+      "text": "Help me get Contoso's global expansion deal to signature this quarter."
+    },
+    {
+      "title": "Buying committee",
+      "text": "Map the buying committee for the Contoso expansion."
+    },
+    {
+      "title": "Commercial scenario",
+      "text": "Model a three-year ramped offer that protects 68% margin."
+    },
+    {
+      "title": "Meeting preparation",
+      "text": "Prepare me for tomorrow's Contoso steering meeting."
+    },
+    {
+      "title": "Forecast decision",
+      "text": "Should Contoso remain in commit for Q4?"
+    },
+    {
+      "title": "Explore capabilities",
+      "text": "Explore what the Revenue Deal Room agent can do."
+    }
+  ],
+  "actions": [
+    {
+      "id": "dealRoomAction",
+      "file": "ai-plugin.json"
+    }
+  ]
+}

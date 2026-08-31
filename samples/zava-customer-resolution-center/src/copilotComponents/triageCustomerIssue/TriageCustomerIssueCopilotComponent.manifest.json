@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "8518dd90-bbff-4fd6-bf56-4be246dfec35",
+  "alias": "TriageCustomerIssueCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "TriageCustomerIssue",
+      "description": {
+        "default": "Create a reviewed customer case from issue language. Do not use after a resolution goal exists."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/triageCustomerIssue/TriageCustomerIssueCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

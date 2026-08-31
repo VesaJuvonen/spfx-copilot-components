@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "b0b3d4ca-a937-4abc-9e9a-aa5518a442d5",
+  "alias": "CreateKnowledgeFromResolutionCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "CreateKnowledgeFromResolution",
+      "description": {
+        "default": "Create knowledge from verified resolution evidence. Do not publish directly."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/createKnowledgeFromResolution/CreateKnowledgeFromResolutionCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

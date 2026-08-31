@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "088868c8-9948-47e7-932c-4cc9acca0f1e",
+  "alias": "BuildValueCaseCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "BuildValueCase",
+      "description": {
+        "default": "Use for customer outcome and payback modeling. Do not set commercial price."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/buildValueCase/BuildValueCaseCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

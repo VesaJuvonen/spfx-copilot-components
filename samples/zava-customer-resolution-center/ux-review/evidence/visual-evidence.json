@@ -1,0 +1,611 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-31T16:15:09.654Z",
+  "totalIntents": 21,
+  "totalCaptures": 75,
+  "failureCount": 0,
+  "uniqueLayouts": 25,
+  "captures": [
+    {
+      "intent": "BalanceServiceWorkload",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "balance-service-workload-standard-light.png",
+      "layout": "workload-skill-capacity-simulator"
+    },
+    {
+      "intent": "BalanceServiceWorkload",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "balance-service-workload-narrow-light.png",
+      "layout": "workload-skill-capacity-simulator"
+    },
+    {
+      "intent": "BalanceServiceWorkload",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "balance-service-workload-standard-dark.png",
+      "layout": "workload-skill-capacity-simulator"
+    },
+    {
+      "intent": "BuildResolutionPlan",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "build-resolution-plan-standard-light.png",
+      "layout": "resolution-plan-evidence-path"
+    },
+    {
+      "intent": "BuildResolutionPlan",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "build-resolution-plan-narrow-light.png",
+      "layout": "resolution-plan-evidence-path"
+    },
+    {
+      "intent": "BuildResolutionPlan",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "build-resolution-plan-standard-dark.png",
+      "layout": "resolution-plan-evidence-path"
+    },
+    {
+      "intent": "ComposeCustomerUpdate",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "compose-customer-update-standard-light.png",
+      "layout": "customer-update-trust-studio"
+    },
+    {
+      "intent": "ComposeCustomerUpdate",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "compose-customer-update-narrow-light.png",
+      "layout": "customer-update-trust-studio"
+    },
+    {
+      "intent": "ComposeCustomerUpdate",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "compose-customer-update-standard-dark.png",
+      "layout": "customer-update-trust-studio"
+    },
+    {
+      "intent": "CoordinateFieldService",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "coordinate-field-service-standard-light.png",
+      "layout": "field-service-readiness-planner"
+    },
+    {
+      "intent": "CoordinateFieldService",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "coordinate-field-service-narrow-light.png",
+      "layout": "field-service-readiness-planner"
+    },
+    {
+      "intent": "CoordinateFieldService",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "coordinate-field-service-standard-dark.png",
+      "layout": "field-service-readiness-planner"
+    },
+    {
+      "intent": "CreateKnowledgeFromResolution",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "create-knowledge-from-resolution-standard-light.png",
+      "layout": "knowledge-applicability-canvas"
+    },
+    {
+      "intent": "CreateKnowledgeFromResolution",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "create-knowledge-from-resolution-narrow-light.png",
+      "layout": "knowledge-applicability-canvas"
+    },
+    {
+      "intent": "CreateKnowledgeFromResolution",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "create-knowledge-from-resolution-standard-dark.png",
+      "layout": "knowledge-applicability-canvas"
+    },
+    {
+      "intent": "DetectServiceIncident",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "detect-service-incident-standard-light.png",
+      "layout": "incident-detection-threshold-graph"
+    },
+    {
+      "intent": "DetectServiceIncident",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "detect-service-incident-narrow-light.png",
+      "layout": "incident-detection-threshold-graph"
+    },
+    {
+      "intent": "DetectServiceIncident",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "detect-service-incident-standard-dark.png",
+      "layout": "incident-detection-threshold-graph"
+    },
+    {
+      "intent": "DiagnoseCaseEvidence",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "diagnose-case-evidence-standard-light.png",
+      "layout": "diagnostics-competing-hypotheses"
+    },
+    {
+      "intent": "DiagnoseCaseEvidence",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "diagnose-case-evidence-narrow-light.png",
+      "layout": "diagnostics-competing-hypotheses"
+    },
+    {
+      "intent": "DiagnoseCaseEvidence",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "diagnose-case-evidence-standard-dark.png",
+      "layout": "diagnostics-competing-hypotheses"
+    },
+    {
+      "intent": "ExploreAgentCapabilities",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "explore-agent-capabilities-standard-light.png",
+      "layout": "capability-explorer-scenario-gallery"
+    },
+    {
+      "intent": "ExploreAgentCapabilities",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "explore-agent-capabilities-narrow-light.png",
+      "layout": "capability-explorer-scenario-gallery"
+    },
+    {
+      "intent": "ExploreAgentCapabilities",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "explore-agent-capabilities-standard-dark.png",
+      "layout": "capability-explorer-scenario-gallery"
+    },
+    {
+      "intent": "ExploreCustomerHealth",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "explore-customer-health-standard-light.png",
+      "layout": "customer-health-relationship-constellation"
+    },
+    {
+      "intent": "ExploreCustomerHealth",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "explore-customer-health-narrow-light.png",
+      "layout": "customer-health-relationship-constellation"
+    },
+    {
+      "intent": "ExploreCustomerHealth",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "explore-customer-health-standard-dark.png",
+      "layout": "customer-health-relationship-constellation"
+    },
+    {
+      "intent": "ExploreServicePerformance",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "explore-service-performance-standard-light.png",
+      "layout": "service-performance-demand-river"
+    },
+    {
+      "intent": "ExploreServicePerformance",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "explore-service-performance-narrow-light.png",
+      "layout": "service-performance-demand-river"
+    },
+    {
+      "intent": "ExploreServicePerformance",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "explore-service-performance-standard-dark.png",
+      "layout": "service-performance-demand-river"
+    },
+    {
+      "intent": "GetPriorityServiceQueue",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "get-priority-service-queue-standard-light.png",
+      "layout": "priority-queue-ranked-judgment"
+    },
+    {
+      "intent": "GetPriorityServiceQueue",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "get-priority-service-queue-narrow-light.png",
+      "layout": "priority-queue-ranked-judgment"
+    },
+    {
+      "intent": "GetPriorityServiceQueue",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "get-priority-service-queue-standard-dark.png",
+      "layout": "priority-queue-ranked-judgment"
+    },
+    {
+      "intent": "ManageCaseEscalation",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "manage-case-escalation-standard-light.png",
+      "layout": "case-escalation-capacity-review"
+    },
+    {
+      "intent": "ManageCaseEscalation",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "manage-case-escalation-narrow-light.png",
+      "layout": "case-escalation-capacity-review"
+    },
+    {
+      "intent": "ManageCaseEscalation",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "manage-case-escalation-standard-dark.png",
+      "layout": "case-escalation-capacity-review"
+    },
+    {
+      "intent": "ManageCustomerCommitments",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "manage-customer-commitments-standard-light.png",
+      "layout": "commitment-bilateral-promise-ledger"
+    },
+    {
+      "intent": "ManageCustomerCommitments",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "manage-customer-commitments-narrow-light.png",
+      "layout": "commitment-bilateral-promise-ledger"
+    },
+    {
+      "intent": "ManageCustomerCommitments",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "manage-customer-commitments-standard-dark.png",
+      "layout": "commitment-bilateral-promise-ledger"
+    },
+    {
+      "intent": "PlanCustomerWinBack",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "plan-customer-win-back-standard-light.png",
+      "layout": "winback-trust-recovery-plan"
+    },
+    {
+      "intent": "PlanCustomerWinBack",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "plan-customer-win-back-narrow-light.png",
+      "layout": "winback-trust-recovery-plan"
+    },
+    {
+      "intent": "PlanCustomerWinBack",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "plan-customer-win-back-standard-dark.png",
+      "layout": "winback-trust-recovery-plan"
+    },
+    {
+      "intent": "ReviewEntitlementCoverage",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "review-entitlement-coverage-standard-light.png",
+      "layout": "entitlement-effective-clause-ledger"
+    },
+    {
+      "intent": "ReviewEntitlementCoverage",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "review-entitlement-coverage-narrow-light.png",
+      "layout": "entitlement-effective-clause-ledger"
+    },
+    {
+      "intent": "ReviewEntitlementCoverage",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "review-entitlement-coverage-standard-dark.png",
+      "layout": "entitlement-effective-clause-ledger"
+    },
+    {
+      "intent": "ReviewIncidentResponse",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "review-incident-response-standard-light.png",
+      "layout": "incident-response-consequence-review"
+    },
+    {
+      "intent": "ReviewIncidentResponse",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "review-incident-response-narrow-light.png",
+      "layout": "incident-response-consequence-review"
+    },
+    {
+      "intent": "ReviewIncidentResponse",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "review-incident-response-standard-dark.png",
+      "layout": "incident-response-consequence-review"
+    },
+    {
+      "intent": "ReviewServiceRecovery",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "review-service-recovery-standard-light.png",
+      "layout": "service-recovery-outcome-review"
+    },
+    {
+      "intent": "ReviewServiceRecovery",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "review-service-recovery-narrow-light.png",
+      "layout": "service-recovery-outcome-review"
+    },
+    {
+      "intent": "ReviewServiceRecovery",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "review-service-recovery-standard-dark.png",
+      "layout": "service-recovery-outcome-review"
+    },
+    {
+      "intent": "RunServiceQualityReview",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "run-service-quality-review-standard-light.png",
+      "layout": "service-quality-transparent-scorecard"
+    },
+    {
+      "intent": "RunServiceQualityReview",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "run-service-quality-review-narrow-light.png",
+      "layout": "service-quality-transparent-scorecard"
+    },
+    {
+      "intent": "RunServiceQualityReview",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "run-service-quality-review-standard-dark.png",
+      "layout": "service-quality-transparent-scorecard"
+    },
+    {
+      "intent": "StartExpertSwarm",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "start-expert-swarm-standard-light.png",
+      "layout": "expert-swarm-skill-availability"
+    },
+    {
+      "intent": "StartExpertSwarm",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "start-expert-swarm-narrow-light.png",
+      "layout": "expert-swarm-skill-availability"
+    },
+    {
+      "intent": "StartExpertSwarm",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "start-expert-swarm-standard-dark.png",
+      "layout": "expert-swarm-skill-availability"
+    },
+    {
+      "intent": "TrackResolutionOutcome",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "track-resolution-outcome-standard-light.png",
+      "layout": "resolution-outcome-verification"
+    },
+    {
+      "intent": "TrackResolutionOutcome",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "track-resolution-outcome-narrow-light.png",
+      "layout": "resolution-outcome-verification"
+    },
+    {
+      "intent": "TrackResolutionOutcome",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "track-resolution-outcome-standard-dark.png",
+      "layout": "resolution-outcome-verification"
+    },
+    {
+      "intent": "TriageCustomerIssue",
+      "mode": "inline",
+      "theme": "light",
+      "width": 760,
+      "file": "triage-customer-issue-standard-light.png",
+      "layout": "triage-structured-intake"
+    },
+    {
+      "intent": "TriageCustomerIssue",
+      "mode": "inline",
+      "theme": "light",
+      "width": 340,
+      "file": "triage-customer-issue-narrow-light.png",
+      "layout": "triage-structured-intake"
+    },
+    {
+      "intent": "TriageCustomerIssue",
+      "mode": "inline",
+      "theme": "dark",
+      "width": 760,
+      "file": "triage-customer-issue-standard-dark.png",
+      "layout": "triage-structured-intake"
+    },
+    {
+      "intent": "GetPriorityServiceQueue",
+      "mode": "fullscreen",
+      "theme": "light",
+      "width": 1600,
+      "file": "get-priority-service-queue-my-queue-keynote-light.png",
+      "layout": "my-queue-workspace-shell"
+    },
+    {
+      "intent": "GetPriorityServiceQueue",
+      "mode": "fullscreen",
+      "theme": "dark",
+      "width": 1280,
+      "file": "get-priority-service-queue-my-queue-desktop-dark.png",
+      "layout": "my-queue-workspace-shell"
+    },
+    {
+      "intent": "GetPriorityServiceQueue",
+      "mode": "fullscreen",
+      "theme": "light",
+      "width": 390,
+      "file": "get-priority-service-queue-my-queue-mobile-light.png",
+      "layout": "my-queue-workspace-shell"
+    },
+    {
+      "intent": "ExploreCustomerHealth",
+      "mode": "fullscreen",
+      "theme": "light",
+      "width": 1600,
+      "file": "explore-customer-health-customer-360-keynote-light.png",
+      "layout": "customer-360-workspace-shell"
+    },
+    {
+      "intent": "ExploreCustomerHealth",
+      "mode": "fullscreen",
+      "theme": "dark",
+      "width": 1280,
+      "file": "explore-customer-health-customer-360-desktop-dark.png",
+      "layout": "customer-360-workspace-shell"
+    },
+    {
+      "intent": "ExploreCustomerHealth",
+      "mode": "fullscreen",
+      "theme": "light",
+      "width": 390,
+      "file": "explore-customer-health-customer-360-mobile-light.png",
+      "layout": "customer-360-workspace-shell"
+    },
+    {
+      "intent": "BuildResolutionPlan",
+      "mode": "fullscreen",
+      "theme": "light",
+      "width": 1600,
+      "file": "build-resolution-plan-resolution-room-keynote-light.png",
+      "layout": "resolution-room-workspace-shell"
+    },
+    {
+      "intent": "BuildResolutionPlan",
+      "mode": "fullscreen",
+      "theme": "dark",
+      "width": 1280,
+      "file": "build-resolution-plan-resolution-room-desktop-dark.png",
+      "layout": "resolution-room-workspace-shell"
+    },
+    {
+      "intent": "BuildResolutionPlan",
+      "mode": "fullscreen",
+      "theme": "light",
+      "width": 390,
+      "file": "build-resolution-plan-resolution-room-mobile-light.png",
+      "layout": "resolution-room-workspace-shell"
+    },
+    {
+      "intent": "ExploreServicePerformance",
+      "mode": "fullscreen",
+      "theme": "light",
+      "width": 1600,
+      "file": "explore-service-performance-service-operations-keynote-light.png",
+      "layout": "service-operations-workspace-shell"
+    },
+    {
+      "intent": "ExploreServicePerformance",
+      "mode": "fullscreen",
+      "theme": "dark",
+      "width": 1280,
+      "file": "explore-service-performance-service-operations-desktop-dark.png",
+      "layout": "service-operations-workspace-shell"
+    },
+    {
+      "intent": "ExploreServicePerformance",
+      "mode": "fullscreen",
+      "theme": "light",
+      "width": 390,
+      "file": "explore-service-performance-service-operations-mobile-light.png",
+      "layout": "service-operations-workspace-shell"
+    }
+  ],
+  "failures": []
+}

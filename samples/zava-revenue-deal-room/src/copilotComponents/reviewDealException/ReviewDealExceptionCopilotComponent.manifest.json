@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "bd518690-7f0e-4b74-8175-ee317a11721d",
+  "alias": "ReviewDealExceptionCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ReviewDealException",
+      "description": {
+        "default": "Use for a governed commercial exception decision. Do not use for scenario modeling."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/reviewDealException/ReviewDealExceptionCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

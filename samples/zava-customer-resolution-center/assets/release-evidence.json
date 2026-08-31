@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-31T16:20:56.263Z",
+  "package": "sharepoint/solution/zava-customer-resolution-center.sppkg",
+  "packageBytes": 328835,
+  "packageSha256": "5a3a94d0cc7d5f374b1eaca0e69f7e364c28e48ddf3e3186aa2c7a7cc6a15984",
+  "agentPackage": "teams/zava-customer-resolution.zip",
+  "agentPackageBytes": 11863,
+  "agentPackageSha256": "13fc7913f521834cfeb297ac3ad8f1d80e9fbd3d49477a2c48a8840962c379d9",
+  "configuredBundles": 1,
+  "configuredComponents": 21,
+  "productionJavaScriptFiles": 1,
+  "totalJavaScriptBytes": 514197,
+  "largestJavaScriptBytes": 514197,
+  "packagedMediaFiles": 5,
+  "duplicateMediaHashes": 0,
+  "visualCaptures": 75,
+  "visualFailures": 0,
+  "uniqueVisualLayouts": 25,
+  "tests": 19,
+  "warnings": 0,
+  "externalPrerequisite": "Authenticated Microsoft 365 tenant for Workbench CSP, routing, iframe focus, forced colors, and host screen-reader validation."
+}

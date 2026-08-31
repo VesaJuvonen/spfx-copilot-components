@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "3c130259-2120-421d-a2a3-d0eb0ea99513",
+  "alias": "NegotiateContractTermsCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "NegotiateContractTermsTool",
+      "description": {
+        "default": "Build a reviewed give-get contract negotiation plan."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/negotiateContractTerms/NegotiateContractTermsCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

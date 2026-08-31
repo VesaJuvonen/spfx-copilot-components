@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "zava-revenue-deal-room-client-side-solution",
+    "id": "495d56a1-a3bf-4540-9dbe-f57085cd0289",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "developer": {
+      "name": "Microsoft 365 PnP Community",
+      "websiteUrl": "https://pnp.github.io/",
+      "privacyUrl": "https://privacy.microsoft.com/",
+      "termsOfUseUrl": "https://www.microsoft.com/servicesagreement",
+      "mpnId": "Undefined-1.24.0-beta.3-55937989"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Evidence-led revenue execution in Microsoft 365 Copilot."
+      },
+      "longDescription": {
+        "default": "Twenty-one intent-routed Copilot Components connect buyer evidence, relationships, commitments, commercial scenarios, human decisions, and forecast accountability."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "Zava Revenue Deal Room",
+        "description": "Activates the Zava Revenue Deal Room Copilot Components and declarative agent.",
+        "id": "17551dd4-91f6-49f5-8a19-180ec8b0ab84",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/zava-revenue-deal-room.sppkg"
+  }
+}

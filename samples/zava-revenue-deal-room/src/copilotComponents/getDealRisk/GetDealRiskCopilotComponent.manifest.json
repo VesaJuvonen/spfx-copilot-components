@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "ef6bbfdc-7cb3-461e-ad89-0a941edc5d9e",
+  "alias": "GetDealRiskCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "GetDealRisk",
+      "description": {
+        "default": "Use for evidence-ranked risk on one deal. Do not use for aggregate pipeline risk."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/getDealRisk/GetDealRiskCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "b563756c-d58d-4079-898b-29361531c4fd",
+  "alias": "ReviewContractRenewalCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ReviewContractRenewalTool",
+      "description": {
+        "default": "Review renewal, renegotiation, consolidation, or exit scenarios."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/reviewContractRenewal/ReviewContractRenewalCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

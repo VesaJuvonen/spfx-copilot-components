@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "externalRuntimeMedia": false,
+  "publicReviewStatus": "Pending final publisher approval",
+  "items": [
+    {
+      "file": "assets/ux-inline-CreatePurchaseIntent.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "8cb1a6b848e1de1f24edd53a00c918f5336f1b9d39479ac7c4abeda87836dd1a"
+    },
+    {
+      "file": "assets/ux-inline-CompareBuyingOptions.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "139153eef80aae1ee344467c16df50bd4a887e0b6be1c12ad9c0dacf6a3f6a98"
+    },
+    {
+      "file": "assets/ux-inline-CheckPurchasePolicy.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "b4ff9e5cd4a9af6a0250d6a0533d39e2456d1734fc0df5ad0ca8cb3b84f2b0a5"
+    },
+    {
+      "file": "assets/ux-inline-ReviewPurchaseRequest.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "741fc52cda96684c18d770dc41e68a9665af559368a41713ae64e0780ae380d1"
+    },
+    {
+      "file": "assets/ux-inline-AggregateDemand.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "1e1416305683748d9800141e6b5549b50d807c0a8c97c0290985727b3698a0eb"
+    },
+    {
+      "file": "assets/ux-inline-BuildSourcingEvent.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "a17428c18fb4af120c33ca4881512af3cefbc8fb7641e5282d7f01a6312496b7"
+    },
+    {
+      "file": "assets/ux-inline-CompareSupplierBids.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "c4558712f12d0dcb513310cfe310d64819b2494024ba6812c7797587dd48e951"
+    },
+    {
+      "file": "assets/ux-inline-ReviewSupplierAward.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "9373161cf87ca8f45a8345c254e481df483c8406a2f29090f9426636c511f2e8"
+    },
+    {
+      "file": "assets/ux-inline-ExploreSupplier360.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "b64fae0a025bde53f18d58333069dc1b114a567af947bc0dda7417d93ed323cc"
+    },
+    {
+      "file": "assets/ux-inline-ReviewContractRenewal.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "58e62c88e91ece4773ce67dca7d1835664eae67eda0c83c77b76a91e0c430c98"
+    },
+    {
+      "file": "assets/ux-inline-DetectSpendLeakage.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "6ce28adb5665413773f5d12a9b68512ef45c1cc640b94220be52937b9d1c8218"
+    },
+    {
+      "file": "assets/ux-inline-TrackSupplierRisk.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "6b3a0a8d92b474b35dcf08b0ebef637fbea58e3f494666e2425fa7592db838db"
+    },
+    {
+      "file": "assets/ux-inline-ResolveInvoiceException.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "2abcfb87d2580c98fee82232ccf1d19fab94c16eba9a7a99548d9618035cd6e7"
+    },
+    {
+      "file": "assets/ux-inline-ExploreSpendPerformance.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "8016c4484f1185a88133d701eb0b9a6fa1bb90d7f51182a087aae323f268492b"
+    },
+    {
+      "file": "assets/ux-inline-OnboardSupplier.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "110b5e86f71e4f41ebad1a400c3d9d4290861e453f1099aad708a9b4ebdeb3ed"
+    },
+    {
+      "file": "assets/ux-inline-ReviewSupplierQualification.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "45c5bd3d3ff5dce93f32e8861b0ab42e74559267e814d1f7388ada7bc0a59c97"
+    },
+    {
+      "file": "assets/ux-inline-PlanSupplierRiskMitigation.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "b39413269d6634800a0d54e46e21fbe787d32525d5efaba524961b8dcb3f6361"
+    },
+    {
+      "file": "assets/ux-inline-NegotiateContractTerms.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "2918a035641747f0f588496fe9a053973e01e399812359dd8ad3b00bc78f4001"
+    },
+    {
+      "file": "assets/ux-inline-ManagePurchaseOrderChange.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "9c7f729547a712e3c4a16ba1e7ee8a91a888b3a61b2a3ced065bffb74436c2cb"
+    },
+    {
+      "file": "assets/ux-inline-TrackLeakageRecovery.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "aa53c237be7c98f577561d6730f3563308ec079c76619e44c2b37179842b38b5"
+    },
+    {
+      "file": "assets/ux-inline-ExploreSupplierPortfolioBalance.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "c0252ad735a57ea62b513d9b91757545cfcafc580da0bd3a9559ef186f18190b"
+    },
+    {
+      "file": "assets/ux-inline-ExploreAgentCapabilities.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "049d28ee7f483a45ad76600c9651bc67c03ec29ff1cac538e846f51e303da8cf"
+    },
+    {
+      "file": "assets/ux-sourcing-workbench.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "a967c8434a739c00f3dfe41590a7745afdd9d7b451d6259d53f963515cdba9fa"
+    },
+    {
+      "file": "assets/ux-supplier-360.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "b8bb5f5d64fbe8c4b3c0146ff8a4f5dbd3226cf9847e4fc5b222296f50d393d3"
+    },
+    {
+      "file": "assets/ux-spend-command.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "1371fb22905d236be66aced597840be2c9d589b65d0059b9fd31fd2b69ff42fc"
+    },
+    {
+      "file": "assets/ux-my-requests.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "2f0ab25f484f7499e1fc6f505919f1fc36ca3a2bb0f139b26f1e004d37f35924"
+    },
+    {
+      "file": "assets/ux-sourcing-mobile.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "ad82e203cf2e61fad260d14a1e39de485ced4783318e79649b00c8f4ba1535bb"
+    },
+    {
+      "file": "assets/ux-sourcing-dark.png",
+      "kind": "publication-screenshot",
+      "origin": "Locally rendered from the deterministic tenant-free UX harness",
+      "rights": "Repository-generated sample evidence",
+      "sha256": "6c532d2096d1a26d530aeb5849977fcb9e86d16d6d9ceed3bd474b50e3157c29"
+    },
+    {
+      "file": "copilot/color.png",
+      "kind": "agent-icon",
+      "origin": "SharePoint Yeoman generator template customized for this sample package",
+      "rights": "Generated sample asset pending final publisher review",
+      "sha256": "4aa6b1320582738d1019eb5dcbde9b1f004423d0d89e67be44981e05b4f05918"
+    },
+    {
+      "file": "copilot/outline.png",
+      "kind": "agent-icon",
+      "origin": "SharePoint Yeoman generator template customized for this sample package",
+      "rights": "Generated sample asset pending final publisher review",
+      "sha256": "b1ddc76f79027d9c0300689721649ce1f1950271a5fc4ca50ae56545228fb566"
+    }
+  ]
+}

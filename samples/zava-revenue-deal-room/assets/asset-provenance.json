@@ -1,0 +1,14 @@
+{
+  "reviewedOn": "2026-08-31",
+  "sourceSample": "../zava-innovation-portfolio",
+  "redistributionStatus": "Pending final public media-rights review",
+  "assets": [
+    { "path": "src/shared/assets/faces/Megan-Bowen.jpg", "sourceCopy": "assets/faces/Megan-Bowen.jpeg", "sha256": "0c8ce4462299c22bc84a4908d1634ad5773d8391b9666296288fdbbfc46a7f2c", "intendedUse": "Fictional Microsoft 365 demo persona portrait for the account executive." },
+    { "path": "src/shared/assets/faces/Miriam-Graham.jpg", "sourceCopy": "assets/faces/Miriam-Graham.jpeg", "sha256": "a0a47ef464b33e90163070cadbc9821eabe1a4980180d1166e8b5903d0b4454b", "intendedUse": "Fictional Microsoft 365 demo persona portrait for the finance partner." },
+    { "path": "src/shared/assets/faces/Joni-Sherman.jpg", "sourceCopy": "assets/faces/Joni-Sherman.jpeg", "sha256": "c134c8a4d54866eb36cdbce726b8c5af6426f996d877502fc53cbf3ac1559acf", "intendedUse": "Fictional Microsoft 365 demo persona portrait for the revenue leader." },
+    { "path": "src/shared/assets/faces/Nestor-Wilke.jpg", "sourceCopy": "assets/faces/Nestor-Wilke.jpeg", "sha256": "9dbebc4cb78f41ba658fe1bb277895fbe410b6159fd6745253716fe052a9439e", "intendedUse": "Fictional Microsoft 365 demo persona portrait for the customer champion." },
+    { "path": "src/shared/assets/faces/Pradeep-Gupta.jpg", "sourceCopy": "assets/faces/Pradeep-Gupta.jpeg", "sha256": "a96d2477ea1d7c5c33d348639e17e4a07a0c14144370a59e055fa88f75c486ff", "intendedUse": "Fictional Microsoft 365 demo persona portrait for the technical evaluator." },
+    { "path": "src/shared/assets/faces/Lee-Gu.jpg", "sourceCopy": "assets/faces/Lee-Gu.jpeg", "sha256": "8660f6067343ad1ee3818d460564af1da1c1645d9014229ccb12cbf4aad6a898", "intendedUse": "Fictional Microsoft 365 demo persona portrait for the economic sponsor." },
+    { "path": "src/shared/assets/faces/Patti-Fernandez.jpg", "sourceCopy": "assets/faces/Patti-Fernandez.jpeg", "sha256": "5b7e8ba18571e464af634acbfbdad54b45a70baffb72c1a15d0b537f012d2ead", "intendedUse": "Fictional Microsoft 365 demo persona portrait for the legal approver." }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "3cead1e8-c228-4666-b0fc-52b5126fea5a",
+  "alias": "TrackResolutionOutcomeCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "TrackResolutionOutcome",
+      "description": {
+        "default": "Verify one customer outcome. Do not use for aggregate performance."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/trackResolutionOutcome/TrackResolutionOutcomeCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

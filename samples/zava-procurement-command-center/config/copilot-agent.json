@@ -1,0 +1,37 @@
+{
+  "$schema": "../node_modules/@microsoft/spfx-heft-plugins/lib-commonjs/plugins/copilotAgentPlugin/copilot-agent.schema.json",
+  "agents": [
+    {
+      "name": {
+        "default": "Zava Procurement Command Center"
+      },
+      "description": {
+        "default": "Govern buying, sourcing, suppliers, spend, and value with evidence-backed agent experiences."
+      },
+      "components": [
+        "601f84ee-b553-452a-86bf-8be16be93aa6",
+        "7d218419-3215-45fb-b1f9-e7dbab939a0f",
+        "cc40ad36-e2ee-4084-b4fc-5137f7ec8605",
+        "b367b9f0-1426-41a4-b508-cc438664ba9e",
+        "62abc9cc-b463-4227-8955-445fe36081f4",
+        "267b6d0c-2096-4a3d-84c2-6b62022b3638",
+        "34487eda-111c-49a6-aef6-2568ee06e971",
+        "ff616e7f-a082-48e1-9a02-6a69becddd95",
+        "5a409563-86a6-44ba-8858-bc3923e96aa6",
+        "b563756c-d58d-4079-898b-29361531c4fd",
+        "6daaf363-2367-4c5d-ba1c-eecd3a46ee1c",
+        "01e6b1af-8340-447f-9554-8aa87b5bca97",
+        "3acd87ea-fd7c-44f0-93e9-e9006011672f",
+        "8966f77a-25a2-43d7-ae23-f8fcfad5ae9d",
+        "b806de3b-1c12-4d87-9b1d-187650c83d79",
+        "42b29c99-f378-4e8f-8a7e-a41b7e263b0b",
+        "b598d60c-d769-4521-b3eb-e0eff26b5c7a",
+        "3c130259-2120-421d-a2a3-d0eb0ea99513",
+        "612e61d0-fa1f-4754-9af4-5c418dc43096",
+        "58d7bf10-6aa0-4f37-a760-53a2e4682401",
+        "8c981270-4ba4-4770-9fc1-c7ca698075e3",
+        "aaa0c43a-a4b1-4cf7-9abb-28870f18126a"
+      ]
+    }
+  ]
+}

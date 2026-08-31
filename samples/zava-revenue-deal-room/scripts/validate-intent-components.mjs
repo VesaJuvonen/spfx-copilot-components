@@ -1,0 +1,20 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+const root = path.resolve(import.meta.dirname, '..');
+const config = JSON.parse(fs.readFileSync(path.join(root, 'config', 'config.json'), 'utf8'));
+const agent = JSON.parse(fs.readFileSync(path.join(root, 'config', 'copilot-agent.json'), 'utf8'));
+const entries = Object.values(config.bundles).flatMap((bundle) => bundle.components || []);
+const manifests = entries.map((entry) => JSON.parse(fs.readFileSync(path.join(root, entry.manifest.replace('./', '')), 'utf8')));
+const ids = manifests.map((manifest) => manifest.id);
+const tools = manifests.map((manifest) => manifest.tools?.[0]?.name);
+const descriptions = manifests.map((manifest) => manifest.tools?.[0]?.description?.default);
+const assert = (condition, message) => { if (!condition) throw new Error(message); };
+assert(entries.length === 21, `Expected 21 component entries, received ${entries.length}`);
+assert(new Set(ids).size === 21, 'Component GUIDs must be unique.');
+assert(new Set(tools).size === 21, 'Tool names must be unique.');
+assert(new Set(entries.map((entry) => entry.manifest)).size === 21, 'Manifest membership must be unique.');
+assert(descriptions.every((description) => description && description.includes('Use for ') && description.includes('Do not ')), 'Every tool requires positive and negative routing boundaries.');
+assert(agent.agents[0].components.length === 21 && new Set(agent.agents[0].components).size === 21, 'Agent registration must include 21 unique components.');
+assert(ids.every((id) => agent.agents[0].components.includes(id)), 'Agent registration does not match manifest GUIDs.');
+console.log(JSON.stringify({ components: entries.length, uniqueGuids: new Set(ids).size, uniqueTools: new Set(tools).size, bundles: Object.keys(config.bundles).length }));

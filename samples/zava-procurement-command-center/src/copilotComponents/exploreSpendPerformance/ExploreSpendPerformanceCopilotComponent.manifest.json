@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "8966f77a-25a2-43d7-ae23-f8fcfad5ae9d",
+  "alias": "ExploreSpendPerformanceCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ExploreSpendPerformanceTool",
+      "description": {
+        "default": "Trace identified procurement opportunity to realized value."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/exploreSpendPerformance/ExploreSpendPerformanceCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

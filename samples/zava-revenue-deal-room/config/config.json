@@ -1,0 +1,96 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "zava-revenue-components": {
+      "components": [
+        {
+          "entrypoint": "./lib/copilotComponents/buildAccountBrief/BuildAccountBriefCopilotComponent.js",
+          "manifest": "./src/copilotComponents/buildAccountBrief/BuildAccountBriefCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/qualifyOpportunity/QualifyOpportunityCopilotComponent.js",
+          "manifest": "./src/copilotComponents/qualifyOpportunity/QualifyOpportunityCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/mapBuyingCommittee/MapBuyingCommitteeCopilotComponent.js",
+          "manifest": "./src/copilotComponents/mapBuyingCommittee/MapBuyingCommitteeCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/getDealRisk/GetDealRiskCopilotComponent.js",
+          "manifest": "./src/copilotComponents/getDealRisk/GetDealRiskCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/prepareCustomerMeeting/PrepareCustomerMeetingCopilotComponent.js",
+          "manifest": "./src/copilotComponents/prepareCustomerMeeting/PrepareCustomerMeetingCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/buildMutualActionPlan/BuildMutualActionPlanCopilotComponent.js",
+          "manifest": "./src/copilotComponents/buildMutualActionPlan/BuildMutualActionPlanCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/reviewMeetingCommitments/ReviewMeetingCommitmentsCopilotComponent.js",
+          "manifest": "./src/copilotComponents/reviewMeetingCommitments/ReviewMeetingCommitmentsCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/shapeSolutionProposal/ShapeSolutionProposalCopilotComponent.js",
+          "manifest": "./src/copilotComponents/shapeSolutionProposal/ShapeSolutionProposalCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/simulateCommercialOffer/SimulateCommercialOfferCopilotComponent.js",
+          "manifest": "./src/copilotComponents/simulateCommercialOffer/SimulateCommercialOfferCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/reviewDealException/ReviewDealExceptionCopilotComponent.js",
+          "manifest": "./src/copilotComponents/reviewDealException/ReviewDealExceptionCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/inspectForecastCommit/InspectForecastCommitCopilotComponent.js",
+          "manifest": "./src/copilotComponents/inspectForecastCommit/InspectForecastCommitCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/explorePipelineQuality/ExplorePipelineQualityCopilotComponent.js",
+          "manifest": "./src/copilotComponents/explorePipelineQuality/ExplorePipelineQualityCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/discoverAccountOpportunity/DiscoverAccountOpportunityCopilotComponent.js",
+          "manifest": "./src/copilotComponents/discoverAccountOpportunity/DiscoverAccountOpportunityCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/researchCompetitivePosition/ResearchCompetitivePositionCopilotComponent.js",
+          "manifest": "./src/copilotComponents/researchCompetitivePosition/ResearchCompetitivePositionCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/coachDealStrategy/CoachDealStrategyCopilotComponent.js",
+          "manifest": "./src/copilotComponents/coachDealStrategy/CoachDealStrategyCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/createExecutiveEngagementPlan/CreateExecutiveEngagementPlanCopilotComponent.js",
+          "manifest": "./src/copilotComponents/createExecutiveEngagementPlan/CreateExecutiveEngagementPlanCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/trackMeetingFollowUp/TrackMeetingFollowUpCopilotComponent.js",
+          "manifest": "./src/copilotComponents/trackMeetingFollowUp/TrackMeetingFollowUpCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/buildValueCase/BuildValueCaseCopilotComponent.js",
+          "manifest": "./src/copilotComponents/buildValueCase/BuildValueCaseCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/reviewProposalReadiness/ReviewProposalReadinessCopilotComponent.js",
+          "manifest": "./src/copilotComponents/reviewProposalReadiness/ReviewProposalReadinessCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/planCustomerSuccessHandoff/PlanCustomerSuccessHandoffCopilotComponent.js",
+          "manifest": "./src/copilotComponents/planCustomerSuccessHandoff/PlanCustomerSuccessHandoffCopilotComponent.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/copilotComponents/exploreAgentCapabilities/ExploreAgentCapabilitiesCopilotComponent.js",
+          "manifest": "./src/copilotComponents/exploreAgentCapabilities/ExploreAgentCapabilitiesCopilotComponent.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {}
+}

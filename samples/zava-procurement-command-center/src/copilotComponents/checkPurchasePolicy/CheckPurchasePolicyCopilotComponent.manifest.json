@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "cc40ad36-e2ee-4084-b4fc-5137f7ec8605",
+  "alias": "CheckPurchasePolicyCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "CheckPurchasePolicyTool",
+      "description": {
+        "default": "Explain applicable purchase rules, evidence, and remediation."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/checkPurchasePolicy/CheckPurchasePolicyCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

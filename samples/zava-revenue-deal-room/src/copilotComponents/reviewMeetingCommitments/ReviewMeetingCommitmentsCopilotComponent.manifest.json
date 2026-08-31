@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "e8d43c67-6ca8-41cb-8427-e481e7c33b86",
+  "alias": "ReviewMeetingCommitmentsCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ReviewMeetingCommitments",
+      "description": {
+        "default": "Use for reviewing proposed meeting updates. Do not use for meeting preparation."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/reviewMeetingCommitments/ReviewMeetingCommitmentsCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

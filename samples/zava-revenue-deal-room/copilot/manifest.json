@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.29/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.29",
+  "version": "1.0.0",
+  "id": "bf0e4e94-ff48-42ec-8ae6-b6ad963878e0",
+  "developer": {
+    "name": "Microsoft 365 PnP Community",
+    "websiteUrl": "https://pnp.github.io/",
+    "privacyUrl": "https://privacy.microsoft.com/",
+    "termsOfUseUrl": "https://www.microsoft.com/servicesagreement"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "Zava Revenue",
+    "full": "Zava Revenue Deal Room"
+  },
+  "description": {
+    "short": "Turn buyer evidence into coordinated deal action.",
+    "full": "An offline showcase that connects buyer evidence, relationships, commitments, commercial judgment, and forecast decisions."
+  },
+  "accentColor": "#146EF5",
+  "copilotAgents": {
+    "declarativeAgents": [
+      {
+        "id": "dealRoomAgent",
+        "file": "declarativeAgent.json"
+      }
+    ]
+  },
+  "permissions": ["identity"],
+  "validDomains": []
+}

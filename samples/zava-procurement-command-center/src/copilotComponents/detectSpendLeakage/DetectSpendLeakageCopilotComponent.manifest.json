@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "6daaf363-2367-4c5d-ba1c-eecd3a46ee1c",
+  "alias": "DetectSpendLeakageCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "DetectSpendLeakageTool",
+      "description": {
+        "default": "Detect addressable off-contract and price leakage patterns."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/detectSpendLeakage/DetectSpendLeakageCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

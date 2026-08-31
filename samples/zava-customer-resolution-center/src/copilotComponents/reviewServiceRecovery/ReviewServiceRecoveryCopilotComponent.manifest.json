@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "7ef97622-7881-4757-9c0f-d8995a4d272c",
+  "alias": "ReviewServiceRecoveryCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ReviewServiceRecovery",
+      "description": {
+        "default": "Review fair authorized recovery. Do not compose customer communication."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/reviewServiceRecovery/ReviewServiceRecoveryCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

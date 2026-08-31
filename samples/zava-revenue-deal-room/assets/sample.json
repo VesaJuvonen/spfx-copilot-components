@@ -1,0 +1,119 @@
+[
+  {
+    "name": "pnp-sp-dev-spfx-copilot-components-zava-revenue-deal-room",
+    "source": "pnp",
+    "title": "Zava Revenue Deal Room",
+    "shortDescription": "An evidence-led revenue Copilot App with 21 intent-routed components and four connected workspaces.",
+    "url": "https://github.com/pnp/spfx-copilot-components/tree/main/samples/zava-revenue-deal-room",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/spfx-copilot-components/tree/main/samples/zava-revenue-deal-room",
+    "longDescription": [
+      "Zava Revenue Deal Room turns natural-language sales intent into focused, inspectable work across account discovery, qualification, buyer influence, risk, commitments, proposals, commercial scenarios, exceptions, forecast, and customer success handoff.",
+      "Twenty operational components and one capability explorer continue into My Deals, Deal Room, Commercial Desk, and Revenue Command. The connected Contoso story preserves evidence and decisions from relationship access through defensible commit.",
+      "The sample is deterministic, offline, responsive, and explicit that confirmed actions are session-only demonstrations. Buyer facts, seller judgment, stale evidence, deterministic output, contrary evidence, and inference remain visibly distinct."
+    ],
+    "creationDateTime": "2026-08-31",
+    "updateDateTime": "2026-08-31",
+    "products": ["SharePoint", "Copilot"],
+    "metadata": [
+      { "key": "SAMPLE-TYPE", "value": "SPFx-CopilotComponent" },
+      { "key": "CLIENT-SIDE-DEV", "value": "React" },
+      { "key": "SPFX-VERSION", "value": "1.24.0-beta.3" }
+    ],
+    "thumbnails": [
+      {
+        "name": "fullscreen-deal-room.png",
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-revenue-deal-room/assets/fullscreen-deal-room.png",
+        "alt": "Full-screen Deal Room workspace coordinating Contoso relationship influence, evidence, and credible close range"
+      },
+      {
+        "name": "inline-commercial-scenario.png",
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-revenue-deal-room/assets/inline-commercial-scenario.png",
+        "alt": "Inline commercial scenario studio with editable inputs, margin guardrail, authority, forecast, and outcome contour"
+      },
+      {
+        "name": "inline-buying-committee.png",
+        "type": "image",
+        "order": 102,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-revenue-deal-room/assets/inline-buying-committee.png",
+        "alt": "Inline buying committee influence orbit with customer authority, stance, relationship strength, and evidence"
+      },
+      {
+        "name": "inline-capability-explorer.png",
+        "type": "image",
+        "order": 103,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-revenue-deal-room/assets/inline-capability-explorer.png",
+        "alt": "Inline searchable Revenue Deal Room capability catalog with business outcomes and safe scenario previews"
+      },
+      {
+        "name": "fullscreen-deal-room-mobile.png",
+        "type": "image",
+        "order": 104,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-revenue-deal-room/assets/fullscreen-deal-room-mobile.png",
+        "alt": "Deal Room workspace adapted to a narrow mobile viewport with scrollable navigation and readable evidence"
+      },
+      {
+        "name": "fullscreen-deal-room-dark.png",
+        "type": "image",
+        "order": 105,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-revenue-deal-room/assets/fullscreen-deal-room-dark.png",
+        "alt": "Full-screen Deal Room in dark theme with accessible relationship orbit, evidence provenance, and status colors"
+      },
+      {
+        "name": "inline-global-opportunity-map.png",
+        "type": "image",
+        "order": 106,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-revenue-deal-room/assets/inline-global-opportunity-map.png",
+        "alt": "Inline D3 projected global opportunity map with regional value bubbles, slip risk, selection, and exact table values"
+      },
+      {
+        "name": "inline-pipeline-quality.png",
+        "type": "image",
+        "order": 107,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-revenue-deal-room/assets/inline-pipeline-quality.png",
+        "alt": "Inline D3 evidence-weighted pipeline chart with stage volume, buyer-proof quality, and intervention legend"
+      },
+      {
+        "name": "fullscreen-my-deals-analytics.png",
+        "type": "image",
+        "order": 108,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-revenue-deal-room/assets/fullscreen-my-deals-analytics.png",
+        "alt": "Full-screen My Deals dashboard with D3 pipeline, forecast movement, global opportunity map, and owned close path"
+      },
+      {
+        "name": "fullscreen-revenue-command.png",
+        "type": "image",
+        "order": 109,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-revenue-deal-room/assets/fullscreen-revenue-command.png",
+        "alt": "Full-screen Revenue Command dashboard with D3 pipeline, regional opportunity map, forecast bridge, and evidence ledger"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "vesajuvonen",
+        "pictureUrl": "https://github.com/vesajuvonen.png",
+        "name": "Vesa Juvonen"
+      }
+    ],
+    "references": [
+      {
+        "name": "Build your first SharePoint Copilot App",
+        "description": "Build and package an SPFx Copilot Component.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/copilot/get-started/build-your-first-copilot-app"
+      },
+      {
+        "name": "SharePoint Framework overview",
+        "description": "Overview of SharePoint Framework solutions.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview"
+      },
+      {
+        "name": "D3",
+        "description": "Data-driven scales, shapes, and geographic projections used by the local visualizations.",
+        "url": "https://d3js.org/"
+      }
+    ]
+  }
+]

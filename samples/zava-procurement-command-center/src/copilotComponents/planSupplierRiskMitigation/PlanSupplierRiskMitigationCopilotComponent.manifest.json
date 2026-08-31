@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "b598d60c-d769-4521-b3eb-e0eff26b5c7a",
+  "alias": "PlanSupplierRiskMitigationCopilotCompone",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "PlanSupplierRiskMitigationTool",
+      "description": {
+        "default": "Plan owned mitigations and residual supplier exposure."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/planSupplierRiskMitigation/PlanSupplierRiskMitigationCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

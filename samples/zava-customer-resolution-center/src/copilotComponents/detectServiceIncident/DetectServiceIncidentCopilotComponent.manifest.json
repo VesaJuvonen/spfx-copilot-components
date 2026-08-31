@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "afca3e7a-d1b0-44d9-baac-a87f52389cc3",
+  "alias": "DetectServiceIncidentCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "DetectServiceIncident",
+      "description": {
+        "default": "Analyze similar-case patterns. Do not declare or close an incident."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/detectServiceIncident/DetectServiceIncidentCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

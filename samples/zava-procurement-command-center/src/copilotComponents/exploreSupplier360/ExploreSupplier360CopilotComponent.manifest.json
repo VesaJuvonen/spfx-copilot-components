@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "5a409563-86a6-44ba-8858-bc3923e96aa6",
+  "alias": "ExploreSupplier360CopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ExploreSupplier360Tool",
+      "description": {
+        "default": "Explore supplier obligations, performance, risk, and owners."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/exploreSupplier360/ExploreSupplier360CopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

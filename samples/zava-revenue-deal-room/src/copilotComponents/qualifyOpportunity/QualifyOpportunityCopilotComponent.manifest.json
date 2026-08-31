@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "fcd34bcd-53e3-4b7f-9220-18697a3d405b",
+  "alias": "QualifyOpportunityCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "QualifyOpportunity",
+      "description": {
+        "default": "Use for opportunity qualification and stage judgment. Do not use for forecast commit."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/qualifyOpportunity/QualifyOpportunityCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

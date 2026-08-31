@@ -1,0 +1,15 @@
+import fs from 'node:fs';import path from 'node:path';
+const root=path.resolve(import.meta.dirname,'..'),config=JSON.parse(fs.readFileSync(path.join(root,'config','config.json'),'utf8')),agent=JSON.parse(fs.readFileSync(path.join(root,'config','copilot-agent.json'),'utf8'));
+const entries=Object.values(config.bundles).flatMap((bundle)=>bundle.components),manifests=entries.map((entry)=>JSON.parse(fs.readFileSync(path.join(root,entry.manifest.replace('./','')),'utf8')));
+const unique=(values)=>new Set(values).size===values.length;
+const failures=[];
+if(entries.length!==22)failures.push(`expected 22 entries, found ${entries.length}`);
+if(!unique(manifests.map(m=>m.id)))failures.push('duplicate component GUID');
+if(!unique(manifests.map(m=>m.tools[0].name)))failures.push('duplicate tool name');
+if(!unique(manifests.map(m=>m.alias)))failures.push('duplicate alias');
+if(manifests.some(m=>m.alias.length>40))failures.push('alias exceeds 40 characters');
+if(manifests.some(m=>/ description$/i.test(m.tools[0].description.default)))failures.push('placeholder description');
+if(agent.agents[0].components.length!==22||!unique(agent.agents[0].components))failures.push('invalid agent registration');
+if(Object.keys(config.bundles).length!==1)failures.push('shared bundle strategy violated');
+if(failures.length)throw new Error(failures.join('; '));
+console.log('Intent validation passed: 22 tools, unique identities, one shared bundle.');

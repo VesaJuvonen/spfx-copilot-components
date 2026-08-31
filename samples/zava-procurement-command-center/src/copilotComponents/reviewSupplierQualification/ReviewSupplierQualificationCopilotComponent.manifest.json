@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "42b29c99-f378-4e8f-8a7e-a41b7e263b0b",
+  "alias": "ReviewSupplierQualificationCopilotCompon",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "ReviewSupplierQualificationTool",
+      "description": {
+        "default": "Review scoped supplier qualification and conditions."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/reviewSupplierQualification/ReviewSupplierQualificationCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

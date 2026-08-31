@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "b806de3b-1c12-4d87-9b1d-187650c83d79",
+  "alias": "OnboardSupplierCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "OnboardSupplierTool",
+      "description": {
+        "default": "Create an evidence-aware supplier candidate draft."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/onboardSupplier/OnboardSupplierCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+import ProcurementCopilotComponentBase from '../../shared/ProcurementCopilotComponentBase';
+import type { IExploreSupplierPortfolioBalanceCopilotComponentProperties } from './ExploreSupplierPortfolioBalanceCopilotComponentProperties';
+export default class ExploreSupplierPortfolioBalanceCopilotComponent extends ProcurementCopilotComponentBase<IExploreSupplierPortfolioBalanceCopilotComponentProperties>{protected intentKey='ExploreSupplierPortfolioBalance' as const;}

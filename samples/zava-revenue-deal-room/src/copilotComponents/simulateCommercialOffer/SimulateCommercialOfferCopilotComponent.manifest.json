@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "c47dc6ac-727b-4a49-8c42-c35392fbbf34",
+  "alias": "SimulateCommercialOfferCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "SimulateCommercialOffer",
+      "description": {
+        "default": "Use for commercial scenario modeling. Do not use to approve exceptions."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/simulateCommercialOffer/SimulateCommercialOfferCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

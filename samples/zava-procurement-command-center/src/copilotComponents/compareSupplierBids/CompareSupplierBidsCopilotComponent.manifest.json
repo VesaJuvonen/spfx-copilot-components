@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "34487eda-111c-49a6-aef6-2568ee06e971",
+  "alias": "CompareSupplierBidsCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "CompareSupplierBidsTool",
+      "description": {
+        "default": "Compare normalized supplier bids and total-value sensitivity."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/compareSupplierBids/CompareSupplierBidsCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

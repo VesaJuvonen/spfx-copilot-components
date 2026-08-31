@@ -1,0 +1,20 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import unzipper from 'unzipper';
+
+const root = path.resolve(import.meta.dirname, '..');
+const teamsPath = path.join(root, 'teams', 'zava-revenue-deal-room.zip');
+if (!fs.existsSync(teamsPath)) throw new Error('Generated Teams/Copilot package is missing.');
+const archive = await unzipper.Open.file(teamsPath);
+const pluginEntry = archive.files.find((entry) => entry.path === 'ai-plugin.json');
+if (!pluginEntry) throw new Error('Generated ai-plugin.json is missing from the agent ZIP.');
+const plugin = JSON.parse((await pluginEntry.buffer()).toString('utf8'));
+const functions = plugin.functions || [];
+const assert = (condition, message) => { if (!condition) throw new Error(message); };
+assert(plugin.schema_version === 'v2.4', 'Generated plugin must use v2.4.');
+assert(plugin.name_for_human.length <= 20, 'name_for_human exceeds 20 characters.');
+assert(plugin.description_for_human.length <= 100, 'description_for_human exceeds 100 characters.');
+assert(plugin.description_for_model.length <= 2048, 'description_for_model exceeds 2,048 characters.');
+assert(functions.length === 21, `Expected 21 generated functions, received ${functions.length}.`);
+assert(new Set(functions.map((item) => item.name)).size === 21, 'Generated function names must be unique.');
+console.log(JSON.stringify({ schema: plugin.schema_version, functions: functions.length, nameLength: plugin.name_for_human.length }));

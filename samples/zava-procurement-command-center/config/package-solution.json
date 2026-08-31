@@ -1,0 +1,42 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "zava-procurement-command-center-client-side-solution",
+    "id": "a4198b8c-6725-4969-a41c-bdddc9ecfeee",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "developer": {
+      "name": "Contoso",
+      "websiteUrl": "https://www.contoso.com",
+      "privacyUrl": "https://www.contoso.com/privacy",
+      "termsOfUseUrl": "https://www.contoso.com/terms",
+      "mpnId": "Undefined-1.24.0-beta.3-55937989"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Evidence-led procurement agent experiences"
+      },
+      "longDescription": {
+        "default": "Zava Procurement turns business intent into governed buying, sourcing, supplier, invoice, and spend decisions."
+      },
+      "screenshotPaths": [
+        "../assets/ux-sourcing-workbench.png",
+        "../assets/ux-inline-ReviewSupplierAward.png"
+      ],
+      "videoUrl": "",
+      "categories": ["Productivity"]
+    },
+    "features": [
+      {
+        "title": "Zava Procurement Command Center",
+        "description": "Activates 22 evidence-led procurement Copilot Components and four connected workspaces.",
+        "id": "e4a0bf92-46e0-490b-b837-506a9de5d492",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/zava-procurement-command-center.sppkg"
+  }
+}

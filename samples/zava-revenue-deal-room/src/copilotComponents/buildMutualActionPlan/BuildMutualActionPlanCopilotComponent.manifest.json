@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "10891983-3442-4106-ac78-70e061280e0b",
+  "alias": "BuildMutualActionPlanCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "BuildMutualActionPlan",
+      "description": {
+        "default": "Use for buyer and seller close commitments. Do not use for internal task lists."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/buildMutualActionPlan/BuildMutualActionPlanCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}

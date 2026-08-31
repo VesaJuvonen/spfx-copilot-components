@@ -1,0 +1,3 @@
+import ProcurementCopilotComponentBase from '../../shared/ProcurementCopilotComponentBase';
+import type { IReviewSupplierQualificationCopilotComponentProperties } from './ReviewSupplierQualificationCopilotComponentProperties';
+export default class ReviewSupplierQualificationCopilotComponent extends ProcurementCopilotComponentBase<IReviewSupplierQualificationCopilotComponentProperties>{protected intentKey='ReviewSupplierQualification' as const;}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "01e6b1af-8340-447f-9554-8aa87b5bca97",
+  "alias": "TrackSupplierRiskCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": {
+    "availableDisplayModes": [
+      "inline",
+      "fullscreen"
+    ]
+  },
+  "tools": [
+    {
+      "name": "TrackSupplierRiskTool",
+      "description": {
+        "default": "Explore geographic and sub-tier supplier exposure."
+      },
+      "propertiesSchema": {
+        "id": "$../../../lib/copilotComponents/trackSupplierRisk/TrackSupplierRiskCopilotComponentProperties.js:default;"
+      }
+    }
+  ]
+}
