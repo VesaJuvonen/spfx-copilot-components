@@ -1,15 +1,68 @@
 # Zava Customer Resolution Center
 
 > [!IMPORTANT]
-> **Status: TO BE DONE - PRODUCT AND UX PLAN ONLY.** This folder is a pre-implementation specification
-> for review. Do not scaffold components, install dependencies, generate GUIDs, create sample metadata,
-> or add design/runtime assets until the product plan is approved and synchronized to GitHub.
+> **Status: OFFLINE SHOWCASE IMPLEMENTED - EXTERNAL GATES REMAIN.** All 20 operational Copilot
+> Components plus the capability explorer have immutable Yeoman-generated identities and one shared
+> React 18 bundle. A coherent 60-customer/500-case service graph, purpose-specific inline experiences,
+> four distinct dashboards, D3 chart/map geometry, persona media, publication automation, and package
+> audits are implemented. Authenticated tenant routing/host accessibility, localization/RTL completion,
+> and public media-rights approval remain explicit release gates.
 
 > **Planned sample type:** self-contained, offline-first SPFx Copilot Components showcase<br>
 > **Planned catalog:** 20 operational inline components + 1 capability explorer<br>
 > **Planned full-screen model:** 4 role-aware lenses in one shared application<br>
 > **Reference quality bar:** [Zava Innovation Hub](../zava-innovation-portfolio/README.md) and its
 > [agentic creation rules](../zava-innovation-portfolio/agentic-creation-rules.md)
+
+## Screenshots
+
+### Resolution Room
+
+![Resolution Room coordinates verified and contrary evidence with an editable resolution decision](assets/fullscreen-resolution-room.png)
+
+### Incident emergence
+
+![Incident emergence component showing a firmware-linked case cluster and contrary case](assets/inline-incident-emergence.png)
+
+### Service recovery
+
+![Service recovery component comparing authority, precedent, and expected customer outcome](assets/inline-service-recovery.png)
+
+Mobile and dark-mode evidence is available in
+[assets/fullscreen-resolution-room-mobile.png](assets/fullscreen-resolution-room-mobile.png) and
+[assets/fullscreen-resolution-room-dark.png](assets/fullscreen-resolution-room-dark.png).
+
+## Demo and review assets
+
+- [Zava-Customer-Resolution-4-Minute-Keynote.md](Zava-Customer-Resolution-4-Minute-Keynote.md)
+- [Zava-Customer-Resolution-10-Minute-Business-Demo.md](Zava-Customer-Resolution-10-Minute-Business-Demo.md)
+- [Zava-Customer-Resolution-5-Minute-Technical-Demo.md](Zava-Customer-Resolution-5-Minute-Technical-Demo.md)
+- [Zava-Customer-Resolution-Designer-Review.md](Zava-Customer-Resolution-Designer-Review.md)
+- [Zava-Customer-Resolution-Routing-Matrix.md](Zava-Customer-Resolution-Routing-Matrix.md)
+
+The tenant-free matrix renders all 21 tools at standard light, narrow light, and standard dark, plus
+all four dashboard defaults at keynote light, desktop dark, and mobile light. The current matrix has
+75 captures, zero runtime/overflow/image/chart failures, and 25 unique layout identities. Local evidence
+does not substitute for authenticated Workbench CSP, routing, iframe focus, forced-colors, or host
+screen-reader validation.
+
+## Build and deploy
+
+Prerequisites are Node.js 22.14 or later in the Node 22 line and an SPFx 1.24 Beta 3 compatible
+environment.
+
+```powershell
+npm ci
+npm run test
+npm run build
+```
+
+The ready-to-deploy offline package is
+[sharepoint/solution/zava-customer-resolution-center.sppkg](sharepoint/solution/zava-customer-resolution-center.sppkg).
+The validated package is 328,835 bytes with SHA-256
+`5a3a94d0cc7d5f374b1eaca0e69f7e364c28e48ddf3e3186aa2c7a7cc6a15984`. It contains one 514,197-byte
+hashed JavaScript asset, one current agent ZIP, five unique provenance-matched portraits, and 21
+Copilot Component definitions.
 
 ## Business story
 
@@ -78,6 +131,37 @@ Industry expectations inform scenario completeness; the sample proves an interac
 | Tell one connected story | A store activation issue becomes a case, resolution plan, expert swarm, incident, recovery decision, customer update, outcome, and knowledge article. |
 | Show premium domain UX | Case constellation, SLA consequence clock, resolution evidence canvas, recovery simulator, and incident emergence map are signature visuals. |
 
+## Plan review and implementation thesis
+
+The scenario is sufficiently understood to plan and prototype, but implementation begins only after
+the open decisions in `todo.md` are approved. The keynote thesis is narrower than the complete catalog:
+
+> **Copilot does not replace the service representative. It turns a fragmented customer exception into
+> a shared, inspectable resolution object that each role can safely advance.**
+
+The primary proof is Alpine House / `ZCR-1048`. One deterministic record must connect issue intake,
+entitlement, diagnostics, SLA consequence, expert work, incident scope, recovery authority, customer
+communication, confirmed outcome, and reusable knowledge. The audience should see state propagate
+between roles; a sequence of unrelated polished screens is not enough.
+
+The keynote cut is a focused six-beat journey: assemble the issue, challenge an inference, rebuild the
+resolution plan, reveal the incident pattern, compare and confirm recovery, then show the customer and
+operations outcome. The eight-interface choreography below is the extended business demo. The broader
+20-tool catalog proves product depth outside the main-stage path.
+
+Implementation must give equal weight to five concerns that are easy to under-specify:
+
+- **Trust grammar:** verified fact, deterministic calculation, inference, recommendation, human
+  decision, and session action remain visually and semantically distinct.
+- **State propagation:** each confirmed action changes a later role's useful state and Reset restores
+  one immutable seed graph.
+- **Internal/customer boundary:** internal diagnostics, commercial exposure, and specialist notes never
+  leak into customer-visible communication without an explicit reviewed transformation.
+- **Failure choreography:** stale evidence, partial source failure, permission limits, policy conflict,
+  bridge failure, and offline/session-only operation receive designed recovery paths.
+- **Demo resilience:** every live beat has deterministic setup, reset, expected route, timing, and a
+  screenshot fallback that tells the same story.
+
 ## End-to-end operating model
 
 | Phase | Business job | Agentic experience | Owning component |
@@ -100,12 +184,12 @@ Industry expectations inform scenario completeness; the sample proves an interac
 Full screen is one shared application with four stable lenses. It is not four apps and not a generic
 dashboard enlarged from inline.
 
-| Lens | Primary persona | First useful state | Decisions and work |
-| --- | --- | --- | --- |
-| **My Queue** | Amina Yusuf, senior service representative | Ranked cases, SLA pressure, customer sentiment, agent-prepared work, and current ownership. | Triage, select work, edit resolution plans, send updates, request recovery, verify outcomes. |
-| **Customer 360** | Megan Bowen, customer success manager | Account health, relationship timeline, products, open commitments, cases, adoption, and retention exposure. | Coordinate customer outcomes, inspect history, plan follow-up, and connect service to relationship health. |
-| **Resolution Room** | Pradeep Gupta, product specialist | One case with case constellation, evidence plan, diagnostic state, expert swarm, incident signal, and recovery consequence. | Diagnose, collaborate, test workaround, review incident, and complete complex resolution. |
-| **Service Operations** | Joni Sherman, VP Customer Operations | Demand and SLA health, incident patterns, quality, service recovery cost, regional performance, and systemic actions. | Intervene in risk, assign improvement, inspect incident response, and verify operational value. |
+| Lens | Persona and category benchmark | Decision question and data grain | Unique default and work | Must not become |
+| --- | --- | --- | --- | --- |
+| **My Queue** | Amina Yusuf, senior service representative; omni-channel agent workspace and skills-based queue patterns. | “What needs my judgment now?” Case and next-action grain. | Ranked cases beside one selected case, SLA consequence, prepared work, and a keyboard-efficient next action. Triage, plan, communicate, escalate, and verify. | A KPI dashboard or a miniature Resolution Room. |
+| **Customer 360** | Megan Bowen, customer success manager; relationship health, success planning, and commitment-management patterns. | “Why does this issue matter to the relationship?” Customer, goal, commitment, and interaction grain. | Relationship constellation, product adoption, service history, bilateral promises, sentiment movement, and retention exposure. Coordinate follow-up, recovery, and win-back. | A CRM field dump or a duplicate case timeline. |
+| **Resolution Room** | Pradeep Gupta, product specialist; major-case, diagnostic workbench, and collaborative swarm patterns. | “What is true, what should we try, and is it safe to act?” Evidence, hypothesis, plan-step, and incident-candidate grain. | Evidence canvas as the dominant workspace, coordinated with diagnostics, SLA consequence, experts, incident signal, and bounded action review. | A generic dashboard, chat transcript, or customer-profile page. |
+| **Service Operations** | Joni Sherman, VP Customer Operations; service operations command, incident, quality, and workforce patterns. | “Where will intervention prevent customer harm?” Cohort, queue, region, driver, and outcome grain. | Demand-to-resolution river, incident emergence, SLA distribution, recovery outcome/cost, capacity, quality, and named interventions. | Four KPI cards or an enlarged queue. |
 
 ### Lens behavior
 
@@ -252,6 +336,33 @@ Innovation Hub's venture-studio identity.
 - **Motion:** case links settle, SLA changes tick once, and plan dependencies reflow in 180-280 ms.
   Reduced motion renders the final state immediately. No perpetual pulse or fake agent waiting.
 
+### Reference adaptation and deliberate differences
+
+The named quality reference is [Zava Revenue Deal Room](../zava-revenue-deal-room/README.md). Its actual
+desktop, mobile, dark, inline, media, chart, and package evidence establishes the finish bar. Adapt its
+clear hierarchy, restrained elevation, portrait-backed accountability, exact-value D3 patterns,
+responsive reflow, owner-document theming, visual harness, and package audits.
+
+Do not copy its blue navigation rail, rainbow progress strip, paper-and-CRM composition, buying-committee
+orbit, commercial contour, close runway, forecast bridge, or repeated dashboard module arrangement.
+Customer Resolution needs its own recognizable grammar:
+
+- A light, calm service canvas with carbon framing, teal resolution paths, coral exception signals, and
+  citrus time/attention markers; dark mode is an equivalent state, not the default identity.
+- Time and causality run left to right. Customer language begins the flow; evidence, plan, authority,
+  promise, and outcome form a visible chain rather than a set of interchangeable panels.
+- The Resolution Room uses an unframed evidence canvas with a persistent SLA edge and bounded decision
+  dock. My Queue is dense and operational; Customer 360 is temporal and relational; Service Operations
+  is analytical and cohort-led.
+- Customer and colleague portraits appear only where identity changes empathy, ownership, expertise, or
+  approval. Product/site imagery and channel artifacts carry more visual weight than persona decoration.
+- Inline experiences use one decisive visual and one next action. Full screen adds coordinated context
+  and operations rather than enlarging the inline card.
+
+The first visual approval set is: inline resolution plan at 340 px and 760 px; desktop Resolution Room;
+mobile Resolution Room; dark Resolution Room; recovery review; incident emergence; and one designed
+partial-evidence/error state. No sibling component bodies scale out before these pixels pass review.
+
 | Decision question | Signature visual | Planned implementation |
 | --- | --- | --- |
 | What happened and why does it matter? | Case constellation across customer goals, interactions, products, cases, commitments, and sentiment | React SVG relationships with Fluent DOM timeline/table fallback. |
@@ -382,7 +493,8 @@ claimed by the front-end sample.
   `ReviewServiceRecovery`, and exact Resolution Room continuation at narrow and wide widths.
 - [ ] **Gate 4 - Connected hero:** complete Store launch rescue across personas, confirmations, receipts,
   and downstream updates.
-- [ ] **Gate 5 - Catalog:** generate and implement only the approved 13 immutable component identities;
+- [ ] **Gate 5 - Catalog:** generate and implement only the approved 20 operational component identities
+  plus `ExploreAgentCapabilities`;
   validate routing collisions and safe capability previews.
 - [ ] **Gate 6 - Quality:** tests, accessibility, localization/RTL, themes, responsive screenshots,
   source/media provenance, generated plugin, package audit, and clean offline rehearsal pass.
@@ -406,4 +518,7 @@ uses review, confirmation, and receipt; exact continuation preserves state; sign
 accessible exact-value alternatives; global, responsive, theme, and accessibility evidence passes; and
 an audited offline package deploys with no runtime data dependency.
 
-Until those gates are approved and completed, this sample remains **TO BE DONE**.
+Implementation status and validation evidence are tracked in [todo.md](todo.md) and
+[assets/release-evidence.json](assets/release-evidence.json). The local gate currently reports 19 tests,
+zero warnings, 75 visual captures, zero visual failures, 25 unique layout identities, one production
+bundle, and zero duplicate media. Local evidence does not claim authenticated host behavior.

@@ -1,15 +1,90 @@
-# Zava Procurement and Supplier Command Center
+# Zava Procurement Command Center
 
 > [!IMPORTANT]
-> **Status: TO BE DONE - PRODUCT AND UX PLAN ONLY.** This folder is a pre-implementation specification
-> for review. Do not scaffold components, install dependencies, generate GUIDs, create sample metadata,
-> or add design/runtime assets until this plan is approved and synchronized to GitHub.
+> **Status: IMPLEMENTED OFFLINE SHOWCASE.** The solution contains 21 operational Copilot Components,
+> one capability explorer, four connected full-screen workspaces, deterministic mock data, D3-derived
+> decision visuals, visual evidence, and an audited deployable SharePoint package. Runtime actions are
+> session-only demonstrations and never write to tenant or external systems.
 
-> **Planned sample type:** self-contained, offline-first SPFx Copilot Components showcase<br>
-> **Planned catalog:** 21 operational inline components + 1 capability explorer<br>
-> **Planned full-screen model:** 4 role-aware lenses in one shared spend application<br>
+> **Sample type:** self-contained, offline-first SPFx Copilot Components showcase<br>
+> **Catalog:** 21 operational inline components + 1 capability explorer<br>
+> **Full-screen model:** 4 role-aware lenses in one shared procurement application<br>
 > **Reference quality bar:** [Zava Innovation Hub](../zava-innovation-portfolio/README.md) and its
 > [agentic creation rules](../zava-innovation-portfolio/agentic-creation-rules.md)
+
+## Screenshots
+
+### Sourcing Workbench
+
+![Sourcing Workbench showing the total-value supplier landscape, evidence table, policy readiness, and award milestones](assets/ux-sourcing-workbench.png)
+
+### Reviewed split award
+
+![Inline supplier award review with an interactive split scenario, blended risk, timing confidence, and policy evidence](assets/ux-inline-ReviewSupplierAward.png)
+
+Additional captured states cover every inline tool, My Requests, Supplier 360, Spend Command, bid
+comparison, invoice reconciliation, 390 px mobile, and dark mode. Machine-readable hashes, layouts,
+runtime, overflow, label, chart, and focus results are in
+[assets/gallery-evidence.json](assets/gallery-evidence.json). Gallery publication metadata is in
+[assets/sample.json](assets/sample.json).
+
+## Implementation status
+
+- 22 immutable component identities generated through SharePoint Yeoman generator
+  `1.24.0-beta.3-55937989` and emitted in one shared React 18 bundle.
+- Deterministic graph scale: 220 requesters, 14 categories, 600 requests, 90 suppliers, and 18 sourcing
+  events centered on `ZPC-RFP-31` and invoice `ZPC-8831`.
+- Fluent UI v9 and owner-document Griffel theming with distinct My Requests, Sourcing Workbench,
+  Supplier 360, and Spend Command layouts in light, dark, desktop, and mobile states.
+- Focused D3 scale/shape geometry for supplier total value and spend-to-value flow, with keyboard
+  selection, accessible descriptions, visible legends, and exact table equivalents.
+- Six focused catalog, integrity, calculation, split-award, and changed-geometry tests pass.
+- Twenty-eight Playwright captures pass with zero browser runtime, overflow, button-label, layout, or
+  focus failures.
+- Audited [zava-procurement-command-center.sppkg](sharepoint/solution/zava-procurement-command-center.sppkg):
+  440,680 bytes, one shared JavaScript asset, one current agent ZIP, and 22 generated plugin functions.
+  See [assets/release-evidence.json](assets/release-evidence.json).
+
+Authenticated tenant validation remains required for Workbench CSP, iframe focus restoration,
+screen-reader host behavior, actual model routing, and Copilot bridge behavior. Public redistribution
+also requires final publisher and media-rights approval.
+
+## Minimal path to awesome
+
+1. Upload [sharepoint/solution/zava-procurement-command-center.sppkg](sharepoint/solution/zava-procurement-command-center.sppkg)
+   to a SharePoint app catalog and deploy it tenant-wide.
+2. Enable the packaged **Zava Procurement Command Center** agent in the target Microsoft 365 Copilot
+   environment.
+3. Start with: **“Compare the final rugged-device bids and show how risk changes the award.”**
+4. Expand to Sourcing Workbench, change the risk weight, inspect the exact table, and open the reviewed
+   65/35 award scenario.
+5. Use Reset between rehearsals. All included data and confirmed actions are offline/session-only mocks.
+
+## Build and validation
+
+Use Node.js 22.14-22.x and run:
+
+```bash
+npm ci
+npm run capture:visual
+npm run build
+```
+
+`npm run build` validates the 22-tool catalog, runs clean tests, creates a production bundle and
+`.sppkg`, validates the generated API plugin inside the current agent ZIP, and audits the package
+archive. `npm run capture:visual` rebuilds the tenant-free harness and publication evidence.
+
+## Demo and review assets
+
+- [4-minute keynote](Zava-Procurement-4-Minute-Keynote.md)
+- [10-minute business demo](Zava-Procurement-10-Minute-Business-Demo.md)
+- [5-minute technical demo](Zava-Procurement-5-Minute-Technical-Demo.md)
+- [Routing matrix](Zava-Procurement-Routing-Matrix.md)
+- [Designer and rehearsal review](Zava-Procurement-Designer-Review.md)
+- [PnP gallery metadata](assets/sample.json)
+
+The scripts include setup, deterministic story values, expected tool routing, human checkpoints,
+fallback screenshots, and explicit boundaries between local evidence and authenticated tenant proof.
 
 ## Business story
 
@@ -345,11 +420,12 @@ system-of-record responsibilities.
 
 ## Definition of done
 
-The future implementation is complete only when all 21 operational inline components are independently
-valuable; the capability explorer safely previews them; all four lenses have useful default states;
-the three hero scenarios run across one coherent graph; policy, normalized value, risk, sensitivity, and
-savings stages are inspectable; consequential actions use authority-aware review, confirmation, and
-receipt; exact continuation preserves context; global/accessibility evidence passes; and an audited
-offline package deploys without runtime data dependencies.
+The local showcase is complete when all 21 operational inline components and the capability explorer
+compile from immutable generated identities; all four lenses have distinct useful default states; the
+rugged-device scenarios run across one coherent graph; policy, normalized value, risk, sensitivity, and
+savings stages are inspectable; consequential actions stop for review and confirmation; visual evidence
+passes; and the audited offline package deploys without runtime data dependencies. Those local gates are
+met by the current package and evidence files.
 
-Until then, this sample remains **TO BE DONE**.
+GA publication still requires the external authenticated-tenant and publisher/media approvals listed
+under **Implementation status** and in [todo.md](todo.md).

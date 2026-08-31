@@ -1,15 +1,182 @@
 # Zava Revenue Deal Room
 
 > [!IMPORTANT]
-> **Status: TO BE DONE - PRODUCT AND UX PLAN ONLY.** This folder is a pre-implementation specification
-> for review. Do not scaffold components, install dependencies, generate GUIDs, create sample metadata,
-> or add design/runtime assets until this plan is approved and synchronized to GitHub.
+> **Ready-made package:** deploy
+> [zava-revenue-deal-room.sppkg](sharepoint/solution/zava-revenue-deal-room.sppkg) without building the
+> project. The experience is a deterministic offline showcase; confirmations and receipts do not write
+> to CRM, contact customers, approve terms, or change a production forecast.
 
-> **Planned sample type:** self-contained, offline-first SPFx Copilot Components showcase<br>
-> **Planned catalog:** 20 operational inline components + 1 capability explorer<br>
-> **Planned full-screen model:** 4 role-aware lenses in one shared revenue application<br>
+> **Sample type:** self-contained, offline-first SPFx Copilot Components showcase<br>
+> **Catalog:** 20 operational inline components + 1 capability explorer<br>
+> **Full-screen model:** 4 role-aware lenses in one shared revenue application<br>
 > **Reference quality bar:** [Zava Innovation Hub](../zava-innovation-portfolio/README.md) and its
 > [agentic creation rules](../zava-innovation-portfolio/agentic-creation-rules.md)
+
+## Summary
+
+Zava Revenue Deal Room demonstrates how an agent can become a precise system of action rather than a
+chat response or sales dashboard. Twenty independently routed operational tools and one capability
+explorer share a React 18 application, one connected Contoso revenue graph, four full-screen workspaces,
+and human-controlled review and confirmation patterns.
+
+The keynote path connects deal risk, buyer influence, mutual commitments, commercial simulation,
+exception governance, and forecast evidence for Contoso Global Expansion / `ZDR-2042`. Facts, seller
+judgment, stale records, contrary evidence, deterministic calculations, and inference remain visibly
+different throughout the journey.
+
+## Screenshots
+
+![Full-screen Deal Room coordinating buyer influence and evidence](assets/fullscreen-deal-room.png)
+
+![Commercial scenario with live value, margin, authority, and forecast calculations](assets/inline-commercial-scenario.png)
+
+![D3 projected global opportunity map with regional value and slip risk](assets/inline-global-opportunity-map.png)
+
+![Revenue Command with D3 pipeline, map, forecast bridge, and evidence](assets/fullscreen-revenue-command.png)
+
+![Deal Room adapted to a narrow mobile viewport](assets/fullscreen-deal-room-mobile.png)
+
+![Deal Room dark theme](assets/fullscreen-deal-room-dark.png)
+
+## Applies to
+
+- SharePoint Framework `1.24.0-beta.3-55937989`
+- Microsoft 365 Copilot declarative agents and Copilot Components preview
+- React `18.3.1`, Fluent UI v9 `9.74.6`, and Griffel `1.7.7`
+- Node.js `>=22.14.0 <23.0.0`
+
+## Minimal Path to Awesome
+
+1. Download and deploy [zava-revenue-deal-room.sppkg](sharepoint/solution/zava-revenue-deal-room.sppkg)
+   to the tenant app catalog.
+2. Approve deployment for all sites when prompted.
+3. Add the packaged **Zava Revenue Deal Room** agent in Microsoft 365 Copilot.
+4. Start with “Help me get Contoso's global expansion deal to signature this quarter.”
+
+To build locally:
+
+```powershell
+npm ci
+npm run build
+```
+
+Use `npm run capture:visual` to regenerate tenant-free publication screenshots and evidence.
+
+## Features
+
+- 21 immutable Yeoman-generated Copilot Component identities with unique GUIDs and tool schemas.
+- One shared production bundle for React, Fluent, Griffel, domain data, and all component entries.
+- Host-authoritative inline-to-full-screen expansion across My Deals, Deal Room, Commercial Desk, and
+  Revenue Command.
+- Buying-committee influence orbit, mutual-action close runway, evidence ledger, commercial outcome
+  contour, and evidence-led forecast review.
+- D3-derived commercial curves, pipeline scales, signed forecast-waterfall geometry, and an offline
+  Natural Earth/TopoJSON opportunity map with selectable regional signals and exact-value tables.
+- Coordinated visualization-first dashboards across My Deals, Deal Room, Commercial Desk, and Revenue
+  Command; chart-appropriate inline tools reuse the same D3 data products at conversational width.
+- Four purpose-built full-screen operating models aligned with enterprise sales-platform expectations:
+  My Deals prioritizes seller actions and customer moments; Deal Room coordinates buyer influence,
+  evidence, commitments, and win strategy; Commercial Desk joins live offer economics to exception
+  authority and policy; Revenue Command connects aggregate pipeline, forecast movement, geography, and
+  named leadership interventions.
+- Seven bundled Microsoft 365 demo persona portraits across headers, deal-team identity, stakeholder
+  nodes, evidence sources, and commitment owners, with initials retained as the runtime fallback.
+- Material commercial controls that recalculate contract value, annual recurring revenue, gross margin,
+  approval authority, and weighted forecast.
+- Review and submit workflows with Draft/Evidence, Review/Decision, Confirm, Receipt, Edit, and Reset.
+- Bounded model-context snapshots and explicit user-triggered Copilot follow-up actions.
+- Searchable capability explorer covering all 20 operational scenarios without advertising itself.
+- Deterministic offline graph with 80 accounts, 260 contacts, 120 opportunities, connected Contoso
+  evidence, and no runtime data or profile-photo requests.
+- Owner-document Griffel rendering, light/dark themes, reduced motion, responsive navigation, semantic
+  status colors, SVG descriptions, and text equivalents.
+
+## Validation status
+
+The 31 August 2026 clean production gate completed with zero TypeScript or lint warnings:
+
+- 21 components, 21 unique GUIDs, 21 unique tools, and one shared bundle.
+- 6 deterministic domain/D3 geometry tests passed; 0 failed.
+- 13 Playwright visual captures passed with 0 runtime, broken-image, or horizontal-overflow failures.
+- 7 runtime portraits and 7 source copies passed SHA-256 provenance checks; the final package contains
+  7 unique hashed media assets and 0 duplicate media binaries.
+- Generated API plugin v2.4 contains 21 functions; `name_for_human` length is 17.
+- Final `.sppkg`: 341,417 bytes; one 398,994-byte hashed production JavaScript asset; 0 stale assets;
+  one embedded current agent package.
+- `.sppkg` SHA-256: `2B9898398850D0F0C7821469D79C0D3B33FF2F949E4A4305852CD1EA0F032E52`.
+- Agent ZIP SHA-256: `680744C396D7133CAA697D29B64FB7E37F86CDF9976D7B1CDC1B514618354B5A`.
+
+Persona files are byte-identical to the standard demo-persona media used by the reference Zava sample.
+Hashes, source-copy paths, and intended uses are recorded in
+[assets/asset-provenance.json](assets/asset-provenance.json). Public redistribution remains subject to
+final media-rights review; this status is enforced by `npm run check:media`.
+
+Tenant-authenticated Workbench CSP, host focus restoration, bridge routing, forced colors, and screen
+reader output remain environment-specific validation gates and are not claimed from the local harness.
+
+## Solution structure
+
+```text
+src/copilotComponents/    21 final Yeoman-generated identities and schemas
+src/shared/               catalog, deterministic domain, React host, theme, and experiences
+scripts/                  catalog, visual evidence, gallery, plugin, and package automation
+assets/                   publication screenshots, evidence, and PnP sample metadata
+copilot/                  declarative agent, plugin, instructions, and icons
+sharepoint/solution/      ready-to-deploy production package
+```
+
+## Demo and review assets
+
+- [4-minute keynote](Zava-Revenue-Deal-Room-4-Minute-Keynote.md) - the focused Microsoft stage story
+  from buyer influence through commercial judgment and forecast evidence.
+- [10-minute business demo](Zava-Revenue-Deal-Room-10-Minute-Business-Demo.md) - the broader cross-role
+  revenue journey with guardrails and current implementation boundaries.
+- [5-minute technical demo](Zava-Revenue-Deal-Room-5-Minute-Technical-Demo.md) - immutable catalog,
+  React 18 host, D3 geometry, offline map, evidence, and package gates.
+- [Designer and rehearsal review](Zava-Revenue-Deal-Room-Designer-Review.md) - visual language,
+  interaction/accessibility checks, screenshot acceptance, and fallback path.
+- [Routing matrix](Zava-Revenue-Deal-Room-Routing-Matrix.md) - 21 tool boundaries, six canonical
+  starters, five sibling-collision rehearsals, and tenant validation notes.
+- [Release evidence](assets/release-evidence.json) - generated package, bundle, media, visual, and hash
+  evidence. Run `npm run generate:release-evidence` only after the final package build.
+
+## Maintenance and extension
+
+To add or change an operational capability, update the typed catalog and the supported final-named
+component schema, then run `npm run configure:intents`, `npm run generate:routing-matrix`, the focused
+tests, `npm run capture:visual`, and `npm run build`. Capability Explorer reads the same catalog; do not
+maintain a second scenario list in its React UI.
+
+The sample currently calculates commercial value, gross margin, weighted forecast, D3 commercial
+curves, evidence-weighted pipeline bars, forecast movement, and regional opportunity marks from
+deterministic local data. These are showcase calculations, not pricing, revenue-recognition, legal, or
+forecasting advice. Live CRM, Microsoft Graph, CPQ, pricing-policy, workflow, approval, and e-signature
+implementations remain deferred behind the service boundaries described below.
+
+## Outcome and telemetry plan
+
+The offline sample emits no telemetry. A production implementation should measure bounded outcomes
+without capturing customer content: intended-tool routing success, property extraction completeness,
+time to first useful state, Expand continuation success, control use, validation recovery, explicit
+confirmation completion, bridge rejection, and abandonment. Review these signals by scenario and host
+mode; never use inferred sentiment or relationship strength as employee-performance telemetry.
+
+## Limitations and support
+
+- Tenant-authenticated model routing, Workbench CSP, iframe focus, forced colors, and screen-reader host
+  output require a Microsoft 365 test tenant and remain external validation gates.
+- Secondary catalog tools share the polished operation host, but complete purpose-specific lifecycle
+  depth for every one of the 20 operational intents remains tracked in [todo.md](todo.md).
+- Persona redistribution is pending final media-rights review as recorded in
+  [assets/asset-provenance.json](assets/asset-provenance.json).
+- For sample issues, use the repository issue tracker and include the component name, prompt, host mode,
+  browser, screenshot, and whether the problem reproduces in the tenant-free harness.
+
+## Version history
+
+| Version | Date | Notes |
+| --- | --- | --- |
+| 1.0.0 | 2026-08-31 | Initial GitHub candidate with 21 tools, four visualization-led workspaces, D3 charts/map, persona media, demo scripts, publication evidence, and audited `.sppkg`. |
 
 ## Business story
 
@@ -340,4 +507,5 @@ commercial and forecast math is inspectable; consequential actions use human rev
 receipt; exact continuation preserves context; accessible/global evidence passes; and an audited offline
 package deploys without runtime data dependencies.
 
-Until then, this sample remains **TO BE DONE**.
+The local implementation and audited package are complete. Tenant-host checks remain explicitly
+separate because they require an authenticated Microsoft 365 environment.
