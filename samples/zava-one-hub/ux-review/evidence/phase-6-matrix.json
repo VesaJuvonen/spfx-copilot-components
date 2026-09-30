@@ -73,11 +73,15 @@
     "releaseReadinessDocumented": true,
     "sampleMetadataPresent": true,
     "readmeTrackerValid": true,
-    "fullscreenShellUsesHostHeightOrFixedEdges": true,
-    "fullscreenLocalViewportHeight": 720,
+    "fullscreenShellUsesHostHeightOrMeasuredFlow": true,
+    "fullscreenConstrainedViewportHeight": 500,
     "fullscreenLocalShellHeight": 720,
+    "fullscreenLocalRootScrollHeight": 720,
+    "fullscreenLocalBodyScrollHeight": 720,
     "fullscreenWorkbenchViewportHeight": 1041,
     "fullscreenWorkbenchShellHeight": 1041,
+    "fullscreenWorkbenchShellPosition": "static",
+    "fullscreenWorkbenchBodyScrollHeight": 1041,
     "sppkgAppManifestVersion": "1.0.0.1",
     "sppkgFeatureVersion": "1.0.0.1",
     "chartScopeChangesGeometry": true,
@@ -110,8 +114,8 @@
     { "path": "assets/screenshot-vacation-updated-list.png", "width": 1600, "height": 860, "bytes": 26729, "sha256": "7041f2382dfcd695c325abd0f4afc6314e4e397ffd3f395ae7b1f649a21feec7" }
   ],
   "artifacts": [
-    { "path": "sharepoint/solution/zava-one-hub.sppkg", "bytes": 6359101, "sha256": "bf65593051eccc8695d161b33f5913b6f193290754d62a9c002235546d013fd3" },
-    { "path": "teams/zava-one.zip", "bytes": 10263, "sha256": "7e897b19a6c976813f46254ae4ba0b1476da4139a4a498f328468e8b7ed82616" }
+    { "path": "sharepoint/solution/zava-one-hub.sppkg", "bytes": 6359311, "sha256": "afd1073b73a07341ff9b92ce183b35cddd72c94ab279f87b00c5e52cc429b285" },
+    { "path": "teams/zava-one.zip", "bytes": 10263, "sha256": "809542332580ee3b76e25fb4750a5dd0f9307bb1a102472aa40359ef26cafd7a" }
   ],
   "externalGate": "Tenant-authenticated modern SharePoint and Teams chrome, CSP, iframe focus, and screen-reader host checks are not complete."
 }

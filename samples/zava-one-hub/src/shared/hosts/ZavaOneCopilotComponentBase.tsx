@@ -13,16 +13,21 @@ export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopil
   private _lastRequestedSize: { width: number; height: number } | undefined;
 
   private async _requestCurrentSizeAsync(): Promise<void> {
-    if (this.hostContext.displayMode === 'fullscreen') return;
     const root = this.context.domElement;
     const view = root.ownerDocument.defaultView;
     if (!view) return;
     await new Promise<void>((resolve) => view.requestAnimationFrame(() => resolve()));
+    const fullscreen = this.hostContext.displayMode === 'fullscreen';
+    const hostDimensions = this.hostContext.containerDimensions;
     const content = root.querySelector<HTMLElement>('[data-layout]');
     const contentRect = content?.getBoundingClientRect();
     const rootRect = root.getBoundingClientRect();
-    const width = Math.ceil(this.hostContext.containerDimensions?.width || root.clientWidth || contentRect?.width || 0);
-    const height = Math.ceil(Math.max(content?.scrollHeight || 0, contentRect ? contentRect.bottom - rootRect.top : 0) + 2);
+    const currentViewportHeight = Math.max(view.visualViewport?.height || 0, view.innerHeight || 0, root.ownerDocument.documentElement.clientHeight || 0, root.clientHeight || 0);
+    const fallbackFullscreenHeight = Math.max(720, Math.min((view.screen?.availHeight || 880) - 120, 1200));
+    const width = Math.ceil(hostDimensions?.width || hostDimensions?.maxWidth || root.clientWidth || contentRect?.width || view.innerWidth || 0);
+    const height = fullscreen
+      ? Math.ceil(hostDimensions?.height || hostDimensions?.maxHeight || (currentViewportHeight >= 720 ? currentViewportHeight : fallbackFullscreenHeight))
+      : Math.ceil(Math.max(content?.scrollHeight || 0, contentRect ? contentRect.bottom - rootRect.top : 0) + 2);
     if (width <= 0 || height <= 0) return;
     if (this._lastRequestedSize && Math.abs(this._lastRequestedSize.width - width) <= 1 && Math.abs(this._lastRequestedSize.height - height) <= 1) return;
     if (await this.requestSizeChangeAsync(width, height)) this._lastRequestedSize = { width, height };
@@ -47,7 +52,10 @@ export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopil
       toolProperties: this.properties as unknown as Readonly<Record<string, unknown>>,
       requestFullscreen: async (): Promise<void> => {
         if ((this.hostContext.availableDisplayModes || []).indexOf('fullscreen') >= 0) {
-          await this.requestDisplayModeAsync('fullscreen');
+          const result = await this.requestDisplayModeAsync('fullscreen');
+          if (result.mode === 'fullscreen') {
+            await this._requestCurrentSizeAsync();
+          }
         }
       },
       requestResize: async (): Promise<void> => this._requestCurrentSizeAsync(),

@@ -47,7 +47,7 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
   React.useEffect(() => {
     const view = props.targetDocument.defaultView;
     const body = props.targetDocument.body;
-    if (!view || !body || !props.requestResize || props.displayMode === 'fullscreen') return undefined;
+    if (!view || !body || !props.requestResize) return undefined;
 
     let animationFrame = 0;
     let trailingTimer = 0;
@@ -59,6 +59,17 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
         trailingTimer = view.setTimeout(() => props.requestResize?.().catch(() => undefined), 240);
       });
     };
+    if (props.displayMode === 'fullscreen') {
+      scheduleResize();
+      view.addEventListener('resize', scheduleResize);
+      view.visualViewport?.addEventListener('resize', scheduleResize);
+      return () => {
+        view.cancelAnimationFrame(animationFrame);
+        view.clearTimeout(trailingTimer);
+        view.removeEventListener('resize', scheduleResize);
+        view.visualViewport?.removeEventListener('resize', scheduleResize);
+      };
+    }
     const resizeObserver = new view.ResizeObserver(scheduleResize);
     const mutationObserver = new view.MutationObserver(scheduleResize);
     resizeObserver.observe(body);
