@@ -28,7 +28,7 @@ The same shared React capability powers:
 
 ![Explore Zava One capability explorer](./assets/preview.png)
 
-> **Current status:** the first-submission candidate is locally validated with 25 passing tests, 39
+> **Current status:** the first-submission candidate is locally validated with 29 passing tests, 39
 > settled experience screenshots, required gallery metadata, and a committed production SPPKG.
 > Tenant-authenticated modern SharePoint/Teams chrome and complete host accessibility validation are
 > still required. SPFx 1.24 beta.5 Copilot Components remain preview technology and are not presented
@@ -232,7 +232,7 @@ embedded module so keynote rendering remains offline.
 | Copilot Workbench | 37/37 Ready baseline; 8/8 changed Personal workflows revalidated |
 | Complete screenshot gallery | 39 PNGs |
 | Bundled media | 28 provenance-checked assets |
-| Production package | `6,358,790` bytes / 169 entries |
+| Production package | `6,358,921` bytes / 169 entries |
 | Publication gallery | `assets/sample.json` / 12 reviewed complete-content PNGs |
 
 See [`phase-6-matrix.json`](./ux-review/evidence/phase-6-matrix.json),

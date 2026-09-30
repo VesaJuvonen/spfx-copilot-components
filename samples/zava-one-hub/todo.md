@@ -18,7 +18,7 @@ by [agentic-creation-rules.md](agentic-creation-rules.md).
 > layouts, zero runtime/overflow/image failures, 39 settled experience screenshots, and 12 reviewed
 > publication images referenced by `assets/sample.json`. Twenty-nine Jest tests, 28-media provenance,
 > six conversation starters with Capability Explorer last, plugin validation, and the final
-> 6,358,790-byte `.sppkg` audit pass. Evidence is in `ux-review/evidence/phase-6-matrix.json`. All 37
+> 6,358,921-byte `.sppkg` audit pass. Evidence is in `ux-review/evidence/phase-6-matrix.json`. All 37
 > Workbench components reached Ready. Authenticated modern SharePoint/Teams chrome, tenant-host
 > accessibility, and deeper per-capability edge-state acceptance remain external or post-submission gates.
 
@@ -834,7 +834,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 - [ ] Complete the full-gallery multimodal/human review for repetition, density, crop, alignment,
   contrast, and keynote readability; representative Company/C06/C27/C34/C35 pixels are already reviewed.
 - [x] Validate bundle/media duplication and measured package thresholds before proceeding: two host-specific
-  bundles, 28 media assets, and a 6,358,790-byte `.sppkg`.
+  bundles, 28 media assets, and a 6,358,921-byte `.sppkg`.
 
 ## Phase 7 - Configuration Impact and Showcase Polish
 
