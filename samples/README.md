@@ -21,6 +21,7 @@ This folder contains SPFx Copilot component samples. Each sample lives in its ow
 | Work IQ Answers | [`work-iq-answers`](./work-iq-answers) |
 | Zava AI Project Portfolio Agent | [`zava-project-tracker`](./zava-project-tracker) |
 | Zava Employee Agent | [`zava-employee-agent`](./zava-employee-agent) |
+| Zava One Employee Experience Hub | [`zava-one-hub`](./zava-one-hub) |
 | Zava Retail Store | [`zava-retail-store`](./zava-retail-store) |
 
 ## Contributing a sample
