@@ -475,7 +475,7 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     width: '100%',
     minHeight: 0,
-    overflow: 'hidden',
+    overflow: 'visible',
     boxSizing: 'border-box',
     backgroundColor: tokens.colorNeutralBackground2
   },
@@ -532,13 +532,10 @@ const useStyles = makeStyles({
     borderBottomColor: tokens.colorBrandStroke1
   },
   canvas: {
-    flexGrow: 1,
+    flexGrow: 0,
     minHeight: 0,
     width: '100%',
-    overflowX: 'hidden',
-    overflowY: 'auto',
-    scrollbarGutter: 'stable',
-    overscrollBehaviorY: 'contain'
+    overflow: 'visible'
   },
   canvasInner: {
     width: 'min(100%, 1680px)',
@@ -1185,11 +1182,7 @@ function WorkspaceFocusedExperience(props: IZavaExperienceProps): React.ReactEle
 export function ZavaOneWorkspace(props: IZavaExperienceProps): React.ReactElement {
   const styles = useStyles();
   const mode = props.workspaceMode || 'combined';
-  const workspaceStyle: React.CSSProperties = props.displayMode === 'fullscreen'
-    ? props.containerHeight && props.containerHeight > 0
-      ? { height: `${props.containerHeight}px`, minHeight: `${props.containerHeight}px`, maxHeight: `${props.containerHeight}px` }
-      : { height: '100dvh', minHeight: '100dvh', maxHeight: '100dvh' }
-    : { height: '100dvh', maxHeight: '100dvh' };
+  const workspaceStyle: React.CSSProperties = { minHeight: '100dvh' };
   const intentTab: ZavaWorkspaceTab = getCapabilityByIntent(props.intent)?.tab || 'company';
   const [activeTab, setActiveTab] = React.useState<ZavaWorkspaceTab>(mode === 'company' ? 'company' : mode === 'personal' ? 'personal' : props.primaryView === 'personal' ? 'personal' : intentTab);
   const [personalEditMode, setPersonalEditMode] = React.useState(false);
