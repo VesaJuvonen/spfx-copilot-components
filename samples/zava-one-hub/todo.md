@@ -624,9 +624,9 @@ or authenticated-host evidence does not yet exist; they are not silently treated
   cleanup, keyboard/focus, reduced motion, dark mode, forced colors, 200% zoom, and no network calls.
 - [x] Render each reference feature locally through shared web-part/Copilot/workspace React paths,
   including all three fixed/combined workspace modes, with 39 settled screenshots.
-- [x] Prevent zero-height MCP full-screen wrappers: keep the workspace in document flow, request size
-  after the display-mode transition, prefer advertised host `height`/`maxHeight`, and expose a 720px
-  measurable root/body bootstrap when the incoming iframe viewport is only 500px.
+- [x] Prevent zero-height and nested-scroll MCP full-screen wrappers: render the workspace in natural
+  document flow, keep the header/tabs/content in one page, and let the MCP/Copilot document own the
+  single scrollbar without custom iframe-height negotiation.
 - [ ] Verify the same reference features in actual SharePoint web parts, Teams personal/channel hosts,
   and Copilot Workbench; local harness evidence does not prove authenticated host behavior.
 - [x] Assert feature web-part manifests are SharePoint-only, exactly three web parts are Teams-enabled,
@@ -802,7 +802,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 - [x] Move Personalize from the My Day hero into the Personal bar as `Edit layout | Personalize` with
   edit/settings icons, responsive icon-only controls, and no connected-experience count label.
 - [x] Reuse the My Day full-screen side-rail model for Plan My Day and Personalize: 380px sibling panel,
-  no modal backdrop, 250ms slide-in, independently scrolling main canvas, 800ms planning pause, and
+  no modal backdrop, 250ms slide-in, host-owned page scrolling, 800ms planning pause, and
   220ms streamed focus recommendations. Preserve this subtle keynote sequence in Workbench even when
   its embedded browser reports reduced motion, so the planning state is not skipped during the demo.
 - [x] Give all 18 Personal Copilot components one shared top-right Expand control: icon + text when the
