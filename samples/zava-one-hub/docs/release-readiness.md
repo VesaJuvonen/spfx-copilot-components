@@ -76,7 +76,7 @@ git diff --check
 
 Stop `npm start` before a clean build. The current evidence records:
 
-- 25 tests passed, zero failed;
+- 29 tests passed, zero failed;
 - 35 capability pairs and 75 unique SPFx component GUIDs;
 - 37 unique generated plugin functions and six conversation starters;
 - two host-specific bundles and 28 provenance-checked media assets;

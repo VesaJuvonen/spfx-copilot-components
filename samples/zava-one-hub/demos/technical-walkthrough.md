@@ -61,7 +61,7 @@ npm ci
 npm run build
 ```
 
-The current gate verifies 25 tests, 37 plugin functions, 39 experience screenshots, two bundles,
+The current gate verifies 29 tests, 37 plugin functions, 39 experience screenshots, two bundles,
 28 media assets, and the final SPPKG. See
 [`docs/release-readiness.md`](../docs/release-readiness.md) and
 [`phase-6-matrix.json`](../ux-review/evidence/phase-6-matrix.json).

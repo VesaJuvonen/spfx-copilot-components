@@ -16,9 +16,9 @@ by [agentic-creation-rules.md](agentic-creation-rules.md).
 > two Copilot infrastructure entries bring the solution to 75 unique SPFx component GUIDs and 37
 > generated plugin functions in two host-specific bundles. The local harness has 35 unique inline
 > layouts, zero runtime/overflow/image failures, 39 settled experience screenshots, and 12 reviewed
-> publication images referenced by `assets/sample.json`. Twenty-five Jest tests, 28-media provenance,
+> publication images referenced by `assets/sample.json`. Twenty-nine Jest tests, 28-media provenance,
 > six conversation starters with Capability Explorer last, plugin validation, and the final
-> 6,357,899-byte `.sppkg` audit pass. Evidence is in `ux-review/evidence/phase-6-matrix.json`. All 37
+> 6,358,790-byte `.sppkg` audit pass. Evidence is in `ux-review/evidence/phase-6-matrix.json`. All 37
 > Workbench components reached Ready. Authenticated modern SharePoint/Teams chrome, tenant-host
 > accessibility, and deeper per-capability edge-state acceptance remain external or post-submission gates.
 
@@ -362,6 +362,21 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
 
 ## Phase 1 - G0 Baseline and Automation
 
+### Phase 1-6 approval audit - September 30, 2026
+
+| Phase | Verified approval baseline | Remaining local hardening | External/deferred gate |
+| --- | --- | --- | --- |
+| 1 | Exact beta.5/React 18 pins, host generation, React lifecycle, collision, publication, and release-evidence validators | None for the fixture-sample baseline | Production-supported SPFx decision remains separate |
+| 2 | Connected typed fixtures, stable identities, deterministic session state, IANA clock tests, and no runtime network/write path | Provider interfaces, exhaustive source/edge-state contracts, focal points, normalization, and Card Stage focus/motion | Live provider mapping, permissions, retention, and source ownership |
+| 3 | Shared host adapters, six Company News layouts, reference read/submit/review flows, error fallback, bridge baseline, and complete C35 desktop flow | Continuation/focus matrices, specialist edge states, read-only previews, and C16/C30 canonical projections | Authenticated Teams, SharePoint page, and Copilot host validation |
+| 4 | Purpose-built Company portal, charts, map/list equivalence, and deterministic IANA office clocks | Domain edge fixtures, typed cross-routes, and the full responsive/theme visual matrix | Authorization-aware goals, licensed market behavior, and source handoffs |
+| 5 | Personal portal and all Personal capability baselines | C01 compositional read models, rollback/undo, ambiguity, and per-intent error matrices | Secure source handoff and step-up authentication |
+| 6 | All specialist pairs, property authoring catalog, unique layouts, screenshots, packages, and local smoke evidence | Specialist edge-state/source contracts and complete multimodal review | Live modern-page Top Actions and tenant-host acceptance |
+
+**Approval stance:** the deterministic fixture sample is locally ready for code/product review. Open
+checkboxes below are intentionally retained where exhaustive edge-state, live-provider, accessibility,
+or authenticated-host evidence does not yet exist; they are not silently treated as complete.
+
 ### Reproducible beta.5 bootstrap
 
 - [x] Resolve `@microsoft/generator-sharepoint@1.24.0-beta.5` metadata and integrity with normal TLS;
@@ -403,11 +418,11 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
   a Teams-enabled web part outside the three approved workspace identities, duplicate workspace mode,
   fixed mode that renders the Company/Personal tab control, or Copilot full-screen route that bypasses
   `ZavaOneWorkspace`.
-- [ ] Add `scripts/validate-react-baseline.mjs` for beta.5 pins, React roots/lifecycle, imports, and
+- [x] Add `scripts/validate-react-baseline.mjs` for beta.5 pins, React roots/lifecycle, imports, and
   unexpected application React copies.
 - [x] Add generated-plugin, package-output, full-gallery visual evidence, media-provenance, and
   deterministic embedded-media validators.
-- [ ] Add dedicated publication, routing-collision-matrix, and generated release-evidence validators
+- [x] Add dedicated publication, routing-collision-matrix, and generated release-evidence validators
   before Phase 8 publication sign-off.
 - [x] Add the tenant-free `ux-review/` harness, server, screenshot capture, and machine-readable
   evidence pipeline before feature scale-out.
@@ -420,7 +435,7 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
 
 - [x] `npm ci`, `npm ls`, catalog/host/media/visual validators, clean tests, production build,
   generated-plugin validation, and package audit pass with zero warnings/errors.
-- [ ] Add and pass the dedicated React-baseline and routing-collision validators before the Phase 8
+- [x] Add and pass the dedicated React-baseline and routing-collision validators before the Phase 8
   release gate; current dependency-tree and generated-host checks cover the implemented baseline.
 - [x] Save the G0 receipt and update the Progress block with measured versions and artifact counts.
 
@@ -467,7 +482,8 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
   once, record hashes in the media catalog, and verify no external image request or broken fallback.
 - [x] Add focused data-integrity tests for persona IDs, portrait references, news authors/media,
   learning IDs, catalog uniqueness, C35 decision/reset behavior, and Personal workflow fixture rules
-  for business days, approval identity, equity estimates, room capacity, and IT issue scope (19 tests passing).
+  for business days, approval identity, equity estimates, room capacity, and IT issue scope (covered by
+  the current 29-test suite).
 - [ ] Extend integrity tests to C16/C30 cross-capability vacation projections and every specialist
   source contract before those deep acceptance gates close.
 
@@ -493,7 +509,8 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
 
 - [x] Test current catalog/persona/news/learning/vacation stable IDs, references, counts, uniqueness,
   C35 decision rules, reset, and deterministic fixture output.
-- [ ] Extend tests to all time-zone/DST, money/unit, source-freshness, sorting, access-trimming, and
+- [x] Test the injected deterministic office instant across IANA-zone UTC rollover and winter/summer DST.
+- [ ] Extend tests to all money/unit, source-freshness, sorting, access-trimming, and remaining
   specialist-calculation contracts.
 - [x] Assert no runtime network call or external write in fixture mode and no switch to fixtures after a
   live-adapter error.
@@ -515,8 +532,10 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
   display names, icons, personal scope, and channel/team tab scope; prove each loads its fixed mode.
 - [x] Implement persistent React 18 roots, complete teardown, owner-document Griffel renderer, one
   Fluent provider, resolved-current-user fallback, and host-derived state.
-- [ ] Add a shared React error boundary and prove abortable asynchronous effect cleanup under host
-  rerenders; current fixture rendering is synchronous.
+- [x] Add a shared React error boundary with a safe no-submit fallback, retry action, and route/theme
+  reset key around every focused and workspace experience.
+- [ ] Prove abortable asynchronous effect cleanup under host rerenders when live asynchronous providers
+  are introduced; current fixture rendering is synchronous.
 - [x] Implement the two-tab shell, typed route focus, neutral launch, responsive canvas, and
   host-owned expansion/collapse behavior.
 - [ ] Complete exact transient-state continuation, settings location, and focus restoration for every
@@ -532,7 +551,7 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
 - [x] Generate the C06 pair: `CompanyNewsWebPart` with publisher configuration and
   `ShowCompanyNews` with optional useful intent filters only.
 - [x] Implement one focused inline news answer and exact expansion to Company / News.
-- [ ] Implement Editorial, Hero tiles, Layers, Carousel, Filmstrip, and Compact list over the same
+- [x] Implement Editorial, Hero tiles, Layers, Carousel, Filmstrip, and Compact list over the same
   authorized ordered records; no autoplay in the first build.
 - [ ] Implement `complete`, `lead`, and `supporting` SharePoint web-part presentations and verify the
   publisher-composed lead/events/supporting narrow order with C10 placeholder content.
@@ -647,8 +666,9 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
   continuation.
 - [x] Implement an offline projected world map with approved bundled geography, keyboard/touch markers,
   nonoverlapping dense-site selection, equivalent 44px office-list targets, and selected detail.
-- [ ] Compute clocks from injected instants and IANA zones for Los Angeles, Helsinki, and Singapore;
-  test UTC midnight/DST, stop updates when hidden/unmounted, and avoid repeated announcements.
+- [x] Compute clocks from an injected deterministic instant and IANA zones for Los Angeles, New York,
+  London, Helsinki, and Singapore; test UTC midnight/DST. Fixture clocks schedule no updates or repeated
+  announcements, so hidden/unmounted cleanup is not required until live clocks are enabled.
 - [ ] Connect typed routes to C21, C22, and C24; show an explicit unavailable destination until those
   capabilities are implemented.
 
@@ -758,7 +778,7 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
   pin the package directly, rerender immediately on changes, and open the property pane from Advanced
   settings. Fixed Company/Personal workspaces do not expose a start-tab switch.
 - [x] Assert all 35 profiles are complete and reject page-author properties in the packaged 37-function
-  Copilot plugin; 19 tests pass and the generated plugin validator confirms the boundary.
+  Copilot plugin; the current 29 tests pass and the generated plugin validator confirms the boundary.
 - [x] Brand the agent as Zava One with deterministic manifest-safe icons: 192x192 white Z on Zava blue
   for `color.png`, and a padded white Z on a transparent 32x32 canvas for `outline.png`. Validate exact
   source-to-ZIP bytes, icon paths, display names, and `#075FCE` accent color during every build.
@@ -814,7 +834,7 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
 - [ ] Complete the full-gallery multimodal/human review for repetition, density, crop, alignment,
   contrast, and keynote readability; representative Company/C06/C27/C34/C35 pixels are already reviewed.
 - [x] Validate bundle/media duplication and measured package thresholds before proceeding: two host-specific
-  bundles, 28 media assets, and a 6,357,899-byte `.sppkg`.
+  bundles, 28 media assets, and a 6,358,790-byte `.sppkg`.
 
 ## Phase 7 - Configuration Impact and Showcase Polish
 

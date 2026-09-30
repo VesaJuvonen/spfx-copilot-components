@@ -5,13 +5,14 @@ import type { GeometryObject, Topology } from 'topojson-specification';
 import worldTopologyJson from 'world-atlas/countries-110m.json';
 import { Button, makeStyles, tokens } from '@fluentui/react-components';
 import { Location24Filled } from '@fluentui/react-icons';
+import { formatOfficeTime, OFFICE_DEMO_INSTANT } from '../utils/officeTime';
 
 const offices = [
-  { id: 'los-angeles', name: 'Los Angeles', region: 'North America', time: '07:40 PDT', coordinates: [-118.2437, 34.0522] as [number, number], detail: 'Customer studio / 555 Flower Street', people: 420, status: 'Open', amenities: 'Visitor center / Studio / Café' },
-  { id: 'new-york', name: 'New York', region: 'North America', time: '10:40 EDT', coordinates: [-74.006, 40.7128] as [number, number], detail: 'Commercial hub / 11 Madison Avenue', people: 610, status: 'Open', amenities: 'Customer rooms / Wellness / Café' },
-  { id: 'london', name: 'London', region: 'Europe', time: '15:40 BST', coordinates: [-0.1276, 51.5072] as [number, number], detail: 'EMEA operations / 2 Kingdom Street', people: 530, status: 'Open', amenities: 'Town hall / Quiet floor / Café' },
-  { id: 'helsinki', name: 'Helsinki', region: 'Europe', time: '17:40 EEST', coordinates: [24.9384, 60.1699] as [number, number], detail: 'Accessibility innovation lab / Aleksanterinkatu 15', people: 280, status: 'Tours Thursday', amenities: 'Innovation lab / Sauna / Café' },
-  { id: 'singapore', name: 'Singapore', region: 'Asia Pacific', time: '22:40 SGT', coordinates: [103.8198, 1.3521] as [number, number], detail: 'Customer support hub / Marina Boulevard', people: 360, status: 'Closed now', amenities: 'Support floor / Prayer room / Food hall' }
+  { id: 'los-angeles', name: 'Los Angeles', region: 'North America', timeZone: 'America/Los_Angeles', coordinates: [-118.2437, 34.0522] as [number, number], detail: 'Customer studio / 555 Flower Street', people: 420, status: 'Open', amenities: 'Visitor center / Studio / Café' },
+  { id: 'new-york', name: 'New York', region: 'North America', timeZone: 'America/New_York', coordinates: [-74.006, 40.7128] as [number, number], detail: 'Commercial hub / 11 Madison Avenue', people: 610, status: 'Open', amenities: 'Customer rooms / Wellness / Café' },
+  { id: 'london', name: 'London', region: 'Europe', timeZone: 'Europe/London', coordinates: [-0.1276, 51.5072] as [number, number], detail: 'EMEA operations / 2 Kingdom Street', people: 530, status: 'Open', amenities: 'Town hall / Quiet floor / Café' },
+  { id: 'helsinki', name: 'Helsinki', region: 'Europe', timeZone: 'Europe/Helsinki', coordinates: [24.9384, 60.1699] as [number, number], detail: 'Accessibility innovation lab / Aleksanterinkatu 15', people: 280, status: 'Tours Thursday', amenities: 'Innovation lab / Sauna / Café' },
+  { id: 'singapore', name: 'Singapore', region: 'Asia Pacific', timeZone: 'Asia/Singapore', coordinates: [103.8198, 1.3521] as [number, number], detail: 'Customer support hub / Marina Boulevard', people: 360, status: 'Closed now', amenities: 'Support floor / Prayer room / Food hall' }
 ];
 
 const worldTopology = worldTopologyJson as unknown as Topology;
@@ -39,10 +40,12 @@ const useStyles = makeStyles({
   time: { fontSize: tokens.fontSizeHero700, lineHeight: tokens.lineHeightHero700, fontWeight: tokens.fontWeightSemibold }
 });
 
-export function OfficeMap(): React.ReactElement {
+export function OfficeMap(props: { instant?: Date }): React.ReactElement {
   const styles = useStyles();
   const [selectedId, setSelectedId] = React.useState<string>('helsinki');
   const selected = offices.find((office) => office.id === selectedId) || offices[1];
+  const instant = props.instant || OFFICE_DEMO_INSTANT;
+  const selectedTime = formatOfficeTime(instant, selected.timeZone);
   const projection = geoNaturalEarth1().fitExtent([[12, 12], [708, 348]], worldCountries);
   const path = geoPath(projection);
   const countryPath = path(worldCountries) || '';
@@ -62,7 +65,8 @@ export function OfficeMap(): React.ReactElement {
         {offices.map((office) => {
           const point = projection(office.coordinates) || [0, 0];
           const radius = 7 + Math.sqrt(office.people) / 10;
-          return <g key={office.id} className={styles.marker} transform={`translate(${point[0]} ${point[1]})`} role="button" tabIndex={0} aria-label={`${office.name}, ${office.time}, ${office.people} employees, ${office.status}`} onClick={() => setSelectedId(office.id)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedId(office.id); } }}><circle className={styles.markerRing} r={radius + 4} /><circle className={office.id === selectedId ? `${styles.markerCore} ${styles.markerSelected}` : styles.markerCore} r={radius} /><circle className={styles.markerDot} r="2.2" /></g>;
+          const officeTime = formatOfficeTime(instant, office.timeZone);
+          return <g key={office.id} className={styles.marker} transform={`translate(${point[0]} ${point[1]})`} role="button" tabIndex={0} aria-label={`${office.name}, ${officeTime}, ${office.people} employees, ${office.status}`} onClick={() => setSelectedId(office.id)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedId(office.id); } }}><circle className={styles.markerRing} r={radius + 4} /><circle className={office.id === selectedId ? `${styles.markerCore} ${styles.markerSelected}` : styles.markerCore} r={radius} /><circle className={styles.markerDot} r="2.2" /></g>;
         })}
       </svg>
       <div className={styles.officeList} role="group" aria-label="Choose a Zava office">
@@ -70,7 +74,7 @@ export function OfficeMap(): React.ReactElement {
       </div>
       <div className={styles.detail} role="status">
         <div className={styles.detailCopy}><strong>{selected.name}</strong><span>{selected.detail}</span><span>{selected.amenities}</span><span className={styles.detailMeta}><span>{selected.region}</span><span>{selected.people} employees</span><span>{selected.status}</span><span>Reviewed September 2026</span></span></div>
-        <time className={styles.time}>{selected.time}</time>
+        <time className={styles.time} dateTime={instant.toISOString()}>{selectedTime}</time>
       </div>
     </div>
   );

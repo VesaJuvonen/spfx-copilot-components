@@ -13,7 +13,10 @@
     "check:media": "node scripts/validate-media-provenance.mjs && node scripts/generate-embedded-media.mjs --check",
     "check:package-output": "node scripts/validate-package-output.mjs",
     "check:publication": "node scripts/validate-publication.mjs",
+    "check:react-baseline": "node scripts/validate-react-baseline.mjs",
     "check:reference-hosts": "node scripts/configure-reference-hosts.mjs --check",
+    "check:release-evidence": "node scripts/validate-release-evidence.mjs",
+    "check:routing-collisions": "node scripts/validate-routing-collisions.mjs",
     "check:visual-evidence": "node scripts/generate-visual-evidence.mjs --check",
     "clean": "heft clean",
     "configure:reference-hosts": "node scripts/configure-reference-hosts.mjs",
@@ -24,7 +27,7 @@
     "generate:agent-icons": "node scripts/generate-agent-icons.mjs",
     "start": "heft start --clean",
     "start:ux-review": "node scripts/serve-ux-review.mjs",
-    "validate": "npm run check:reference-hosts && npm run check:agent-icons && npm run check:media && npm run check:visual-evidence && npm run check:publication && npm run build:ux-review && heft test --clean"
+    "validate": "npm run check:reference-hosts && npm run check:react-baseline && npm run check:routing-collisions && npm run check:agent-icons && npm run check:media && npm run check:visual-evidence && npm run check:publication && npm run check:release-evidence && npm run build:ux-review && heft test --clean"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",

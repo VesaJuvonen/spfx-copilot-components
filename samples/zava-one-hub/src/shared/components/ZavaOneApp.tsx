@@ -41,6 +41,7 @@ import {
   VacationApprovalsExperience,
   ZavaOneWorkspace
 } from './ZavaOneExperiences';
+import { ZavaErrorBoundary } from './ZavaErrorBoundary';
 
 function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'requestResize' | 'targetDocument'>): React.ReactElement | undefined {
   React.useEffect(() => {
@@ -142,11 +143,14 @@ function FocusedExperience(props: IZavaExperienceProps): React.ReactElement {
 
 export function ZavaOneApp(props: IZavaExperienceProps): React.ReactElement {
   const useWorkspace = props.surface === 'workspace' || props.displayMode === 'fullscreen';
+  const resetKey = `${props.intent}|${props.surface}|${props.displayMode}|${props.workspaceMode}|${props.theme}`;
 
   return (
     <ZavaThemeProvider targetDocument={props.targetDocument} theme={props.theme}>
-      <HostSizeSync displayMode={props.displayMode} requestResize={props.requestResize} targetDocument={props.targetDocument} />
-      {useWorkspace ? <ZavaOneWorkspace {...props} surface="workspace" /> : <FocusedExperience {...props} />}
+      <ZavaErrorBoundary resetKey={resetKey}>
+        <HostSizeSync displayMode={props.displayMode} requestResize={props.requestResize} targetDocument={props.targetDocument} />
+        {useWorkspace ? <ZavaOneWorkspace {...props} surface="workspace" /> : <FocusedExperience {...props} />}
+      </ZavaErrorBoundary>
     </ZavaThemeProvider>
   );
 }
