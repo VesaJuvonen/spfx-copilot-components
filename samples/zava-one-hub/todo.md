@@ -609,8 +609,8 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
 - [x] Assert feature web-part manifests are SharePoint-only, exactly three web parts are Teams-enabled,
   each owns one unique workspace mode, and all workspace/Copilot full-screen roots resolve to the same
   `ZavaOneWorkspace` implementation.
-- [x] Capture C35 list, detail, decision, receipt, and updated-list publication screenshots with real
-  bundled persona portraits at the 1600x900 web-part checkpoint.
+- [x] Capture complete-content C35 list, detail, decision, receipt, and updated-list publication
+  screenshots with real bundled persona portraits at the desktop web-part checkpoint.
 - [ ] Extend the complete C35 state sequence to inline, Teams workspace, Copilot full-screen, narrow,
   and dark authenticated-host checkpoints.
 - [x] Validate the generated plugin/package and save local cross-host evidence; keep tenant-only behavior open
@@ -921,8 +921,8 @@ These items are not part of the offline keynote package and must not block its l
   screenshots, demos, package link, version history, authors, and references.
 - [x] Author `assets/sample.json` from actual metadata and validated PNGs; preserve gallery ordering and
   link only to real assets.
-- [x] Recapture and review 12 current-implementation publication images at 1600x900 without clipped
-  workspace columns or stale layouts.
+- [x] Recapture and review 12 current-implementation publication images as full-page/full-workspace
+  evidence without clipped modules, controls, or stale layouts.
 - [x] Add architecture and data-flow diagrams, catalog/routing documentation, host matrix, privacy and
   accessibility notes, media provenance, test commands, and release evidence links.
 - [ ] Reconcile design documents only where implementation decisions legitimately supersede proposals;

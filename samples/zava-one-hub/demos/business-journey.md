@@ -12,7 +12,7 @@ Open the Combined workspace on the Company tab.
 - Explain that Company and Personal layouts have independent session-only order and visibility.
 - Use **Edit layout** or **Personalize** only if there is time; do not imply cross-device persistence.
 
-Checkpoint: [Company workspace](../assets/preview.png).
+Checkpoint: [Company workspace](../assets/screenshot-company-workspace.png).
 
 ## 2. Focused company answer
 
@@ -94,6 +94,6 @@ Select **Explore Zava One**.
 - Search, filter, and copy a prompt without mutating business state.
 - Close on 35 paired capabilities, three composed workspaces, and one shared implementation model.
 
-Checkpoint: [Capability explorer](../assets/screenshot-capability-explorer.png).
+Checkpoint: [Capability explorer](../assets/preview.png).
 
 Use [Demo operations](./demo-operations.md) to reset before the next run.

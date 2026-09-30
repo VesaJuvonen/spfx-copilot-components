@@ -57,7 +57,7 @@ sequenceDiagram
 
 Locally validated behavior includes semantic controls, visible focus, keyboard-capable layout movement,
 text alternatives for charts/maps, light/dark token use, and responsive component layouts. Publication
-screenshots were reviewed at 1600x900.
+screenshots were reviewed as complete full-page/full-workspace captures with at least 1600px width.
 
 This is not an accessibility certification. Authenticated host testing remains required for Narrator or
 JAWS, 200% zoom, forced colors, reduced motion, iframe focus, Teams chrome, and modern SharePoint page

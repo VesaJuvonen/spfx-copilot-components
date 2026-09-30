@@ -91,14 +91,16 @@ const publicationScreenshots = publicationThumbnails.map((thumbnail) => {
   const bytes = readFileSync(path);
   const width = bytes.readUInt32BE(16);
   const height = bytes.readUInt32BE(20);
-  if (width !== 1600 || height !== 900) throw new Error(`Publication screenshot ${thumbnail.name} must be 1600x900, found ${width}x${height}.`);
+  if (width < 1600 || height < 800) throw new Error(`Publication screenshot ${thumbnail.name} is too small for complete-content review (${width}x${height}).`);
   const record = {
     path: `assets/${thumbnail.name}`,
+    width,
+    height,
     bytes: bytes.length,
     sha256: createHash('sha256').update(bytes).digest('hex')
   };
   const expectedRecord = recordedPublication.get(record.path);
-  if (!expectedRecord || expectedRecord.bytes !== record.bytes || expectedRecord.sha256 !== record.sha256) {
+  if (!expectedRecord || expectedRecord.width !== record.width || expectedRecord.height !== record.height || expectedRecord.bytes !== record.bytes || expectedRecord.sha256 !== record.sha256) {
     throw new Error(`Publication release evidence is stale for ${thumbnail.name}.`);
   }
   return record;
@@ -113,8 +115,8 @@ const matrix = {
   captureWidths: { inline: 900, workspace: 1440 },
   publicationGallery: {
     totalScreenshots: publicationScreenshots.length,
-    width: 1600,
-    height: 900,
+    captureMode: 'complete-content',
+    minimumWidth: 1600,
     screenshots: publicationScreenshots
   },
   failures: { runtime: 0, overflow: 0, brokenImages: 0 },

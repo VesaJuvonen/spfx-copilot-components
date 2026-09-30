@@ -33,7 +33,7 @@ and session-local.
 - [Simulated receipt](../assets/screenshot-vacation-receipt.png)
 - [Updated queue](../assets/screenshot-vacation-updated-list.png)
 - [Office map](../assets/screenshot-office-map.png)
-- [Capability explorer](../assets/screenshot-capability-explorer.png)
+- [Capability explorer](../assets/preview.png)
 
 ## Offline fallback
 

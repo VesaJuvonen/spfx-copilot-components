@@ -26,7 +26,7 @@ The same shared React capability powers:
 - the exact route inside Copilot full screen; and
 - one of three composed SharePoint/Teams workspace experiences.
 
-![Zava One Company workspace](./assets/preview.png)
+![Explore Zava One capability explorer](./assets/preview.png)
 
 > **Current status:** the first-submission candidate is locally validated with 25 passing tests, 39
 > settled experience screenshots, required gallery metadata, and a committed production SPPKG.
@@ -102,7 +102,7 @@ hashes are in
 
 | Company workspace | Personal workspace |
 | --- | --- |
-| [![Combined Company workspace](./assets/preview.png)](./assets/preview.png) | [![Combined Personal workspace](./assets/screenshot-personal.png)](./assets/screenshot-personal.png) |
+| [Complete Company workspace](./assets/screenshot-company-workspace.png) | [Complete Personal workspace](./assets/screenshot-personal.png) |
 
 | Company News | Praise composer |
 | --- | --- |
@@ -124,7 +124,7 @@ hashes are in
 
 | Updated queue | Capability explorer |
 | --- | --- |
-| [![Updated vacation queue](./assets/screenshot-vacation-updated-list.png)](./assets/screenshot-vacation-updated-list.png) | [![Capability explorer](./assets/screenshot-capability-explorer.png)](./assets/screenshot-capability-explorer.png) |
+| [![Updated vacation queue](./assets/screenshot-vacation-updated-list.png)](./assets/screenshot-vacation-updated-list.png) | [![Capability explorer](./assets/preview.png)](./assets/preview.png) |
 
 The ordered publication inventory and crop review are in
 [`assets/publication-screenshots.md`](./assets/publication-screenshots.md). The four full workspace
@@ -233,7 +233,7 @@ embedded module so keynote rendering remains offline.
 | Complete screenshot gallery | 39 PNGs |
 | Bundled media | 28 provenance-checked assets |
 | Production package | `6,357,899` bytes / 169 entries |
-| Publication gallery | `assets/sample.json` / 12 reviewed 1600x900 PNGs |
+| Publication gallery | `assets/sample.json` / 12 reviewed complete-content PNGs |
 
 See [`phase-6-matrix.json`](./ux-review/evidence/phase-6-matrix.json),
 [`g0-bootstrap.md`](./ux-review/evidence/g0-bootstrap.md), and

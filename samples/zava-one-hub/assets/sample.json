@@ -37,84 +37,84 @@
         "type": "image",
         "order": 100,
         "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/preview.png",
-        "alt": "Zava One combined workspace showing the Company experience"
+        "alt": "Searchable Zava One capability explorer with safe prompt preview"
+      },
+      {
+        "name": "screenshot-company-workspace.png",
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-company-workspace.png",
+        "alt": "Complete Zava One combined workspace showing the Company experience"
       },
       {
         "name": "screenshot-personal.png",
         "type": "image",
-        "order": 101,
+        "order": 102,
         "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-personal.png",
         "alt": "Zava One combined workspace showing the Personal experience"
       },
       {
         "name": "screenshot-company-news.png",
         "type": "image",
-        "order": 102,
+        "order": 103,
         "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-company-news.png",
         "alt": "Zava One Company News experience"
       },
       {
         "name": "screenshot-recognition-compose.png",
         "type": "image",
-        "order": 103,
+        "order": 104,
         "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-recognition-compose.png",
         "alt": "Zava One praise composer with recipient, message, value, and audience"
       },
       {
         "name": "screenshot-sales-performance.png",
         "type": "image",
-        "order": 104,
+        "order": 105,
         "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-sales-performance.png",
         "alt": "Zava One sales performance chart and exact values"
       },
       {
         "name": "screenshot-office-map.png",
         "type": "image",
-        "order": 105,
+        "order": 106,
         "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-office-map.png",
         "alt": "Zava One global office map with equivalent office list and selected details"
       },
       {
         "name": "screenshot-vacation-approvals.png",
         "type": "image",
-        "order": 106,
+        "order": 107,
         "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-vacation-approvals.png",
         "alt": "Zava One vacation request approvals queue"
       },
       {
         "name": "screenshot-vacation-detail.png",
         "type": "image",
-        "order": 107,
+        "order": 108,
         "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-vacation-detail.png",
         "alt": "Vacation request detail with balance impact and team coverage"
       },
       {
         "name": "screenshot-vacation-decision.png",
         "type": "image",
-        "order": 108,
+        "order": 109,
         "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-vacation-decision.png",
         "alt": "Vacation request decision review before confirmation"
       },
       {
         "name": "screenshot-vacation-receipt.png",
         "type": "image",
-        "order": 109,
+        "order": 110,
         "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-vacation-receipt.png",
         "alt": "Session-only simulated vacation approval receipt"
       },
       {
         "name": "screenshot-vacation-updated-list.png",
         "type": "image",
-        "order": 110,
+        "order": 111,
         "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-vacation-updated-list.png",
         "alt": "Vacation approval queue with updated pending and processed counts"
-      },
-      {
-        "name": "screenshot-capability-explorer.png",
-        "type": "image",
-        "order": 111,
-        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-capability-explorer.png",
-        "alt": "Searchable Zava One capability explorer with safe prompt preview"
       }
     ],
     "authors": [
