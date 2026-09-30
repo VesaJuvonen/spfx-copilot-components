@@ -235,7 +235,7 @@ embedded module so keynote rendering remains offline.
 | Copilot Workbench | 37/37 Ready baseline; 8/8 changed Personal workflows revalidated |
 | Complete screenshot gallery | 39 PNGs |
 | Bundled media | 28 provenance-checked assets |
-| Production package | `1.0.0.4` / `6,359,363` bytes / 169 entries |
+| Production package | `1.0.0.5` / `6,359,859` bytes / 169 entries |
 | Publication gallery | `assets/sample.json` / 12 reviewed complete-content PNGs |
 
 See [`phase-6-matrix.json`](./ux-review/evidence/phase-6-matrix.json),
@@ -332,6 +332,7 @@ Open `http://127.0.0.1:4322`. Query parameters select an experience:
 
 | Version | Date | Comments |
 | --- | --- | --- |
+| 1.0.0.5 | September 30, 2026 | Track the visible M365 panel height through cross-origin iframe clipping |
 | 1.0.0.4 | September 30, 2026 | Adapt full-screen MCP content to the host panel instead of a fixed bootstrap height |
 | 1.0.0.3 | September 30, 2026 | Retry MCP resize until the nested SharePoint iframe reaches full-screen height |
 | 1.0.0.2 | September 30, 2026 | Corrected measurable MCP full-screen resize handshake |

@@ -1186,7 +1186,9 @@ export function ZavaOneWorkspace(props: IZavaExperienceProps): React.ReactElemen
   const styles = useStyles();
   const mode = props.workspaceMode || 'combined';
   const workspaceStyle: React.CSSProperties = props.displayMode === 'fullscreen'
-    ? { height: '100dvh', minHeight: '100dvh', maxHeight: '100dvh' }
+    ? props.containerHeight && props.containerHeight > 0
+      ? { height: `${props.containerHeight}px`, minHeight: `${props.containerHeight}px`, maxHeight: `${props.containerHeight}px` }
+      : { height: '100dvh', minHeight: '100dvh', maxHeight: '100dvh' }
     : { height: '100dvh', maxHeight: '100dvh' };
   const intentTab: ZavaWorkspaceTab = getCapabilityByIntent(props.intent)?.tab || 'company';
   const [activeTab, setActiveTab] = React.useState<ZavaWorkspaceTab>(mode === 'company' ? 'company' : mode === 'personal' ? 'personal' : props.primaryView === 'personal' ? 'personal' : intentTab);

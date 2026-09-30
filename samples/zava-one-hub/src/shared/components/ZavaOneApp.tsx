@@ -43,7 +43,11 @@ import {
 } from './ZavaOneExperiences';
 import { ZavaErrorBoundary } from './ZavaErrorBoundary';
 
-function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'requestResize' | 'targetDocument'>): React.ReactElement | undefined {
+function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'requestResize' | 'targetDocument'> & {
+  onVisibleHeightChange: React.Dispatch<React.SetStateAction<number | undefined>>;
+}): React.ReactElement | undefined {
+  const visibilityProbeRef = React.useRef<HTMLDivElement>(null);
+
   React.useEffect(() => {
     const view = props.targetDocument.defaultView;
     const body = props.targetDocument.body;
@@ -61,6 +65,13 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
       });
     };
     if (props.displayMode === 'fullscreen') {
+      const visibilityObserver = visibilityProbeRef.current && view.IntersectionObserver
+        ? new view.IntersectionObserver(([entry]) => {
+          const visibleHeight = Math.floor(entry.intersectionRect.height);
+          if (visibleHeight > 0) props.onVisibleHeightChange(visibleHeight);
+        }, { threshold: Array.from({ length: 101 }, (_, index) => index / 100) })
+        : undefined;
+      if (visibilityObserver && visibilityProbeRef.current) visibilityObserver.observe(visibilityProbeRef.current);
       scheduleResize();
       [120, 480, 1200].forEach((delay) => retryTimers.push(view.setTimeout(() => props.requestResize?.().catch(() => undefined), delay)));
       view.addEventListener('resize', scheduleResize);
@@ -69,6 +80,7 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
         view.cancelAnimationFrame(animationFrame);
         view.clearTimeout(trailingTimer);
         retryTimers.forEach((timer) => view.clearTimeout(timer));
+        visibilityObserver?.disconnect();
         view.removeEventListener('resize', scheduleResize);
         view.visualViewport?.removeEventListener('resize', scheduleResize);
       };
@@ -86,9 +98,11 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
       resizeObserver.disconnect();
       mutationObserver.disconnect();
     };
-  }, [props.displayMode, props.requestResize, props.targetDocument]);
+  }, [props.displayMode, props.onVisibleHeightChange, props.requestResize, props.targetDocument]);
 
-  return undefined;
+  return props.displayMode === 'fullscreen'
+    ? <div ref={visibilityProbeRef} aria-hidden="true" style={{ position: 'fixed', inset: 0, height: '100dvh', pointerEvents: 'none', opacity: 0 }} />
+    : undefined;
 }
 
 function FocusedExperience(props: IZavaExperienceProps): React.ReactElement {
@@ -159,12 +173,24 @@ function FocusedExperience(props: IZavaExperienceProps): React.ReactElement {
 export function ZavaOneApp(props: IZavaExperienceProps): React.ReactElement {
   const useWorkspace = props.surface === 'workspace' || props.displayMode === 'fullscreen';
   const resetKey = `${props.intent}|${props.surface}|${props.displayMode}|${props.workspaceMode}|${props.theme}`;
+  const [visibleFullscreenHeight, setVisibleFullscreenHeight] = React.useState<number | undefined>();
+
+  React.useEffect(() => {
+    if (props.displayMode !== 'fullscreen') setVisibleFullscreenHeight(undefined);
+  }, [props.displayMode]);
 
   return (
     <ZavaThemeProvider targetDocument={props.targetDocument} theme={props.theme}>
       <ZavaErrorBoundary resetKey={resetKey}>
-        <HostSizeSync displayMode={props.displayMode} requestResize={props.requestResize} targetDocument={props.targetDocument} />
-        {useWorkspace ? <ZavaOneWorkspace {...props} surface="workspace" /> : <FocusedExperience {...props} />}
+        <HostSizeSync
+          displayMode={props.displayMode}
+          requestResize={props.requestResize}
+          targetDocument={props.targetDocument}
+          onVisibleHeightChange={setVisibleFullscreenHeight}
+        />
+        {useWorkspace
+          ? <ZavaOneWorkspace {...props} surface="workspace" containerHeight={visibleFullscreenHeight} />
+          : <FocusedExperience {...props} />}
       </ZavaErrorBoundary>
     </ZavaThemeProvider>
   );

@@ -6,17 +6,12 @@ import {
 } from '@microsoft/sp-copilot-component';
 import { ZavaOneApp } from '../components/ZavaOneApp';
 import type { IZavaModelContextSnapshot, ZavaIntentKey } from '../models/zavaOne';
-import { getAdvertisedFullscreenHeight, resolveFullscreenRequestHeight } from '../utils/fullscreenSize';
+import { resolveFullscreenRequestHeight } from '../utils/fullscreenSize';
 
 export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopilotComponent<TProperties> {
   protected abstract readonly intent: ZavaIntentKey;
   private _root: Root | undefined;
   private _lastRequestedSize: { width: number; height: number } | undefined;
-
-  private _getFullscreenContainerHeight(): number | undefined {
-    const dimensions = this.hostContext.containerDimensions;
-    return getAdvertisedFullscreenHeight(dimensions?.height, dimensions?.maxHeight);
-  }
 
   private async _requestCurrentSizeAsync(): Promise<void> {
     const root = this.context.domElement;
@@ -51,7 +46,6 @@ export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopil
       intent: this.intent,
       surface: 'copilotInline',
       displayMode: this.hostContext.displayMode,
-      containerHeight: this.hostContext.displayMode === 'fullscreen' ? this._getFullscreenContainerHeight() : undefined,
       workspaceMode: 'combined',
       targetDocument: this.context.domElement.ownerDocument,
       theme: this.hostContext.theme === 'dark' ? 'dark' : 'light',
