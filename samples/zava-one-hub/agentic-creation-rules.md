@@ -201,7 +201,9 @@ approved sample values, but keep the actions and gates.
 12. **Add focused test matrices while implementing.** Assert catalog/layout uniqueness, all information
   defaults, retained control effects, selected detail, no-match/error fallback, all review safeguards,
   and every form's prefill/validation/Edit/review/confirm/receipt/reset lifecycle. Assert every tool
-  publishes one activation snapshot plus updated snapshots for material visible-state changes.
+  publishes one activation snapshot plus updated snapshots for material visible-state changes. Assert
+  every routed inline tool has one explicit user-triggered follow-up action, sends grounded content only
+  after invocation, suppresses duplicate sends while pending, and renders transport/host rejection.
 13. **Create a local visual harness before Workbench review.** It MUST render every intent, width, and
   theme without a tenant. Automate screenshots plus runtime, overflow, image, control-label, chart,
   keyboard-focus, reduced-motion, and 200% browser-zoom checks. Save a machine-readable evidence file.
@@ -503,6 +505,22 @@ phased implementation. If only planning is requested, stop before dependency or 
   route changes. Include intent, route/view, display mode, visible entity IDs/labels, active filters,
   workflow stage, visible summary, and safe next actions. Deduplicate equal snapshots. Generic catalog
   outcome text alone is insufficient; the summary must identify the actual visual/data currently shown.
+- **G32 - Every inline tool closes the conversational loop.** Every independently routed inline
+  component MUST publish its initial useful state and material interaction changes to Copilot, and MUST
+  expose at least one explicit, useful action that lets the user continue in chat with the current
+  intent, selection, filters, and visible result grounded in the outgoing message. Use
+  `updateModelContextAsync` for silent state grounding and `sendFollowUpMessageAsync` only after the
+  user invokes the labeled action. Disable duplicate sends while pending, handle thrown and `isError`
+  outcomes, and show honest local acknowledgement or retry feedback. Never send a conversation turn
+  automatically from mount, render, selection, validation, mode change, or receipt creation.
+- **G33 - One vertical scroll owner per rendered mode.** Inline and full-screen experiences MUST NOT
+  create competing document, iframe, shell, canvas, column, or panel scrollbars. Natural document flow
+  is the default for full screen: header, navigation, and content form one page and the MCP/Copilot host
+  document owns vertical scrolling. Do not combine fixed `100vh`/`100dvh` shells with nested
+  `overflow-y:auto`, custom iframe-height negotiation, or application resize observers. A bounded
+  internal scroller is allowed only for a domain control that truly requires it (for example a code
+  editor or virtualized grid), never as the primary workspace page; document the exception and prove
+  in the tenant host that the surrounding page does not scroll independently.
 
 ---
 
@@ -738,6 +756,10 @@ interface IIntentDefinition<TProperties> {
 - Use the available canvas. Full-screen content fills the host width with a readable responsive
   maximum that increases on desktop and projector displays. Do not strand a dashboard in an inline-
   sized center column or stretch compact inline components across the full canvas.
+- Use natural vertical document flow by default. The full-screen header, navigation, dashboard, and
+  route content scroll together under one MCP/Copilot document scrollbar. Do not make the dashboard
+  canvas independently scroll beneath a fixed application header. If a bounded domain control needs
+  internal scrolling, keep it local and prove there is still only one page-level scroll owner.
 
 **Workspace dashboard contract:**
 
@@ -792,6 +814,11 @@ interface IIntentDefinition<TProperties> {
 - Capture every default dashboard at mobile, standard, desktop/keynote, light, and dark states. Assert
   no horizontal overflow, blank charts, inaccessible controls, or inline-width content stranded on a
   large canvas.
+- In the tenant host, enumerate every element whose `scrollHeight > clientHeight` or computed overflow
+  is `auto`/`scroll`. Require one page-level vertical owner, exercise Company/Personal or equivalent
+  routes, resize the browser, and fail on repeated iframe size messages, layout flicker, nested tracks,
+  or headers that remain fixed while the primary page scrolls unless that behavior was explicitly
+  approved.
 
 ### 4.2 Repeatable implementation sequence
 
@@ -1069,6 +1096,10 @@ metadata, routes, and preview adapters rather than copying Zava-specific UI/data
   workspace/route state after full screen is active.
 - Do not use Expand as generic “open app” navigation. It is continuation of the current component,
   including its prompt context and, where implemented, transient interaction state.
+- Treat full-screen sizing and scrolling as host-owned. Prefer natural content height and the framework's
+  normal document sizing. Do not install a second resize observer, send raw size protocol messages, or
+  continuously negotiate iframe height. Verify the real tenant host before adding any explicit sizing;
+  if explicit inline sizing is needed, keep it inline-only, deduplicated, and fully torn down.
 
 ### 7.1 MCP Apps host communication contract
 
@@ -1115,11 +1146,29 @@ transport or send raw protocol messages.
   confirmed mock receipts in the session store. Catch bridge failures, keep the UI usable, and expose a
   non-blocking retry/status only when communication is necessary to the current action.
 
+**Per-inline component acceptance contract:**
+
+1. After the first useful state commits, publish intent, view/route, visible summary, active filters,
+  selected IDs/labels, workflow stage, and safe next actions. Information-only components are not
+  exempt.
+2. After each material user action, publish the complete replacement snapshot for the new visible
+  state. Do not emit partial deltas or generic “user interacted” text.
+3. Provide at least one explicit command such as `Ask Copilot about this risk`, `Summarize selected
+  results`, or `Draft a response`. Build its outgoing content from the current visible state, not from
+  stale prompt defaults or hidden records.
+4. Keep silent model-context updates separate from conversation turns. The explicit command is the only
+  path that calls `sendFollowUpMessageAsync`; automatic follow-ups are prohibited.
+5. While sending, disable the command and expose a stable pending label/state. On acknowledgement, show
+  concise local confirmation; on thrown error or `isError`, retain the user's state and offer retry.
+6. Unit-test the activation snapshot, one material state transition, exact grounded outgoing content,
+  duplicate-click suppression, thrown-error recovery, and host `isError` recovery for every routed
+  inline tool. For large catalogs, generate the coverage matrix from the canonical intent catalog.
+
 **Conversation turns:**
 
 - A follow-up is equivalent to the user sending a message in the existing Copilot conversation. Never
   emit one automatically from mount, mode changes, filters, selection, typing, validation, or submit.
-- Give each sample at least one useful, explicit message action in both mode journeys. Inline stays
+- Give each independently routed inline component at least one useful, explicit message action. Inline stays
   within the two-action guideline, for example `Ask Copilot about this risk`. Full screen may offer a
   contextual command such as `Draft a status update` or `Summarize this decision`; the button label and
   accessible description make the exact outgoing intent clear.
