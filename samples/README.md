@@ -8,6 +8,7 @@ This folder contains SPFx Copilot component samples. Each sample lives in its ow
 | Choice Relay | [`choice-relay`](./choice-relay) |
 | Copilot Readiness Action Centre | [`copilot-readiness-action-centre`](./copilot-readiness-action-centre) |
 | SharePoint Events Copilot Agent | [`events`](./events) |
+| Holiday Planner | [`holiday-planner`](./holiday-planner) |
 | Executive Sales & Revenue Dashboard | [`executive-sales-dashboard`](./executive-sales-dashboard) |
 | Kudos & Recognition Wall | [`kudos-recognition-wall`](./kudos-recognition-wall) |
 | M365 Service Health | [`m365-service-health`](./m365-service-health) |

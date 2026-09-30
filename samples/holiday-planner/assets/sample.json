@@ -1,0 +1,88 @@
+[
+  {
+    "name": "pnp-spfx-copilot-apps-holiday-planner",
+    "source": "pnp",
+    "title": "Holiday Planner - Working Days, Long Weekends, and Regional Holidays in Copilot Chat",
+    "shortDescription": "Five SPFx Copilot Components and one declarative agent that calculate working days, find long weekends with bridge-day suggestions, list holidays, check dates, and compare office calendars directly in Copilot chat.",
+    "url": "https://github.com/pnp/spfx-copilot-components/tree/main/samples/holiday-planner",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/spfx-copilot-components/tree/main/samples/holiday-planner",
+    "longDescription": [
+      "Holiday Planner is a SharePoint Copilot App built as five SPFx 1.24 Copilot Components under a single declarative agent. Each tool renders a live React card in the Copilot conversation: an inclusive working-day count, the next long weekend with the working days until it and any bridge-day suggestion, a full-year, month, or upcoming holiday list, a working-day check for a specific date or named holiday, and a side-by-side comparison of regional calendars.",
+      "Expanding a card opens a shared dashboard with calendar tabs, holiday details, and a Vacation Optimizer. Holiday data is read from a SharePoint list under the signed-in user's delegated identity, configured through a tenant storage entity, with demo data as a labelled fallback. The default country resolves from the query, a OneDrive-saved preference, the user's profile, or browser hints, and the pure planning calculations are unit tested."
+    ],
+    "creationDateTime": "2026-09-24",
+    "updateDateTime": "2026-09-30",
+    "products": [
+      "SharePoint",
+      "Microsoft Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE-TYPE",
+        "value": "SPFx-CopilotComponent"
+      },
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.24.0-beta.5"
+      }
+    ],
+    "thumbnails": [
+      {
+        "name": "FullView-HolidayPlanner.png",
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/holiday-planner/assets/FullView-HolidayPlanner.png",
+        "alt": "Expanded Holiday Planner dashboard with next holiday, next long weekend, working-day summary, holiday calendar, and holiday details."
+      },
+      {
+        "name": "InlineView-HolidayPlanner.png",
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/holiday-planner/assets/InlineView-HolidayPlanner.png",
+        "alt": "Inline Copilot card listing all holidays in the year for the selected country with fixed and optional badges."
+      },
+      {
+        "name": "longWeekendInlineView.png",
+        "type": "image",
+        "order": 102,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/holiday-planner/assets/longWeekendInlineView.png",
+        "alt": "Inline Copilot card showing the next long weekend, days off, working days until the break, and bridge-day status."
+      },
+      {
+        "name": "HolidaysComparison.png",
+        "type": "image",
+        "order": 103,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/holiday-planner/assets/HolidaysComparison.png",
+        "alt": "Inline Copilot card comparing holidays side by side for different regions."
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "HarminderSethi",
+        "pictureUrl": "https://github.com/HarminderSethi.png",
+        "name": "Harminder Singh"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Copilot Apps",
+        "description": "Extend Microsoft Copilot with interactive experiences built with the SharePoint Framework.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/copilot/overview-copilot-apps"
+      },
+      {
+        "name": "Build agents for Microsoft Copilot",
+        "description": "Extend Microsoft Copilot with declarative agents, plugins, and connectors.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      },
+      {
+        "name": "OneDrive app folder for Microsoft Graph",
+        "description": "Store per-user application settings in a dedicated OneDrive folder with the Files.ReadWrite.AppFolder permission.",
+        "url": "https://learn.microsoft.com/graph/onedrive-sharepoint-appfolder"
+      }
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.24/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.24",
+  "version": "1.1.4",
+  "id": "b833da2d-ea55-4165-9d0b-0e31d620fb5b",
+  "developer": {
+    "name": "Harminder Singh",
+    "websiteUrl": "https://github.com/HarminderSethi",
+    "privacyUrl": "https://github.com/HarminderSethi/spfx-copilot-apps/blob/main/samples/holiday-planner/README.md",
+    "termsOfUseUrl": "https://github.com/HarminderSethi/spfx-copilot-apps/blob/main/samples/holiday-planner/README.md"
+  },
+  "icons": { "color": "color.png", "outline": "outline.png" },
+  "name": {
+    "short": "Holiday Planner",
+    "full": "Holiday Planner — Working Days & Regional Holidays"
+  },
+  "description": {
+    "short": "Calculate working days and plan around regional holidays.",
+    "full": "Calculate working days, find long weekends, explore upcoming holidays, check specific dates, and compare regional calendars with interactive SPFx Copilot Components."
+  },
+  "accentColor": "#147D64",
+  "copilotAgents": {
+    "declarativeAgents": [{ "id": "holidayPlannerAgent", "file": "declarativeAgent.json" }]
+  },
+  "permissions": ["identity"],
+  "validDomains": []
+}

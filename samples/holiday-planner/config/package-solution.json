@@ -1,0 +1,44 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "holiday-planner-client-side-solution",
+    "id": "b833da2d-ea55-4165-9d0b-0e31d620fb5b",
+    "version": "1.1.4.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "webApiPermissionRequests": [
+      { "resource": "Microsoft Graph", "scope": "User.Read" },
+      { "resource": "Microsoft Graph", "scope": "Files.ReadWrite.AppFolder" }
+    ],
+    "developer": {
+      "name": "Harminder Singh",
+      "websiteUrl": "https://github.com/HarminderSethi",
+      "privacyUrl": "https://github.com/HarminderSethi/spfx-copilot-apps/blob/main/samples/holiday-planner/README.md",
+      "termsOfUseUrl": "https://github.com/HarminderSethi/spfx-copilot-apps/blob/main/samples/holiday-planner/README.md",
+      "mpnId": "Undefined-1.24.0-dev.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Calculate working days, discover long weekends, and compare regional holidays inside Microsoft Copilot."
+      },
+      "longDescription": {
+        "default": "Holiday Planner is an SPFx Copilot Components sample for working-day calculations, long-weekend discovery, upcoming holiday exploration, holiday details, and regional comparison. It reads and writes SharePoint with the signed-in user's delegated identity and includes demo data when SharePoint is unavailable."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": ["Productivity", "Collaboration"]
+    },
+    "features": [
+      {
+        "title": "Holiday Planner Feature",
+        "description": "Registers the Holiday Planner Copilot Components.",
+        "id": "0d98f2bd-3fa5-4c86-bae6-c750ba307cc5",
+        "version": "1.1.4.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/holiday-planner.sppkg"
+  }
+}

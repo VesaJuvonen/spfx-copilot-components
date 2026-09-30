@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "50d39f7f-43db-4e75-b815-ca19d824fb3b",
+  "alias": "HolidayDetailsCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": { "availableDisplayModes": ["inline", "fullscreen"] },
+  "tools": [{
+    "name": "GetHolidayDetails",
+    "description": { "default": "Answer whether a specific date is a holiday or working day, or provide details about a named holiday including type, date, and regional applicability. Use for a specific date or holiday name, not general upcoming-holiday lists." },
+    "propertiesSchema": { "id": "$../../../lib/copilotComponents/holidayDetails/HolidayDetailsCopilotComponentProperties.js:default;" }
+  }]
+}

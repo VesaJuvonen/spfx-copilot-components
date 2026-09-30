@@ -1,0 +1,10 @@
+node_modules/
+lib/
+lib-commonjs/
+temp/
+release/
+sharepoint/solution/*.sppkg
+teams/*.zip
+scripts/
+README.md
+holiday-planner-copilot-prompt.md
