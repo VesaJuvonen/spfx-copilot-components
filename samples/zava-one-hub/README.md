@@ -235,7 +235,7 @@ embedded module so keynote rendering remains offline.
 | Copilot Workbench | 37/37 Ready baseline; 8/8 changed Personal workflows revalidated |
 | Complete screenshot gallery | 39 PNGs |
 | Bundled media | 28 provenance-checked assets |
-| Production package | `1.0.0.10` / `6,360,425` bytes / 169 entries |
+| Production package | `1.0.0.11` / `6,359,397` bytes / 169 entries |
 | Publication gallery | `assets/sample.json` / 12 reviewed complete-content PNGs |
 
 See [`phase-6-matrix.json`](./ux-review/evidence/phase-6-matrix.json),
@@ -332,6 +332,7 @@ Open `http://127.0.0.1:4322`. Query parameters select an experience:
 
 | Version | Date | Comments |
 | --- | --- | --- |
+| 1.0.0.11 | September 30, 2026 | Disable all full-screen size messages and preserve only the inner component scrollbar |
 | 1.0.0.10 | September 30, 2026 | Underfill the host panel by 32px and shrink only when clipping requires it |
 | 1.0.0.9 | September 30, 2026 | Disable the competing SDK auto-resizer that recreated the outer scrollbar |
 | 1.0.0.8 | September 30, 2026 | Retry exact full-screen settlement until the host applies the visible panel height |

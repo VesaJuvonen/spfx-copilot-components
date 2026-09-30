@@ -1,4 +1,4 @@
-import { disableCopilotAutoResize } from './copilotAutoResize';
+import { disableCopilotAutoResize, takeCopilotSizeControl } from './copilotAutoResize';
 
 describe('Copilot bridge auto-resize control', () => {
   test('disconnects deferred auto-resize and prevents it from being reinstalled', () => {
@@ -16,5 +16,17 @@ describe('Copilot bridge auto-resize control', () => {
 
   test('does nothing when the bridge does not expose deferred auto-resize', () => {
     expect(disableCopilotAutoResize({})).toBe(false);
+  });
+
+  test('suppresses observer messages while preserving a controlled sender', async () => {
+    const sendSizeChangedAsync = jest.fn(async (_size: { width: number; height: number }) => undefined);
+    const internal = { sendSizeChangedAsync };
+    const controlledSender = takeCopilotSizeControl({ _internal: internal });
+
+    await internal.sendSizeChangedAsync({ width: 800, height: 600 });
+    expect(sendSizeChangedAsync).not.toHaveBeenCalled();
+
+    await controlledSender?.(720, 450);
+    expect(sendSizeChangedAsync).toHaveBeenCalledWith({ width: 720, height: 450 });
   });
 });

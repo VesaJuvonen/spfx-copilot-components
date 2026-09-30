@@ -42,13 +42,8 @@ import {
   ZavaOneWorkspace
 } from './ZavaOneExperiences';
 import { ZavaErrorBoundary } from './ZavaErrorBoundary';
-import { isFullscreenViewportSettled, resolveFullscreenSettlementHeight, resolveVisibleFullscreenHeight } from '../utils/fullscreenSize';
 
-function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'requestResize' | 'targetDocument'> & {
-  onVisibleHeightChange: React.Dispatch<React.SetStateAction<number | undefined>>;
-}): React.ReactElement | undefined {
-  const visibilityProbeRef = React.useRef<HTMLDivElement>(null);
-
+function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'requestResize' | 'targetDocument'>): React.ReactElement | undefined {
   React.useEffect(() => {
     const view = props.targetDocument.defaultView;
     const body = props.targetDocument.body;
@@ -56,7 +51,6 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
 
     let animationFrame = 0;
     let trailingTimer = 0;
-    let settlementTimer = 0;
     const scheduleResize = (includeTrailing = true): void => {
       view.cancelAnimationFrame(animationFrame);
       view.clearTimeout(trailingTimer);
@@ -69,49 +63,11 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
       const documentElement = props.targetDocument.documentElement;
       const previousBodyOverflow = body.style.overflow;
       const previousDocumentOverflow = documentElement.style.overflow;
-      let settlementAttempt = 0;
-      let settlementTarget: number | undefined;
-      const settlementDelays = [240, 800, 1600];
-      const scheduleSettlement = (): void => {
-        if (settlementTimer || settlementTarget === undefined || settlementAttempt >= settlementDelays.length) return;
-        settlementTimer = view.setTimeout(async () => {
-          settlementTimer = 0;
-          const targetHeight = settlementTarget;
-          if (targetHeight === undefined) return;
-          const currentViewportHeight = Math.floor(Math.max(view.visualViewport?.height || 0, view.innerHeight));
-          if (isFullscreenViewportSettled(currentViewportHeight, targetHeight)) return;
-          settlementAttempt += 1;
-          await props.requestResize?.(targetHeight).catch(() => undefined);
-          scheduleSettlement();
-        }, settlementDelays[settlementAttempt]);
-      };
-      const visibilityObserver = visibilityProbeRef.current && view.IntersectionObserver
-        ? new view.IntersectionObserver(([entry]) => {
-          const visibleHeight = Math.floor(entry.intersectionRect.height);
-          if (visibleHeight > 0) {
-            props.onVisibleHeightChange((currentHeight) => resolveVisibleFullscreenHeight(currentHeight, visibleHeight));
-            const currentViewportHeight = Math.floor(Math.max(view.visualViewport?.height || 0, view.innerHeight));
-            const targetHeight = resolveFullscreenSettlementHeight(currentViewportHeight, visibleHeight);
-            if (targetHeight === undefined) return;
-            if (settlementTarget === undefined || Math.abs(settlementTarget - targetHeight) >= 16) {
-              view.clearTimeout(settlementTimer);
-              settlementTimer = 0;
-              settlementAttempt = 0;
-              settlementTarget = targetHeight;
-            }
-            scheduleSettlement();
-          }
-        }, { threshold: Array.from({ length: 101 }, (_, index) => index / 100) })
-        : undefined;
       body.style.overflow = 'hidden';
       documentElement.style.overflow = 'hidden';
-      if (visibilityObserver && visibilityProbeRef.current) visibilityObserver.observe(visibilityProbeRef.current);
-      scheduleResize(false);
       return () => {
         view.cancelAnimationFrame(animationFrame);
         view.clearTimeout(trailingTimer);
-        view.clearTimeout(settlementTimer);
-        visibilityObserver?.disconnect();
         body.style.overflow = previousBodyOverflow;
         documentElement.style.overflow = previousDocumentOverflow;
       };
@@ -128,11 +84,9 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
       resizeObserver.disconnect();
       mutationObserver.disconnect();
     };
-  }, [props.displayMode, props.onVisibleHeightChange, props.requestResize, props.targetDocument]);
+  }, [props.displayMode, props.requestResize, props.targetDocument]);
 
-  return props.displayMode === 'fullscreen'
-    ? <div ref={visibilityProbeRef} aria-hidden="true" style={{ position: 'fixed', inset: 0, height: '100dvh', pointerEvents: 'none', opacity: 0 }} />
-    : undefined;
+  return undefined;
 }
 
 function FocusedExperience(props: IZavaExperienceProps): React.ReactElement {
@@ -203,23 +157,13 @@ function FocusedExperience(props: IZavaExperienceProps): React.ReactElement {
 export function ZavaOneApp(props: IZavaExperienceProps): React.ReactElement {
   const useWorkspace = props.surface === 'workspace' || props.displayMode === 'fullscreen';
   const resetKey = `${props.intent}|${props.surface}|${props.displayMode}|${props.workspaceMode}|${props.theme}`;
-  const [visibleFullscreenHeight, setVisibleFullscreenHeight] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    if (props.displayMode !== 'fullscreen') setVisibleFullscreenHeight(undefined);
-  }, [props.displayMode]);
 
   return (
     <ZavaThemeProvider targetDocument={props.targetDocument} theme={props.theme}>
       <ZavaErrorBoundary resetKey={resetKey}>
-        <HostSizeSync
-          displayMode={props.displayMode}
-          requestResize={props.requestResize}
-          targetDocument={props.targetDocument}
-          onVisibleHeightChange={setVisibleFullscreenHeight}
-        />
+        <HostSizeSync displayMode={props.displayMode} requestResize={props.requestResize} targetDocument={props.targetDocument} />
         {useWorkspace
-          ? <ZavaOneWorkspace {...props} surface="workspace" containerHeight={visibleFullscreenHeight} />
+          ? <ZavaOneWorkspace {...props} surface="workspace" />
           : <FocusedExperience {...props} />}
       </ZavaErrorBoundary>
     </ZavaThemeProvider>

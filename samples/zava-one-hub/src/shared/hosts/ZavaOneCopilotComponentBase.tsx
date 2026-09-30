@@ -6,43 +6,45 @@ import {
 } from '@microsoft/sp-copilot-component';
 import { ZavaOneApp } from '../components/ZavaOneApp';
 import type { IZavaModelContextSnapshot, ZavaIntentKey } from '../models/zavaOne';
-import { disableCopilotAutoResize } from '../utils/copilotAutoResize';
-import { FULLSCREEN_LAYOUT_HYSTERESIS, isFullscreenViewportSettled, resolveFullscreenRequestHeight } from '../utils/fullscreenSize';
+import { takeCopilotSizeControl, type ControlledSizeSender } from '../utils/copilotAutoResize';
 
 export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopilotComponent<TProperties> {
   protected abstract readonly intent: ZavaIntentKey;
   private _root: Root | undefined;
   private _lastRequestedSize: { width: number; height: number } | undefined;
+  private _sendControlledSizeAsync: ControlledSizeSender | undefined;
 
   protected async onInit(): Promise<void> {
-    disableCopilotAutoResize(this.context.copilotBridge);
+    this._sendControlledSizeAsync = takeCopilotSizeControl(this.context.copilotBridge);
   }
 
-  private async _requestCurrentSizeAsync(requestedFullscreenHeight?: number): Promise<void> {
+  private async _requestCurrentSizeAsync(): Promise<void> {
+    if (this.hostContext.displayMode === 'fullscreen') return;
     const root = this.context.domElement;
     const view = root.ownerDocument.defaultView;
     if (!view) return;
     await new Promise<void>((resolve) => view.requestAnimationFrame(() => resolve()));
-    const fullscreen = this.hostContext.displayMode === 'fullscreen';
     const hostDimensions = this.hostContext.containerDimensions;
     const content = root.querySelector<HTMLElement>('[data-layout]');
     const contentRect = content?.getBoundingClientRect();
     const rootRect = root.getBoundingClientRect();
-    const currentViewportHeight = Math.max(view.visualViewport?.height || 0, view.innerHeight || 0, root.ownerDocument.documentElement.clientHeight || 0, root.clientHeight || 0);
     const width = Math.ceil(hostDimensions?.width || hostDimensions?.maxWidth || root.clientWidth || contentRect?.width || view.innerWidth || 0);
-    const height = fullscreen
-      ? Math.ceil(requestedFullscreenHeight && requestedFullscreenHeight > 0
-        ? requestedFullscreenHeight
-        : resolveFullscreenRequestHeight(hostDimensions?.height, hostDimensions?.maxHeight, currentViewportHeight, view.screen?.availHeight))
-      : Math.ceil(Math.max(content?.scrollHeight || 0, contentRect ? contentRect.bottom - rootRect.top : 0) + 2);
+    const height = Math.ceil(Math.max(content?.scrollHeight || 0, contentRect ? contentRect.bottom - rootRect.top : 0) + 2);
     if (width <= 0 || height <= 0) return;
-    const sizeTolerance = fullscreen ? FULLSCREEN_LAYOUT_HYSTERESIS : 1;
     const matchesLastRequest = !!this._lastRequestedSize
-      && Math.abs(this._lastRequestedSize.width - width) <= sizeTolerance
-      && Math.abs(this._lastRequestedSize.height - height) <= sizeTolerance;
-    const fullscreenViewportSettled = isFullscreenViewportSettled(currentViewportHeight, height);
-    if (matchesLastRequest && (!fullscreen || fullscreenViewportSettled)) return;
-    if (await this.requestSizeChangeAsync(width, height)) this._lastRequestedSize = { width, height };
+      && Math.abs(this._lastRequestedSize.width - width) <= 1
+      && Math.abs(this._lastRequestedSize.height - height) <= 1;
+    if (matchesLastRequest) return;
+    try {
+      if (this._sendControlledSizeAsync) {
+        await this._sendControlledSizeAsync(width, height);
+      } else if (!await this.requestSizeChangeAsync(width, height)) {
+        return;
+      }
+      this._lastRequestedSize = { width, height };
+    } catch {
+      return;
+    }
   }
 
   protected render(): void {
@@ -62,12 +64,10 @@ export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopil
       requestFullscreen: async (): Promise<void> => {
         if ((this.hostContext.availableDisplayModes || []).indexOf('fullscreen') >= 0) {
           const result = await this.requestDisplayModeAsync('fullscreen');
-          if (result.mode === 'fullscreen') {
-            await this._requestCurrentSizeAsync();
-          }
+          if (result.mode !== 'fullscreen') return;
         }
       },
-      requestResize: async (height?: number): Promise<void> => this._requestCurrentSizeAsync(height),
+      requestResize: async (): Promise<void> => this._requestCurrentSizeAsync(),
       publishContext: async (snapshot: IZavaModelContextSnapshot): Promise<void> => {
         await this.context.copilotBridge.updateModelContextAsync({
           content: [createCopilotTextContent(snapshot.summary)],
@@ -89,5 +89,6 @@ export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopil
     this._root?.unmount();
     this._root = undefined;
     this._lastRequestedSize = undefined;
+    this._sendControlledSizeAsync = undefined;
   }
 }
