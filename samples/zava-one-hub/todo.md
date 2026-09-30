@@ -18,7 +18,7 @@ by [agentic-creation-rules.md](agentic-creation-rules.md).
 > layouts, zero runtime/overflow/image failures, 39 settled experience screenshots, and 12 reviewed
 > publication images referenced by `assets/sample.json`. Thirty-two Jest tests, 28-media provenance,
 > six conversation starters with Capability Explorer last, plugin validation, and the final
-> version `1.0.0.8`, 6,360,448-byte `.sppkg` audit pass. Evidence is in
+> version `1.0.0.9`, 6,360,518-byte `.sppkg` audit pass. Evidence is in
 > `ux-review/evidence/phase-6-matrix.json`. All 37
 > Workbench components reached Ready. Authenticated modern SharePoint/Teams chrome, tenant-host
 > accessibility, and deeper per-capability edge-state acceptance remain external or post-submission gates.
@@ -782,7 +782,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
   pin the package directly, rerender immediately on changes, and open the property pane from Advanced
   settings. Fixed Company/Personal workspaces do not expose a start-tab switch.
 - [x] Assert all 35 profiles are complete and reject page-author properties in the packaged 37-function
-  Copilot plugin; the current 35 tests pass and the generated plugin validator confirms the boundary.
+  Copilot plugin; the current 37 tests pass and the generated plugin validator confirms the boundary.
 - [x] Brand the agent as Zava One with deterministic manifest-safe icons: 192x192 white Z on Zava blue
   for `color.png`, and a padded white Z on a transparent 32x32 canvas for `outline.png`. Validate exact
   source-to-ZIP bytes, icon paths, display names, and `#075FCE` accent color during every build.
@@ -838,7 +838,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 - [ ] Complete the full-gallery multimodal/human review for repetition, density, crop, alignment,
   contrast, and keynote readability; representative Company/C06/C27/C34/C35 pixels are already reviewed.
 - [x] Validate bundle/media duplication and measured package thresholds before proceeding: two host-specific
-  bundles, 28 media assets, and a version `1.0.0.8`, 6,360,448-byte `.sppkg`.
+  bundles, 28 media assets, and a version `1.0.0.9`, 6,360,518-byte `.sppkg`.
 
 ## Phase 7 - Configuration Impact and Showcase Polish
 
@@ -891,7 +891,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 
 ### Local executable gates
 
-- [x] Increment the exact-settlement App Catalog solution and feature versions to `1.0.0.8` while preserving solution,
+- [x] Increment the single-resize-authority App Catalog solution and feature versions to `1.0.0.9` while preserving solution,
   feature, component, and agent identities for upgrade deployment.
 - [x] Run catalog, React baseline, routing matrix, media, embedded media, gallery, publication, visual,
   clean test, production build, generated plugin, package-output, release-evidence, diagnostics, and

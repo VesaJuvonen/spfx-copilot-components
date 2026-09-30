@@ -6,12 +6,17 @@ import {
 } from '@microsoft/sp-copilot-component';
 import { ZavaOneApp } from '../components/ZavaOneApp';
 import type { IZavaModelContextSnapshot, ZavaIntentKey } from '../models/zavaOne';
+import { disableCopilotAutoResize } from '../utils/copilotAutoResize';
 import { FULLSCREEN_LAYOUT_HYSTERESIS, isFullscreenViewportSettled, resolveFullscreenRequestHeight } from '../utils/fullscreenSize';
 
 export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopilotComponent<TProperties> {
   protected abstract readonly intent: ZavaIntentKey;
   private _root: Root | undefined;
   private _lastRequestedSize: { width: number; height: number } | undefined;
+
+  protected async onInit(): Promise<void> {
+    disableCopilotAutoResize(this.context.copilotBridge);
+  }
 
   private async _requestCurrentSizeAsync(requestedFullscreenHeight?: number): Promise<void> {
     const root = this.context.domElement;
