@@ -51,6 +51,7 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
 
     let animationFrame = 0;
     let trailingTimer = 0;
+    const retryTimers: number[] = [];
     const scheduleResize = (): void => {
       view.cancelAnimationFrame(animationFrame);
       view.clearTimeout(trailingTimer);
@@ -61,11 +62,13 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
     };
     if (props.displayMode === 'fullscreen') {
       scheduleResize();
+      [120, 480, 1200].forEach((delay) => retryTimers.push(view.setTimeout(() => props.requestResize?.().catch(() => undefined), delay)));
       view.addEventListener('resize', scheduleResize);
       view.visualViewport?.addEventListener('resize', scheduleResize);
       return () => {
         view.cancelAnimationFrame(animationFrame);
         view.clearTimeout(trailingTimer);
+        retryTimers.forEach((timer) => view.clearTimeout(timer));
         view.removeEventListener('resize', scheduleResize);
         view.visualViewport?.removeEventListener('resize', scheduleResize);
       };
@@ -79,6 +82,7 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
     return () => {
       view.cancelAnimationFrame(animationFrame);
       view.clearTimeout(trailingTimer);
+      retryTimers.forEach((timer) => view.clearTimeout(timer));
       resizeObserver.disconnect();
       mutationObserver.disconnect();
     };

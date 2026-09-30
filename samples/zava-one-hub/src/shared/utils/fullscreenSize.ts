@@ -6,7 +6,16 @@ export function getAdvertisedFullscreenHeight(height?: number, maxHeight?: numbe
   return undefined;
 }
 
-export function resolveFullscreenRequestHeight(height: number | undefined, maxHeight: number | undefined, currentViewportHeight: number): number {
-  return getAdvertisedFullscreenHeight(height, maxHeight)
-    || (currentViewportHeight >= MIN_FULLSCREEN_HEIGHT ? currentViewportHeight : MIN_FULLSCREEN_HEIGHT);
+export function resolveFullscreenRequestHeight(
+  height: number | undefined,
+  maxHeight: number | undefined,
+  currentViewportHeight: number,
+  availableScreenHeight = 0
+): number {
+  return Math.max(
+    getAdvertisedFullscreenHeight(height, maxHeight) || 0,
+    currentViewportHeight,
+    availableScreenHeight,
+    MIN_FULLSCREEN_HEIGHT
+  );
 }
