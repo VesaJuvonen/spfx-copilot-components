@@ -6,11 +6,17 @@ import {
 } from '@microsoft/sp-copilot-component';
 import { ZavaOneApp } from '../components/ZavaOneApp';
 import type { IZavaModelContextSnapshot, ZavaIntentKey } from '../models/zavaOne';
+import { getAdvertisedFullscreenHeight, resolveFullscreenRequestHeight } from '../utils/fullscreenSize';
 
 export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopilotComponent<TProperties> {
   protected abstract readonly intent: ZavaIntentKey;
   private _root: Root | undefined;
   private _lastRequestedSize: { width: number; height: number } | undefined;
+
+  private _getFullscreenContainerHeight(): number | undefined {
+    const dimensions = this.hostContext.containerDimensions;
+    return getAdvertisedFullscreenHeight(dimensions?.height, dimensions?.maxHeight);
+  }
 
   private async _requestCurrentSizeAsync(): Promise<void> {
     const root = this.context.domElement;
@@ -23,10 +29,9 @@ export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopil
     const contentRect = content?.getBoundingClientRect();
     const rootRect = root.getBoundingClientRect();
     const currentViewportHeight = Math.max(view.visualViewport?.height || 0, view.innerHeight || 0, root.ownerDocument.documentElement.clientHeight || 0, root.clientHeight || 0);
-    const fallbackFullscreenHeight = Math.max(720, Math.min((view.screen?.availHeight || 880) - 120, 1200));
     const width = Math.ceil(hostDimensions?.width || hostDimensions?.maxWidth || root.clientWidth || contentRect?.width || view.innerWidth || 0);
     const height = fullscreen
-      ? Math.ceil(hostDimensions?.height || hostDimensions?.maxHeight || (currentViewportHeight >= 720 ? currentViewportHeight : fallbackFullscreenHeight))
+      ? Math.ceil(resolveFullscreenRequestHeight(hostDimensions?.height, hostDimensions?.maxHeight, currentViewportHeight))
       : Math.ceil(Math.max(content?.scrollHeight || 0, contentRect ? contentRect.bottom - rootRect.top : 0) + 2);
     if (width <= 0 || height <= 0) return;
     if (this._lastRequestedSize && Math.abs(this._lastRequestedSize.width - width) <= 1 && Math.abs(this._lastRequestedSize.height - height) <= 1) return;
@@ -42,9 +47,7 @@ export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopil
       intent: this.intent,
       surface: 'copilotInline',
       displayMode: this.hostContext.displayMode,
-      containerHeight: this.hostContext.displayMode === 'fullscreen'
-        ? this.hostContext.containerDimensions?.height ?? this.hostContext.containerDimensions?.maxHeight
-        : undefined,
+      containerHeight: this.hostContext.displayMode === 'fullscreen' ? this._getFullscreenContainerHeight() : undefined,
       workspaceMode: 'combined',
       targetDocument: this.context.domElement.ownerDocument,
       theme: this.hostContext.theme === 'dark' ? 'dark' : 'light',

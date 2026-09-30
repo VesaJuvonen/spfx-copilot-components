@@ -122,7 +122,7 @@ npm run check:package-output
 
 Call out:
 
-- 29 tests / 0 failures;
+- 32 tests / 0 failures;
 - 75 unique SPFx manifests;
 - 35 capabilities and 37 plugin functions;
 - 13 routing collision pairs;

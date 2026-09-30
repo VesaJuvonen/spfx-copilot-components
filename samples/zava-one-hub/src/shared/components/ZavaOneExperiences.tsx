@@ -79,6 +79,7 @@ import type {
   ZavaWorkspaceTab
 } from '../models/zavaOne';
 import { useVacationRequests, zavaSessionStore } from '../services/ZavaSessionStore';
+import { MIN_FULLSCREEN_HEIGHT } from '../utils/fullscreenSize';
 import { ResponsiveExpandButton } from './ResponsiveExpandButton';
 
 function settle(action: Promise<void> | undefined): void {
@@ -1188,7 +1189,7 @@ export function ZavaOneWorkspace(props: IZavaExperienceProps): React.ReactElemen
   const workspaceStyle: React.CSSProperties = props.displayMode === 'fullscreen'
     ? props.containerHeight && props.containerHeight > 0
       ? { height: `${Math.floor(props.containerHeight)}px`, minHeight: `${Math.floor(props.containerHeight)}px`, maxHeight: `${Math.floor(props.containerHeight)}px` }
-      : { height: '100dvh', minHeight: '720px' }
+      : { height: '100dvh', minHeight: `${MIN_FULLSCREEN_HEIGHT}px` }
     : { height: '100dvh', maxHeight: '100dvh' };
   const intentTab: ZavaWorkspaceTab = getCapabilityByIntent(props.intent)?.tab || 'company';
   const [activeTab, setActiveTab] = React.useState<ZavaWorkspaceTab>(mode === 'company' ? 'company' : mode === 'personal' ? 'personal' : props.primaryView === 'personal' ? 'personal' : intentTab);

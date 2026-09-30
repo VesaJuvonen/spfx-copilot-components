@@ -230,12 +230,12 @@ embedded module so keynote rendering remains offline.
 | Copilot plugin | v2.4, 37 validated functions / 6 conversation starters |
 | Agent branding | Zava One / 192px color icon / 32px transparent outline icon |
 | SPFx bundles | 2 host-specific bundles with shared source |
-| Tests | 29 passed / 0 failed |
+| Tests | 32 passed / 0 failed |
 | Inline visual smoke | 35 rendered / 35 unique layouts / 0 runtime, overflow, or image failures |
 | Copilot Workbench | 37/37 Ready baseline; 8/8 changed Personal workflows revalidated |
 | Complete screenshot gallery | 39 PNGs |
 | Bundled media | 28 provenance-checked assets |
-| Production package | `1.0.0.2` / `6,359,313` bytes / 169 entries |
+| Production package | `1.0.0.2` / `6,359,353` bytes / 169 entries |
 | Publication gallery | `assets/sample.json` / 12 reviewed complete-content PNGs |
 
 See [`phase-6-matrix.json`](./ux-review/evidence/phase-6-matrix.json),

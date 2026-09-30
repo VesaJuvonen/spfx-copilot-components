@@ -16,9 +16,9 @@ by [agentic-creation-rules.md](agentic-creation-rules.md).
 > two Copilot infrastructure entries bring the solution to 75 unique SPFx component GUIDs and 37
 > generated plugin functions in two host-specific bundles. The local harness has 35 unique inline
 > layouts, zero runtime/overflow/image failures, 39 settled experience screenshots, and 12 reviewed
-> publication images referenced by `assets/sample.json`. Twenty-nine Jest tests, 28-media provenance,
+> publication images referenced by `assets/sample.json`. Thirty-two Jest tests, 28-media provenance,
 > six conversation starters with Capability Explorer last, plugin validation, and the final
-> version `1.0.0.2`, 6,359,313-byte `.sppkg` audit pass. Evidence is in
+> version `1.0.0.2`, 6,359,353-byte `.sppkg` audit pass. Evidence is in
 > `ux-review/evidence/phase-6-matrix.json`. All 37
 > Workbench components reached Ready. Authenticated modern SharePoint/Teams chrome, tenant-host
 > accessibility, and deeper per-capability edge-state acceptance remain external or post-submission gates.
@@ -782,7 +782,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
   pin the package directly, rerender immediately on changes, and open the property pane from Advanced
   settings. Fixed Company/Personal workspaces do not expose a start-tab switch.
 - [x] Assert all 35 profiles are complete and reject page-author properties in the packaged 37-function
-  Copilot plugin; the current 29 tests pass and the generated plugin validator confirms the boundary.
+  Copilot plugin; the current 32 tests pass and the generated plugin validator confirms the boundary.
 - [x] Brand the agent as Zava One with deterministic manifest-safe icons: 192x192 white Z on Zava blue
   for `color.png`, and a padded white Z on a transparent 32x32 canvas for `outline.png`. Validate exact
   source-to-ZIP bytes, icon paths, display names, and `#075FCE` accent color during every build.
@@ -838,7 +838,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 - [ ] Complete the full-gallery multimodal/human review for repetition, density, crop, alignment,
   contrast, and keynote readability; representative Company/C06/C27/C34/C35 pixels are already reviewed.
 - [x] Validate bundle/media duplication and measured package thresholds before proceeding: two host-specific
-  bundles, 28 media assets, and a version `1.0.0.2`, 6,359,313-byte `.sppkg`.
+  bundles, 28 media assets, and a version `1.0.0.2`, 6,359,353-byte `.sppkg`.
 
 ## Phase 7 - Configuration Impact and Showcase Polish
 
