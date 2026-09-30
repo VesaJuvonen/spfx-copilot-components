@@ -42,6 +42,7 @@ import {
   ZavaOneWorkspace
 } from './ZavaOneExperiences';
 import { ZavaErrorBoundary } from './ZavaErrorBoundary';
+import { resolveVisibleFullscreenHeight, shouldSettleFullscreenFrame } from '../utils/fullscreenSize';
 
 function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'requestResize' | 'targetDocument'> & {
   onVisibleHeightChange: React.Dispatch<React.SetStateAction<number | undefined>>;
@@ -55,6 +56,7 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
 
     let animationFrame = 0;
     let trailingTimer = 0;
+    let settlementTimer = 0;
     const scheduleResize = (includeTrailing = true): void => {
       view.cancelAnimationFrame(animationFrame);
       view.clearTimeout(trailingTimer);
@@ -68,12 +70,23 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
       const previousBodyOverflow = body.style.overflow;
       const previousDocumentOverflow = documentElement.style.overflow;
       let previousViewportWidth = view.innerWidth;
+      let lastSettledHeight: number | undefined;
+      let pendingSettledHeight: number | undefined;
       const visibilityObserver = visibilityProbeRef.current && view.IntersectionObserver
         ? new view.IntersectionObserver(([entry]) => {
           const visibleHeight = Math.floor(entry.intersectionRect.height);
           if (visibleHeight > 0) {
-            props.onVisibleHeightChange(visibleHeight);
-            props.requestResize?.(visibleHeight).catch(() => undefined);
+            props.onVisibleHeightChange((currentHeight) => resolveVisibleFullscreenHeight(currentHeight, visibleHeight));
+            const currentViewportHeight = Math.floor(Math.max(view.visualViewport?.height || 0, view.innerHeight));
+            if (!shouldSettleFullscreenFrame(currentViewportHeight, visibleHeight, lastSettledHeight)) return;
+            if (pendingSettledHeight !== undefined && Math.abs(pendingSettledHeight - visibleHeight) < 16) return;
+            view.clearTimeout(settlementTimer);
+            pendingSettledHeight = visibleHeight;
+            settlementTimer = view.setTimeout(() => {
+              lastSettledHeight = visibleHeight;
+              pendingSettledHeight = undefined;
+              props.requestResize?.(visibleHeight).catch(() => undefined);
+            }, 240);
           }
         }, { threshold: Array.from({ length: 101 }, (_, index) => index / 100) })
         : undefined;
@@ -91,6 +104,7 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
       return () => {
         view.cancelAnimationFrame(animationFrame);
         view.clearTimeout(trailingTimer);
+        view.clearTimeout(settlementTimer);
         visibilityObserver?.disconnect();
         body.style.overflow = previousBodyOverflow;
         documentElement.style.overflow = previousDocumentOverflow;
