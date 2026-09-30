@@ -1,5 +1,6 @@
 import {
   getAdvertisedFullscreenHeight,
+  isFullscreenViewportSettled,
   resolveFullscreenRequestHeight,
   resolveVisibleFullscreenHeight,
   shouldSettleFullscreenFrame
@@ -26,9 +27,13 @@ describe('full-screen MCP sizing', () => {
     expect(resolveVisibleFullscreenHeight(1170, 1130)).toBe(1130);
   });
 
-  test('settles only material iframe overflow and ignores repeated nearby targets', () => {
+  test('settles only material iframe overflow', () => {
     expect(shouldSettleFullscreenFrame(1392, 1170)).toBe(true);
     expect(shouldSettleFullscreenFrame(1190, 1170)).toBe(false);
-    expect(shouldSettleFullscreenFrame(1392, 1150, 1170)).toBe(false);
+  });
+
+  test('does not treat a taller rejected viewport as settled', () => {
+    expect(isFullscreenViewportSettled(1801, 1579)).toBe(false);
+    expect(isFullscreenViewportSettled(1585, 1579)).toBe(true);
   });
 });

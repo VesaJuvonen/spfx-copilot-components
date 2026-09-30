@@ -6,7 +6,7 @@ import {
 } from '@microsoft/sp-copilot-component';
 import { ZavaOneApp } from '../components/ZavaOneApp';
 import type { IZavaModelContextSnapshot, ZavaIntentKey } from '../models/zavaOne';
-import { FULLSCREEN_LAYOUT_HYSTERESIS, resolveFullscreenRequestHeight } from '../utils/fullscreenSize';
+import { FULLSCREEN_LAYOUT_HYSTERESIS, isFullscreenViewportSettled, resolveFullscreenRequestHeight } from '../utils/fullscreenSize';
 
 export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopilotComponent<TProperties> {
   protected abstract readonly intent: ZavaIntentKey;
@@ -35,7 +35,7 @@ export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopil
     const matchesLastRequest = !!this._lastRequestedSize
       && Math.abs(this._lastRequestedSize.width - width) <= sizeTolerance
       && Math.abs(this._lastRequestedSize.height - height) <= sizeTolerance;
-    const fullscreenViewportSettled = currentViewportHeight >= height - sizeTolerance;
+    const fullscreenViewportSettled = isFullscreenViewportSettled(currentViewportHeight, height);
     if (matchesLastRequest && (!fullscreen || fullscreenViewportSettled)) return;
     if (await this.requestSizeChangeAsync(width, height)) this._lastRequestedSize = { width, height };
   }

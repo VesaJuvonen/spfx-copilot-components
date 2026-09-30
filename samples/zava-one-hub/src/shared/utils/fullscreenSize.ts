@@ -28,7 +28,10 @@ export function resolveVisibleFullscreenHeight(currentHeight: number | undefined
   return visibleHeight;
 }
 
-export function shouldSettleFullscreenFrame(currentViewportHeight: number, visibleHeight: number, lastSettledHeight?: number): boolean {
-  if (currentViewportHeight - visibleHeight < FULLSCREEN_FRAME_HYSTERESIS) return false;
-  return lastSettledHeight === undefined || Math.abs(lastSettledHeight - visibleHeight) >= FULLSCREEN_FRAME_HYSTERESIS;
+export function shouldSettleFullscreenFrame(currentViewportHeight: number, visibleHeight: number): boolean {
+  return currentViewportHeight - visibleHeight >= FULLSCREEN_FRAME_HYSTERESIS;
+}
+
+export function isFullscreenViewportSettled(currentViewportHeight: number, requestedHeight: number): boolean {
+  return Math.abs(currentViewportHeight - requestedHeight) <= FULLSCREEN_LAYOUT_HYSTERESIS;
 }

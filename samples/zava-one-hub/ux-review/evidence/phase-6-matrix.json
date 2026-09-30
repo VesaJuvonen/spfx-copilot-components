@@ -9,7 +9,7 @@
     "griffel": "1.7.8"
   },
   "catalog": {
-    "solutionVersion": "1.0.0.7",
+    "solutionVersion": "1.0.0.8",
     "businessCapabilities": 35,
     "featureWebParts": 35,
     "workspaceWebParts": 3,
@@ -22,7 +22,7 @@
   },
   "validation": {
     "jestSuites": 9,
-    "jestTests": 34,
+    "jestTests": 35,
     "jestFailures": 0,
     "lintWarnings": 0,
     "inlineIntentsRendered": 35,
@@ -90,6 +90,9 @@
     "fullscreenLayoutHysteresis": 16,
     "fullscreenFrameHysteresis": 48,
     "fullscreenSettlementDelayMs": 240,
+    "fullscreenSettlementAttempts": 3,
+    "fullscreenSettlementRetryDelaysMs": [240, 800, 1600],
+    "fullscreenRejectedTallerViewportIsSettled": false,
     "fullscreenLocalShellHeight": 500,
     "fullscreenLocalRootScrollHeight": 500,
     "fullscreenLocalBodyScrollHeight": 500,
@@ -97,8 +100,8 @@
     "fullscreenWorkbenchShellHeight": 1041,
     "fullscreenWorkbenchShellPosition": "static",
     "fullscreenWorkbenchBodyScrollHeight": 1041,
-    "sppkgAppManifestVersion": "1.0.0.7",
-    "sppkgFeatureVersion": "1.0.0.7",
+    "sppkgAppManifestVersion": "1.0.0.8",
+    "sppkgFeatureVersion": "1.0.0.8",
     "chartScopeChangesGeometry": true,
     "officeMarkerCount": 5,
     "officeListCount": 5,
@@ -129,7 +132,7 @@
     { "path": "assets/screenshot-vacation-updated-list.png", "width": 1600, "height": 860, "bytes": 26729, "sha256": "7041f2382dfcd695c325abd0f4afc6314e4e397ffd3f395ae7b1f649a21feec7" }
   ],
   "artifacts": [
-    { "path": "sharepoint/solution/zava-one-hub.sppkg", "bytes": 6360287, "sha256": "c39361a79e90dbd7784bfc0a6ff62001658e2c6b2f1c2b899e8acb53ff054f28" },
+    { "path": "sharepoint/solution/zava-one-hub.sppkg", "bytes": 6360448, "sha256": "678514c5fee23fccdfb7f08cda2cb4b5674ba1a734c5364d191b9a69a6ba4d62" },
     { "path": "teams/zava-one.zip", "bytes": 10263, "sha256": "f947e9b318101257dc232e0dffecfbf9e793550cffbee32d79f009dfb4b207f7" }
   ],
   "externalGate": "Tenant-authenticated modern SharePoint and Teams chrome, CSP, iframe focus, and screen-reader host checks are not complete."

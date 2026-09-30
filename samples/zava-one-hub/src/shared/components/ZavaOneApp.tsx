@@ -70,23 +70,36 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
       const previousBodyOverflow = body.style.overflow;
       const previousDocumentOverflow = documentElement.style.overflow;
       let previousViewportWidth = view.innerWidth;
-      let lastSettledHeight: number | undefined;
-      let pendingSettledHeight: number | undefined;
+      let settlementAttempt = 0;
+      let settlementTarget: number | undefined;
+      const settlementDelays = [240, 800, 1600];
+      const scheduleSettlement = (): void => {
+        if (settlementTimer || settlementTarget === undefined || settlementAttempt >= settlementDelays.length) return;
+        settlementTimer = view.setTimeout(async () => {
+          settlementTimer = 0;
+          const targetHeight = settlementTarget;
+          if (targetHeight === undefined) return;
+          const currentViewportHeight = Math.floor(Math.max(view.visualViewport?.height || 0, view.innerHeight));
+          if (!shouldSettleFullscreenFrame(currentViewportHeight, targetHeight)) return;
+          settlementAttempt += 1;
+          await props.requestResize?.(targetHeight).catch(() => undefined);
+          scheduleSettlement();
+        }, settlementDelays[settlementAttempt]);
+      };
       const visibilityObserver = visibilityProbeRef.current && view.IntersectionObserver
         ? new view.IntersectionObserver(([entry]) => {
           const visibleHeight = Math.floor(entry.intersectionRect.height);
           if (visibleHeight > 0) {
             props.onVisibleHeightChange((currentHeight) => resolveVisibleFullscreenHeight(currentHeight, visibleHeight));
             const currentViewportHeight = Math.floor(Math.max(view.visualViewport?.height || 0, view.innerHeight));
-            if (!shouldSettleFullscreenFrame(currentViewportHeight, visibleHeight, lastSettledHeight)) return;
-            if (pendingSettledHeight !== undefined && Math.abs(pendingSettledHeight - visibleHeight) < 16) return;
-            view.clearTimeout(settlementTimer);
-            pendingSettledHeight = visibleHeight;
-            settlementTimer = view.setTimeout(() => {
-              lastSettledHeight = visibleHeight;
-              pendingSettledHeight = undefined;
-              props.requestResize?.(visibleHeight).catch(() => undefined);
-            }, 240);
+            if (!shouldSettleFullscreenFrame(currentViewportHeight, visibleHeight)) return;
+            if (settlementTarget === undefined || Math.abs(settlementTarget - visibleHeight) >= 16) {
+              view.clearTimeout(settlementTimer);
+              settlementTimer = 0;
+              settlementAttempt = 0;
+              settlementTarget = visibleHeight;
+            }
+            scheduleSettlement();
           }
         }, { threshold: Array.from({ length: 101 }, (_, index) => index / 100) })
         : undefined;
