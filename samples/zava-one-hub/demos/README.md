@@ -3,7 +3,15 @@
 These scripts demonstrate the fixture-first sample without implying live business writes or production
 readiness. Use the same checked-in package, prompts, routes, and reset procedure for every rehearsal.
 
-## Demo set
+## Primary presenter set
+
+| Script | Duration | Purpose |
+| --- | --- | --- |
+| [Five-minute keynote](./keynote-5-minutes.md) | 5 minutes | Executive product story across answers, decisions, charts, maps, and workspaces |
+| [Ten-minute technical demo](./technical-demo-10-minutes.md) | 10 minutes | Catalog, routing, shared hosts, state, safety, packaging, and evidence |
+| [Twenty-minute feature showcase](./feature-showcase-20-minutes.md) | 15-20 minutes | Guided employee day covering forms, services, business insight, and personalization |
+
+## Alternate cuts and operations
 
 | Script | Duration | Purpose |
 | --- | --- | --- |
@@ -19,6 +27,7 @@ readiness. Use the same checked-in package, prompts, routes, and reset procedure
 3. Reset the C35 vacation queue and any session personalization.
 4. Keep the visible **Demo data / No business submission** labels in frame.
 5. Use the exact prompts in the scripts so routing remains deterministic.
+6. Choose one primary script and rehearse its optional cuts; do not combine every branch live.
 
 The current publication screenshots and their state coverage are recorded in
 [`assets/publication-screenshots.md`](../assets/publication-screenshots.md).

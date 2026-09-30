@@ -255,9 +255,10 @@ See [`phase-6-matrix.json`](./ux-review/evidence/phase-6-matrix.json),
 | Guide | Use |
 | --- | --- |
 | [Demo index](./demos/README.md) | Preflight and recommended order |
-| [90-second keynote](./demos/keynote-90-seconds.md) | Timed prompts, routes, checkpoints, and fallback |
-| [Business journey](./demos/business-journey.md) | Company, Personal, review, submit preview, charts, and map |
-| [Technical walkthrough](./demos/technical-walkthrough.md) | Architecture, host isolation, state, routing, and evidence |
+| [Five-minute keynote](./demos/keynote-5-minutes.md) | Executive product story with exact prompts, clicks, timing, and cuts |
+| [Ten-minute technical demo](./demos/technical-demo-10-minutes.md) | Catalog, routing, host isolation, state, safeguards, and validation |
+| [Twenty-minute feature showcase](./demos/feature-showcase-20-minutes.md) | Company, Personal, forms, services, charts, maps, and personalization |
+| [90-second keynote](./demos/keynote-90-seconds.md) | Compressed alternate pitch |
 | [Demo operations](./demos/demo-operations.md) | Reset, offline fallback, and failure recovery |
 | [Release readiness](./docs/release-readiness.md) | Host matrix, privacy, accessibility, validation, and external gates |
 

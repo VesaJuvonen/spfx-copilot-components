@@ -866,6 +866,8 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 
 ### Demo enablement
 
+- [x] Create presenter-ready five-minute keynote, ten-minute technical, and twenty-minute feature
+  showcase scripts with exact prompts, routes, UI targets, timing, recovery cuts, and honest host gates.
 - [x] Write and rehearse a 60-90 second keynote flow with deterministic reset points and an offline
   fallback that demonstrates the same product truth.
 - [x] Write a longer business journey covering Company, Personal, Copilot continuation, one review,
