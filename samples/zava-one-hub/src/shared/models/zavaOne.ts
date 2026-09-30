@@ -103,7 +103,7 @@ export interface IZavaModelContextSnapshot {
 
 export interface IZavaHostActions {
   requestFullscreen?: () => Promise<void>;
-  requestResize?: () => Promise<void>;
+  requestResize?: (height?: number) => Promise<void>;
   publishContext?: (snapshot: IZavaModelContextSnapshot) => Promise<void>;
   sendFollowUp?: (message: string) => Promise<void>;
 }

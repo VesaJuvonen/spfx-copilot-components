@@ -13,7 +13,7 @@ export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopil
   private _root: Root | undefined;
   private _lastRequestedSize: { width: number; height: number } | undefined;
 
-  private async _requestCurrentSizeAsync(): Promise<void> {
+  private async _requestCurrentSizeAsync(requestedFullscreenHeight?: number): Promise<void> {
     const root = this.context.domElement;
     const view = root.ownerDocument.defaultView;
     if (!view) return;
@@ -26,7 +26,9 @@ export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopil
     const currentViewportHeight = Math.max(view.visualViewport?.height || 0, view.innerHeight || 0, root.ownerDocument.documentElement.clientHeight || 0, root.clientHeight || 0);
     const width = Math.ceil(hostDimensions?.width || hostDimensions?.maxWidth || root.clientWidth || contentRect?.width || view.innerWidth || 0);
     const height = fullscreen
-      ? Math.ceil(resolveFullscreenRequestHeight(hostDimensions?.height, hostDimensions?.maxHeight, currentViewportHeight, view.screen?.availHeight))
+      ? Math.ceil(requestedFullscreenHeight && requestedFullscreenHeight > 0
+        ? requestedFullscreenHeight
+        : resolveFullscreenRequestHeight(hostDimensions?.height, hostDimensions?.maxHeight, currentViewportHeight, view.screen?.availHeight))
       : Math.ceil(Math.max(content?.scrollHeight || 0, contentRect ? contentRect.bottom - rootRect.top : 0) + 2);
     if (width <= 0 || height <= 0) return;
     const matchesLastRequest = !!this._lastRequestedSize
@@ -59,7 +61,7 @@ export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopil
           }
         }
       },
-      requestResize: async (): Promise<void> => this._requestCurrentSizeAsync(),
+      requestResize: async (height?: number): Promise<void> => this._requestCurrentSizeAsync(height),
       publishContext: async (snapshot: IZavaModelContextSnapshot): Promise<void> => {
         await this.context.copilotBridge.updateModelContextAsync({
           content: [createCopilotTextContent(snapshot.summary)],

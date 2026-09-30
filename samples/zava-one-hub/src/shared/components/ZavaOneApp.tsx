@@ -55,38 +55,51 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
 
     let animationFrame = 0;
     let trailingTimer = 0;
-    const retryTimers: number[] = [];
-    const scheduleResize = (): void => {
+    const scheduleResize = (includeTrailing = true): void => {
       view.cancelAnimationFrame(animationFrame);
       view.clearTimeout(trailingTimer);
       animationFrame = view.requestAnimationFrame(() => {
         props.requestResize?.().catch(() => undefined);
-        trailingTimer = view.setTimeout(() => props.requestResize?.().catch(() => undefined), 240);
+        if (includeTrailing) trailingTimer = view.setTimeout(() => props.requestResize?.().catch(() => undefined), 240);
       });
     };
     if (props.displayMode === 'fullscreen') {
+      const documentElement = props.targetDocument.documentElement;
+      const previousBodyOverflow = body.style.overflow;
+      const previousDocumentOverflow = documentElement.style.overflow;
+      let previousViewportWidth = view.innerWidth;
       const visibilityObserver = visibilityProbeRef.current && view.IntersectionObserver
         ? new view.IntersectionObserver(([entry]) => {
           const visibleHeight = Math.floor(entry.intersectionRect.height);
-          if (visibleHeight > 0) props.onVisibleHeightChange(visibleHeight);
+          if (visibleHeight > 0) {
+            props.onVisibleHeightChange(visibleHeight);
+            props.requestResize?.(visibleHeight).catch(() => undefined);
+          }
         }, { threshold: Array.from({ length: 101 }, (_, index) => index / 100) })
         : undefined;
+      const handleViewportResize = (): void => {
+        const viewportWidth = view.innerWidth;
+        if (Math.abs(viewportWidth - previousViewportWidth) > 32) scheduleResize(false);
+        previousViewportWidth = viewportWidth;
+      };
+      body.style.overflow = 'hidden';
+      documentElement.style.overflow = 'hidden';
       if (visibilityObserver && visibilityProbeRef.current) visibilityObserver.observe(visibilityProbeRef.current);
-      scheduleResize();
-      [120, 480, 1200].forEach((delay) => retryTimers.push(view.setTimeout(() => props.requestResize?.().catch(() => undefined), delay)));
-      view.addEventListener('resize', scheduleResize);
-      view.visualViewport?.addEventListener('resize', scheduleResize);
+      scheduleResize(false);
+      view.addEventListener('resize', handleViewportResize);
+      view.visualViewport?.addEventListener('resize', handleViewportResize);
       return () => {
         view.cancelAnimationFrame(animationFrame);
         view.clearTimeout(trailingTimer);
-        retryTimers.forEach((timer) => view.clearTimeout(timer));
         visibilityObserver?.disconnect();
-        view.removeEventListener('resize', scheduleResize);
-        view.visualViewport?.removeEventListener('resize', scheduleResize);
+        body.style.overflow = previousBodyOverflow;
+        documentElement.style.overflow = previousDocumentOverflow;
+        view.removeEventListener('resize', handleViewportResize);
+        view.visualViewport?.removeEventListener('resize', handleViewportResize);
       };
     }
-    const resizeObserver = new view.ResizeObserver(scheduleResize);
-    const mutationObserver = new view.MutationObserver(scheduleResize);
+    const resizeObserver = new view.ResizeObserver(() => scheduleResize());
+    const mutationObserver = new view.MutationObserver(() => scheduleResize());
     resizeObserver.observe(body);
     mutationObserver.observe(body, { attributes: true, characterData: true, childList: true, subtree: true });
     scheduleResize();
@@ -94,7 +107,6 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
     return () => {
       view.cancelAnimationFrame(animationFrame);
       view.clearTimeout(trailingTimer);
-      retryTimers.forEach((timer) => view.clearTimeout(timer));
       resizeObserver.disconnect();
       mutationObserver.disconnect();
     };
