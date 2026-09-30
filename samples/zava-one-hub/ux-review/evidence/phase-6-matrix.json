@@ -52,8 +52,15 @@
     "generatedPluginFunctions": 37,
     "uniquePluginFunctionDescriptions": 37,
     "agentInstructionFunctionCoverage": 37,
-    "conversationStarters": 5,
+    "conversationStarters": 6,
     "capabilityExplorerStarterIsLast": true,
+    "packagedAgentVersion": "1.0.0.14",
+    "publicationGalleryImages": 5,
+    "publicationGalleryWidth": 1600,
+    "publicationGalleryHeight": 900,
+    "publicationGalleryMatchesCurrentImplementation": true,
+    "sampleMetadataPresent": true,
+    "readmeTrackerValid": true,
     "chartScopeChangesGeometry": true,
     "officeMarkerCount": 5,
     "officeListCount": 5,
@@ -70,8 +77,8 @@
     { "path": "ux-review/evidence/screenshots/company-mobile-light.png", "bytes": 456577, "sha256": "9cad7b3b30d8d09bf5478662900f1798f5106a560dd8eec40b9ab3297b3de6e1" }
   ],
   "artifacts": [
-    { "path": "sharepoint/solution/zava-one-hub.sppkg", "bytes": 6357873, "sha256": "31417603251be04ce77e867adb802763d48158cbb31d7c7efb8a16c476912c56" },
-    { "path": "teams/zava-one.zip", "bytes": 10239, "sha256": "de300b6d754b852dbed38e091e5a682846e4406ee2dabd3fa9273e2754ead433" }
+    { "path": "sharepoint/solution/zava-one-hub.sppkg", "bytes": 6357899, "sha256": "ac5fe2840c149d4d4fff7e8bc2b084dbf87da6002d95c8f10620d8f88e981bb4" },
+    { "path": "teams/zava-one.zip", "bytes": 10263, "sha256": "fe2e5164e56f583ac3be71f9704c5e88cb80c4dfb0e6ae5ec4d5d0abd90b6a65" }
   ],
   "externalGate": "Tenant-authenticated modern SharePoint and Teams chrome, CSP, iframe focus, and screen-reader host checks are not complete."
 }

@@ -10,30 +10,28 @@ by [agentic-creation-rules.md](agentic-creation-rules.md).
 > **Status legend:** `- [ ]` open, `- [x]` validated, **IN PROGRESS** active, and
 > **BLOCKED: reason** externally blocked. A checkbox closes only after its named evidence exists.
 
-> **Progress (latest):** **Phase 6 review checkpoint reached.** All 35 final-named feature pairs were
-> generated through Yeoman and now render shared React experiences through 35 SharePoint-only web parts
-> and 35 intent-specific Copilot Components. Three additional workspace web parts provide Combined,
-> Company-only, and Personal-only SharePoint/Teams modes over the same `ZavaOneWorkspace`; two Copilot
-> infrastructure entries bring the solution to 75 unique SPFx component GUIDs and 37 generated plugin
-> functions in two host-specific bundles that keep SharePoint and Copilot runtimes isolated. The local harness rendered all 35 inline intents with 35 unique
-> layouts, zero runtime/overflow/image failures, and saved a complete 39-image experience gallery plus
-> eight representative review screenshots. Twenty-five Jest tests,
-> the media/provenance gate, zero-warning production build, plugin validation, and final 6,356,129-byte
-> `.sppkg` audit pass. Evidence is in `ux-review/evidence/phase-6-matrix.json`. All 37 Workbench
-> components have reached Ready, and the eight changed Personal workflows were rechecked against fresh
-> localhost manifests. Phase 7 remains untouched; SharePoint/Teams host chrome, ACE selection, and deeper
-> per-capability edge-state acceptance remain open for the requested review and revisit.
+> **Progress (latest):** **First-submission candidate locally validated.** All 35 final-named feature
+> pairs render through 35 SharePoint-only web parts and 35 intent-specific Copilot Components. Three
+> composed workspace web parts provide Combined, Company-only, and Personal-only SharePoint/Teams modes;
+> two Copilot infrastructure entries bring the solution to 75 unique SPFx component GUIDs and 37
+> generated plugin functions in two host-specific bundles. The local harness has 35 unique inline
+> layouts, zero runtime/overflow/image failures, 39 settled experience screenshots, and five reviewed
+> publication images referenced by `assets/sample.json`. Twenty-five Jest tests, 28-media provenance,
+> six conversation starters with Capability Explorer last, plugin validation, and the final
+> 6,357,899-byte `.sppkg` audit pass. Evidence is in `ux-review/evidence/phase-6-matrix.json`. All 37
+> Workbench components reached Ready. Authenticated modern SharePoint/Teams chrome, tenant-host
+> accessibility, and deeper per-capability edge-state acceptance remain external or post-submission gates.
 
 ### Review readiness
 
-**Ready for local Phase 6 review:** all 35 paired experiences, three workspace modes, C06/C13/C14/C35
-reference journeys, C27/C34 D3 visuals, 39 screenshot states, deterministic fixtures/media, generated
-plugin, and deployable package have executable evidence.
+**Ready for first repository review and developer-tenant deployment:** all 35 paired experiences, three
+workspace modes, C06/C13/C14/C35 reference journeys, C27/C34 D3 visuals, 39 screenshot states, five
+gallery assets, deterministic fixtures/media, six conversation starters, generated plugin, and the
+committed deployable package have executable evidence.
 
-**Not release-complete:** the open Phase 0-6 checkboxes now identify only real remaining work: native ACE
-selection, dedicated baseline/routing/publication validators, source-service abstractions and edge-state
-matrices, exact host continuation/focus behavior, deep domain acceptance, complete visual matrix/human
-review, and authenticated SharePoint/Teams/Copilot validation. Phase 7 remains intentionally unstarted.
+**Not production-ready:** native ACE selection, source-service abstractions, edge-state matrices, exact
+host continuation/focus behavior, deep domain acceptance, complete accessibility/visual review, and
+authenticated SharePoint/Teams/Copilot validation remain open and are not implied by this submission.
 
 ## Authority, Decisions, and Boundaries
 
@@ -233,8 +231,8 @@ part, Copilot inline view, and composed workspace wherever that feature appears.
   request/vacation approval, tasks/approvals, news/announcements, knowledge/glossary,
   events/agenda, learning/tasks, IT/security/facilities, public stock/private equity,
   Personal leave/team availability, and offices/workplace booking/campus menu.
-- [x] Provide five keynote-ready conversation starters spanning company news, verified knowledge,
-  a praise form, a sales chart, and `ExploreAgentCapabilities` in the final position.
+- [x] Provide six keynote-ready conversation starters spanning company news, verified knowledge,
+  a praise form, a sales chart, a global office map, and `ExploreAgentCapabilities` in the final position.
 - [x] Keep API plugin v2.4 `name_for_human` at `Zava One` (8 characters), human description at no more
   than 100 characters, and model description at no more than 2,048 characters.
 
@@ -814,7 +812,7 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
 - [ ] Complete the full-gallery multimodal/human review for repetition, density, crop, alignment,
   contrast, and keynote readability; representative Company/C06/C27/C34/C35 pixels are already reviewed.
 - [x] Validate bundle/media duplication and measured package thresholds before proceeding: two host-specific
-  bundles, 28 media assets, and a 6,357,873-byte `.sppkg`.
+  bundles, 28 media assets, and a 6,357,899-byte `.sppkg`.
 
 ## Phase 7 - Configuration Impact and Showcase Polish
 
@@ -868,7 +866,7 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
 - [ ] Run catalog, React baseline, routing matrix, media, embedded media, gallery, publication, visual,
   clean test, production build, generated plugin, package-output, release-evidence, diagnostics, and
   `git diff --check` gates with zero warnings/errors.
-- [ ] Inspect the actual `.sppkg` JavaScript, manifests, embedded agent ZIP, icons, media count, shared
+- [x] Inspect the actual `.sppkg` JavaScript, manifests, embedded agent ZIP, icons, media count, shared
   bundle membership, paired feature registrations, three Teams-enabled workspace registrations,
   stale output, and measured size thresholds.
 - [ ] Inspect the three generated Teams catalog entries or manifest archives for unique identities,
@@ -889,7 +887,7 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
 
 ### Publication gate
 
-- [ ] Confirm package hashes, feature-pair/component/tool counts, Teams-enabled web-part count,
+- [x] Confirm package hashes, feature-pair/component/tool counts, Teams-enabled web-part count,
   bundle/media counts, screenshot inventory, routing matrix, README links, demos, and release claims are
   generated from current artifacts.
 - [ ] Stop temporary servers, update the Progress block and every duplicated measured count, and leave
@@ -919,8 +917,10 @@ These items are not part of the offline keynote package and must not block its l
 - [x] Replace the placeholder README with the PnP sample template content for Zava One: objectives,
   cross-product experiences, architecture, fixture/data story, prerequisites, setup, limitations,
   screenshots, demos, package link, version history, authors, and references.
-- [ ] Author `assets/sample.json` from actual metadata and validated PNGs; preserve gallery ordering and
+- [x] Author `assets/sample.json` from actual metadata and validated PNGs; preserve gallery ordering and
   link only to real assets.
+- [x] Recapture and review five current-implementation publication images at 1600x900 without clipped
+  workspace columns or stale layouts.
 - [ ] Add architecture and data-flow diagrams, catalog/routing documentation, host matrix, privacy and
   accessibility notes, media provenance, test commands, and release evidence links.
 - [ ] Reconcile design documents only where implementation decisions legitimately supersede proposals;

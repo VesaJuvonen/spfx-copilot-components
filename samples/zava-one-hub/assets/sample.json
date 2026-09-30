@@ -1,0 +1,91 @@
+[
+  {
+    "name": "pnp-sp-dev-spfx-copilot-apps-zava-one-hub",
+    "source": "pnp",
+    "title": "Zava One - Employee Experience Hub",
+    "shortDescription": "A fixture-first employee hub with 35 paired SharePoint web parts and Copilot Components for company communications, personal work, services, decisions, and business insights.",
+    "url": "https://github.com/pnp/spfx-copilot-components/tree/main/samples/zava-one-hub",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/spfx-copilot-components/tree/main/samples/zava-one-hub",
+    "longDescription": [
+      "Zava One is an SPFx 1.24 employee experience that pairs 35 independently configurable SharePoint web parts with 35 intent-specific Copilot Components over shared React implementations. Three composed workspace web parts provide Combined, Company, and Personal experiences across SharePoint and Microsoft Teams.",
+      "The sample demonstrates company news, trusted knowledge, personal work, employee services, approval workflows, charts, and a selectable world office map. Six conversation starters showcase information, verified answers, praise, sales visualization, global offices, and a capability explorer.",
+      "All business data and actions are deterministic fixtures for reliable offline demonstrations. The committed SPPKG, generated agent package, 25 automated tests, and 39-image review gallery support repeatable evaluation before tenant-host validation."
+    ],
+    "creationDateTime": "2026-09-26",
+    "updateDateTime": "2026-09-29",
+    "products": [
+      "SharePoint",
+      "Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE-TYPE",
+        "value": "SPFx-CopilotComponent"
+      },
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.24.0-beta.5"
+      }
+    ],
+    "thumbnails": [
+      {
+        "name": "preview.png",
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/preview.png",
+        "alt": "Zava One combined workspace showing the Company experience"
+      },
+      {
+        "name": "screenshot-personal.png",
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-personal.png",
+        "alt": "Zava One combined workspace showing the Personal experience"
+      },
+      {
+        "name": "screenshot-company-news.png",
+        "type": "image",
+        "order": 102,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-company-news.png",
+        "alt": "Zava One Company News experience"
+      },
+      {
+        "name": "screenshot-sales-performance.png",
+        "type": "image",
+        "order": 103,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-sales-performance.png",
+        "alt": "Zava One sales performance chart and exact values"
+      },
+      {
+        "name": "screenshot-vacation-approvals.png",
+        "type": "image",
+        "order": 104,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/zava-one-hub/assets/screenshot-vacation-approvals.png",
+        "alt": "Zava One vacation request approvals queue"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "vesajuvonen",
+        "pictureUrl": "https://github.com/vesajuvonen.png",
+        "name": "Vesa Juvonen"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of the SharePoint Framework",
+        "description": "The SharePoint Framework is the extensibility model used by the web parts and Copilot Components in this sample.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview"
+      },
+      {
+        "name": "Build your first SharePoint Copilot App",
+        "description": "Learn how to build and test SPFx Copilot Components for Microsoft Copilot.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/copilot/get-started/build-your-first-copilot-app"
+      }
+    ]
+  }
+]

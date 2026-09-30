@@ -69,7 +69,7 @@ for (const fn of functions) {
 }
 
 const starters = agent.conversation_starters || [];
-if (starters.length !== 5) errors.push(`Expected 5 conversation starters, found ${starters.length}.`);
+if (starters.length !== 6) errors.push(`Expected 6 conversation starters, found ${starters.length}.`);
 if (new Set(starters.map((starter) => starter.title)).size !== starters.length) errors.push('Conversation starter titles must be unique.');
 if (new Set(starters.map((starter) => starter.text)).size !== starters.length) errors.push('Conversation starter prompts must be unique.');
 if (starters.at(-1)?.text !== 'Show me all the company and employee experiences Zava One can help with.') {

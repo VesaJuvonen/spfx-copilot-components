@@ -4,7 +4,14 @@
 ![React](https://img.shields.io/badge/React-18.3.1-149eca.svg)
 ![Fluent UI](https://img.shields.io/badge/Fluent_UI-9.74.9-0f6cbd.svg)
 ![Data](https://img.shields.io/badge/data-offline_fixtures-008272.svg)
-![Status](https://img.shields.io/badge/status-Phase_6_review-8a6500.svg)
+![Status](https://img.shields.io/badge/status-first_submission_candidate-0078d4.svg)
+
+## Applies To
+
+- SharePoint Framework `1.24.0-beta.5` Copilot Components
+- Microsoft Copilot declarative agents
+- SharePoint Online and Microsoft Teams
+- React `18.3.1`, Fluent UI React v9, and Node.js 22
 
 **Your company, wherever you work.**
 
@@ -19,12 +26,13 @@ The same shared React capability powers:
 - the exact route inside Copilot full screen; and
 - one of three composed SharePoint/Teams workspace experiences.
 
-![Zava One Company workspace](./ux-review/evidence/all-experiences/workspace-combined-company.png)
+![Zava One Company workspace](./assets/preview.png)
 
-> **Current status:** Phase 6 implementation is ready for review. Phase 7 personalization and showcase
-> polish have not started. Tenant-authenticated modern SharePoint/Teams chrome and complete host
-> accessibility validation are still required. SPFx 1.24 beta.5 Copilot Components remain preview
-> technology and are not presented as production-ready.
+> **Current status:** the first-submission candidate is locally validated with 25 passing tests, 39
+> settled experience screenshots, required gallery metadata, and a committed production SPPKG.
+> Tenant-authenticated modern SharePoint/Teams chrome and complete host accessibility validation are
+> still required. SPFx 1.24 beta.5 Copilot Components remain preview technology and are not presented
+> as production-ready.
 
 ## Highlights
 
@@ -40,7 +48,7 @@ The same shared React capability powers:
   distinctive editorial photography, publication metadata, and six selectable layouts.
 - **Decision-grade visualization:** focused D3 bar charts with exact-value tables and an offline Natural
   Earth office projection with equivalent marker/list selection.
-- **Offline keynote reliability:** 22 provenance-checked media assets embedded once in the shared bundle;
+- **Offline keynote reliability:** 28 provenance-checked media assets embedded once in the shared bundle;
   no runtime content or profile-photo request is required.
 - **Copilot bridge behavior:** host-authoritative expansion, complete model-context snapshots, explicit
   user-triggered follow-ups, persistent React roots, and owner-document Fluent/Griffel rendering.
@@ -197,7 +205,7 @@ embedded module so keynote rendering remains offline.
 | --- | --- |
 | SPFx components | 75 unique GUIDs |
 | Business capabilities | 35 web-part/Copilot pairs |
-| Copilot plugin | v2.4, 37 validated functions |
+| Copilot plugin | v2.4, 37 validated functions / 6 conversation starters |
 | Agent branding | Zava One / 192px color icon / 32px transparent outline icon |
 | SPFx bundles | 2 host-specific bundles with shared source |
 | Tests | 25 passed / 0 failed |
@@ -205,11 +213,23 @@ embedded module so keynote rendering remains offline.
 | Copilot Workbench | 37/37 Ready baseline; 8/8 changed Personal workflows revalidated |
 | Complete screenshot gallery | 39 PNGs |
 | Bundled media | 28 provenance-checked assets |
-| Production package | `6,357,873` bytes / 169 entries |
+| Production package | `6,357,899` bytes / 169 entries |
+| Publication gallery | `assets/sample.json` / 5 reviewed 1600x900 PNGs |
 
 See [`phase-6-matrix.json`](./ux-review/evidence/phase-6-matrix.json),
 [`g0-bootstrap.md`](./ux-review/evidence/g0-bootstrap.md), and
 [`todo.md`](./todo.md) for detailed evidence and remaining gates.
+
+## Testing and Deployment Readiness
+
+| Gate | Status | Next action |
+| --- | --- | --- |
+| Source, generated hosts, media, and routing validation | Ready | Run `npm ci` and `npm run validate` |
+| Local visual review | Ready | Run the UX review harness and use the documented query parameters |
+| SharePoint solution package | Ready to deploy to a developer tenant | Upload the committed SPPKG to an approved app catalog |
+| Copilot Component baseline | Ready for tenant verification | Confirm all six starters and 37 tools in Copilot Workbench |
+| Modern SharePoint pages and Teams tabs | External validation required | Verify Top Actions, responsive chrome, focus, and CSP after deployment |
+| Production use | Not claimed | Replace fixtures and complete security, privacy, accessibility, and service-owner reviews |
 
 ## Minimal Path to Awesome
 
@@ -231,7 +251,7 @@ Prerequisites:
 - Yeoman `5.1.0` plus `@microsoft/generator-sharepoint@1.24.0-beta.5` only when generating components
 
 ```bash
-npm install
+npm ci
 npm run validate
 npm run build
 ```
@@ -262,8 +282,8 @@ Open `http://127.0.0.1:4322`. Query parameters select an experience:
   tenant/app catalog and test accounts.
 - The current providers are fixtures. Live Graph, SharePoint, HR, LMS, ITSM, CRM, finance, market,
   workplace, and security integrations are deferred.
-- Phase 7 settings, final motion, keynote scripts, per-intent edge-state expansion, localization/RTL,
-  forced-color, screen-reader host testing, and publication assets remain open in `todo.md`.
+- Phase 7 final motion, keynote scripts, per-intent edge-state expansion, localization/RTL,
+  forced-color, and screen-reader host testing remain open in `todo.md`.
 - VS Code may show inherited TypeScript 6 deprecation warnings for the generator-owned ES5/node10 base
   config. The pinned TypeScript 5.8/Heft build is clean; changing the generated target is intentionally
   deferred until the SPFx baseline changes.
@@ -278,7 +298,7 @@ Open `http://127.0.0.1:4322`. Query parameters select an experience:
 
 | Version | Date | Comments |
 | --- | --- | --- |
-| 1.0.0 | September 26, 2026 | Phase 6 review build with 35 paired capabilities and three workspaces |
+| 1.0.0 | September 29, 2026 | First-submission candidate with 35 paired capabilities and three workspaces |
 
 ## References
 
@@ -292,3 +312,5 @@ Open `http://127.0.0.1:4322`. Query parameters select an experience:
 
 **THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
 IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.**
+
+<img src="https://m365-visitor-stats.azurewebsites.net/spfx-copilot-components/samples/zava-one-hub" />
