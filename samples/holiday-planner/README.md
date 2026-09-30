@@ -86,7 +86,19 @@ SPFx Copilot Components cannot be tested in the local workbench. Use the hosted 
 npm run build
 ```
 
-Deploy `sharepoint/solution/holiday-planner.sppkg` to the SharePoint App Catalog and `teams/holiday-planner.zip` to the Teams/Copilot app catalog, approve the API permissions, then configure the tenant property and provision the list as described next. Start a new Copilot conversation after every redeploy so the agent picks up the latest tool schema and instructions.
+Deploy `sharepoint/solution/holiday-planner.sppkg` to the SharePoint App Catalog and `teams/holiday-planner.zip` to the Teams/Copilot app catalog, then approve the API permissions, configure the tenant property, and provision the list as described next. Start a new Copilot conversation after every redeploy so the agent picks up the latest tool schema and instructions.
+
+### Approve Microsoft Graph permissions
+
+Uploading the `.sppkg` queues the permission requests declared in [`config/package-solution.json`](./config/package-solution.json); they are not granted automatically. A SharePoint or Global administrator must approve them:
+
+1. Open the **SharePoint admin center** and go to **Advanced > API access**.
+2. Under **Pending requests**, select each request from `holiday-planner-client-side-solution` and choose **Approve**:
+   - **Microsoft Graph** - `User.Read`
+   - **Microsoft Graph** - `Files.ReadWrite.AppFolder`
+3. Confirm both now appear under **Approved requests**.
+
+Until approval is complete, the components still render and fall back to browser-locale or time-zone country detection, but the profile-country lookup and **Save default country to OneDrive** action fail with a consent error.
 
 ### Configure the holiday site
 
