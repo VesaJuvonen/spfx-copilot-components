@@ -15,7 +15,7 @@ by [agentic-creation-rules.md](agentic-creation-rules.md).
 > composed workspace web parts provide Combined, Company-only, and Personal-only SharePoint/Teams modes;
 > two Copilot infrastructure entries bring the solution to 75 unique SPFx component GUIDs and 37
 > generated plugin functions in two host-specific bundles. The local harness has 35 unique inline
-> layouts, zero runtime/overflow/image failures, 39 settled experience screenshots, and five reviewed
+> layouts, zero runtime/overflow/image failures, 39 settled experience screenshots, and 12 reviewed
 > publication images referenced by `assets/sample.json`. Twenty-five Jest tests, 28-media provenance,
 > six conversation starters with Capability Explorer last, plugin validation, and the final
 > 6,357,899-byte `.sppkg` audit pass. Evidence is in `ux-review/evidence/phase-6-matrix.json`. All 37
@@ -609,8 +609,10 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
 - [x] Assert feature web-part manifests are SharePoint-only, exactly three web parts are Teams-enabled,
   each owns one unique workspace mode, and all workspace/Copilot full-screen roots resolve to the same
   `ZavaOneWorkspace` implementation.
-- [ ] Capture C35 list, detail, decision, receipt, and updated-list screenshots with real bundled persona
-  portraits at inline, web-part, Teams workspace, Copilot full-screen, narrow, and dark checkpoints.
+- [x] Capture C35 list, detail, decision, receipt, and updated-list publication screenshots with real
+  bundled persona portraits at the 1600x900 web-part checkpoint.
+- [ ] Extend the complete C35 state sequence to inline, Teams workspace, Copilot full-screen, narrow,
+  and dark authenticated-host checkpoints.
 - [x] Validate the generated plugin/package and save local cross-host evidence; keep tenant-only behavior open
   if authentication or host capability is unavailable.
 
@@ -844,14 +846,14 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
 
 ### Demo enablement
 
-- [ ] Write and rehearse a 60-90 second keynote flow with deterministic reset points and an offline
+- [x] Write and rehearse a 60-90 second keynote flow with deterministic reset points and an offline
   fallback that demonstrates the same product truth.
-- [ ] Write a longer business journey covering Company, Personal, Copilot continuation, one review,
+- [x] Write a longer business journey covering Company, Personal, Copilot continuation, one review,
   one submit preview, C35 cross-surface vacation status updates, personalization, and the C34
   visualization.
-- [ ] Write a technical walkthrough covering generated identities, shared adapters, catalog automation,
+- [x] Write a technical walkthrough covering generated identities, shared adapters, catalog automation,
   state ownership, bridge snapshots, fixture services, accessibility, and package evidence.
-- [ ] Save demo prompts, expected routes, screenshots, reset procedure, and failure recovery in the repo.
+- [x] Save demo prompts, expected routes, screenshots, reset procedure, and failure recovery in the repo.
 
 ### Phase 7 gate
 
@@ -863,13 +865,13 @@ and an immediate update to this file. Tenant-only checks remain open with one pr
 
 ### Local executable gates
 
-- [ ] Run catalog, React baseline, routing matrix, media, embedded media, gallery, publication, visual,
+- [x] Run catalog, React baseline, routing matrix, media, embedded media, gallery, publication, visual,
   clean test, production build, generated plugin, package-output, release-evidence, diagnostics, and
   `git diff --check` gates with zero warnings/errors.
 - [x] Inspect the actual `.sppkg` JavaScript, manifests, embedded agent ZIP, icons, media count, shared
   bundle membership, paired feature registrations, three Teams-enabled workspace registrations,
   stale output, and measured size thresholds.
-- [ ] Inspect the three generated Teams catalog entries or manifest archives for unique identities,
+- [x] Inspect the three generated Teams catalog entries or manifest archives for unique identities,
   names, icons, personal/channel scopes, launch mode, shared component references, and absence of all
   feature-level web parts.
 - [ ] Run a clean-clone/offline rehearsal with `npm ci`, no runtime network, repeatable screenshots, and
@@ -919,9 +921,9 @@ These items are not part of the offline keynote package and must not block its l
   screenshots, demos, package link, version history, authors, and references.
 - [x] Author `assets/sample.json` from actual metadata and validated PNGs; preserve gallery ordering and
   link only to real assets.
-- [x] Recapture and review five current-implementation publication images at 1600x900 without clipped
+- [x] Recapture and review 12 current-implementation publication images at 1600x900 without clipped
   workspace columns or stale layouts.
-- [ ] Add architecture and data-flow diagrams, catalog/routing documentation, host matrix, privacy and
+- [x] Add architecture and data-flow diagrams, catalog/routing documentation, host matrix, privacy and
   accessibility notes, media provenance, test commands, and release evidence links.
 - [ ] Reconcile design documents only where implementation decisions legitimately supersede proposals;
   preserve history and mark measured limitations honestly.

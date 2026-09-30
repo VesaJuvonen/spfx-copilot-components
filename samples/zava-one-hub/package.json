@@ -12,6 +12,7 @@
     "check:agent-icons": "node scripts/generate-agent-icons.mjs --check",
     "check:media": "node scripts/validate-media-provenance.mjs && node scripts/generate-embedded-media.mjs --check",
     "check:package-output": "node scripts/validate-package-output.mjs",
+    "check:publication": "node scripts/validate-publication.mjs",
     "check:reference-hosts": "node scripts/configure-reference-hosts.mjs --check",
     "check:visual-evidence": "node scripts/generate-visual-evidence.mjs --check",
     "clean": "heft clean",
@@ -23,7 +24,7 @@
     "generate:agent-icons": "node scripts/generate-agent-icons.mjs",
     "start": "heft start --clean",
     "start:ux-review": "node scripts/serve-ux-review.mjs",
-    "validate": "npm run check:reference-hosts && npm run check:agent-icons && npm run check:media && npm run check:visual-evidence && npm run build:ux-review && heft test --clean"
+    "validate": "npm run check:reference-hosts && npm run check:agent-icons && npm run check:media && npm run check:visual-evidence && npm run check:publication && npm run build:ux-review && heft test --clean"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",

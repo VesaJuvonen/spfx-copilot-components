@@ -1,11 +1,78 @@
 {
-  "generatedAt": "2026-09-26T00:00:00Z",
+  "generatedAt": "2026-09-30T00:00:00Z",
   "inlineExperiences": 35,
   "workspaceStates": 4,
   "totalScreenshots": 39,
   "captureWidths": {
     "inline": 900,
     "workspace": 1440
+  },
+  "publicationGallery": {
+    "totalScreenshots": 12,
+    "width": 1600,
+    "height": 900,
+    "screenshots": [
+      {
+        "path": "assets/preview.png",
+        "bytes": 165383,
+        "sha256": "19c3c61f47b6cd9e4b37c708bcac709feeaf70c059b0eaa073b5c360bf2215b0"
+      },
+      {
+        "path": "assets/screenshot-personal.png",
+        "bytes": 64390,
+        "sha256": "914b432c5a237495c887c2bf08ed26c6d3d4c77d5020c4ccfb02dea9f01b881b"
+      },
+      {
+        "path": "assets/screenshot-company-news.png",
+        "bytes": 100867,
+        "sha256": "bbeb42657a9ced2c6d9bf3b08244c6dbff759ee98dee597be1f2654548f54175"
+      },
+      {
+        "path": "assets/screenshot-recognition-compose.png",
+        "bytes": 27161,
+        "sha256": "811d8e739621a29032730e3d4a0ec873d766419196d75a1e7f445c7efccb83df"
+      },
+      {
+        "path": "assets/screenshot-sales-performance.png",
+        "bytes": 19138,
+        "sha256": "58462bd4bb6b017ac7c2c352d9f6e123bdbe533eaa3a6f6bfdec49391bd9e9af"
+      },
+      {
+        "path": "assets/screenshot-office-map.png",
+        "bytes": 29391,
+        "sha256": "4eec1652d387ffacda2082f7887ff4104d16c980d48f1596c4ee1c3612e52dcf"
+      },
+      {
+        "path": "assets/screenshot-vacation-approvals.png",
+        "bytes": 30315,
+        "sha256": "791455e3f6e91059a14559382ad272c76a05891241f2a1baca4fcb7438d1db09"
+      },
+      {
+        "path": "assets/screenshot-vacation-detail.png",
+        "bytes": 25321,
+        "sha256": "ca983e965967ffa7bb67b3f4500f08a38fafbe25df27c1e13944343debf6ef02"
+      },
+      {
+        "path": "assets/screenshot-vacation-decision.png",
+        "bytes": 18324,
+        "sha256": "91dbf9cb4a0a6fc7356303efc88781c03442cb61e99af5ef09ca9b8499376bbe"
+      },
+      {
+        "path": "assets/screenshot-vacation-receipt.png",
+        "bytes": 16522,
+        "sha256": "3d7ec751c434c3ca63f988de5871dbd253778d4e626409edbe6f7cd0a048dcf0"
+      },
+      {
+        "path": "assets/screenshot-vacation-updated-list.png",
+        "bytes": 26556,
+        "sha256": "a5f56b6ea6526a4bd99486373fca9b5582d717889bef088effc8d56bfd3c5693"
+      },
+      {
+        "path": "assets/screenshot-capability-explorer.png",
+        "bytes": 38614,
+        "sha256": "4e97f90f7b5c547804b47e6d4990e9a433ba5ebe70f1fae21c6f8518b476eee0"
+      }
+    ]
   },
   "failures": {
     "runtime": 0,

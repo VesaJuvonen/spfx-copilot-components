@@ -98,18 +98,37 @@ hashes are in
 | C34 | Offices and world map | OfficeDetails | ShowOfficeDetails | [View](./ux-review/evidence/all-experiences/c34-office-details.png) |
 | C35 | Vacation request approvals | VacationRequestApprovals | ReviewVacationRequests | [View](./ux-review/evidence/all-experiences/c35-vacation-approvals.png) |
 
-### Workspace Screenshots
+### Publication Story
 
-- [Combined / Company](./ux-review/evidence/all-experiences/workspace-combined-company.png)
-- [Combined / Personal](./ux-review/evidence/all-experiences/workspace-combined-personal.png)
-- [Company-only](./ux-review/evidence/all-experiences/workspace-company.png)
-- [Personal-only](./ux-review/evidence/all-experiences/workspace-personal.png)
+| Company workspace | Personal workspace |
+| --- | --- |
+| [![Combined Company workspace](./assets/preview.png)](./assets/preview.png) | [![Combined Personal workspace](./assets/screenshot-personal.png)](./assets/screenshot-personal.png) |
 
-![Vacation request approvals](./ux-review/evidence/screenshots/c35-list.png)
+| Company News | Praise composer |
+| --- | --- |
+| [![Company News](./assets/screenshot-company-news.png)](./assets/screenshot-company-news.png) | [![Praise composer](./assets/screenshot-recognition-compose.png)](./assets/screenshot-recognition-compose.png) |
 
-![Sales performance D3 chart](./ux-review/evidence/screenshots/c27-chart.png)
+| Sales performance | Global offices |
+| --- | --- |
+| [![Sales chart and table](./assets/screenshot-sales-performance.png)](./assets/screenshot-sales-performance.png) | [![Office map and list](./assets/screenshot-office-map.png)](./assets/screenshot-office-map.png) |
 
-![Office projection and accessible list](./ux-review/evidence/screenshots/c34-map.png)
+#### Vacation Approval Flow
+
+| Queue | Request detail |
+| --- | --- |
+| [![Vacation approval queue](./assets/screenshot-vacation-approvals.png)](./assets/screenshot-vacation-approvals.png) | [![Vacation request detail](./assets/screenshot-vacation-detail.png)](./assets/screenshot-vacation-detail.png) |
+
+| Decision review | Simulated receipt |
+| --- | --- |
+| [![Decision review](./assets/screenshot-vacation-decision.png)](./assets/screenshot-vacation-decision.png) | [![Simulated receipt](./assets/screenshot-vacation-receipt.png)](./assets/screenshot-vacation-receipt.png) |
+
+| Updated queue | Capability explorer |
+| --- | --- |
+| [![Updated vacation queue](./assets/screenshot-vacation-updated-list.png)](./assets/screenshot-vacation-updated-list.png) | [![Capability explorer](./assets/screenshot-capability-explorer.png)](./assets/screenshot-capability-explorer.png) |
+
+The ordered publication inventory and crop review are in
+[`assets/publication-screenshots.md`](./assets/publication-screenshots.md). The four full workspace
+states and all 35 focused experiences remain available in the engineering gallery above.
 
 ## Architecture
 
@@ -214,7 +233,7 @@ embedded module so keynote rendering remains offline.
 | Complete screenshot gallery | 39 PNGs |
 | Bundled media | 28 provenance-checked assets |
 | Production package | `6,357,899` bytes / 169 entries |
-| Publication gallery | `assets/sample.json` / 5 reviewed 1600x900 PNGs |
+| Publication gallery | `assets/sample.json` / 12 reviewed 1600x900 PNGs |
 
 See [`phase-6-matrix.json`](./ux-review/evidence/phase-6-matrix.json),
 [`g0-bootstrap.md`](./ux-review/evidence/g0-bootstrap.md), and
@@ -230,6 +249,17 @@ See [`phase-6-matrix.json`](./ux-review/evidence/phase-6-matrix.json),
 | Copilot Component baseline | Ready for tenant verification | Confirm all six starters and 37 tools in Copilot Workbench |
 | Modern SharePoint pages and Teams tabs | External validation required | Verify Top Actions, responsive chrome, focus, and CSP after deployment |
 | Production use | Not claimed | Replace fixtures and complete security, privacy, accessibility, and service-owner reviews |
+
+## Demo and Sharing Package
+
+| Guide | Use |
+| --- | --- |
+| [Demo index](./demos/README.md) | Preflight and recommended order |
+| [90-second keynote](./demos/keynote-90-seconds.md) | Timed prompts, routes, checkpoints, and fallback |
+| [Business journey](./demos/business-journey.md) | Company, Personal, review, submit preview, charts, and map |
+| [Technical walkthrough](./demos/technical-walkthrough.md) | Architecture, host isolation, state, routing, and evidence |
+| [Demo operations](./demos/demo-operations.md) | Reset, offline fallback, and failure recovery |
+| [Release readiness](./docs/release-readiness.md) | Host matrix, privacy, accessibility, validation, and external gates |
 
 ## Minimal Path to Awesome
 
@@ -282,7 +312,7 @@ Open `http://127.0.0.1:4322`. Query parameters select an experience:
   tenant/app catalog and test accounts.
 - The current providers are fixtures. Live Graph, SharePoint, HR, LMS, ITSM, CRM, finance, market,
   workplace, and security integrations are deferred.
-- Phase 7 final motion, keynote scripts, per-intent edge-state expansion, localization/RTL,
+- Phase 7 final motion, per-intent edge-state expansion, localization/RTL,
   forced-color, and screen-reader host testing remain open in `todo.md`.
 - VS Code may show inherited TypeScript 6 deprecation warnings for the generator-owned ES5/node10 base
   config. The pinned TypeScript 5.8/Heft build is clean; changing the generated target is intentionally
@@ -298,7 +328,7 @@ Open `http://127.0.0.1:4322`. Query parameters select an experience:
 
 | Version | Date | Comments |
 | --- | --- | --- |
-| 1.0.0 | September 29, 2026 | First-submission candidate with 35 paired capabilities and three workspaces |
+| 1.0.0 | September 30, 2026 | Sharing candidate with 35 paired capabilities, demo scripts, and complete publication gallery |
 
 ## References
 

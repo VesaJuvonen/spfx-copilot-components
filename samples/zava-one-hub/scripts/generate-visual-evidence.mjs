@@ -8,6 +8,8 @@ import { zavaCapabilityCatalog } from '../config/zava-capabilities.mjs';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const screenshotRoot = resolve(root, 'ux-review/evidence/all-experiences');
 const outputPath = resolve(root, 'ux-review/evidence/all-experiences-matrix.json');
+const sampleMetadataPath = resolve(root, 'assets/sample.json');
+const releaseEvidencePath = resolve(root, 'ux-review/evidence/phase-6-matrix.json');
 const workspaceFiles = [
   'workspace-combined-company.png',
   'workspace-combined-personal.png',
@@ -72,12 +74,49 @@ const screenshots = files.map((name) => {
   };
 });
 
+const sampleMetadata = JSON.parse(readFileSync(sampleMetadataPath, 'utf8'))[0];
+const publicationThumbnails = sampleMetadata?.thumbnails || [];
+const publicationNames = publicationThumbnails.map((thumbnail) => thumbnail.name);
+const publicationOrders = publicationThumbnails.map((thumbnail) => thumbnail.order);
+if (publicationThumbnails.length !== 12) throw new Error(`Expected 12 publication screenshots, found ${publicationThumbnails.length}.`);
+if (new Set(publicationNames).size !== publicationNames.length) throw new Error('Publication screenshot names must be unique.');
+if (new Set(publicationOrders).size !== publicationOrders.length) throw new Error('Publication screenshot orders must be unique.');
+
+const releaseEvidence = JSON.parse(readFileSync(releaseEvidencePath, 'utf8'));
+const recordedPublication = new Map((releaseEvidence.publicationScreenshots || []).map((record) => [record.path, record]));
+const publicationScreenshots = publicationThumbnails.map((thumbnail) => {
+  const path = resolve(root, 'assets', thumbnail.name);
+  if (!existsSync(path)) throw new Error(`Missing publication screenshot: ${thumbnail.name}`);
+  if (!thumbnail.url?.endsWith(`/assets/${thumbnail.name}`)) throw new Error(`Publication URL does not match ${thumbnail.name}.`);
+  const bytes = readFileSync(path);
+  const width = bytes.readUInt32BE(16);
+  const height = bytes.readUInt32BE(20);
+  if (width !== 1600 || height !== 900) throw new Error(`Publication screenshot ${thumbnail.name} must be 1600x900, found ${width}x${height}.`);
+  const record = {
+    path: `assets/${thumbnail.name}`,
+    bytes: bytes.length,
+    sha256: createHash('sha256').update(bytes).digest('hex')
+  };
+  const expectedRecord = recordedPublication.get(record.path);
+  if (!expectedRecord || expectedRecord.bytes !== record.bytes || expectedRecord.sha256 !== record.sha256) {
+    throw new Error(`Publication release evidence is stale for ${thumbnail.name}.`);
+  }
+  return record;
+});
+if (recordedPublication.size !== publicationScreenshots.length) throw new Error('Publication release evidence contains unexpected screenshots.');
+
 const matrix = {
-  generatedAt: '2026-09-26T00:00:00Z',
+  generatedAt: '2026-09-30T00:00:00Z',
   inlineExperiences: zavaCapabilityCatalog.length,
   workspaceStates: workspaceFiles.length,
   totalScreenshots: screenshots.length,
   captureWidths: { inline: 900, workspace: 1440 },
+  publicationGallery: {
+    totalScreenshots: publicationScreenshots.length,
+    width: 1600,
+    height: 900,
+    screenshots: publicationScreenshots
+  },
   failures: { runtime: 0, overflow: 0, brokenImages: 0 },
   screenshots
 };
@@ -88,8 +127,8 @@ if (process.argv.includes('--check')) {
     console.error('Visual evidence matrix is stale. Run npm run generate:visual-evidence.');
     process.exit(1);
   }
-  console.log(`Validated ${screenshots.length} experience screenshots.`);
+  console.log(`Validated ${screenshots.length} experience screenshots and ${publicationScreenshots.length} publication screenshots.`);
 } else {
   writeFileSync(outputPath, generated, 'utf8');
-  console.log(`Generated visual evidence for ${screenshots.length} screenshots.`);
+  console.log(`Generated visual evidence for ${screenshots.length} experience screenshots and ${publicationScreenshots.length} publication screenshots.`);
 }
