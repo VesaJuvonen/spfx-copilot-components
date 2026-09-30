@@ -72,6 +72,11 @@
     "releaseReadinessDocumented": true,
     "sampleMetadataPresent": true,
     "readmeTrackerValid": true,
+    "fullscreenShellUsesHostHeightOrFixedEdges": true,
+    "fullscreenLocalViewportHeight": 720,
+    "fullscreenLocalShellHeight": 720,
+    "fullscreenWorkbenchViewportHeight": 1041,
+    "fullscreenWorkbenchShellHeight": 1041,
     "chartScopeChangesGeometry": true,
     "officeMarkerCount": 5,
     "officeListCount": 5,
@@ -102,8 +107,8 @@
     { "path": "assets/screenshot-vacation-updated-list.png", "width": 1600, "height": 860, "bytes": 26729, "sha256": "7041f2382dfcd695c325abd0f4afc6314e4e397ffd3f395ae7b1f649a21feec7" }
   ],
   "artifacts": [
-    { "path": "sharepoint/solution/zava-one-hub.sppkg", "bytes": 6358921, "sha256": "8c39fb685e82fce596e8d21a3232e390b54d37fd6661889ec247cc7b5d23309e" },
-    { "path": "teams/zava-one.zip", "bytes": 10263, "sha256": "5dc486d01bcafe9c0c1dbce3651aad3b05c75c901fd0f35b7cbc13827a8c8be7" }
+    { "path": "sharepoint/solution/zava-one-hub.sppkg", "bytes": 6359104, "sha256": "82a15f302234897d27556391119e30e43da25cdd32614c8fd8451257dd0227fc" },
+    { "path": "teams/zava-one.zip", "bytes": 10263, "sha256": "2476b8bd7a6db48f049c7604240a0fd24d7a7c9bd1dfeff2dff0397bc210c7a9" }
   ],
   "externalGate": "Tenant-authenticated modern SharePoint and Teams chrome, CSP, iframe focus, and screen-reader host checks are not complete."
 }

@@ -153,7 +153,9 @@ states and all 35 focused experiences remain available in the engineering galler
   `SharePointFullPage`, `TeamsPersonalApp`, and `TeamsTab`, allowing the composed workspaces to be used
   as locked SharePoint single-part app pages without exposing individual features as full-page apps.
 - Copilot inline answers one focused question. Full screen renders the shared workspace at the owning
-  route. Prompt values filter or prefill but never authorize or submit an operation.
+  route. The full-screen shell fills the actual Copilot iframe using host container height when
+  advertised and fixed iframe edges otherwise. Prompt values filter or prefill but never authorize or
+  submit an operation.
 - The Company tab is a full 17-experience portal by default. A pinned company-wide update hero surfaces
   current announcements and alerts, while the real shared Company components fill three independently
   stacked columns. Company has its own Edit layout, hide/restore, Personalize rail, and session-persisted
@@ -232,7 +234,7 @@ embedded module so keynote rendering remains offline.
 | Copilot Workbench | 37/37 Ready baseline; 8/8 changed Personal workflows revalidated |
 | Complete screenshot gallery | 39 PNGs |
 | Bundled media | 28 provenance-checked assets |
-| Production package | `6,358,921` bytes / 169 entries |
+| Production package | `6,359,104` bytes / 169 entries |
 | Publication gallery | `assets/sample.json` / 12 reviewed complete-content PNGs |
 
 See [`phase-6-matrix.json`](./ux-review/evidence/phase-6-matrix.json),

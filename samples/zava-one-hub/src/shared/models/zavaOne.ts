@@ -112,6 +112,7 @@ export interface IZavaExperienceProps extends IZavaHostActions {
   intent: ZavaIntentKey;
   surface: ZavaSurface;
   displayMode?: string;
+  containerHeight?: number;
   theme?: ZavaThemeName;
   targetDocument: Document;
   currentUserName: string;

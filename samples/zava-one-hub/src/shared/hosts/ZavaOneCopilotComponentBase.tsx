@@ -37,6 +37,9 @@ export abstract class ZavaOneCopilotComponentBase<TProperties> extends BaseCopil
       intent: this.intent,
       surface: 'copilotInline',
       displayMode: this.hostContext.displayMode,
+      containerHeight: this.hostContext.displayMode === 'fullscreen'
+        ? this.hostContext.containerDimensions?.height ?? this.hostContext.containerDimensions?.maxHeight
+        : undefined,
       workspaceMode: 'combined',
       targetDocument: this.context.domElement.ownerDocument,
       theme: this.hostContext.theme === 'dark' ? 'dark' : 'light',

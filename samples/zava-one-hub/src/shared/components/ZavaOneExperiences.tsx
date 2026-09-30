@@ -474,9 +474,9 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
-    height: '100vh',
     minHeight: 0,
     overflow: 'hidden',
+    boxSizing: 'border-box',
     backgroundColor: tokens.colorNeutralBackground2
   },
   shellBar: {
@@ -1185,6 +1185,11 @@ function WorkspaceFocusedExperience(props: IZavaExperienceProps): React.ReactEle
 export function ZavaOneWorkspace(props: IZavaExperienceProps): React.ReactElement {
   const styles = useStyles();
   const mode = props.workspaceMode || 'combined';
+  const workspaceStyle: React.CSSProperties = props.displayMode === 'fullscreen'
+    ? props.containerHeight && props.containerHeight > 0
+      ? { position: 'fixed', top: 0, right: 0, left: 0, height: `${Math.floor(props.containerHeight)}px`, maxHeight: `${Math.floor(props.containerHeight)}px` }
+      : { position: 'fixed', top: 0, right: 0, bottom: 0, left: 0 }
+    : { height: '100dvh', maxHeight: '100dvh' };
   const intentTab: ZavaWorkspaceTab = getCapabilityByIntent(props.intent)?.tab || 'company';
   const [activeTab, setActiveTab] = React.useState<ZavaWorkspaceTab>(mode === 'company' ? 'company' : mode === 'personal' ? 'personal' : props.primaryView === 'personal' ? 'personal' : intentTab);
   const [personalEditMode, setPersonalEditMode] = React.useState(false);
@@ -1218,7 +1223,7 @@ export function ZavaOneWorkspace(props: IZavaExperienceProps): React.ReactElemen
   const renderWorkspaceExperience = (intent: string): React.ReactNode => <WorkspaceFocusedExperience {...props} intent={intent} surface="workspace" showSource={false} toolProperties={undefined} publishContext={undefined} requestFullscreen={undefined} requestResize={undefined} />;
 
   return (
-    <main className={mergeClasses(styles.root, styles.shell)} data-layout={`workspace-${mode}-${activeTab}`} data-density={props.density || 'comfortable'}>
+    <main className={mergeClasses(styles.root, styles.shell)} style={workspaceStyle} data-layout={`workspace-${mode}-${activeTab}`} data-density={props.density || 'comfortable'}>
       <header className={styles.shellBar}>
         <div className={styles.brand}><span className={styles.brandMark}>Z</span><span>Zava One</span></div>
         <div className={styles.statusRow}>{mode !== 'combined' && workspaceTools}<Badge appearance="filled" color="informative">Demo data</Badge><Avatar size={36} name={props.currentUserName || 'Megan Bowen'} image={{ src: zavaPeople.megan.photoUrl }} /></div>
