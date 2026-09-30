@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -7,6 +8,7 @@ import { zavaCapabilityCatalog } from '../config/zava-capabilities.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const evidence = JSON.parse(readFileSync(resolve(root, 'ux-review/evidence/phase-6-matrix.json'), 'utf8'));
+const packageSolution = JSON.parse(readFileSync(resolve(root, 'config/package-solution.json'), 'utf8'));
 const errors = [];
 
 for (const artifact of evidence.artifacts || []) {
@@ -51,6 +53,16 @@ if ((evidence.publicationScreenshots || []).length !== evidence.validation.publi
 if (evidence.validation.jestTests !== 29 || evidence.validation.jestFailures !== 0) errors.push('Jest release evidence is stale.');
 
 const expectedPackageBytes = evidence.artifacts?.find((artifact) => artifact.path.endsWith('.sppkg'))?.bytes;
+const sppkgPath = resolve(root, 'sharepoint/solution/zava-one-hub.sppkg');
+const appManifest = execFileSync('tar', ['-xOf', sppkgPath, 'AppManifest.xml'], { encoding: 'utf8' });
+const featurePath = `feature_${packageSolution.solution.features[0].id}.xml`;
+const featureManifest = execFileSync('tar', ['-xOf', sppkgPath, featurePath], { encoding: 'utf8' });
+const embeddedSolutionVersion = appManifest.match(/<App\b[^>]*\bVersion="([^"]+)"/)?.[1];
+const embeddedFeatureVersion = featureManifest.match(/<Feature\b[^>]*\bVersion="([^"]+)"/)?.[1];
+if (packageSolution.solution.version !== evidence.catalog.solutionVersion) errors.push('Source and evidence solution versions differ.');
+if (embeddedSolutionVersion !== packageSolution.solution.version) errors.push(`Embedded solution version ${embeddedSolutionVersion} differs from source ${packageSolution.solution.version}.`);
+if (embeddedFeatureVersion !== packageSolution.solution.features[0].version) errors.push(`Embedded feature version ${embeddedFeatureVersion} differs from source ${packageSolution.solution.features[0].version}.`);
+if (evidence.validation.sppkgAppManifestVersion !== embeddedSolutionVersion || evidence.validation.sppkgFeatureVersion !== embeddedFeatureVersion) errors.push('Embedded SPPKG version evidence is stale.');
 const formattedPackageBytes = Number(expectedPackageBytes).toLocaleString('en-US');
 for (const path of ['README.md', 'todo.md']) {
   const content = readFileSync(resolve(root, path), 'utf8');

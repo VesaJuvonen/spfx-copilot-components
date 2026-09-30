@@ -234,7 +234,7 @@ embedded module so keynote rendering remains offline.
 | Copilot Workbench | 37/37 Ready baseline; 8/8 changed Personal workflows revalidated |
 | Complete screenshot gallery | 39 PNGs |
 | Bundled media | 28 provenance-checked assets |
-| Production package | `6,359,104` bytes / 169 entries |
+| Production package | `1.0.0.1` / `6,359,101` bytes / 169 entries |
 | Publication gallery | `assets/sample.json` / 12 reviewed complete-content PNGs |
 
 See [`phase-6-matrix.json`](./ux-review/evidence/phase-6-matrix.json),
@@ -331,6 +331,7 @@ Open `http://127.0.0.1:4322`. Query parameters select an experience:
 
 | Version | Date | Comments |
 | --- | --- | --- |
+| 1.0.0.1 | September 30, 2026 | App Catalog upgrade package with host-aware Copilot full-screen sizing |
 | 1.0.0 | September 30, 2026 | Sharing candidate with 35 paired capabilities, demo scripts, and complete publication gallery |
 
 ## References

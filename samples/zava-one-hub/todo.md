@@ -18,7 +18,8 @@ by [agentic-creation-rules.md](agentic-creation-rules.md).
 > layouts, zero runtime/overflow/image failures, 39 settled experience screenshots, and 12 reviewed
 > publication images referenced by `assets/sample.json`. Twenty-nine Jest tests, 28-media provenance,
 > six conversation starters with Capability Explorer last, plugin validation, and the final
-> 6,359,104-byte `.sppkg` audit pass. Evidence is in `ux-review/evidence/phase-6-matrix.json`. All 37
+> version `1.0.0.1`, 6,359,101-byte `.sppkg` audit pass. Evidence is in
+> `ux-review/evidence/phase-6-matrix.json`. All 37
 > Workbench components reached Ready. Authenticated modern SharePoint/Teams chrome, tenant-host
 > accessibility, and deeper per-capability edge-state acceptance remain external or post-submission gates.
 
@@ -837,7 +838,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 - [ ] Complete the full-gallery multimodal/human review for repetition, density, crop, alignment,
   contrast, and keynote readability; representative Company/C06/C27/C34/C35 pixels are already reviewed.
 - [x] Validate bundle/media duplication and measured package thresholds before proceeding: two host-specific
-  bundles, 28 media assets, and a 6,359,104-byte `.sppkg`.
+  bundles, 28 media assets, and a version `1.0.0.1`, 6,359,101-byte `.sppkg`.
 
 ## Phase 7 - Configuration Impact and Showcase Polish
 
@@ -890,6 +891,8 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 
 ### Local executable gates
 
+- [x] Increment the App Catalog solution and feature versions to `1.0.0.1` while preserving solution,
+  feature, component, and agent identities for upgrade deployment.
 - [x] Run catalog, React baseline, routing matrix, media, embedded media, gallery, publication, visual,
   clean test, production build, generated plugin, package-output, release-evidence, diagnostics, and
   `git diff --check` gates with zero warnings/errors.
