@@ -1,6 +1,7 @@
 export const MIN_FULLSCREEN_HEIGHT = 720;
 export const FULLSCREEN_LAYOUT_HYSTERESIS = 16;
 export const FULLSCREEN_FRAME_HYSTERESIS = 48;
+export const FULLSCREEN_HOST_SLACK = 32;
 
 export function getAdvertisedFullscreenHeight(height?: number, maxHeight?: number): number | undefined {
   if (maxHeight && maxHeight >= MIN_FULLSCREEN_HEIGHT) return maxHeight;
@@ -30,6 +31,11 @@ export function resolveVisibleFullscreenHeight(currentHeight: number | undefined
 
 export function shouldSettleFullscreenFrame(currentViewportHeight: number, visibleHeight: number): boolean {
   return currentViewportHeight - visibleHeight >= FULLSCREEN_FRAME_HYSTERESIS;
+}
+
+export function resolveFullscreenSettlementHeight(currentViewportHeight: number, visibleHeight: number): number | undefined {
+  if (!shouldSettleFullscreenFrame(currentViewportHeight, visibleHeight)) return undefined;
+  return Math.max(1, visibleHeight - FULLSCREEN_HOST_SLACK);
 }
 
 export function isFullscreenViewportSettled(currentViewportHeight: number, requestedHeight: number): boolean {

@@ -42,7 +42,7 @@ import {
   ZavaOneWorkspace
 } from './ZavaOneExperiences';
 import { ZavaErrorBoundary } from './ZavaErrorBoundary';
-import { resolveVisibleFullscreenHeight, shouldSettleFullscreenFrame } from '../utils/fullscreenSize';
+import { isFullscreenViewportSettled, resolveFullscreenSettlementHeight, resolveVisibleFullscreenHeight } from '../utils/fullscreenSize';
 
 function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'requestResize' | 'targetDocument'> & {
   onVisibleHeightChange: React.Dispatch<React.SetStateAction<number | undefined>>;
@@ -69,7 +69,6 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
       const documentElement = props.targetDocument.documentElement;
       const previousBodyOverflow = body.style.overflow;
       const previousDocumentOverflow = documentElement.style.overflow;
-      let previousViewportWidth = view.innerWidth;
       let settlementAttempt = 0;
       let settlementTarget: number | undefined;
       const settlementDelays = [240, 800, 1600];
@@ -80,7 +79,7 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
           const targetHeight = settlementTarget;
           if (targetHeight === undefined) return;
           const currentViewportHeight = Math.floor(Math.max(view.visualViewport?.height || 0, view.innerHeight));
-          if (!shouldSettleFullscreenFrame(currentViewportHeight, targetHeight)) return;
+          if (isFullscreenViewportSettled(currentViewportHeight, targetHeight)) return;
           settlementAttempt += 1;
           await props.requestResize?.(targetHeight).catch(() => undefined);
           scheduleSettlement();
@@ -92,28 +91,22 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
           if (visibleHeight > 0) {
             props.onVisibleHeightChange((currentHeight) => resolveVisibleFullscreenHeight(currentHeight, visibleHeight));
             const currentViewportHeight = Math.floor(Math.max(view.visualViewport?.height || 0, view.innerHeight));
-            if (!shouldSettleFullscreenFrame(currentViewportHeight, visibleHeight)) return;
-            if (settlementTarget === undefined || Math.abs(settlementTarget - visibleHeight) >= 16) {
+            const targetHeight = resolveFullscreenSettlementHeight(currentViewportHeight, visibleHeight);
+            if (targetHeight === undefined) return;
+            if (settlementTarget === undefined || Math.abs(settlementTarget - targetHeight) >= 16) {
               view.clearTimeout(settlementTimer);
               settlementTimer = 0;
               settlementAttempt = 0;
-              settlementTarget = visibleHeight;
+              settlementTarget = targetHeight;
             }
             scheduleSettlement();
           }
         }, { threshold: Array.from({ length: 101 }, (_, index) => index / 100) })
         : undefined;
-      const handleViewportResize = (): void => {
-        const viewportWidth = view.innerWidth;
-        if (Math.abs(viewportWidth - previousViewportWidth) > 32) scheduleResize(false);
-        previousViewportWidth = viewportWidth;
-      };
       body.style.overflow = 'hidden';
       documentElement.style.overflow = 'hidden';
       if (visibilityObserver && visibilityProbeRef.current) visibilityObserver.observe(visibilityProbeRef.current);
       scheduleResize(false);
-      view.addEventListener('resize', handleViewportResize);
-      view.visualViewport?.addEventListener('resize', handleViewportResize);
       return () => {
         view.cancelAnimationFrame(animationFrame);
         view.clearTimeout(trailingTimer);
@@ -121,8 +114,6 @@ function HostSizeSync(props: Pick<IZavaExperienceProps, 'displayMode' | 'request
         visibilityObserver?.disconnect();
         body.style.overflow = previousBodyOverflow;
         documentElement.style.overflow = previousDocumentOverflow;
-        view.removeEventListener('resize', handleViewportResize);
-        view.visualViewport?.removeEventListener('resize', handleViewportResize);
       };
     }
     const resizeObserver = new view.ResizeObserver(() => scheduleResize());

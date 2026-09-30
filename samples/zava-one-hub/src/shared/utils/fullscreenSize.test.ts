@@ -2,6 +2,7 @@ import {
   getAdvertisedFullscreenHeight,
   isFullscreenViewportSettled,
   resolveFullscreenRequestHeight,
+  resolveFullscreenSettlementHeight,
   resolveVisibleFullscreenHeight,
   shouldSettleFullscreenFrame
 } from './fullscreenSize';
@@ -35,5 +36,11 @@ describe('full-screen MCP sizing', () => {
   test('does not treat a taller rejected viewport as settled', () => {
     expect(isFullscreenViewportSettled(1801, 1579)).toBe(false);
     expect(isFullscreenViewportSettled(1585, 1579)).toBe(true);
+  });
+
+  test('settles below the host edge and never grows a shorter frame', () => {
+    expect(resolveFullscreenSettlementHeight(1801, 1170)).toBe(1138);
+    expect(resolveFullscreenSettlementHeight(1138, 1138)).toBeUndefined();
+    expect(resolveFullscreenSettlementHeight(900, 930)).toBeUndefined();
   });
 });
