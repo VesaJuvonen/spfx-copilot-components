@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "efc11f65-c702-477e-8c8d-91fa0ade01a1",
+  "alias": "WorkingDayCalculatorCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": { "availableDisplayModes": ["inline", "fullscreen"] },
+  "tools": [{
+    "name": "CalculateWorkingDays",
+    "description": { "default": "Calculate inclusive working days between two dates, excluding weekends and the selected country's holidays. Use for questions asking how many working days remain, occur between dates, or are available before a deadline. Do not use for listing upcoming holidays or finding long weekends." },
+    "propertiesSchema": { "id": "$../../../lib/copilotComponents/workingDayCalculator/WorkingDayCalculatorCopilotComponentProperties.js:default;" }
+  }]
+}

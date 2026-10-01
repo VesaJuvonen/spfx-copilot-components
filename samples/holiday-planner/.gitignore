@@ -1,0 +1,17 @@
+node_modules/
+lib/
+lib-commonjs/
+temp/
+release/
+sharepoint/solution/*.sppkg
+sharepoint/solution/debug/
+teams/*.zip
+teams/.copilot-agent-hotfix.json
+*.log
+.heft/
+jest-output/
+**/*.test.ts
+
+!sharepoint/solution/
+sharepoint/solution/*
+!sharepoint/solution/holiday-planner.sppkg

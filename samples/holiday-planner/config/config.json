@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/office-build/config.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "holiday-planner-working-day-calculator": {
+      "components": [{
+        "entrypoint": "./lib/copilotComponents/workingDayCalculator/WorkingDayCalculatorCopilotComponent.js",
+        "manifest": "./src/copilotComponents/workingDayCalculator/WorkingDayCalculatorCopilotComponent.manifest.json"
+      }]
+    },
+    "holiday-planner-long-weekend-finder": {
+      "components": [{
+        "entrypoint": "./lib/copilotComponents/longWeekendFinder/LongWeekendFinderCopilotComponent.js",
+        "manifest": "./src/copilotComponents/longWeekendFinder/LongWeekendFinderCopilotComponent.manifest.json"
+      }]
+    },
+    "holiday-planner-upcoming-holidays": {
+      "components": [{
+        "entrypoint": "./lib/copilotComponents/upcomingHolidays/UpcomingHolidaysCopilotComponent.js",
+        "manifest": "./src/copilotComponents/upcomingHolidays/UpcomingHolidaysCopilotComponent.manifest.json"
+      }]
+    },
+    "holiday-planner-holiday-details": {
+      "components": [{
+        "entrypoint": "./lib/copilotComponents/holidayDetails/HolidayDetailsCopilotComponent.js",
+        "manifest": "./src/copilotComponents/holidayDetails/HolidayDetailsCopilotComponent.manifest.json"
+      }]
+    },
+    "holiday-planner-regional-comparison": {
+      "components": [{
+        "entrypoint": "./lib/copilotComponents/regionalComparison/RegionalComparisonCopilotComponent.js",
+        "manifest": "./src/copilotComponents/regionalComparison/RegionalComparisonCopilotComponent.manifest.json"
+      }]
+    }
+  },
+  "externals": {},
+  "localizedResources": {}
+}
