@@ -32,7 +32,7 @@
     "thumbnails": [
       { "name": "inline-star-match-game01.png", "type": "image", "order": 100, "url": "https://github.com/pnp/spfx-copilot-apps/raw/main/samples/copilot-star-match-game/assets/inline-star-match-game01.png", "alt": "Star Match Game inline" },
       { "name": "inline-star-match-game02.png", "type": "image", "order": 101, "url": "https://github.com/pnp/spfx-copilot-apps/raw/main/samples/copilot-star-match-game/assets/inline-star-match-game02.png", "alt": "Star Match Game inline" },
-      { "name": "fullscreen-star-match-game.png", "type": "image", "order": 101, "url": "https://github.com/pnp/spfx-copilot-apps/raw/main/samples/copilot-star-match-game/assets/fullscreen-star-match-game.png", "alt": "Star Match Game full-screen" },
+      { "name": "fullscreen-star-match-game.png", "type": "image", "order": 101, "url": "https://github.com/pnp/spfx-copilot-apps/raw/main/samples/copilot-star-match-game/assets/fullscreen-star-match-game.png", "alt": "Star Match Game full-screen" }
     ],
     "authors": [
       {
