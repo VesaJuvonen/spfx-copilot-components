@@ -10,29 +10,32 @@ by [agentic-creation-rules.md](agentic-creation-rules.md).
 > **Status legend:** `- [ ]` open, `- [x]` validated, **IN PROGRESS** active, and
 > **BLOCKED: reason** externally blocked. A checkbox closes only after its named evidence exists.
 
-> **Progress (latest):** **First-submission candidate locally validated.** All 35 final-named feature
+> **Progress (latest):** **Demo finalized and locally validated.** All 35 final-named feature
 > pairs render through 35 SharePoint-only web parts and 35 intent-specific Copilot Components. Three
 > composed workspace web parts provide Combined, Company-only, and Personal-only SharePoint/Teams modes;
 > two Copilot infrastructure entries bring the solution to 75 unique SPFx component GUIDs and 37
 > generated plugin functions in two host-specific bundles. The local harness has 35 unique inline
-> layouts, zero runtime/overflow/image failures, 39 settled experience screenshots, and 12 reviewed
-> publication images referenced by `assets/sample.json`. Thirty-two Jest tests, 28-media provenance,
+> layouts, zero runtime/overflow/image failures, 39 recaptured engineering screenshots, and 15 reviewed
+> publication images referenced by `assets/sample.json`. Thirty-five Jest tests, 28-media provenance,
 > six conversation starters with Capability Explorer last, plugin validation, and the final
-> version `1.0.0.13`, 6,358,009-byte `.sppkg` audit pass. Evidence is in
+> version `1.0.0.14`, 6,203,364-byte `.sppkg` audit pass. Evidence is in
 > `ux-review/evidence/phase-6-matrix.json`. All 37
-> Workbench components reached Ready. Authenticated modern SharePoint/Teams chrome, tenant-host
-> accessibility, and deeper per-capability edge-state acceptance remain external or post-submission gates.
+> Workbench components reached Ready in the earlier host baseline. The sample author confirmed all
+> three separately packaged Teams personal apps work and supplied authenticated screenshots with no
+> duplicate workspace header. Modern SharePoint chrome, complete tenant-host accessibility, and deeper
+> per-capability edge-state acceptance remain external or post-demo gates.
 
 ### Review readiness
 
 **Ready for first repository review and developer-tenant deployment:** all 35 paired experiences, three
-workspace modes, C06/C13/C14/C35 reference journeys, C27/C34 D3 visuals, 39 screenshot states, five
-gallery assets, deterministic fixtures/media, six conversation starters, generated plugin, and the
+workspace modes, C06/C13/C14/C35 reference journeys, C27/C34 D3 visuals, 39 engineering captures, 15
+publication assets, deterministic fixtures/media, six conversation starters, generated plugin, and the
 committed deployable package have executable evidence.
 
 **Not production-ready:** native ACE selection, source-service abstractions, edge-state matrices, exact
 host continuation/focus behavior, deep domain acceptance, complete accessibility/visual review, and
-authenticated SharePoint/Teams/Copilot validation remain open and are not implied by this submission.
+complete authenticated SharePoint/Teams/Copilot acceptance remain open and are not implied by the
+working Teams baseline or this submission.
 
 ## Authority, Decisions, and Boundaries
 
@@ -70,10 +73,12 @@ authenticated SharePoint/Teams/Copilot validation remain open and are not implie
   same `ZavaOneWorkspace` React control with an immutable `combined`, `company`, or `personal` mode.
 5. **Host exposure:** all 35 feature web parts declare SharePoint web-part hosting only and are not
   exposed as Teams tabs, Teams personal apps, or SharePoint full-page apps. Exactly three composed
-  workspace web parts add Teams personal and Teams channel/tab hosting:
+  workspace web parts declare Teams hosting:
   `ZavaOneWorkspaceWebPart`, `ZavaOneCompanyWorkspaceWebPart`, and
-  `ZavaOnePersonalWorkspaceWebPart`. All remain normal SharePoint web parts and none is a SharePoint
-  single-page/full-page app. These are three Teams app experiences/registrations in one SPFx solution,
+  `ZavaOnePersonalWorkspaceWebPart`. All remain normal SharePoint web parts and also support SharePoint
+  full-page hosting. The final demo packages expose **personal apps only**, with no channel or
+  group-chat scopes; the underlying SPFx TeamsTab capability is not a channel app registration.
+  These are three Teams app experiences/registrations in one SPFx solution,
   not three copied applications or UI implementations. Any later Teams surface requires explicit
   approval and must compose several coherent capabilities; a small standalone feature never earns
   Teams exposure merely because its web part exists.
@@ -484,7 +489,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 - [x] Add focused data-integrity tests for persona IDs, portrait references, news authors/media,
   learning IDs, catalog uniqueness, C35 decision/reset behavior, and Personal workflow fixture rules
   for business days, approval identity, equity estimates, room capacity, and IT issue scope (covered by
-  the current 29-test suite).
+  the initial 29-test suite; the final demo now has 35 passing tests).
 - [ ] Extend integrity tests to C16/C30 cross-capability vacation projections and every specialist
   source contract before those deep acceptance gates close.
 
@@ -782,7 +787,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
   pin the package directly, rerender immediately on changes, and open the property pane from Advanced
   settings. Fixed Company/Personal workspaces do not expose a start-tab switch.
 - [x] Assert all 35 profiles are complete and reject page-author properties in the packaged 37-function
-  Copilot plugin; the current 29 tests pass and the generated plugin validator confirms the boundary.
+  Copilot plugin; the current 35 tests pass and the generated plugin validator confirms the boundary.
 - [x] Brand the agent as Zava One with deterministic manifest-safe icons: 192x192 white Z on Zava blue
   for `color.png`, and a padded white Z on a transparent 32x32 canvas for `outline.png`. Validate exact
   source-to-ZIP bytes, icon paths, display names, and `#075FCE` accent color during every build.
@@ -827,8 +832,8 @@ or authenticated-host evidence does not yet exist; they are not silently treated
   Copilot Component, and exactly one shared module used by both; reject wrapper-owned duplicate UI,
   calculations, validation, or fixture data.
 - [x] Assert exactly three web parts are Teams-enabled (combined, Company-only, Personal-only), each
-  supports personal and channel tabs, fixed variants omit the Company/Personal tab control, and no
-  feature web part or SharePoint full-page app is exposed to Teams.
+  standalone app package supports personal scope only, fixed variants omit the Company/Personal control, and no
+  feature-level web part gains Teams or SharePoint full-page exposure.
 - [ ] Render and smoke-test every intent in the local harness at all required widths/themes; verify no
   nested global headers, external writes, runtime errors, image failures, or overflow.
 - [x] Render all 35 inline intents at the standard review width: 35 unique layouts, zero runtime errors,
@@ -838,7 +843,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 - [ ] Complete the full-gallery multimodal/human review for repetition, density, crop, alignment,
   contrast, and keynote readability; representative Company/C06/C27/C34/C35 pixels are already reviewed.
 - [x] Validate bundle/media duplication and measured package thresholds before proceeding: two host-specific
-  bundles, 28 media assets, and a version `1.0.0.13`, 6,358,009-byte `.sppkg`.
+  bundles, 28 media assets, and a version `1.0.0.14`, 6,203,364-byte `.sppkg`.
 
 ## Phase 7 - Configuration Impact and Showcase Polish
 
@@ -891,7 +896,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 
 ### Local executable gates
 
-- [x] Increment the natural-flow App Catalog solution and feature versions to `1.0.0.13` while preserving solution,
+- [x] Increment the final App Catalog solution and feature versions to `1.0.0.14` while preserving solution,
   feature, component, and agent identities for upgrade deployment.
 - [x] Run catalog, React baseline, routing matrix, media, embedded media, gallery, publication, visual,
   clean test, production build, generated plugin, package-output, release-evidence, diagnostics, and
@@ -899,17 +904,22 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 - [x] Inspect the actual `.sppkg` JavaScript, manifests, embedded agent ZIP, icons, media count, shared
   bundle membership, paired feature registrations, three Teams-enabled workspace registrations,
   stale output, and measured size thresholds.
-- [x] Inspect the three generated Teams catalog entries or manifest archives for unique identities,
-  names, icons, personal/channel scopes, launch mode, shared component references, and absence of all
+- [x] Inspect the three standalone Teams manifest archives for unique identities,
+  names, icons, personal-only scope/context, launch mode, shared component references, and absence of all
   feature-level web parts.
 - [ ] Run a clean-clone/offline rehearsal with `npm ci`, no runtime network, repeatable screenshots, and
   the one-command build.
+- [x] Prove fresh Git-index checkout stability without regeneration: LF/CRLF regression tests and all
+  generated-file, media, routing, publication, Teams ZIP, release-evidence, and SPPKG gates pass using
+  the installed dependency baseline. This is not a replacement for the separate `npm ci` rehearsal.
 - [x] Commit the validated `sharepoint/solution/zava-one-hub.sppkg` and generated release-evidence JSON.
 
 ### Tenant-host evidence
 
-- [ ] **BLOCKED: approved developer tenant, app catalog, tenant domain, and authenticated hosts are not
-  yet identified.** Validate SharePoint web-part composition/mobile DOM order, Teams personal app,
+- [x] Record the sample author's working Teams personal-app baseline and three authenticated viewport
+  screenshots. Preserve host chrome, remove only the four-pixel frame, and verify every retained pixel.
+- [ ] Complete the broader authenticated host matrix: SharePoint web-part composition/mobile DOM order,
+  Teams personal-app accessibility,
   Copilot Workbench inline/full screen, bridge context/follow-up, expansion denial/collapse, iframe CSP
   and focus, selected ACE/Quick View, screen reader, and real catalog routing when supplied.
 - [ ] Record actual host/version/account prerequisites, screenshots, unsupported preview behavior, and
@@ -920,8 +930,8 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 - [x] Confirm package hashes, feature-pair/component/tool counts, Teams-enabled web-part count,
   bundle/media counts, screenshot inventory, routing matrix, README links, demos, and release claims are
   generated from current artifacts.
-- [ ] Stop temporary servers, update the Progress block and every duplicated measured count, and leave
-  only precise external prerequisites open.
+- [x] Stop task-owned temporary servers, update the Progress block and duplicated measured counts, and
+  distinguish external sign-off gates from deferred production-feature work.
 
 ## Deferred - Dynamic Data and API Integration
 
@@ -949,15 +959,19 @@ These items are not part of the offline keynote package and must not block its l
   screenshots, demos, package link, version history, authors, and references.
 - [x] Author `assets/sample.json` from actual metadata and validated PNGs; preserve gallery ordering and
   link only to real assets.
-- [x] Recapture and review 12 current-implementation publication images as full-page/full-workspace
-  evidence without clipped modules, controls, or stale layouts.
+- [x] Recapture and individually review 12 complete local publication images and three genuine Teams
+  viewport overviews; verify content geometry, correct states, source hashes, and exact Teams crop pixels.
+- [x] Recapture all 35 inline engineering images and four workspace states with the pinned browser
+  runner; assert actual viewport size, correct layout, loaded images, bounds, and no horizontal clipping.
+- [x] Add reproducible screenshot/crop scripts and validators, and synchronize the publication gallery,
+  release matrix, package hashes, screenshot metadata, README, and demo evidence counts.
 - [x] Add architecture and data-flow diagrams, catalog/routing documentation, host matrix, privacy and
   accessibility notes, media provenance, test commands, and release evidence links.
 - [ ] Reconcile design documents only where implementation decisions legitimately supersede proposals;
   preserve history and mark measured limitations honestly.
 - [x] Remove the diagnostic `Baseline` scaffold and all placeholder names/descriptions/properties only
   after the G0 receipt and final-named generated replacements exist.
-- [ ] Remove temporary harness output that is not part of approved evidence; retain reproducible scripts,
+- [x] Remove temporary harness output that is not part of approved evidence; retain reproducible scripts,
   machine-readable matrices, selected screenshots, and the committed package.
 
 ## Reusable Playbook

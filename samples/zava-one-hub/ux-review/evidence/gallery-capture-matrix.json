@@ -1,0 +1,903 @@
+{
+  "capturedAt": "2026-10-01T17:22:33.136Z",
+  "captureMode": "rendered-element",
+  "captures": [
+    {
+      "path": "ux-review/evidence/all-experiences/c01-my-day.png",
+      "source": "local-ux-review",
+      "query": "intent=myDay&surface=copilotInline",
+      "layout": "my-day-summary",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 713,
+      "bytes": 90304,
+      "sha256": "e6eca02a3dc35dde147a8d81040a656f9d1842b16565f8a1b5a139dc2edb0cb9",
+      "geometry": {
+        "width": 720,
+        "height": 713,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c02-agenda.png",
+      "source": "local-ux-review",
+      "query": "intent=agenda&surface=copilotInline",
+      "layout": "agenda-timeline",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 655,
+      "bytes": 32619,
+      "sha256": "dd794e790d6f692c7083c8c50a6931a3dfca30fc314d4104f0408bafa4e643d6",
+      "geometry": {
+        "width": 720,
+        "height": 655,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c03-important-mail.png",
+      "source": "local-ux-review",
+      "query": "intent=importantMail&surface=copilotInline",
+      "layout": "personal-important-mail",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 593,
+      "bytes": 46524,
+      "sha256": "ccfcd350f1fa69eadc85f9ace432d5eaea28f7613798ab0336e4ff7869fa4b81",
+      "geometry": {
+        "width": 720,
+        "height": 593,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c04-tasks.png",
+      "source": "local-ux-review",
+      "query": "intent=tasks&surface=copilotInline",
+      "layout": "personal-tasks-checklist",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 527,
+      "bytes": 26583,
+      "sha256": "d69c0a4ce1d27387dc0b238c978ed5159c5455d732c9a039d6554665cc227b85",
+      "geometry": {
+        "width": 720,
+        "height": 527,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c05-approvals.png",
+      "source": "local-ux-review",
+      "query": "intent=approvals&surface=copilotInline",
+      "layout": "personal-approvals-queue",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 449,
+      "bytes": 42911,
+      "sha256": "4403c29d0ca6ac72f73e6404d4d3934e585266e1b33ebbbd5eb7e1136e5027c2",
+      "geometry": {
+        "width": 720,
+        "height": 449,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c06-company-news.png",
+      "source": "local-ux-review",
+      "query": "intent=companyNews&surface=copilotInline",
+      "layout": "news-editorial",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 847,
+      "bytes": 401745,
+      "sha256": "fb268c19436703781bf199e97348153e25b9af4e39807de3ae89dc7e4774737e",
+      "geometry": {
+        "width": 720,
+        "height": 847,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c07-announcements.png",
+      "source": "local-ux-review",
+      "query": "intent=announcements&surface=copilotInline",
+      "layout": "c07-alert-summary-summary",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 307,
+      "bytes": 20259,
+      "sha256": "bcc3c2a3211beffa442948496f744729488f3916508f08e9dcbfd0e677f0a475",
+      "geometry": {
+        "width": 720,
+        "height": 307,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c08-knowledge.png",
+      "source": "local-ux-review",
+      "query": "intent=knowledge&surface=copilotInline",
+      "layout": "c08-search-summary-summary",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 586,
+      "bytes": 43358,
+      "sha256": "048b9f2a09f37d1c4ff76fe3fa0ef4f42913d13f499577e2e35def5b8cee6e97",
+      "geometry": {
+        "width": 720,
+        "height": 586,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c09-employee-services.png",
+      "source": "local-ux-review",
+      "query": "intent=employeeServices&surface=copilotInline",
+      "layout": "c09-directory-summary-summary",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 726,
+      "bytes": 37522,
+      "sha256": "00604009d66ab6f5439c97b544e8cffb82d9fc3db7e263d9af512f5a91f6cd78",
+      "geometry": {
+        "width": 720,
+        "height": 726,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c10-company-events.png",
+      "source": "local-ux-review",
+      "query": "intent=companyEvents&surface=copilotInline",
+      "layout": "company-events-calendar",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 835,
+      "bytes": 36577,
+      "sha256": "73812ba9b2b385602127fda145dcd6a4a9ce40fd2e89f2a6e26cebdff482c210",
+      "geometry": {
+        "width": 720,
+        "height": 835,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c11-people.png",
+      "source": "local-ux-review",
+      "query": "intent=people&surface=copilotInline",
+      "layout": "company-people-directory",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 769,
+      "bytes": 70946,
+      "sha256": "2d008cbdce65e341d52c05718d0263e6bd235da29c01737580a52c1aa0bf7fef",
+      "geometry": {
+        "width": 720,
+        "height": 769,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c12-onboarding.png",
+      "source": "local-ux-review",
+      "query": "intent=onboarding&surface=copilotInline",
+      "layout": "c12-journey-summary-summary",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 472,
+      "bytes": 23796,
+      "sha256": "0acb2472f6d5fc5024887d5abe983ab59a033220e0628ff4f24bafd27a2d2b6d",
+      "geometry": {
+        "width": 720,
+        "height": 472,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c13-learning.png",
+      "source": "local-ux-review",
+      "query": "intent=learning&surface=copilotInline",
+      "layout": "personal-required-learning",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 451,
+      "bytes": 30014,
+      "sha256": "07af70515c38bfda9f59165a67871c541b3f61f8a7acc5dc68093c97b6362c47",
+      "geometry": {
+        "width": 720,
+        "height": 451,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c14-recognition.png",
+      "source": "local-ux-review",
+      "query": "intent=recognition&surface=copilotInline",
+      "layout": "recognition-story-overview",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 590,
+      "bytes": 195682,
+      "sha256": "ca1b357e4620e8b4cdd43417014a802376940ba4ea957d2742ca0ba426c78314",
+      "geometry": {
+        "width": 720,
+        "height": 590,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c15-surveys.png",
+      "source": "local-ux-review",
+      "query": "intent=surveys&surface=copilotInline",
+      "layout": "company-daily-poll-vote",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 605,
+      "bytes": 34891,
+      "sha256": "4da104ccab3f2fba8991d71d129cba1a725dfc9ea48bcee07647b00b006b6418",
+      "geometry": {
+        "width": 720,
+        "height": 605,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c16-time-off.png",
+      "source": "local-ux-review",
+      "query": "intent=timeOff&surface=copilotInline",
+      "layout": "personal-time-off-list",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 479,
+      "bytes": 29177,
+      "sha256": "51d8f53750f2cfc8ad66e650c5f66a3859f7a80233a540c469918d828488cf82",
+      "geometry": {
+        "width": 720,
+        "height": 479,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c17-pay-documents.png",
+      "source": "local-ux-review",
+      "query": "intent=payDocuments&surface=copilotInline",
+      "layout": "c17-documents-summary-summary",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 392,
+      "bytes": 22101,
+      "sha256": "86313940590feca04edb93794735666e91c8173c9bef48a570de7301f89f9708",
+      "geometry": {
+        "width": 720,
+        "height": 392,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c18-benefits.png",
+      "source": "local-ux-review",
+      "query": "intent=benefits&surface=copilotInline",
+      "layout": "c18-benefits-summary-summary",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 357,
+      "bytes": 21034,
+      "sha256": "8388d74e365a8b76604d17015b8fcf8c3cf04fc608de7221bbe8b6a1a7eb399d",
+      "geometry": {
+        "width": 720,
+        "height": 357,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c19-equity.png",
+      "source": "local-ux-review",
+      "query": "intent=equity&surface=copilotInline",
+      "layout": "personal-equity-valuation",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 1118,
+      "bytes": 43840,
+      "sha256": "25ef63f76044d25ef5b42cc6341f35e44835cdce6180f8b17ef8bca3252381d4",
+      "geometry": {
+        "width": 720,
+        "height": 1117.828125,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c20-expenses-travel.png",
+      "source": "local-ux-review",
+      "query": "intent=expensesTravel&surface=copilotInline",
+      "layout": "personal-expenses-open",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 479,
+      "bytes": 29836,
+      "sha256": "47126f642c2ba1d8b15328c8b2c764a8042768803c7ea9358761db214dffa044",
+      "geometry": {
+        "width": 720,
+        "height": 479,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c21-campus-menu.png",
+      "source": "local-ux-review",
+      "query": "intent=campusMenu&surface=copilotInline",
+      "layout": "company-campus-menu",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 567,
+      "bytes": 182559,
+      "sha256": "c69827ef64ea8db7ba8453b9356384c4b4f9558e40cd4f9caebf47ae55d5c97a",
+      "geometry": {
+        "width": 720,
+        "height": 567,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c22-workplace-space.png",
+      "source": "local-ux-review",
+      "query": "intent=workplaceSpace&surface=copilotInline",
+      "layout": "personal-workplace-criteria",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 423,
+      "bytes": 21117,
+      "sha256": "8f3afc565997390cab1e06ff47e8ad1faa9fadf7650efb6b0ea0a0c347215363",
+      "geometry": {
+        "width": 720,
+        "height": 423,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c23-it-help.png",
+      "source": "local-ux-review",
+      "query": "intent=itHelp&surface=copilotInline",
+      "layout": "personal-it-mine-form",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 432,
+      "bytes": 23663,
+      "sha256": "e91787542c8937abbf2fde618dceac1d4c47e669c20ef49bb55cd62127246881",
+      "geometry": {
+        "width": 720,
+        "height": 432,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c24-workplace-help.png",
+      "source": "local-ux-review",
+      "query": "intent=workplaceHelp&surface=copilotInline",
+      "layout": "c24-facilities-summary-summary",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 398,
+      "bytes": 22438,
+      "sha256": "f3bc83c883b66d93a49e9a0508b22eb1854340cf61b5005a06ee2920d7a58f8a",
+      "geometry": {
+        "width": 720,
+        "height": 398,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c25-shifts.png",
+      "source": "local-ux-review",
+      "query": "intent=shifts&surface=copilotInline",
+      "layout": "personal-shifts-schedule",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 479,
+      "bytes": 25222,
+      "sha256": "0aa5b0971dd094ee2880be0b6857a9adbdb722738d76090acb648e0f33a7ed2d",
+      "geometry": {
+        "width": 720,
+        "height": 479,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c26-project-health.png",
+      "source": "local-ux-review",
+      "query": "intent=projectHealth&surface=copilotInline",
+      "layout": "company-project-health",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 850,
+      "bytes": 45988,
+      "sha256": "e268e3f57149d1bcb9525498314cfb2abacba99474ecccccc254173a693a41b7",
+      "geometry": {
+        "width": 720,
+        "height": 850,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c27-sales-performance.png",
+      "source": "local-ux-review",
+      "query": "intent=salesPerformance&surface=copilotInline",
+      "layout": "company-sales-performance",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 719,
+      "bytes": 38313,
+      "sha256": "190d4a576fdd6a0b9c84042bac0b8037b2ce4b24588486bcf671156ab5c3113e",
+      "geometry": {
+        "width": 720,
+        "height": 719,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c28-goals-scorecards.png",
+      "source": "local-ux-review",
+      "query": "intent=goalsScorecards&surface=copilotInline",
+      "layout": "company-goals-scorecards",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 763,
+      "bytes": 38341,
+      "sha256": "9a629cf214ba1a62e694750206471891f4dae325d7b96820c6fe3a5e10f4418e",
+      "geometry": {
+        "width": 720,
+        "height": 763,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c29-work-files.png",
+      "source": "local-ux-review",
+      "query": "intent=workFiles&surface=copilotInline",
+      "layout": "personal-work-files",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 629,
+      "bytes": 34251,
+      "sha256": "2412b7dcdcb6c22c8b10446c5820d6f08d955798ebd410e7ef2f3dc86f138c14",
+      "geometry": {
+        "width": 720,
+        "height": 629,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c30-team-availability.png",
+      "source": "local-ux-review",
+      "query": "intent=teamAvailability&surface=copilotInline",
+      "layout": "c30-team-summary-summary",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 353,
+      "bytes": 33383,
+      "sha256": "2272d96e4b58287b0d19f12268f07a67cb42f6c01b472112836a687d720c0d96",
+      "geometry": {
+        "width": 720,
+        "height": 353,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c31-company-stock.png",
+      "source": "local-ux-review",
+      "query": "intent=companyStock&surface=copilotInline",
+      "layout": "company-stock-market-detail",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 811,
+      "bytes": 40081,
+      "sha256": "0c993a34da47d797872189f8bcb3ae77083295561f5c82032d2235b007490d35",
+      "geometry": {
+        "width": 720,
+        "height": 811,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c32-glossary.png",
+      "source": "local-ux-review",
+      "query": "intent=glossary&surface=copilotInline",
+      "layout": "glossary-definition",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 589,
+      "bytes": 35254,
+      "sha256": "ee64ab633ef279cda2450d549ab90dadbfd7108e4d57b41fc97b9f3d63e88417",
+      "geometry": {
+        "width": 720,
+        "height": 589,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c33-security-reporting.png",
+      "source": "local-ux-review",
+      "query": "intent=securityReporting&surface=copilotInline",
+      "layout": "security-report-choose",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 459,
+      "bytes": 33277,
+      "sha256": "0ee7d90d9c125e58a2bdef964834cc457e2a3254b14581b50597c585c53a9db8",
+      "geometry": {
+        "width": 720,
+        "height": 459,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c34-office-details.png",
+      "source": "local-ux-review",
+      "query": "intent=officeDetails&surface=copilotInline",
+      "layout": "company-office-map",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 716,
+      "bytes": 120611,
+      "sha256": "75193d358758a3f888a1b8ffac068dd9cb16dc9127892e955ae12cd34c20f3c6",
+      "geometry": {
+        "width": 720,
+        "height": 716,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/c35-vacation-approvals.png",
+      "source": "local-ux-review",
+      "query": "intent=vacationApprovals&surface=copilotInline",
+      "layout": "vacation-approvals-queue-list",
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "width": 720,
+      "height": 660,
+      "bytes": 55022,
+      "sha256": "5818ff5bef3082ccf647ce00b3ffaf9edbdc5e1f7a4762d89be73943f46a6e57",
+      "geometry": {
+        "width": 720,
+        "height": 660,
+        "scrollWidth": 720,
+        "documentWidth": 900,
+        "viewportWidth": 900,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/workspace-combined-company.png",
+      "source": "local-ux-review",
+      "query": "intent=workspace&mode=combined&primaryView=company",
+      "layout": "workspace-combined-company",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "width": 1440,
+      "height": 6281,
+      "bytes": 2042589,
+      "sha256": "adcb242c90621b503f50cd3ebb8cdbddb3d0a7b7ab035e4f44afe0f7ff2b78db",
+      "geometry": {
+        "width": 1440,
+        "height": 6281,
+        "scrollWidth": 1440,
+        "documentWidth": 1440,
+        "viewportWidth": 1440,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/workspace-combined-personal.png",
+      "source": "local-ux-review",
+      "query": "intent=workspace&mode=combined&primaryView=personal",
+      "layout": "workspace-combined-personal",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "width": 1440,
+      "height": 4066,
+      "bytes": 616564,
+      "sha256": "59f46ca94ebf8753c2d9cc6ef9b2cb81d9585358ea131c1adc9806b301530355",
+      "geometry": {
+        "width": 1440,
+        "height": 4066,
+        "scrollWidth": 1440,
+        "documentWidth": 1440,
+        "viewportWidth": 1440,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/workspace-company.png",
+      "source": "local-ux-review",
+      "query": "intent=workspace&mode=company",
+      "layout": "workspace-company-company",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "width": 1440,
+      "height": 6226,
+      "bytes": 2041907,
+      "sha256": "48577ef8eafe3d61598f74b36b72e2eb173f7d31822c26f31db6084402e2018d",
+      "geometry": {
+        "width": 1440,
+        "height": 6226,
+        "scrollWidth": 1440,
+        "documentWidth": 1440,
+        "viewportWidth": 1440,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    },
+    {
+      "path": "ux-review/evidence/all-experiences/workspace-personal.png",
+      "source": "local-ux-review",
+      "query": "intent=workspace&mode=personal",
+      "layout": "workspace-personal-personal",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "width": 1440,
+      "height": 4011,
+      "bytes": 615906,
+      "sha256": "e0280ec91d3cf766925e366e6c8cb1b7a1414363ab0ed79f2dc04c2c085d0383",
+      "geometry": {
+        "width": 1440,
+        "height": 4011,
+        "scrollWidth": 1440,
+        "documentWidth": 1440,
+        "viewportWidth": 1440,
+        "brokenImages": 0
+      },
+      "runtimeErrors": 0
+    }
+  ]
+}

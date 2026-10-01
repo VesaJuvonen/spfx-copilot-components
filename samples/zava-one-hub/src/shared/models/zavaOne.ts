@@ -135,4 +135,5 @@ export interface IZavaExperienceProps extends IZavaHostActions {
   showPlanMyDay?: boolean;
   toolProperties?: Readonly<Record<string, unknown>>;
   workspaceMode?: ZavaWorkspaceMode;
+  hideWorkspaceHeader?: boolean;
 }

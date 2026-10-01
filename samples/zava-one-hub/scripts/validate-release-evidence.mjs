@@ -50,7 +50,7 @@ if (teamsEnabled.length !== 3) errors.push(`Expected 3 Teams-enabled web parts, 
 if (fullPage.length !== 3) errors.push(`Expected 3 SharePoint full-page web parts, found ${fullPage.length}.`);
 if (teamsEnabled.some((record) => !record.manifest.alias?.includes('Workspace'))) errors.push('A feature web part is unexpectedly Teams-enabled.');
 if ((evidence.publicationScreenshots || []).length !== evidence.validation.publicationGalleryImages) errors.push('Publication screenshot evidence count is inconsistent.');
-if (evidence.validation.jestTests !== 29 || evidence.validation.jestFailures !== 0) errors.push('Jest release evidence is stale.');
+if (evidence.validation.jestTests < 35 || evidence.validation.jestFailures !== 0) errors.push('Jest release evidence must include the six Teams header tests and have no failures.');
 
 const expectedPackageBytes = evidence.artifacts?.find((artifact) => artifact.path.endsWith('.sppkg'))?.bytes;
 const sppkgPath = resolve(root, 'sharepoint/solution/zava-one-hub.sppkg');

@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, extname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { loadScreenshotEvidence } from './screenshot-evidence.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const errors = [];
@@ -35,6 +36,7 @@ function collectMarkdown(path) {
 const markdownFiles = [
   resolve(root, 'README.md'),
   resolve(root, 'assets/publication-screenshots.md'),
+  resolve(root, 'teams/README.md'),
   ...collectMarkdown(resolve(root, 'demos')),
   ...collectMarkdown(resolve(root, 'docs'))
 ];
@@ -58,13 +60,24 @@ if (readme.includes('YOUR-SOLUTION-NAME') || readme.includes('YOUR-GITHUB-ACCOUN
 const sample = JSON.parse(readFileSync(resolve(root, 'assets/sample.json'), 'utf8'))[0];
 const thumbnails = sample?.thumbnails || [];
 if (sample?.name !== 'pnp-sp-dev-spfx-copilot-apps-zava-one-hub') errors.push('Sample metadata name is invalid.');
-if (sample?.updateDateTime !== '2026-09-30') errors.push('Sample metadata updateDateTime is stale.');
-if (thumbnails.length !== 12) errors.push(`Expected 12 publication thumbnails, found ${thumbnails.length}.`);
+if (sample?.updateDateTime !== '2026-10-01') errors.push('Sample metadata updateDateTime is stale.');
+if (!sample?.products?.includes('Teams')) errors.push('Sample metadata must include Teams.');
+if (thumbnails.length !== 15) errors.push(`Expected 15 publication thumbnails, found ${thumbnails.length}.`);
 if (new Set(thumbnails.map((thumbnail) => thumbnail.name)).size !== thumbnails.length) errors.push('Thumbnail names must be unique.');
 if (new Set(thumbnails.map((thumbnail) => thumbnail.order)).size !== thumbnails.length) errors.push('Thumbnail orders must be unique.');
 for (const thumbnail of thumbnails) {
   if (!existsSync(resolve(root, 'assets', thumbnail.name))) errors.push(`Missing thumbnail asset: ${thumbnail.name}`);
   if (!thumbnail.url?.endsWith(`/samples/zava-one-hub/assets/${thumbnail.name}`)) errors.push(`Invalid thumbnail URL: ${thumbnail.name}`);
+}
+for (const mode of ['combined', 'company', 'personal']) {
+  if (!thumbnails.some((thumbnail) => thumbnail.name === `screenshot-teams-${mode}.png`)) {
+    errors.push(`Missing ${mode} Teams personal-app thumbnail.`);
+  }
+}
+const captureEvidence = loadScreenshotEvidence(root);
+const capturedPaths = new Set(captureEvidence.publication.map((record) => record.path));
+for (const thumbnail of thumbnails) {
+  if (!capturedPaths.has(`assets/${thumbnail.name}`)) errors.push(`Missing verified capture evidence: ${thumbnail.name}`);
 }
 
 const sampleIndex = readFileSync(resolve(root, '..', 'README.md'), 'utf8');

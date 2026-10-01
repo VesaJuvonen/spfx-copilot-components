@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T00:00:00Z",
+  "generatedAt": "2026-10-01T17:41:55.256Z",
   "profile": {
     "spfx": "1.24.0-beta.5",
     "react": "18.3.1",
@@ -9,7 +9,7 @@
     "griffel": "1.7.8"
   },
   "catalog": {
-    "solutionVersion": "1.0.0.13",
+    "solutionVersion": "1.0.0.14",
     "businessCapabilities": 35,
     "featureWebParts": 35,
     "workspaceWebParts": 3,
@@ -21,8 +21,8 @@
     "sharePointFullPageWebParts": 3
   },
   "validation": {
-    "jestSuites": 8,
-    "jestTests": 29,
+    "jestSuites": 9,
+    "jestTests": 35,
     "jestFailures": 0,
     "lintWarnings": 0,
     "inlineIntentsRendered": 35,
@@ -56,12 +56,11 @@
     "conversationStarters": 6,
     "capabilityExplorerStarterIsLast": true,
     "packagedAgentVersion": "1.0.0.14",
-    "publicationGalleryImages": 12,
-    "publicationGalleryCaptureMode": "complete-content",
-    "publicationGalleryMinimumWidth": 1600,
-    "publicationGalleryMinimumHeight": 860,
-    "publicationGalleryMaximumHeight": 8634,
-    "publicationGalleryHasClippedContent": false,
+    "publicationGalleryImages": 15,
+    "publicationGalleryCaptureMode": "rendered-element-and-authenticated-viewport",
+    "publicationGalleryMinimumWidth": 720,
+    "publicationGalleryMinimumHeight": 416,
+    "publicationGalleryMaximumHeight": 6198,
     "publicationGalleryMatchesCurrentImplementation": true,
     "c35PublicationWorkflowStates": 5,
     "vacationResetPendingCount": 4,
@@ -80,40 +79,193 @@
     "fullscreenM365DocumentScrollHeight": 8470,
     "fullscreenComponentViewportHeight": 8470,
     "fullscreenM365ScrollOwnerCount": 1,
-    "sppkgAppManifestVersion": "1.0.0.13",
-    "sppkgFeatureVersion": "1.0.0.13",
+    "sppkgAppManifestVersion": "1.0.0.14",
+    "sppkgFeatureVersion": "1.0.0.14",
     "chartScopeChangesGeometry": true,
     "officeMarkerCount": 5,
     "officeListCount": 5,
-    "vacationDecisionUpdatesPendingCount": true
+    "vacationDecisionUpdatesPendingCount": true,
+    "publicationGalleryHasHorizontalClipping": false,
+    "teamsPersonalAppCaptures": 3,
+    "teamsWorkspaceHeaderHidden": true,
+    "sppkgEntries": 110
   },
   "screenshots": [
-    { "path": "ux-review/evidence/screenshots/c06-inline.png", "bytes": 381386, "sha256": "84be988100f5abd37cba6388c0b1639a40200fd27b3ede0f141cdcfdeca8498e" },
-    { "path": "ux-review/evidence/screenshots/c27-chart.png", "bytes": 61768, "sha256": "d2ec5aa2038a5a6dfe4378ebc7ccaabcaac074016fb284f8f6935916c43e91e5" },
-    { "path": "ux-review/evidence/screenshots/c34-map.png", "bytes": 42117, "sha256": "44a76796ea9e43b151436d6af1b15dc02d8a6c0b1a344f56e6eb3abfd222eae9" },
-    { "path": "ux-review/evidence/screenshots/c35-list.png", "bytes": 48146, "sha256": "9e7e7069fdd18875d166d69823a781ffdbb06044f02088f11049fd2f1fc6dc65" },
-    { "path": "ux-review/evidence/screenshots/c35-receipt.png", "bytes": 32448, "sha256": "d9e031ca05320dc10c6146989e33b18ade0118afb78b94c7e6e520fae52246dd" },
-    { "path": "ux-review/evidence/screenshots/company-desktop-dark.png", "bytes": 1257878, "sha256": "c6f7ec32cda1376c5414c4468c3311ee243484bf58b45183c0530ad5816edf7d" },
-    { "path": "ux-review/evidence/screenshots/company-desktop-light.png", "bytes": 1260075, "sha256": "ce35e9ccd98650d0cfe4dea07df6ad18f1018a5a339855f0e20d530e7ce218e0" },
-    { "path": "ux-review/evidence/screenshots/company-mobile-light.png", "bytes": 456577, "sha256": "9cad7b3b30d8d09bf5478662900f1798f5106a560dd8eec40b9ab3297b3de6e1" }
+    {
+      "path": "ux-review/evidence/screenshots/c06-inline.png",
+      "bytes": 381386,
+      "sha256": "84be988100f5abd37cba6388c0b1639a40200fd27b3ede0f141cdcfdeca8498e"
+    },
+    {
+      "path": "ux-review/evidence/screenshots/c27-chart.png",
+      "bytes": 61768,
+      "sha256": "d2ec5aa2038a5a6dfe4378ebc7ccaabcaac074016fb284f8f6935916c43e91e5"
+    },
+    {
+      "path": "ux-review/evidence/screenshots/c34-map.png",
+      "bytes": 42117,
+      "sha256": "44a76796ea9e43b151436d6af1b15dc02d8a6c0b1a344f56e6eb3abfd222eae9"
+    },
+    {
+      "path": "ux-review/evidence/screenshots/c35-list.png",
+      "bytes": 48146,
+      "sha256": "9e7e7069fdd18875d166d69823a781ffdbb06044f02088f11049fd2f1fc6dc65"
+    },
+    {
+      "path": "ux-review/evidence/screenshots/c35-receipt.png",
+      "bytes": 32448,
+      "sha256": "d9e031ca05320dc10c6146989e33b18ade0118afb78b94c7e6e520fae52246dd"
+    },
+    {
+      "path": "ux-review/evidence/screenshots/company-desktop-dark.png",
+      "bytes": 1257878,
+      "sha256": "c6f7ec32cda1376c5414c4468c3311ee243484bf58b45183c0530ad5816edf7d"
+    },
+    {
+      "path": "ux-review/evidence/screenshots/company-desktop-light.png",
+      "bytes": 1260075,
+      "sha256": "ce35e9ccd98650d0cfe4dea07df6ad18f1018a5a339855f0e20d530e7ce218e0"
+    },
+    {
+      "path": "ux-review/evidence/screenshots/company-mobile-light.png",
+      "bytes": 456577,
+      "sha256": "9cad7b3b30d8d09bf5478662900f1798f5106a560dd8eec40b9ab3297b3de6e1"
+    }
   ],
   "publicationScreenshots": [
-    { "path": "assets/preview.png", "width": 2000, "height": 1125, "bytes": 59434, "sha256": "2bd109e9d9e5198fd432196ff495b1bf577dad7696a9ec3e635f000d7c1dfb22" },
-    { "path": "assets/screenshot-company-workspace.png", "width": 1600, "height": 8634, "bytes": 537409, "sha256": "f572bf0ba3718a6a6631369bf8dc6562f25d50f1f1e3c9f65432e809dff9e456" },
-    { "path": "assets/screenshot-personal.png", "width": 1600, "height": 8634, "bytes": 536880, "sha256": "f65f011bce4f0aad9628ec536962b0f79b3fb61cc3886706707bf6296cb17fb5" },
-    { "path": "assets/screenshot-company-news.png", "width": 1981, "height": 1290, "bytes": 661616, "sha256": "d73a0906b23601aa8086db891d7cd07512351921de3eb04bab3f0f812b90ef40" },
-    { "path": "assets/screenshot-recognition-compose.png", "width": 2000, "height": 1125, "bytes": 50184, "sha256": "ea6512aad31995bc98b0728ab5cfe73dab6e54db74d0ffbaf7e8f88ba783b7aa" },
-    { "path": "assets/screenshot-sales-performance.png", "width": 2000, "height": 1125, "bytes": 43599, "sha256": "3206adfd39061d2192d97cc78b06c2977800b20fe4873427d9c649f89f32f632" },
-    { "path": "assets/screenshot-office-map.png", "width": 2000, "height": 1125, "bytes": 180078, "sha256": "0637f504d697f37c0bad4adbc69643186c4b83a2264d5532e1a85cbba472e60c" },
-    { "path": "assets/screenshot-vacation-approvals.png", "width": 2000, "height": 1125, "bytes": 51540, "sha256": "dd02c80079d2259359d1590f6940bced226f3da1f6854d67a02080f4fa541bed" },
-    { "path": "assets/screenshot-vacation-detail.png", "width": 1600, "height": 860, "bytes": 25496, "sha256": "371baf45d4a575fcc81ffed92facabace29962b15404fd7f0eba81441e9b7048" },
-    { "path": "assets/screenshot-vacation-decision.png", "width": 1600, "height": 860, "bytes": 18474, "sha256": "208a88e55f10d4b19142dc00af75b62c942313d41af805073bc5ca34e72c97f9" },
-    { "path": "assets/screenshot-vacation-receipt.png", "width": 1600, "height": 860, "bytes": 16697, "sha256": "81aa3919aee0ea3ab94d2ba27f649d616bf3c4e4b7856e6d040cb287218e4322" },
-    { "path": "assets/screenshot-vacation-updated-list.png", "width": 1600, "height": 860, "bytes": 26729, "sha256": "7041f2382dfcd695c325abd0f4afc6314e4e397ffd3f395ae7b1f649a21feec7" }
+    {
+      "path": "assets/preview.png",
+      "width": 1600,
+      "height": 778,
+      "bytes": 65203,
+      "sha256": "25061fe868fb71921eec59ece23ac26a71d730ef894dfe03326f4ec915d4282e"
+    },
+    {
+      "path": "assets/screenshot-company-workspace.png",
+      "width": 1600,
+      "height": 6198,
+      "bytes": 2175495,
+      "sha256": "f7f842ebd4287d79ef9aec59a03d0369a9c79dd1d7dbdaddd346c13d36d3cfd6"
+    },
+    {
+      "path": "assets/screenshot-personal.png",
+      "width": 1600,
+      "height": 3995,
+      "bytes": 623509,
+      "sha256": "a4197fcd314a9c8a0cd3e0985befa9f774f6fc1a5f7b895ab4c39e2dd77e0704"
+    },
+    {
+      "path": "assets/screenshot-company-news.png",
+      "width": 1600,
+      "height": 1289,
+      "bytes": 1224859,
+      "sha256": "43ba9371509209bc33bfbe3b8bcf7924d905f971b2318c2458202025943e42b3"
+    },
+    {
+      "path": "assets/screenshot-recognition-compose.png",
+      "width": 720,
+      "height": 681,
+      "bytes": 52360,
+      "sha256": "045125f2d3ea54d57bf3584ff4b9ab25f281df84881ff0712a54706e5b81a726"
+    },
+    {
+      "path": "assets/screenshot-sales-performance.png",
+      "width": 720,
+      "height": 719,
+      "bytes": 38084,
+      "sha256": "3c12044ea83737d9466e50ea3370e41e58b9bab672b22dda2191fd5999b5f9e6"
+    },
+    {
+      "path": "assets/screenshot-office-map.png",
+      "width": 720,
+      "height": 716,
+      "bytes": 120328,
+      "sha256": "591c03c4e33d047d4876f9f3e75c4b74fcfc550efbce6518cda225ceb337224e"
+    },
+    {
+      "path": "assets/screenshot-vacation-approvals.png",
+      "width": 720,
+      "height": 660,
+      "bytes": 55064,
+      "sha256": "3aa8d7958cf0a307db541f58cce7aa12fca0ba6287d4cc0d0fb62ff0081a97f6"
+    },
+    {
+      "path": "assets/screenshot-vacation-detail.png",
+      "width": 720,
+      "height": 632,
+      "bytes": 45869,
+      "sha256": "e21c03e8c6e72cef65abab5d0f8c924bff1f3d4e4c992e41006cd593d15d9f0f"
+    },
+    {
+      "path": "assets/screenshot-vacation-decision.png",
+      "width": 720,
+      "height": 490,
+      "bytes": 27341,
+      "sha256": "bd27a370fced6ec1073601e2321c91052ad41e4b35b2fc5ca1822524fa18ef6a"
+    },
+    {
+      "path": "assets/screenshot-vacation-receipt.png",
+      "width": 720,
+      "height": 416,
+      "bytes": 24604,
+      "sha256": "fdff4743d56b2cdbc52f6203cb56628bba1d8318f818eadffcf84db91999977d"
+    },
+    {
+      "path": "assets/screenshot-vacation-updated-list.png",
+      "width": 720,
+      "height": 586,
+      "bytes": 46452,
+      "sha256": "a3ba5513a1cdfbde034ed227f98d021f76b00d9075d4502889eed0a702da6c8e"
+    },
+    {
+      "path": "assets/screenshot-teams-combined.png",
+      "width": 1492,
+      "height": 760,
+      "bytes": 501644,
+      "sha256": "f6fec3c2b2539531ae4058afc465a49678a4b3a5ee474e10df3b1a363e669b66"
+    },
+    {
+      "path": "assets/screenshot-teams-company.png",
+      "width": 1487,
+      "height": 760,
+      "bytes": 539779,
+      "sha256": "942b9f25570ea378388d541613655bcad946819870ef77f364747b5dcfd4b2fb"
+    },
+    {
+      "path": "assets/screenshot-teams-personal.png",
+      "width": 1490,
+      "height": 760,
+      "bytes": 365114,
+      "sha256": "812b7c0c0aaa79d661dadf19aeb88b256ad4f9a71e5ca7f15d0d6ef2dae440d8"
+    }
   ],
   "artifacts": [
-    { "path": "sharepoint/solution/zava-one-hub.sppkg", "bytes": 6358009, "sha256": "6f8c17bca0fa7faf7adb947ff5df13fcd24a952d3f9d48ac15399f2189cffb6b" },
-    { "path": "teams/zava-one.zip", "bytes": 10263, "sha256": "f947e9b318101257dc232e0dffecfbf9e793550cffbee32d79f009dfb4b207f7" }
+    {
+      "path": "sharepoint/solution/zava-one-hub.sppkg",
+      "bytes": 6203364,
+      "sha256": "31f7646cf5f46d3f4160e61efb29b9db6d7a44191eb03b3fb25cb973bb60f2ed"
+    },
+    {
+      "path": "teams/zava-one.zip",
+      "bytes": 10263,
+      "sha256": "48178aabe1c8db4448f1613d65553cfc104c44927b804ec0f569007aa1e3bbb6"
+    },
+    {
+      "path": "teams/zavaOneWorkspace/TeamsSPFxApp.zip",
+      "bytes": 23830,
+      "sha256": "ba082d645833ff2656df44969fdae848376d52d96cac52209648db2e3faf8758"
+    },
+    {
+      "path": "teams/zavaOneCompanyWorkspace/TeamsSPFxApp.zip",
+      "bytes": 19793,
+      "sha256": "13430506d817e70ed7e73ad553494cb6465daa95ac59b0ca9a15e68ce30a45bf"
+    },
+    {
+      "path": "teams/zavaOnePersonalWorkspace/TeamsSPFxApp.zip",
+      "bytes": 21693,
+      "sha256": "3d427972eba23aa8068cfc1502848999c482eca8ff54bb004dfc296612eff5c4"
+    }
   ],
-  "externalGate": "Tenant-authenticated modern SharePoint and Teams chrome, CSP, iframe focus, and screen-reader host checks are not complete."
+  "externalGate": "The sample author confirmed the three Teams personal apps work and supplied authenticated viewport screenshots. Modern SharePoint Top Actions, host CSP/focus, screen-reader, forced-color, and complete accessibility checks remain open.",
+  "historicalHostEvidence": "Workbench, host-resize, and non-gallery screenshot measurements retain their earlier baseline; they are not a new accessibility or host certification."
 }

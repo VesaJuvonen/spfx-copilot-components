@@ -8,13 +8,16 @@
   "scripts": {
     "build": "npm run validate && heft test --clean --production && heft package-solution --production && npm run check:generated-plugin && npm run check:package-output",
     "build:ux-review": "node scripts/build-ux-review.mjs",
+    "capture:publication": "node scripts/capture-publication.mjs",
+    "capture:gallery": "node scripts/capture-publication.mjs --gallery",
     "check:generated-plugin": "node scripts/validate-generated-ai-plugin.mjs",
     "check:agent-icons": "node scripts/generate-agent-icons.mjs --check",
     "check:media": "node scripts/validate-media-provenance.mjs && node scripts/generate-embedded-media.mjs --check",
     "check:package-output": "node scripts/validate-package-output.mjs",
     "check:publication": "node scripts/validate-publication.mjs",
+    "check:teams-apps": "node scripts/validate-teams-apps.mjs",
     "check:react-baseline": "node scripts/validate-react-baseline.mjs",
-    "check:reference-hosts": "node scripts/configure-reference-hosts.mjs --check",
+    "check:reference-hosts": "node --test scripts/generated-text.test.mjs && node scripts/configure-reference-hosts.mjs --check",
     "check:release-evidence": "node scripts/validate-release-evidence.mjs",
     "check:routing-collisions": "node scripts/validate-routing-collisions.mjs",
     "check:visual-evidence": "node scripts/generate-visual-evidence.mjs --check",
@@ -23,11 +26,12 @@
     "eject-webpack": "heft eject-webpack",
     "generate:media": "node scripts/generate-embedded-media.mjs",
     "generate:visual-evidence": "node scripts/generate-visual-evidence.mjs",
+    "update:release-evidence": "node scripts/update-release-evidence.mjs && node scripts/generate-visual-evidence.mjs",
     "generate:approved-components": "node scripts/generate-approved-components.mjs",
     "generate:agent-icons": "node scripts/generate-agent-icons.mjs",
     "start": "heft start --clean",
     "start:ux-review": "node scripts/serve-ux-review.mjs",
-    "validate": "npm run check:reference-hosts && npm run check:react-baseline && npm run check:routing-collisions && npm run check:agent-icons && npm run check:media && npm run check:visual-evidence && npm run check:publication && npm run check:release-evidence && npm run build:ux-review && heft test --clean"
+    "validate": "npm run check:reference-hosts && npm run check:react-baseline && npm run check:routing-collisions && npm run check:agent-icons && npm run check:media && npm run check:visual-evidence && npm run check:publication && npm run check:teams-apps && npm run check:release-evidence && npm run build:ux-review && heft test --clean"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",
@@ -77,6 +81,7 @@
     "esbuild": "0.25.10",
     "eslint": "9.37.0",
     "eslint-plugin-react-hooks": "5.2.0",
+    "playwright": "1.63.0",
     "typescript": "~5.8.0"
   },
   "overrides": {
