@@ -4,7 +4,7 @@
 ![React](https://img.shields.io/badge/React-18.3.1-149eca.svg)
 ![Fluent UI](https://img.shields.io/badge/Fluent_UI-9.74.9-0f6cbd.svg)
 ![Data](https://img.shields.io/badge/data-offline_fixtures-008272.svg)
-![Status](https://img.shields.io/badge/status-first_submission_candidate-0078d4.svg)
+![Status](https://img.shields.io/badge/status-demo_ready-0078d4.svg)
 
 ## Applies To
 
@@ -28,10 +28,11 @@ The same shared React capability powers:
 
 ![Explore Zava One capability explorer](./assets/preview.png)
 
-> **Current status:** the first-submission candidate is locally validated with 29 passing tests, 39
-> settled experience screenshots, required gallery metadata, and a committed production SPPKG.
-> Tenant-authenticated modern SharePoint/Teams chrome and complete host accessibility validation are
-> still required. SPFx 1.24 beta.5 Copilot Components remain preview technology and are not presented
+> **Current status:** the demo is locally validated with 35 passing tests, 39 recaptured engineering
+> screenshots, 15 reviewed publication images, and a committed production SPPKG. The sample author
+> confirmed all three Teams personal apps work and supplied authenticated screenshots.
+> Modern SharePoint host checks and complete host accessibility validation remain open.
+> SPFx 1.24 beta.5 Copilot Components remain preview technology and are not presented
 > as production-ready.
 
 ## Highlights
@@ -236,8 +237,8 @@ embedded module so keynote rendering remains offline.
 | Copilot Workbench | 37/37 Ready baseline; 8/8 changed Personal workflows revalidated |
 | Complete screenshot gallery | 39 PNGs |
 | Bundled media | 28 provenance-checked assets |
-| Production package | `1.0.0.13` / `6,358,009` bytes / 169 entries |
-| Publication gallery | `assets/sample.json` / 12 reviewed complete-content PNGs |
+| Production package | `1.0.0.14` / `6,203,364` bytes / 110 entries |
+| Publication gallery | `assets/sample.json` / 15 reviewed PNGs, including three authenticated Teams views |
 
 See [`phase-6-matrix.json`](./ux-review/evidence/phase-6-matrix.json),
 [`g0-bootstrap.md`](./ux-review/evidence/g0-bootstrap.md), and
@@ -251,7 +252,8 @@ See [`phase-6-matrix.json`](./ux-review/evidence/phase-6-matrix.json),
 | Local visual review | Ready | Run the UX review harness and use the documented query parameters |
 | SharePoint solution package | Ready to deploy to a developer tenant | Upload the committed SPPKG to an approved app catalog |
 | Copilot Component baseline | Ready for tenant verification | Confirm all six starters and 37 tools in Copilot Workbench |
-| Modern SharePoint pages and Teams tabs | External validation required | Verify Top Actions, responsive chrome, focus, and CSP after deployment |
+| Teams personal apps | Working baseline confirmed by sample author | Three authenticated screenshots; broader host accessibility checks remain open |
+| Modern SharePoint pages | External validation required | Verify Top Actions, responsive chrome, focus, and CSP after deployment |
 | Production use | Not claimed | Replace fixtures and complete security, privacy, accessibility, and service-owner reviews |
 
 ## Demo and Sharing Package
@@ -276,6 +278,27 @@ See [`phase-6-matrix.json`](./ux-review/evidence/phase-6-matrix.json),
 3. Add a Zava One feature web part to a SharePoint page, or use one of the three composed workspace web
    parts for SharePoint/Teams testing.
 4. Add the generated Zava One agent to Microsoft 365 Copilot and test inline/full-screen routing.
+
+### Separate Teams personal apps
+
+The solution includes three standalone Teams personal apps for the composed workspace web parts:
+
+- [Zava One](./teams/zavaOneWorkspace/TeamsSPFxApp.zip) - combined Company and Personal workspace.
+- [Zava One Company](./teams/zavaOneCompanyWorkspace/TeamsSPFxApp.zip) - Company-only workspace.
+- [Zava One Personal](./teams/zavaOnePersonalWorkspace/TeamsSPFxApp.zip) - Personal-only workspace.
+
+These separate packages are a workaround for the current SPFx tooling limitation: packaging SPFx
+Teams apps and Copilot agents together in a single Teams app package does not currently work.
+Deploy the SPFx `.sppkg` to SharePoint first, then upload the three Teams ZIPs separately from the
+generated agent package. All three are personal-only apps, not channel or group-chat apps.
+
+See the [Teams app guide](./teams/README.md) for manifests, installation, and package regeneration.
+
+| Teams personal app | Authenticated screenshot |
+| --- | --- |
+| Zava One (Combined) | [Company content with Company/Personal navigation](./assets/screenshot-teams-combined.png) |
+| Zava One Company | [Company-only content](./assets/screenshot-teams-company.png) |
+| Zava One Personal | [Personal-only content](./assets/screenshot-teams-personal.png) |
 
 ### Build from source
 
@@ -313,8 +336,8 @@ Open `http://127.0.0.1:4322`. Query parameters select an experience:
 
 ## Current Limitations
 
-- Tenant-authenticated SharePoint, Teams, and Copilot Workbench checks are still blocked on an approved
-  tenant/app catalog and test accounts.
+- The Teams personal-app baseline is confirmed by the sample author. Modern SharePoint Top Actions,
+  host CSP/focus, forced colors, screen readers, and complete host accessibility checks remain open.
 - The current providers are fixtures. Live Graph, SharePoint, HR, LMS, ITSM, CRM, finance, market,
   workplace, and security integrations are deferred.
 - Phase 7 final motion, per-intent edge-state expansion, localization/RTL,
@@ -333,6 +356,7 @@ Open `http://127.0.0.1:4322`. Query parameters select an experience:
 
 | Version | Date | Comments |
 | --- | --- | --- |
+| 1.0.0.14 | October 1, 2026 | Separate Teams personal apps, host-aware workspace header, verified screenshot crops, and finalized demo evidence |
 | 1.0.0.13 | September 30, 2026 | Refactor workspaces to natural document flow with one host scrollbar |
 | 1.0.0.12 | September 30, 2026 | Probe once, settle to the measured host height, then allow shrink-only updates |
 | 1.0.0.11 | September 30, 2026 | Disable all full-screen size messages and preserve only the inner component scrollbar |

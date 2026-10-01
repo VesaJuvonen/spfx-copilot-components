@@ -122,17 +122,18 @@ npm run check:package-output
 
 Call out:
 
-- 32 tests / 0 failures;
+- 35 tests / 0 failures;
 - 75 unique SPFx manifests;
 - 35 capabilities and 37 plugin functions;
 - 13 routing collision pairs;
-- 39 engineering screenshots and 12 complete publication captures;
+- 39 engineering screenshots and 15 reviewed publication images (12 local, three authenticated Teams);
 - 28 provenance-checked media assets;
-- one validated 169-entry SPPKG.
+- one validated version `1.0.0.14`, 110-entry SPPKG and three personal-only Teams app ZIPs.
 
 ### 9:30-10:00 — Honest boundary
 
-Close with: "This proves the fixture sample and package locally. Authenticated Teams chrome, modern
+Close with: "This proves the fixture sample and package locally, plus the author's working Teams
+personal-app baseline and authentic screenshots. Modern
 SharePoint Top Actions, host screen-reader behavior, CSP/focus integration, and live providers remain
 explicit external gates."
 

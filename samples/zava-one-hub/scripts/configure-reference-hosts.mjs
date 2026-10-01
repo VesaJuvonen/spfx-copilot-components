@@ -4,6 +4,7 @@ import { EOL } from 'node:os';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { zavaCapabilityCatalog } from '../config/zava-capabilities.mjs';
+import { normalizeNewlines } from './generated-text.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const checkOnly = process.argv.includes('--check');
@@ -291,7 +292,7 @@ const stale = [];
 for (const output of outputs) {
   const outputPath = resolve(root, output.path);
   if (checkOnly) {
-    if (!existsSync(outputPath) || readFileSync(outputPath, 'utf8') !== output.content) stale.push(output.path);
+    if (!existsSync(outputPath) || normalizeNewlines(readFileSync(outputPath, 'utf8')) !== normalizeNewlines(output.content)) stale.push(output.path);
   } else {
     writeFileSync(outputPath, output.content, 'utf8');
   }

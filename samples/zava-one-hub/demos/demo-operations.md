@@ -3,6 +3,7 @@
 ## Preflight
 
 Do not run a clean build while the SPFx watcher is active.
+Generated-text checks tolerate Git's LF/CRLF conversion without ignoring actual content changes.
 
 ```bash
 npm ci
@@ -61,7 +62,24 @@ Prefix each query with `http://127.0.0.1:4322/`.
 | Workspace personalization is unexpected | Close all Zava tabs to end the browser session, then reopen the workspace. |
 | Tenant authentication or host chrome fails | State the limitation once and switch to the matching local fallback route. |
 | A simulated action is interrupted | Return to the list and inspect current session state; do not claim success without the receipt. |
-| Build output differs from evidence | Stop watchers, run `npm run build`, recompute hashes, and update evidence before sharing. |
+| Build output differs from evidence | Stop watchers, build the package, run `npm run update:release-evidence`, then `npm run validate` before sharing. |
+
+## Screenshot and package evidence
+
+Use `npm run capture:publication` and `npm run capture:gallery` against the running UX review server.
+The capture runner requires installed Microsoft Edge and asserts the actual viewport, correct layout,
+image loading, complete rendered bounds, and no horizontal clipping. Set `ZAVA_UX_REVIEW_URL` if using
+a port other than 4322.
+
+For Teams, supply authenticated Combined, Company, and Personal snapshots to
+[`crop-teams-screenshots.ps1`](../scripts/crop-teams-screenshots.ps1). It removes only a four-pixel window
+frame and verifies every retained pixel against its source; it does not invent host chrome or resize.
+These are viewport overviews, not complete-workspace captures.
+
+After rebuilding packages, run `npm run update:release-evidence` to read the actual artifact hashes,
+embedded versions, passing Jest JUnit totals, and validated screenshot matrices. Then run
+`npm run check:publication`, `npm run check:visual-evidence`, and `npm run check:release-evidence`.
+See the [publication audit](../assets/publication-screenshots.md) for the full image inventory.
 
 ## End of demo
 

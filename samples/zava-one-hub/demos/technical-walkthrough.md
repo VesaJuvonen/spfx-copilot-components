@@ -61,13 +61,14 @@ npm ci
 npm run build
 ```
 
-The current gate verifies 32 tests, 37 plugin functions, 39 experience screenshots, two bundles,
-28 media assets, and the final SPPKG. See
+The current gate verifies 35 tests, 37 plugin functions, 39 engineering screenshots, 15 publication
+images, two bundles, 28 media assets, the final SPPKG, and three personal-only Teams packages. See
 [`docs/release-readiness.md`](../docs/release-readiness.md) and
 [`phase-6-matrix.json`](../ux-review/evidence/phase-6-matrix.json).
 
 ## 8. Honest boundary
 
-The local evidence does not certify authenticated Teams chrome, modern SharePoint page Top Actions,
+The author's working Teams baseline and three authenticated screenshots do not certify complete host
+accessibility. Modern SharePoint page Top Actions,
 host screen-reader behavior, CSP/focus integration, or live providers. Those remain explicit tenant and
 production gates.

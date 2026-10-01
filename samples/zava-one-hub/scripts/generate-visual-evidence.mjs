@@ -4,12 +4,15 @@ import { EOL } from 'node:os';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { zavaCapabilityCatalog } from '../config/zava-capabilities.mjs';
+import { normalizeNewlines } from './generated-text.mjs';
+import { loadScreenshotEvidence } from './screenshot-evidence.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const screenshotRoot = resolve(root, 'ux-review/evidence/all-experiences');
 const outputPath = resolve(root, 'ux-review/evidence/all-experiences-matrix.json');
 const sampleMetadataPath = resolve(root, 'assets/sample.json');
 const releaseEvidencePath = resolve(root, 'ux-review/evidence/phase-6-matrix.json');
+loadScreenshotEvidence(root);
 const workspaceFiles = [
   'workspace-combined-company.png',
   'workspace-combined-personal.png',
@@ -78,7 +81,7 @@ const sampleMetadata = JSON.parse(readFileSync(sampleMetadataPath, 'utf8'))[0];
 const publicationThumbnails = sampleMetadata?.thumbnails || [];
 const publicationNames = publicationThumbnails.map((thumbnail) => thumbnail.name);
 const publicationOrders = publicationThumbnails.map((thumbnail) => thumbnail.order);
-if (publicationThumbnails.length !== 12) throw new Error(`Expected 12 publication screenshots, found ${publicationThumbnails.length}.`);
+if (publicationThumbnails.length !== 15) throw new Error(`Expected 15 publication screenshots, found ${publicationThumbnails.length}.`);
 if (new Set(publicationNames).size !== publicationNames.length) throw new Error('Publication screenshot names must be unique.');
 if (new Set(publicationOrders).size !== publicationOrders.length) throw new Error('Publication screenshot orders must be unique.');
 
@@ -91,7 +94,7 @@ const publicationScreenshots = publicationThumbnails.map((thumbnail) => {
   const bytes = readFileSync(path);
   const width = bytes.readUInt32BE(16);
   const height = bytes.readUInt32BE(20);
-  if (width < 1600 || height < 800) throw new Error(`Publication screenshot ${thumbnail.name} is too small for complete-content review (${width}x${height}).`);
+  if (width < 640 || height < 200) throw new Error(`Publication screenshot ${thumbnail.name} is too small for content review (${width}x${height}).`);
   const record = {
     path: `assets/${thumbnail.name}`,
     width,
@@ -108,15 +111,15 @@ const publicationScreenshots = publicationThumbnails.map((thumbnail) => {
 if (recordedPublication.size !== publicationScreenshots.length) throw new Error('Publication release evidence contains unexpected screenshots.');
 
 const matrix = {
-  generatedAt: '2026-09-30T00:00:00Z',
+  generatedAt: releaseEvidence.generatedAt,
   inlineExperiences: zavaCapabilityCatalog.length,
   workspaceStates: workspaceFiles.length,
   totalScreenshots: screenshots.length,
   captureWidths: { inline: 900, workspace: 1440 },
   publicationGallery: {
     totalScreenshots: publicationScreenshots.length,
-    captureMode: 'complete-content',
-    minimumWidth: 1600,
+    captureMode: 'rendered-element-and-authenticated-viewport',
+    minimumWidth: Math.min(...publicationScreenshots.map((record) => record.width)),
     screenshots: publicationScreenshots
   },
   failures: { runtime: 0, overflow: 0, brokenImages: 0 },
@@ -125,7 +128,7 @@ const matrix = {
 const generated = `${JSON.stringify(matrix, null, 2)}${EOL}`;
 
 if (process.argv.includes('--check')) {
-  if (!existsSync(outputPath) || readFileSync(outputPath, 'utf8') !== generated) {
+  if (!existsSync(outputPath) || normalizeNewlines(readFileSync(outputPath, 'utf8')) !== normalizeNewlines(generated)) {
     console.error('Visual evidence matrix is stale. Run npm run generate:visual-evidence.');
     process.exit(1);
   }

@@ -29,6 +29,7 @@ createRoot(container).render(
       surface={surface}
       displayMode={displayMode}
       workspaceMode={workspaceMode}
+      hideWorkspaceHeader={query.get('hideWorkspaceHeader') === 'true'}
       theme={theme}
       targetDocument={document}
       currentUserName="Megan Bowen"

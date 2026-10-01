@@ -116,6 +116,7 @@ export abstract class ZavaOneWebPartBase<TProperties extends IZavaOneWebPartProp
         intent: this.intent,
         surface: this.intent === 'workspace' ? 'workspace' : 'webPart',
         workspaceMode: this.workspaceMode,
+        hideWorkspaceHeader: this.intent === 'workspace' && !!this.context.sdks.microsoftTeams,
         targetDocument: this.domElement.ownerDocument,
         theme: this._isDarkTheme ? 'dark' : 'light',
         currentUserName: this.context.pageContext.user.displayName || 'Megan Bowen',
