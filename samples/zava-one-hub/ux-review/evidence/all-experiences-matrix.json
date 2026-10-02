@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T17:41:55.256Z",
+  "generatedAt": "2026-10-02T08:51:40.651Z",
   "inlineExperiences": 35,
   "workspaceStates": 4,
   "totalScreenshots": 39,
@@ -22,16 +22,16 @@
       {
         "path": "assets/screenshot-company-workspace.png",
         "width": 1600,
-        "height": 6198,
-        "bytes": 2175495,
-        "sha256": "f7f842ebd4287d79ef9aec59a03d0369a9c79dd1d7dbdaddd346c13d36d3cfd6"
+        "height": 5479,
+        "bytes": 2355621,
+        "sha256": "3cda85c4bae96a75fc9611e95a47cb144d5bcf3061fb57bea9ac4fc0811a62cd"
       },
       {
         "path": "assets/screenshot-personal.png",
         "width": 1600,
-        "height": 3995,
-        "bytes": 623509,
-        "sha256": "a4197fcd314a9c8a0cd3e0985befa9f774f6fc1a5f7b895ab4c39e2dd77e0704"
+        "height": 3722,
+        "bytes": 620414,
+        "sha256": "851e352920185e09ee289974e2ea22e31c922284516079177c96acd20c11442c"
       },
       {
         "path": "assets/screenshot-company-news.png",
@@ -85,16 +85,16 @@
       {
         "path": "assets/screenshot-vacation-receipt.png",
         "width": 720,
-        "height": 416,
-        "bytes": 24604,
-        "sha256": "fdff4743d56b2cdbc52f6203cb56628bba1d8318f818eadffcf84db91999977d"
+        "height": 590,
+        "bytes": 34348,
+        "sha256": "972abb7f9bf73759bdc855fc26e91699489542a86fee6f6ae6815df35c23810e"
       },
       {
         "path": "assets/screenshot-vacation-updated-list.png",
         "width": 720,
         "height": 586,
-        "bytes": 46452,
-        "sha256": "a3ba5513a1cdfbde034ed227f98d021f76b00d9075d4502889eed0a702da6c8e"
+        "bytes": 46424,
+        "sha256": "952ba565110b56681c3489c3afedcbb4e208c23dcbe9493f9395d36fd73f15e4"
       },
       {
         "path": "assets/screenshot-teams-combined.png",
@@ -127,8 +127,8 @@
   "screenshots": [
     {
       "path": "ux-review/evidence/all-experiences/c01-my-day.png",
-      "bytes": 90304,
-      "sha256": "e6eca02a3dc35dde147a8d81040a656f9d1842b16565f8a1b5a139dc2edb0cb9"
+      "bytes": 90515,
+      "sha256": "7e6de00a52605e6066b6a29edd6aa3d2d63eca682b91e493883d3232ef055355"
     },
     {
       "path": "ux-review/evidence/all-experiences/c02-agenda.png",
@@ -138,7 +138,7 @@
     {
       "path": "ux-review/evidence/all-experiences/c03-important-mail.png",
       "bytes": 46524,
-      "sha256": "ccfcd350f1fa69eadc85f9ace432d5eaea28f7613798ab0336e4ff7869fa4b81"
+      "sha256": "da6f629ebb5c74a86dca666dda8715d45389a2dda88f725537ab5265391fdbe6"
     },
     {
       "path": "ux-review/evidence/all-experiences/c04-tasks.png",
@@ -152,8 +152,8 @@
     },
     {
       "path": "ux-review/evidence/all-experiences/c06-company-news.png",
-      "bytes": 401745,
-      "sha256": "fb268c19436703781bf199e97348153e25b9af4e39807de3ae89dc7e4774737e"
+      "bytes": 525397,
+      "sha256": "3dcc3be714eb4225501f3e61c6808f31605554447d50acde2f657de2b7a25ba2"
     },
     {
       "path": "ux-review/evidence/all-experiences/c07-announcements.png",
@@ -192,8 +192,8 @@
     },
     {
       "path": "ux-review/evidence/all-experiences/c14-recognition.png",
-      "bytes": 195682,
-      "sha256": "ca1b357e4620e8b4cdd43417014a802376940ba4ea957d2742ca0ba426c78314"
+      "bytes": 195691,
+      "sha256": "1e76cf770a4bef0ef34d3e358547ad0d6a5a5aa7487b4bfc6570f2131c222116"
     },
     {
       "path": "ux-review/evidence/all-experiences/c15-surveys.png",
@@ -302,23 +302,23 @@
     },
     {
       "path": "ux-review/evidence/all-experiences/workspace-combined-company.png",
-      "bytes": 2042589,
-      "sha256": "adcb242c90621b503f50cd3ebb8cdbddb3d0a7b7ab035e4f44afe0f7ff2b78db"
+      "bytes": 2198950,
+      "sha256": "38611b8d188fb780fd437b9755e286eb5e488a5c669e17c82c9859daea42ee8d"
     },
     {
       "path": "ux-review/evidence/all-experiences/workspace-combined-personal.png",
-      "bytes": 616564,
-      "sha256": "59f46ca94ebf8753c2d9cc6ef9b2cb81d9585358ea131c1adc9806b301530355"
+      "bytes": 614174,
+      "sha256": "0c4b3fdbd90077fececd5f07bda44406c02ddfa9d4f7add8f80a026d695cfe8e"
     },
     {
       "path": "ux-review/evidence/all-experiences/workspace-company.png",
-      "bytes": 2041907,
-      "sha256": "48577ef8eafe3d61598f74b36b72e2eb173f7d31822c26f31db6084402e2018d"
+      "bytes": 2197956,
+      "sha256": "147598751b9af5fe8b83c91e58d69a0f516c539e3bd1c86a07af361bb6c6090c"
     },
     {
       "path": "ux-review/evidence/all-experiences/workspace-personal.png",
-      "bytes": 615906,
-      "sha256": "e0280ec91d3cf766925e366e6c8cb1b7a1414363ab0ed79f2dc04c2c085d0383"
+      "bytes": 613491,
+      "sha256": "00892f1cb177c8c8cb354b477cafe520931518a87f2222f78ecfeaa05b600f0a"
     }
   ]
 }

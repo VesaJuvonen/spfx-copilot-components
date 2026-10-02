@@ -28,7 +28,7 @@ The same shared React capability powers:
 
 ![Explore Zava One capability explorer](./assets/preview.png)
 
-> **Current status:** the demo is locally validated with 35 passing tests, 39 recaptured engineering
+> **Current status:** the demo is locally validated with 42 passing tests, 4,080 responsive browser states, 39 recaptured engineering
 > screenshots, 15 reviewed publication images, and a committed production SPPKG. The sample author
 > confirmed all three Teams personal apps work and supplied authenticated screenshots.
 > Modern SharePoint host checks and complete host accessibility validation remain open.
@@ -232,13 +232,17 @@ embedded module so keynote rendering remains offline.
 | Copilot plugin | v2.4, 37 validated functions / 6 conversation starters |
 | Agent branding | Zava One / 192px color icon / 32px transparent outline icon |
 | SPFx bundles | 2 host-specific bundles with shared source |
-| Tests | 32 passed / 0 failed |
+| Tests | 42 passed / 0 failed |
 | Inline visual smoke | 35 rendered / 35 unique layouts / 0 runtime, overflow, or image failures |
 | Copilot Workbench | 37/37 Ready baseline; 8/8 changed Personal workflows revalidated |
 | Complete screenshot gallery | 39 PNGs |
 | Bundled media | 28 provenance-checked assets |
-| Production package | `1.0.0.14` / `6,203,364` bytes / 110 entries |
+| Production package | `1.0.0.15` / `6,205,670` bytes / 110 entries |
+| Responsive regression | 4,080 passing states; phone/tablet/desktop, narrow desktop columns, dark mode, and submission journeys |
 | Publication gallery | `assets/sample.json` / 15 reviewed PNGs, including three authenticated Teams views |
+
+See the [responsive review](./docs/responsive-review.md) for coverage, container-width fixes,
+Praise-style submission receipts, balanced default columns, and repeatable browser commands.
 
 See [`phase-6-matrix.json`](./ux-review/evidence/phase-6-matrix.json),
 [`g0-bootstrap.md`](./ux-review/evidence/g0-bootstrap.md), and
@@ -356,6 +360,7 @@ Open `http://127.0.0.1:4322`. Query parameters select an experience:
 
 | Version | Date | Comments |
 | --- | --- | --- |
+| 1.0.0.15 | October 2, 2026 | Container-responsive layouts, 4,080 browser-state checks, polished shared submission receipts, and balanced workspace defaults |
 | 1.0.0.14 | October 1, 2026 | Separate Teams personal apps, host-aware workspace header, verified screenshot crops, and finalized demo evidence |
 | 1.0.0.13 | September 30, 2026 | Refactor workspaces to natural document flow with one host scrollbar |
 | 1.0.0.12 | September 30, 2026 | Probe once, settle to the measured host height, then allow shrink-only updates |

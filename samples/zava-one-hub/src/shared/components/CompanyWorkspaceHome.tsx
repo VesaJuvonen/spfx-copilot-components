@@ -3,6 +3,7 @@ import { Badge, Button, Checkbox, Text, makeStyles, tokens } from '@fluentui/rea
 import { Alert24Regular, Megaphone24Regular, Settings24Regular } from '@fluentui/react-icons';
 import { zavaCapabilities } from '../catalog/capabilities';
 import type { IZavaExperienceProps } from '../models/zavaOne';
+import { companyPortalColumnAssignments } from '../models/workspacePortalDefaults';
 import { PersonalPortalDnd } from './PersonalPortalDnd';
 import { PersonalRightPanel } from './PersonalRightPanel';
 
@@ -12,10 +13,10 @@ const layoutStorageKey = 'zava-one:company-portal-layout:v1';
 const essentialIntents = ['companyNews', 'announcements', 'knowledge', 'companyEvents'];
 
 const useStyles = makeStyles({
-  shell: { display: 'flex', width: '100%', minHeight: '100%', minWidth: 0, overflow: 'visible', backgroundColor: tokens.colorNeutralBackground2 },
+  shell: { display: 'flex', width: '100%', minHeight: '100%', minWidth: 0, overflow: 'visible', backgroundColor: tokens.colorNeutralBackground2, '@container zava-experience (max-width: 900px)': { flexDirection: 'column' } },
   main: { flexGrow: 1, minWidth: 0, overflow: 'visible' },
   home: { display: 'grid', gap: tokens.spacingVerticalXL, paddingRight: tokens.spacingHorizontalXS },
-  hero: { display: 'grid', gridTemplateColumns: 'minmax(0, 1.3fr) minmax(320px, .7fr)', gap: tokens.spacingHorizontalXL, padding: tokens.spacingHorizontalXL, color: tokens.colorNeutralForegroundOnBrand, backgroundImage: 'linear-gradient(130deg, #075fce 0%, #006f75 58%, #138a3d 100%)', borderRadius: tokens.borderRadiusLarge, boxShadow: tokens.shadow8, '@media (max-width: 860px)': { gridTemplateColumns: '1fr' } },
+  hero: { display: 'grid', gridTemplateColumns: 'minmax(0, 1.3fr) minmax(320px, .7fr)', gap: tokens.spacingHorizontalXL, padding: tokens.spacingHorizontalXL, color: tokens.colorNeutralForegroundOnBrand, backgroundImage: 'linear-gradient(130deg, #075fce 0%, #006f75 58%, #138a3d 100%)', borderRadius: tokens.borderRadiusLarge, boxShadow: tokens.shadow8, '@container zava-experience (max-width: 860px)': { gridTemplateColumns: '1fr' } },
   heroLead: { display: 'flex', alignItems: 'flex-start', gap: tokens.spacingHorizontalL, minWidth: 0 },
   heroIcon: { display: 'grid', placeItems: 'center', width: '52px', height: '52px', flexShrink: 0, color: tokens.colorNeutralForegroundOnBrand, backgroundColor: 'rgba(255,255,255,.16)', borderRadius: tokens.borderRadiusCircular },
   heroCopy: { display: 'grid', gap: tokens.spacingVerticalXS, minWidth: 0 },
@@ -81,7 +82,7 @@ export function CompanyWorkspaceHome(props: ICompanyWorkspaceHomeProps): React.R
           <span className={styles.update}><Alert24Regular /><span className={styles.updateCopy}><strong>Helsinki accessibility lab opens</strong><span>Employee tours begin Thursday at 10:00 EEST.</span></span></span>
         </div>
       </section>
-      <PersonalPortalDnd panels={panels} targetDocument={props.targetDocument} editMode={props.editMode} onHidePanel={(panelId) => setVisiblePanels((current) => ({ ...current, [panelId]: false }))} storageKey={layoutStorageKey} ariaLabel="Company experiences" dataAttribute="data-company-capability" />
+      <PersonalPortalDnd panels={panels} targetDocument={props.targetDocument} editMode={props.editMode} onHidePanel={(panelId) => setVisiblePanels((current) => ({ ...current, [panelId]: false }))} storageKey={layoutStorageKey} ariaLabel="Company experiences" dataAttribute="data-company-capability" defaultColumnAssignments={companyPortalColumnAssignments} />
     </section></main>
     {settingsOpen && <PersonalRightPanel title="Personalize Company" icon={<Settings24Regular />} onDismiss={() => setSettingsOpen(false)} footnote="Stored in this browser session only — not saved permanently."><div className={styles.settingsBody}><Text>Choose the Company experiences shown in this workspace. Company-wide updates remain pinned at the top.</Text><div className={styles.actions}><Button appearance="subtle" onClick={() => setAll(true)}>Show all</Button><Button appearance="subtle" onClick={() => setAll(false)}>Essentials only</Button></div><div className={styles.settingsList}>{companyCapabilities.map((capability) => <Checkbox key={capability.intentKey} label={capability.title} checked={visiblePanels[capability.intentKey]} onChange={(_, data) => setVisiblePanels((current) => ({ ...current, [capability.intentKey]: data.checked === true }))} />)}</div></div></PersonalRightPanel>}
   </div>;

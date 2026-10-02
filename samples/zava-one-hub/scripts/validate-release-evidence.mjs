@@ -50,7 +50,19 @@ if (teamsEnabled.length !== 3) errors.push(`Expected 3 Teams-enabled web parts, 
 if (fullPage.length !== 3) errors.push(`Expected 3 SharePoint full-page web parts, found ${fullPage.length}.`);
 if (teamsEnabled.some((record) => !record.manifest.alias?.includes('Workspace'))) errors.push('A feature web part is unexpectedly Teams-enabled.');
 if ((evidence.publicationScreenshots || []).length !== evidence.validation.publicationGalleryImages) errors.push('Publication screenshot evidence count is inconsistent.');
-if (evidence.validation.jestTests < 35 || evidence.validation.jestFailures !== 0) errors.push('Jest release evidence must include the six Teams header tests and have no failures.');
+if (evidence.validation.jestTests < 42 || evidence.validation.jestFailures !== 0) errors.push('Jest release evidence must include Teams header, receipt, and default/saved-layout regressions with no failures.');
+const responsive = JSON.parse(readFileSync(resolve(root, 'ux-review/evidence/responsive-matrix.json'), 'utf8'));
+if (responsive.states < 4080 || responsive.failures !== 0 || responsive.capabilities !== 35 ||
+  JSON.stringify(responsive.viewportWidths) !== JSON.stringify([320, 390, 560, 768, 1024, 1280, 1440, 1600]) ||
+  JSON.stringify(responsive.desktopColumnWidths) !== JSON.stringify([320, 390, 560, 768]) ||
+  JSON.stringify(responsive.darkViewportWidths) !== JSON.stringify([320, 768, 1440]) ||
+  responsive.defaultColumns.length !== 32 || responsive.defaultColumns.some((record) => record.spread > 0.2)) {
+  errors.push('Responsive release evidence is incomplete or has failures.');
+}
+if (evidence.validation.responsiveStates !== responsive.states || evidence.validation.responsiveFailures !== responsive.failures ||
+  JSON.stringify(evidence.validation.responsiveViewportWidths) !== JSON.stringify(responsive.viewportWidths)) {
+  errors.push('Release and responsive evidence are inconsistent.');
+}
 
 const expectedPackageBytes = evidence.artifacts?.find((artifact) => artifact.path.endsWith('.sppkg'))?.bytes;
 const sppkgPath = resolve(root, 'sharepoint/solution/zava-one-hub.sppkg');

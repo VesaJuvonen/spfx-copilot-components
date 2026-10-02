@@ -190,7 +190,7 @@ Return to vacation approvals and select **Reset demo data**.
 
 - Verify 4 pending / 2 processed.
 - Show the local fallback route table.
-- Close with the evidence: 35 tests, 37 plugin functions, 39 engineering screenshots, 15 publication
+- Close with the evidence: 42 tests, 4,080 responsive browser states, 37 plugin functions, 39 engineering screenshots, 15 publication
   captures, 28 bundled media assets, and one validated SPPKG.
 
 Closing line:

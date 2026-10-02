@@ -122,13 +122,13 @@ npm run check:package-output
 
 Call out:
 
-- 35 tests / 0 failures;
+- 42 tests / 0 failures, plus 4,080 passing responsive browser states;
 - 75 unique SPFx manifests;
 - 35 capabilities and 37 plugin functions;
 - 13 routing collision pairs;
 - 39 engineering screenshots and 15 reviewed publication images (12 local, three authenticated Teams);
 - 28 provenance-checked media assets;
-- one validated version `1.0.0.14`, 110-entry SPPKG and three personal-only Teams app ZIPs.
+- one validated version `1.0.0.15`, 110-entry SPPKG and three personal-only Teams app ZIPs.
 
 ### 9:30-10:00 — Honest boundary
 

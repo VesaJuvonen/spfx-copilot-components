@@ -18,7 +18,6 @@ import {
   ArrowLeft24Regular,
   Add24Regular,
   Calendar24Regular,
-  CheckmarkCircle24Filled,
   DismissCircle24Regular,
   Document24Regular,
   Search24Regular,
@@ -36,11 +35,12 @@ import {
 import { getZavaPerson } from '../mockData/personas';
 import type { IZavaExperienceProps, IZavaModelContextSnapshot } from '../models/zavaOne';
 import { ResponsiveExpandButton } from './ResponsiveExpandButton';
+import { SubmissionReceipt } from './SubmissionReceipt';
 
 const useStyles = makeStyles({
-  root: { width: '100%', minWidth: 0, boxSizing: 'border-box' },
+  root: { width: '100%', minWidth: 0, boxSizing: 'border-box', containerType: 'inline-size', containerName: 'zava-experience', overflowWrap: 'anywhere' },
   inline: { maxWidth: '720px', marginRight: 'auto', marginLeft: 'auto', padding: tokens.spacingHorizontalM },
-  frame: { display: 'grid', gap: tokens.spacingVerticalL, overflow: 'hidden', padding: tokens.spacingHorizontalL, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge, boxShadow: tokens.shadow4 },
+  frame: { display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', gap: tokens.spacingVerticalL, overflow: 'hidden', padding: tokens.spacingHorizontalL, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge, boxShadow: tokens.shadow4 },
   strip: { height: '5px', marginTop: `calc(-1 * ${tokens.spacingHorizontalL})`, marginRight: `calc(-1 * ${tokens.spacingHorizontalL})`, marginLeft: `calc(-1 * ${tokens.spacingHorizontalL})`, backgroundImage: 'linear-gradient(90deg, #075fce 0%, #075fce 32%, #138a3d 32%, #138a3d 55%, #b32687 55%, #b32687 78%, #d84f38 78%)' },
   header: { display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) auto', alignItems: 'start', gap: tokens.spacingHorizontalL },
   heading: { display: 'grid', gap: tokens.spacingVerticalXXS },
@@ -58,12 +58,11 @@ const useStyles = makeStyles({
   itemCopy: { display: 'grid', gap: tokens.spacingVerticalXXS, minWidth: 0 },
   secondary: { color: tokens.colorNeutralForeground3, fontSize: tokens.fontSizeBase200 },
   detail: { display: 'grid', gap: tokens.spacingVerticalM, padding: tokens.spacingHorizontalXL, backgroundColor: tokens.colorNeutralBackground2, borderRadius: tokens.borderRadiusLarge },
-  evidenceGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: tokens.spacingHorizontalM },
+  evidenceGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: tokens.spacingHorizontalM },
   evidence: { display: 'grid', gap: tokens.spacingVerticalXXS, padding: tokens.spacingHorizontalM, backgroundColor: tokens.colorNeutralBackground1, borderRadius: tokens.borderRadiusMedium },
-  formGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: tokens.spacingHorizontalM },
-  receipt: { display: 'grid', gap: tokens.spacingVerticalM, padding: tokens.spacingHorizontalXL, color: tokens.colorNeutralForegroundInverted, backgroundColor: tokens.colorPaletteGreenBackground3, borderRadius: tokens.borderRadiusLarge },
+  formGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: tokens.spacingHorizontalM },
   risk: { padding: tokens.spacingHorizontalM, backgroundColor: tokens.colorPaletteYellowBackground1, borderLeft: `4px solid ${tokens.colorPaletteYellowBorder2}`, borderRadius: tokens.borderRadiusMedium },
-  metricGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: tokens.spacingHorizontalM },
+  metricGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 150px), 1fr))', gap: tokens.spacingHorizontalM },
   metric: { display: 'grid', gap: tokens.spacingVerticalXXS, padding: tokens.spacingHorizontalL, backgroundColor: tokens.colorNeutralBackground2, borderRadius: tokens.borderRadiusLarge },
   metricValue: { fontSize: tokens.fontSizeHero800, lineHeight: tokens.lineHeightHero800, fontWeight: tokens.fontWeightSemibold },
   chart: { display: 'grid', gap: tokens.spacingVerticalM },
@@ -73,7 +72,7 @@ const useStyles = makeStyles({
   estimateBar: { fill: '#b32687', cursor: 'pointer' },
   chartTable: { width: '100%', borderCollapse: 'collapse' },
   cell: { padding: tokens.spacingHorizontalS, textAlign: 'left', borderBottom: `1px solid ${tokens.colorNeutralStroke2}` },
-  roomGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: tokens.spacingHorizontalM },
+  roomGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: tokens.spacingHorizontalM },
   room: { display: 'grid', gap: tokens.spacingVerticalS, padding: tokens.spacingHorizontalL, color: tokens.colorNeutralForeground1, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge, textAlign: 'left', cursor: 'pointer' },
   roomSelected: { backgroundColor: tokens.colorBrandBackground2, border: `2px solid ${tokens.colorBrandStroke1}` },
   loading: { display: 'grid', placeItems: 'center', gap: tokens.spacingVerticalM, minHeight: '180px', color: tokens.colorNeutralForeground3 },
@@ -113,7 +112,11 @@ export function ApprovalsExperience(props: IZavaExperienceProps): React.ReactEle
     {stage === 'queue' && <div className={styles.list}>{approvalFixtures.map((approval) => { const person = getZavaPerson(approval.personId); const status = statuses[approval.id] || 'pending'; return <button key={approval.id} type="button" className={mergeClasses(styles.row, styles.rowButton)} onClick={() => open(approval.id)}><Avatar size={40} name={person.displayName} image={{ src: person.photoUrl }} /><span className={styles.itemCopy}><strong>{approval.title}</strong><span>{person.displayName} / {approval.due}</span><span className={styles.secondary}>{approval.summary}</span></span><Badge color={status === 'pending' ? 'warning' : status === 'approved' ? 'success' : 'danger'}>{status}</Badge></button>; })}</div>}
     {stage === 'review' && <div className={styles.detail}><Button appearance="subtle" icon={<ArrowLeft24Regular />} onClick={() => setStage('queue')}>Back to approvals</Button><h3 className={styles.title}>{selected.title}</h3><p className={styles.subtitle}>{selected.summary}</p><div className={styles.evidenceGrid}>{selected.details.map(([label, value]) => <span key={label} className={styles.evidence}><span className={styles.secondary}>{label}</span><strong>{value}</strong></span>)}</div><div className={styles.risk}><strong>Decision context</strong><br />{selected.risk}</div>{selectedStatus === 'pending' && <div className={styles.actions}><Button appearance="primary" onClick={() => { setDecision('approved'); setStage('confirm'); }}>Approve</Button><Button onClick={() => { setDecision('declined'); setStage('confirm'); }}>Decline</Button></div>}{selectedStatus !== 'pending' && <Badge color={selectedStatus === 'approved' ? 'success' : 'danger'}>Already {selectedStatus}</Badge>}</div>}
     {stage === 'confirm' && <div className={styles.detail}><Button appearance="subtle" icon={<ArrowLeft24Regular />} onClick={() => setStage('review')}>Edit decision</Button><h3 className={styles.title}>{decision === 'approved' ? 'Approve' : 'Decline'} {selected.title}</h3>{decision === 'declined' && <Field label="Reason" required><Textarea value={reason} onChange={(event) => setReason(event.currentTarget.value)} /></Field>}<Button appearance="primary" disabled={decision === 'declined' && !reason.trim()} onClick={confirm}>Confirm {decision === 'approved' ? 'approval' : 'decline'}</Button></div>}
-    {stage === 'decided' && <div className={styles.receipt} role="status">{decision === 'approved' ? <CheckmarkCircle24Filled /> : <DismissCircle24Regular />}<h3 className={styles.title}>Approval {decision}</h3><span>{selected.title} / {selected.id}</span><span>Decision recorded for this session</span><Button appearance="primary" onClick={() => setStage('queue')}>Back to approvals</Button></div>}
+    {stage === 'decided' && <SubmissionReceipt eyebrow="Decision recorded" title={`Approval ${decision}`} description={selected.title}
+      tone={decision === 'declined' ? 'neutral' : 'success'} icon={decision === 'declined' ? <DismissCircle24Regular /> : undefined}
+      details={[{ label: 'Reference', value: selected.id }, { label: 'Decision', value: decision === 'approved' ? 'Approved' : 'Declined' }, ...(decision === 'declined' ? [{ label: 'Reason', value: reason }] : [])]}
+      note="Decision recorded for this session only. No external approval was submitted."
+      actions={<Button appearance="primary" onClick={() => setStage('queue')}>Back to approvals</Button>} />}
   </WorkflowFrame>;
 }
 
@@ -138,7 +141,10 @@ export function TimeOffExperience(props: IZavaExperienceProps): React.ReactEleme
     {stage === 'list' && <><div className={styles.actions}><Button appearance="primary" onClick={resetForm}>Request new time off</Button><Badge appearance="outline">18 vacation days available</Badge></div><div className={styles.list}>{requests.map((request) => <div key={request.id} className={styles.row}><Calendar24Regular /><span className={styles.itemCopy}><strong>{request.leaveType} / {request.dates}</strong><span className={styles.secondary}>{request.days} working day{request.days === 1 ? '' : 's'} / {request.id}</span></span><Badge color={request.status === 'Approved' ? 'success' : 'warning'}>{request.status}</Badge></div>)}</div></>}
     {stage === 'form' && <div className={styles.detail}><Button appearance="subtle" icon={<ArrowLeft24Regular />} onClick={() => setStage('list')}>Back to requests</Button><div className={styles.formGrid}><Field label="Leave type" required><Select value={leaveType} onChange={(event) => setLeaveType(event.currentTarget.value as LeaveType)}><option value="vacation">Vacation</option><option value="sick">Sick leave</option><option value="personal">Personal day</option></Select></Field><Field label="Start date" required><Input type="date" value={startDate} onChange={(_, data) => setStartDate(data.value)} /></Field><Field label="End date" required><Input type="date" value={endDate} onChange={(_, data) => setEndDate(data.value)} /></Field></div><Field label="Reason" required><Textarea value={reason} onChange={(event) => setReason(event.currentTarget.value)} placeholder="Add the context your manager needs." /></Field><div className={styles.risk}><strong>{days} working day{days === 1 ? '' : 's'}</strong><br />Projected vacation balance: {Math.max(0, 18 - days)} days. Team coverage remains healthy.</div><Button appearance="primary" disabled={!days || reason.trim().length < 4} onClick={() => setStage('review')}>Review request</Button></div>}
     {stage === 'review' && <div className={styles.detail}><Button appearance="subtle" icon={<ArrowLeft24Regular />} onClick={() => setStage('form')}>Edit request</Button><h3 className={styles.title}>Review time-off request</h3><div className={styles.evidenceGrid}><span className={styles.evidence}><span className={styles.secondary}>Leave type</span><strong>{leaveType}</strong></span><span className={styles.evidence}><span className={styles.secondary}>Dates</span><strong>{startDate} to {endDate}</strong></span><span className={styles.evidence}><span className={styles.secondary}>Working days</span><strong>{days}</strong></span><span className={styles.evidence}><span className={styles.secondary}>Approver</span><strong>Manager / Megan Bowen</strong></span></div><p>{reason}</p><Button appearance="primary" onClick={submit}>Submit time-off request</Button></div>}
-    {stage === 'receipt' && <div className={styles.receipt} role="status"><CheckmarkCircle24Filled /><h3 className={styles.title}>Time-off request submitted</h3><span>{startDate} to {endDate} / {days} working days</span><span>Status: Pending manager approval</span><Button appearance="primary" onClick={() => setStage('list')}>View submitted requests</Button></div>}
+    {stage === 'receipt' && <SubmissionReceipt eyebrow="Request recorded" title="Time-off request submitted" description="Your request is ready for manager review."
+      details={[{ label: 'Dates', value: `${startDate} to ${endDate}` }, { label: 'Working days', value: days }, { label: 'Status', value: 'Pending manager approval' }]}
+      note="Session-only demo request. No leave request was sent to HR."
+      actions={<Button appearance="primary" onClick={() => setStage('list')}>View submitted requests</Button>} />}
   </WorkflowFrame>;
 }
 
@@ -180,7 +186,10 @@ export function WorkplaceSpaceExperience(props: IZavaExperienceProps): React.Rea
     {stage === 'loading' && <div className={styles.loading} role="status"><Spinner /><span>Checking {office} rooms for {date} at {time}…</span></div>}
     {stage === 'results' && <><Button appearance="subtle" icon={<ArrowLeft24Regular />} onClick={() => setStage('criteria')}>Change search</Button><div className={styles.roomGrid}>{rooms.map((room) => <button key={room.id} type="button" className={mergeClasses(styles.room, selectedId === room.id && styles.roomSelected)} onClick={() => setSelectedId(room.id)}><strong>{room.name}</strong><span>{room.capacity} people</span><span className={styles.secondary}>{room.features}</span><Badge color="success">Available</Badge></button>)}</div>{!rooms.length && <div className={styles.risk}>No rooms match this capacity. Change office, time, or people count.</div>}<Button appearance="primary" disabled={!selected} onClick={() => setStage('confirm')}>Review booking</Button></>}
     {stage === 'confirm' && selected && <div className={styles.detail}><Button appearance="subtle" icon={<ArrowLeft24Regular />} onClick={() => setStage('results')}>Back to rooms</Button><h3 className={styles.title}>{selected.name}</h3><div className={styles.evidenceGrid}><span className={styles.evidence}><span className={styles.secondary}>Office</span><strong>{office}</strong></span><span className={styles.evidence}><span className={styles.secondary}>Date and time</span><strong>{date} / {time}</strong></span><span className={styles.evidence}><span className={styles.secondary}>Duration</span><strong>{duration} minutes</strong></span><span className={styles.evidence}><span className={styles.secondary}>Capacity</span><strong>{selected.capacity}</strong></span></div><Button appearance="primary" onClick={() => setStage('receipt')}>Confirm room booking</Button></div>}
-    {stage === 'receipt' && selected && <div className={styles.receipt} role="status"><CheckmarkCircle24Filled /><h3 className={styles.title}>Room booked</h3><span>{selected.name} / {office} / {date} at {time}</span><span>Reference ROOM-{selected.id}-2026</span><Button appearance="primary" onClick={() => { setSelectedId(undefined); setStage('criteria'); }}>Book another room</Button></div>}
+    {stage === 'receipt' && selected && <SubmissionReceipt eyebrow="Booking recorded" title="Room booked" description={`${selected.name} in ${office} is selected for your meeting.`}
+      details={[{ label: 'Date and time', value: `${date} at ${time}` }, { label: 'Duration', value: `${duration} minutes` }, { label: 'Reference', value: `ROOM-${selected.id}-2026` }]}
+      note="Session-only demo booking. No room reservation was sent to a workplace service."
+      actions={<Button appearance="primary" onClick={() => { setSelectedId(undefined); setStage('criteria'); }}>Book another room</Button>} />}
   </WorkflowFrame>;
 }
 
@@ -212,6 +221,9 @@ export function ItHelpExperience(props: IZavaExperienceProps): React.ReactElemen
     {view === 'known' && selectedKnown && <div className={styles.detail}><Button appearance="subtle" icon={<ArrowLeft24Regular />} onClick={() => setSelectedId(undefined)}>Back to known issues</Button><h3 className={styles.title}>{selectedKnown.title}</h3><p>{selectedKnown.detail}</p><Badge color={selectedKnown.status === 'Resolved' ? 'success' : 'warning'}>{selectedKnown.status}</Badge></div>}
     {view === 'new' && stage === 'form' && <div className={styles.detail}><Button appearance="subtle" icon={<ArrowLeft24Regular />} onClick={closeNew}>Back to my issues</Button><div className={styles.privacy}><ShieldLock24Regular /><span><strong>Private IT intake</strong><br />Do not include passwords, access tokens, or unrelated personal data.</span></div><div className={styles.formGrid}><Field label="Category" required><Select value={category} onChange={(event) => setCategory(event.currentTarget.value)}>{['Access', 'Device', 'Network', 'Software', 'Other'].map((item) => <option key={item}>{item}</option>)}</Select></Field><Field label="Impact" required><Select value={impact} onChange={(event) => setImpact(event.currentTarget.value)}>{['Low', 'Medium', 'High'].map((item) => <option key={item}>{item}</option>)}</Select></Field></div><Field label="Summary" required><Input value={summary} onChange={(_, data) => setSummary(data.value)} /></Field><Field label="Description" required><Textarea value={description} onChange={(event) => setDescription(event.currentTarget.value)} /></Field><Button appearance="primary" disabled={summary.trim().length < 5 || description.trim().length < 12} onClick={() => setStage('review')}>Review IT issue</Button></div>}
     {view === 'new' && stage === 'review' && <div className={styles.detail}><Button appearance="subtle" icon={<ArrowLeft24Regular />} onClick={() => setStage('form')}>Edit issue</Button><h3 className={styles.title}>{summary}</h3><p>{description}</p><div className={styles.evidenceGrid}><span className={styles.evidence}><span className={styles.secondary}>Category</span><strong>{category}</strong></span><span className={styles.evidence}><span className={styles.secondary}>Impact</span><strong>{impact}</strong></span><span className={styles.evidence}><span className={styles.secondary}>Destination</span><strong>Zava IT service desk</strong></span></div><Button appearance="primary" onClick={submit}>Submit IT issue</Button></div>}
-    {view === 'new' && stage === 'receipt' && <div className={styles.receipt} role="status"><CheckmarkCircle24Filled /><h3 className={styles.title}>IT issue submitted</h3><span>{summary} / Status: Open</span><span>Reference {selectedId} / Target response: 4 business hours</span><Button appearance="primary" onClick={() => { setView('mine'); setStage('form'); }}>View my issues</Button></div>}
+    {view === 'new' && stage === 'receipt' && <SubmissionReceipt eyebrow="Issue recorded" title="IT issue submitted" description={summary}
+      details={[{ label: 'Reference', value: selectedId }, { label: 'Status', value: 'Open' }, { label: 'Target response', value: '4 business hours' }]}
+      note="Session-only demo issue. No ticket was sent to the IT service."
+      actions={<Button appearance="primary" onClick={() => { setView('mine'); setStage('form'); }}>View my issues</Button>} />}
   </WorkflowFrame>;
 }
