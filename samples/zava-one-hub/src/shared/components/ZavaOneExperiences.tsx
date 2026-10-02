@@ -80,6 +80,7 @@ import type {
 } from '../models/zavaOne';
 import { useVacationRequests, zavaSessionStore } from '../services/ZavaSessionStore';
 import { ResponsiveExpandButton } from './ResponsiveExpandButton';
+import { SubmissionReceipt } from './SubmissionReceipt';
 
 function settle(action: Promise<void> | undefined): void {
   action?.catch(() => undefined);
@@ -90,6 +91,9 @@ const useStyles = makeStyles({
     width: '100%',
     minWidth: 0,
     boxSizing: 'border-box',
+    containerType: 'inline-size',
+    containerName: 'zava-experience',
+    overflowWrap: 'anywhere',
     color: tokens.colorNeutralForeground1
   },
   inlineRoot: {
@@ -209,21 +213,21 @@ const useStyles = makeStyles({
   newsHeroTileCopy: { position: 'absolute', right: 0, bottom: 0, left: 0, zIndex: 1, display: 'grid', gap: tokens.spacingVerticalS, padding: tokens.spacingHorizontalXL },
   newsHeroTitleButton: { padding: 0, color: '#ffffff', backgroundColor: 'transparent', border: 0, textAlign: 'left', cursor: 'pointer', fontSize: tokens.fontSizeHero800, lineHeight: tokens.lineHeightHero800, fontWeight: tokens.fontWeightSemibold, ':hover': { textDecorationLine: 'underline' }, ':focus-visible': { outline: '3px solid #ffffff', outlineOffset: '2px' } },
   newsHeroSummary: { margin: 0, maxWidth: '720px', color: '#ffffff', lineHeight: tokens.lineHeightBase300 },
-  newsTileMosaic: { display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: tokens.spacingHorizontalM, '@media (max-width: 680px)': { gridTemplateColumns: '1fr' } },
-  newsTileFeatured: { gridColumn: '1 / -1', minHeight: '400px', '@media (max-width: 680px)': { gridColumn: 'auto', minHeight: '320px' } },
+  newsTileMosaic: { display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: tokens.spacingHorizontalM, '@container zava-experience (max-width: 680px)': { gridTemplateColumns: '1fr' } },
+  newsTileFeatured: { gridColumn: '1 / -1', minHeight: '400px', '@container zava-experience (max-width: 680px)': { gridColumn: 'auto', minHeight: '320px' } },
   newsVisualTile: { position: 'relative', minHeight: '280px', overflow: 'hidden', color: '#ffffff', backgroundColor: '#11364f', borderRadius: tokens.borderRadiusLarge, boxShadow: tokens.shadow8 },
   newsVisualTileCopy: { position: 'absolute', right: 0, bottom: 0, left: 0, zIndex: 1, display: 'grid', gap: tokens.spacingVerticalXS, padding: tokens.spacingHorizontalL },
   newsVisualTileTitle: { padding: 0, color: '#ffffff', backgroundColor: 'transparent', border: 0, textAlign: 'left', cursor: 'pointer', fontSize: tokens.fontSizeBase500, lineHeight: tokens.lineHeightBase500, fontWeight: tokens.fontWeightSemibold, ':hover': { textDecorationLine: 'underline' }, ':focus-visible': { outline: '3px solid #ffffff', outlineOffset: '2px' } },
-  newsLayers: { display: 'grid', gridTemplateColumns: 'minmax(0, 1.45fr) minmax(290px, .55fr)', gap: tokens.spacingHorizontalL, alignItems: 'stretch', '@media (max-width: 820px)': { gridTemplateColumns: '1fr' } },
+  newsLayers: { display: 'grid', gridTemplateColumns: 'minmax(0, 1.45fr) minmax(290px, .55fr)', gap: tokens.spacingHorizontalL, alignItems: 'stretch', '@container zava-experience (max-width: 820px)': { gridTemplateColumns: '1fr' } },
   newsLayerRail: { display: 'grid', alignContent: 'start', gap: tokens.spacingVerticalS },
   newsLayerItem: { display: 'grid', gridTemplateColumns: '88px minmax(0, 1fr)', gap: tokens.spacingHorizontalM, minHeight: '88px', padding: tokens.spacingHorizontalS, color: tokens.colorNeutralForeground1, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusMedium },
   newsLayerImage: { width: '88px', height: '88px', objectFit: 'cover', borderRadius: tokens.borderRadiusSmall },
   newsCarousel: { display: 'grid', gap: tokens.spacingVerticalM },
-  newsCarouselStage: { display: 'grid', gridTemplateColumns: 'minmax(0, 1.3fr) minmax(280px, .7fr)', minHeight: '390px', overflow: 'hidden', backgroundColor: tokens.colorNeutralBackground2, borderRadius: tokens.borderRadiusLarge, boxShadow: tokens.shadow8, '@media (max-width: 720px)': { gridTemplateColumns: '1fr' } },
+  newsCarouselStage: { display: 'grid', gridTemplateColumns: 'minmax(0, 1.3fr) minmax(280px, .7fr)', minHeight: '390px', overflow: 'hidden', backgroundColor: tokens.colorNeutralBackground2, borderRadius: tokens.borderRadiusLarge, boxShadow: tokens.shadow8, '@container zava-experience (max-width: 720px)': { gridTemplateColumns: '1fr' } },
   newsCarouselImage: { width: '100%', height: '100%', minHeight: '300px', objectFit: 'cover' },
   newsCarouselCopy: { display: 'grid', alignContent: 'center', gap: tokens.spacingVerticalM, padding: tokens.spacingHorizontalXL },
   newsCarouselControls: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: tokens.spacingHorizontalM },
-  newsFilmstrip: { display: 'grid', gridAutoFlow: 'column', gridAutoColumns: 'minmax(270px, 32%)', gap: tokens.spacingHorizontalM, overflowX: 'auto', paddingBottom: tokens.spacingVerticalS, scrollSnapType: 'x mandatory', '@media (max-width: 720px)': { gridAutoColumns: 'minmax(270px, 84%)' } },
+  newsFilmstrip: { display: 'grid', gridAutoFlow: 'column', gridAutoColumns: 'minmax(270px, 32%)', gap: tokens.spacingHorizontalM, overflowX: 'auto', paddingBottom: tokens.spacingVerticalS, scrollSnapType: 'x mandatory', '@container zava-experience (max-width: 720px)': { gridAutoColumns: 'minmax(270px, 84%)' } },
   newsFilmstripItem: { scrollSnapAlign: 'start' },
   sectionTitle: {
     marginTop: 0,
@@ -241,11 +245,11 @@ const useStyles = makeStyles({
   },
   newsGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
     gap: tokens.spacingHorizontalM
   },
   newsGridEditorial: {
-    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))'
+    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))'
   },
   newsGridCompact: {
     gridTemplateColumns: '1fr'
@@ -272,7 +276,7 @@ const useStyles = makeStyles({
     gridTemplateColumns: '112px minmax(0, 1fr)'
   },
   newsCompactList: { display: 'grid', gap: tokens.spacingVerticalXS },
-  newsCompactRow: { display: 'grid', gridTemplateColumns: '132px minmax(0, 1fr)', minHeight: '112px', overflow: 'hidden', color: tokens.colorNeutralForeground1, backgroundColor: tokens.colorNeutralBackground1, borderBottom: `1px solid ${tokens.colorNeutralStroke2}`, '@media (max-width: 520px)': { gridTemplateColumns: '96px minmax(0, 1fr)' } },
+  newsCompactRow: { display: 'grid', gridTemplateColumns: '132px minmax(0, 1fr)', minHeight: '112px', overflow: 'hidden', color: tokens.colorNeutralForeground1, backgroundColor: tokens.colorNeutralBackground1, borderBottom: `1px solid ${tokens.colorNeutralStroke2}`, '@container zava-experience (max-width: 520px)': { gridTemplateColumns: '96px minmax(0, 1fr)' } },
   newsCompactImage: { width: '100%', height: '100%', minHeight: '112px', objectFit: 'cover' },
   newsThumb: {
     width: '100%',
@@ -313,7 +317,7 @@ const useStyles = makeStyles({
     fontSize: tokens.fontSizeBase400,
     lineHeight: tokens.lineHeightBase400
   },
-  recognitionCelebration: { display: 'grid', gridTemplateColumns: 'minmax(0, 1.05fr) minmax(220px, .95fr)', overflow: 'hidden', backgroundColor: tokens.colorNeutralBackground2, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge, boxShadow: tokens.shadow8, '@media (max-width: 600px)': { gridTemplateColumns: '1fr' } },
+  recognitionCelebration: { display: 'grid', gridTemplateColumns: 'minmax(0, 1.05fr) minmax(220px, .95fr)', overflow: 'hidden', backgroundColor: tokens.colorNeutralBackground2, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge, boxShadow: tokens.shadow8, '@container zava-experience (max-width: 600px)': { gridTemplateColumns: '1fr' } },
   recognitionCelebrationCopy: { display: 'grid', alignContent: 'center', gap: tokens.spacingVerticalM, padding: tokens.spacingHorizontalXXL },
   recognitionCelebrationTitle: { margin: 0, fontSize: tokens.fontSizeHero800, lineHeight: tokens.lineHeightHero800, fontWeight: tokens.fontWeightSemibold },
   recognitionVisual: { position: 'relative', minHeight: '260px' },
@@ -321,21 +325,13 @@ const useStyles = makeStyles({
   recognitionImageMessage: { position: 'absolute', right: tokens.spacingHorizontalM, bottom: tokens.spacingVerticalM, left: tokens.spacingHorizontalM, display: 'flex', alignItems: 'center', gap: tokens.spacingHorizontalS, padding: tokens.spacingHorizontalM, color: '#ffffff', backgroundColor: 'rgba(17,54,79,.92)', borderRadius: tokens.borderRadiusMedium, fontWeight: tokens.fontWeightSemibold },
   recognitionSteps: { display: 'flex', alignItems: 'center', gap: tokens.spacingHorizontalS, color: tokens.colorNeutralForeground2, fontSize: tokens.fontSizeBase200, flexWrap: 'wrap' },
   recognitionPeople: { display: 'flex', alignItems: 'center', gap: tokens.spacingHorizontalS },
-  recognitionAvatars: { display: 'flex', alignItems: 'center' },
+  recognitionAvatars: { display: 'flex', alignItems: 'center', paddingRight: '8px' },
   recognitionAvatar: { marginRight: '-8px', border: `2px solid ${tokens.colorNeutralBackground2}`, borderRadius: tokens.borderRadiusCircular },
-  recognitionReceipt: { display: 'grid', overflow: 'hidden', backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge, boxShadow: tokens.shadow8 },
-  recognitionReceiptHero: { display: 'grid', justifyItems: 'center', gap: tokens.spacingVerticalS, padding: `${tokens.spacingVerticalXL} ${tokens.spacingHorizontalXL}`, textAlign: 'center', backgroundColor: tokens.colorPaletteGreenBackground1, borderTop: `5px solid ${tokens.colorPaletteGreenBorderActive}` },
-  recognitionReceiptIcon: { display: 'grid', placeItems: 'center', width: '56px', height: '56px', color: tokens.colorPaletteGreenForeground1, backgroundColor: tokens.colorNeutralBackground1, borderRadius: tokens.borderRadiusCircular, boxShadow: tokens.shadow4 },
-  recognitionReceiptTitle: { margin: 0, fontSize: tokens.fontSizeHero800, lineHeight: tokens.lineHeightHero800, fontWeight: tokens.fontWeightSemibold },
-  recognitionReceiptBody: { display: 'grid', gap: tokens.spacingVerticalL, padding: tokens.spacingHorizontalXL },
   recognitionReceiptPerson: { display: 'flex', alignItems: 'center', justifyContent: 'center', gap: tokens.spacingHorizontalM, textAlign: 'left' },
   recognitionReceiptMessage: { margin: 0, paddingLeft: tokens.spacingHorizontalL, color: tokens.colorNeutralForeground1, borderLeft: `4px solid ${tokens.colorPaletteBlueBorderActive}`, fontSize: tokens.fontSizeBase400, lineHeight: tokens.lineHeightBase400 },
-  recognitionReceiptMeta: { display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: tokens.spacingHorizontalM, paddingTop: tokens.spacingVerticalM, borderTop: `1px solid ${tokens.colorNeutralStroke2}`, '@media (max-width: 520px)': { gridTemplateColumns: '1fr' } },
-  recognitionReceiptMetaItem: { display: 'grid', gap: tokens.spacingVerticalXXS },
-  recognitionReceiptActions: { display: 'flex', justifyContent: 'center', gap: tokens.spacingHorizontalS, flexWrap: 'wrap' },
   recognitionRecipients: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 150px), 1fr))',
     gap: tokens.spacingHorizontalS
   },
   recognitionRecipient: {
@@ -406,7 +402,7 @@ const useStyles = makeStyles({
   },
   formGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
     gap: tokens.spacingHorizontalM
   },
   reviewBlock: {
@@ -417,17 +413,9 @@ const useStyles = makeStyles({
     borderLeft: `4px solid ${tokens.colorBrandStroke1}`,
     borderRadius: tokens.borderRadiusMedium
   },
-  receipt: {
-    display: 'grid',
-    gap: tokens.spacingVerticalM,
-    padding: tokens.spacingHorizontalXL,
-    color: tokens.colorNeutralForegroundInverted,
-    backgroundColor: tokens.colorPaletteGreenBackground3,
-    borderRadius: tokens.borderRadiusLarge
-  },
   metricGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 150px), 1fr))',
     gap: tokens.spacingHorizontalM
   },
   metric: {
@@ -446,11 +434,15 @@ const useStyles = makeStyles({
     display: 'grid',
     gridTemplateColumns: 'auto minmax(150px, 1fr) minmax(130px, .8fr) auto auto',
     alignItems: 'center',
-    gap: tokens.spacingHorizontalM
+    gap: tokens.spacingHorizontalM,
+    '@container zava-experience (max-width: 620px)': {
+      gridTemplateColumns: 'auto minmax(0, 1fr)',
+      '& > :nth-child(n+3)': { gridColumn: '2' }
+    }
   },
   evidenceGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
     gap: tokens.spacingHorizontalM
   },
   evidence: {
@@ -541,7 +533,7 @@ const useStyles = makeStyles({
     width: 'min(100%, 1680px)',
     marginRight: 'auto',
     marginLeft: 'auto',
-    padding: 'clamp(16px, 3vw, 40px)',
+    padding: 'clamp(16px, 3cqw, 40px)',
     boxSizing: 'border-box'
   },
   workspaceHero: {
@@ -573,7 +565,7 @@ const useStyles = makeStyles({
   },
   workspaceGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
     gap: tokens.spacingHorizontalL,
     alignItems: 'start'
   },
@@ -601,13 +593,13 @@ const useStyles = makeStyles({
   personalToolsHeader: { gap: 0, padding: '2px', backgroundColor: 'rgba(255,255,255,.10)', border: '1px solid rgba(255,255,255,.48)', borderRadius: tokens.borderRadiusMedium },
   personalDivider: { width: '1px', height: '20px', flexShrink: 0, backgroundColor: tokens.colorNeutralStroke2 },
   personalDividerHeader: { backgroundColor: 'rgba(255,255,255,.48)' },
-  personalToolButton: { minHeight: '36px', ':focus-visible': { outline: `2px solid ${tokens.colorStrokeFocus2}`, outlineOffset: '2px' }, '@media (max-width: 520px)': { width: '40px', minWidth: '40px', height: '40px', paddingRight: 0, paddingLeft: 0 } },
+  personalToolButton: { minHeight: '36px', ':focus-visible': { outline: `2px solid ${tokens.colorStrokeFocus2}`, outlineOffset: '2px' }, '@container zava-experience (max-width: 520px)': { width: '40px', minWidth: '40px', height: '40px', paddingRight: 0, paddingLeft: 0 } },
   personalToolButtonActive: { color: tokens.colorNeutralForegroundOnBrand, backgroundColor: tokens.colorBrandBackground, ':hover': { color: tokens.colorNeutralForegroundOnBrand, backgroundColor: tokens.colorBrandBackgroundHover }, ':hover:active': { color: tokens.colorNeutralForegroundOnBrand, backgroundColor: tokens.colorBrandBackgroundPressed } },
   personalToolButtonHeader: { color: '#ffffff', backgroundColor: 'transparent', ':hover': { color: '#ffffff', backgroundColor: 'rgba(255,255,255,.16)' }, ':hover:active': { color: '#ffffff', backgroundColor: 'rgba(255,255,255,.24)' }, ':focus-visible': { outline: '2px solid #ffffff', outlineOffset: '2px' } },
   personalToolButtonHeaderActive: { color: '#11364f', backgroundColor: '#ffffff', ':hover': { color: '#11364f', backgroundColor: '#f5f5f5' }, ':hover:active': { color: '#11364f', backgroundColor: '#e6e6e6' } },
-  personalToolLabel: { '@media (max-width: 520px)': { display: 'none' } },
+  personalToolLabel: { '@container zava-experience (max-width: 520px)': { display: 'none' } },
   responsiveOneColumn: {
-    '@media (max-width: 800px)': {
+    '@container zava-experience (max-width: 800px)': {
       gridTemplateColumns: '1fr'
     }
   }
@@ -764,7 +756,7 @@ export function CompanyNewsExperience(props: IZavaExperienceProps): React.ReactE
       const activeStory = visibleStories[activeIndex];
       return <div className={styles.newsCarousel}><div className={styles.newsCarouselStage}>{props.showImages !== false && <button type="button" className={styles.newsImageButton} aria-label={`Read ${activeStory.title}`} onClick={() => setSelectedId(activeStory.id)}><img className={styles.newsCarouselImage} src={activeStory.imageUrl} alt={activeStory.imageAlt} /></button>}<div className={styles.newsCarouselCopy}><span className={styles.eyebrow}>{activeStory.category} / {activeStory.region}</span><h3 className={styles.storyTitle}><button type="button" className={styles.newsTitleButton} onClick={() => setSelectedId(activeStory.id)}>{activeStory.title}</button></h3><p className={styles.subtitle}>{activeStory.summary}</p><Button appearance="primary" onClick={() => setSelectedId(activeStory.id)}>Read the story</Button></div></div><div className={styles.newsCarouselControls}><Button onClick={() => setCarouselIndex((index) => (index - 1 + visibleStories.length) % visibleStories.length)}>Previous</Button><span className={styles.secondaryText}>{activeIndex + 1} of {visibleStories.length}</span><Button onClick={() => setCarouselIndex((index) => (index + 1) % visibleStories.length)}>Next</Button></div></div>;
     }
-    if (layout === 'filmstrip') return <div className={styles.newsFilmstrip} aria-label="Zava news filmstrip">{visibleStories.map((story) => renderVisualTile(story))}</div>;
+    if (layout === 'filmstrip') return <div className={styles.newsFilmstrip} data-responsive-scroll aria-label="Zava news filmstrip">{visibleStories.map((story) => renderVisualTile(story))}</div>;
     if (layout === 'compact') return <div className={styles.newsCompactList} aria-label="Zava news list">{visibleStories.map(renderCompactRow)}</div>;
     return renderEditorial();
   };
@@ -920,15 +912,14 @@ export function RecognitionExperience(props: IZavaExperienceProps): React.ReactE
         </div>
       )}
       {stage === 'receipt' && (
-        <div className={styles.recognitionReceipt} role="status">
-          <div className={styles.recognitionReceiptHero}><span className={styles.recognitionReceiptIcon}><CheckmarkCircle24Filled /></span><span className={styles.eyebrow}>Recognition published</span><h3 className={styles.recognitionReceiptTitle}>Your praise is live</h3><span className={styles.subtitle}>You made great work visible and gave {recipient.firstName} a moment worth celebrating.</span></div>
-          <div className={styles.recognitionReceiptBody}>
+        <SubmissionReceipt eyebrow="Recognition published" title="Your praise is live"
+          description={`You made great work visible and gave ${recipient.firstName} a moment worth celebrating.`}
+          details={[{ label: 'Recognition value', value: recognitionValue }, { label: 'Shared with', value: audience }, { label: 'Reference', value: 'REC-2026-1048' }]}
+          note="Demo recognition only. No praise was published to a source service."
+          actions={<><Button appearance="primary" icon={<Sparkle24Regular />} onClick={() => { setMessage(''); setRecognitionValue('Teamwork'); setStage('compose'); }}>Send another praise</Button><Button onClick={() => setStage('overview')}>Back to recognition</Button></>}>
             <div className={styles.recognitionReceiptPerson}><Avatar size={48} name={recipient.displayName} image={{ src: recipient.photoUrl }} /><span className={styles.listCopy}><strong>{recipient.displayName}</strong><span className={styles.secondaryText}>{recipient.jobTitle}</span></span><Sparkle24Regular /></div>
             <blockquote className={styles.recognitionReceiptMessage}>“{message}”</blockquote>
-            <div className={styles.recognitionReceiptMeta}><span className={styles.recognitionReceiptMetaItem}><span className={styles.secondaryText}>Recognition value</span><strong>{recognitionValue}</strong></span><span className={styles.recognitionReceiptMetaItem}><span className={styles.secondaryText}>Shared with</span><strong>{audience}</strong></span><span className={styles.recognitionReceiptMetaItem}><span className={styles.secondaryText}>Reference</span><strong>REC-2026-1048</strong></span></div>
-            <div className={styles.recognitionReceiptActions}><Button appearance="primary" icon={<Sparkle24Regular />} onClick={() => { setMessage(''); setRecognitionValue('Teamwork'); setStage('compose'); }}>Send another praise</Button><Button onClick={() => setStage('overview')}>Back to recognition</Button></div>
-          </div>
-        </div>
+        </SubmissionReceipt>
       )}
       {props.showSource !== false && <div className={styles.source}>C14 / Recognition fixture / Explicit review and publication receipt</div>}
     </ExperienceRoot>
@@ -1069,13 +1060,12 @@ export function VacationApprovalsExperience(props: IZavaExperienceProps): React.
         </div>
       )}
       {selected && receipt && stage === 'receipt' && (
-        <div className={styles.receipt} role="status">
-          {receipt.decision === 'approved' ? <CheckmarkCircle24Filled /> : <DismissCircle24Regular />}
-          <h3 className={styles.storyTitle}>Request {receipt.decision}</h3>
-          <span>{getZavaPerson(selected.requesterId).displayName} / {selected.startDate} - {selected.endDate}</span>
-          <span>Reference {receipt.reference} / Session-only demo update</span>
-          <Button appearance="primary" onClick={returnToList}>Back to updated list</Button>
-        </div>
+        <SubmissionReceipt eyebrow="Vacation decision recorded" title={`Request ${receipt.decision}`}
+          description={`Decision for ${getZavaPerson(selected.requesterId).displayName}`}
+          tone={receipt.decision === 'declined' ? 'neutral' : 'success'} icon={receipt.decision === 'declined' ? <DismissCircle24Regular /> : undefined}
+          details={[{ label: 'Dates', value: `${selected.startDate} - ${selected.endDate}` }, { label: 'Working days', value: selected.workdays }, { label: 'Reference', value: receipt.reference }]}
+          note="Session-only demo update. No HR submission."
+          actions={<Button appearance="primary" onClick={returnToList}>Back to updated list</Button>} />
       )}
       {props.showSource !== false && <div className={styles.source}>C35 / Canonical session-local request catalog / Demo data / No HR submission</div>}
     </ExperienceRoot>

@@ -32,7 +32,7 @@ import {
 const defaultStorageKey = 'zava-one:personal-portal-layout:v1';
 
 const useStyles = makeStyles({
-  columns: { display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: tokens.spacingHorizontalL, alignItems: 'start', '@media (max-width: 1080px)': { gridTemplateColumns: '1fr' } },
+  columns: { display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: tokens.spacingHorizontalL, alignItems: 'start', '@container zava-experience (max-width: 1080px)': { gridTemplateColumns: '1fr' } },
   column: { display: 'grid', gap: tokens.spacingVerticalL, alignContent: 'start', minWidth: 0, minHeight: '96px', borderRadius: tokens.borderRadiusLarge, transitionProperty: 'background-color, box-shadow', transitionDuration: tokens.durationNormal },
   columnEditing: { boxShadow: `inset 0 0 0 1px ${tokens.colorNeutralStroke2}`, padding: tokens.spacingHorizontalXS },
   columnOver: { backgroundColor: tokens.colorBrandBackground2, boxShadow: `0 0 0 2px ${tokens.colorBrandStroke2}` },
@@ -60,14 +60,15 @@ export interface IPersonalPortalDndProps {
   storageKey?: string;
   ariaLabel?: string;
   dataAttribute?: 'data-personal-capability' | 'data-company-capability';
+  defaultColumnAssignments?: Readonly<Record<string, PersonalPortalColumnId>>;
 }
 
-function readLayout(targetDocument: Document, storageKey: string, panelIds: readonly string[]): PersonalPortalLayout {
+function readLayout(targetDocument: Document, storageKey: string, panelIds: readonly string[], columnAssignments?: Readonly<Record<string, PersonalPortalColumnId>>): PersonalPortalLayout {
   try {
     const saved = targetDocument.defaultView?.sessionStorage.getItem(storageKey);
-    return normalizePersonalPortalLayout(saved ? JSON.parse(saved) : undefined, panelIds);
+    return normalizePersonalPortalLayout(saved ? JSON.parse(saved) : undefined, panelIds, columnAssignments);
   } catch {
-    return createDefaultPersonalPortalLayout(panelIds);
+    return createDefaultPersonalPortalLayout(panelIds, columnAssignments);
   }
 }
 
@@ -96,7 +97,7 @@ export function PersonalPortalDnd(props: IPersonalPortalDndProps): React.ReactEl
   const storageKey = props.storageKey || defaultStorageKey;
   const ariaLabel = props.ariaLabel || 'Personal experiences';
   const dataAttribute = props.dataAttribute || 'data-personal-capability';
-  const [layout, setLayout] = React.useState<PersonalPortalLayout>(() => readLayout(props.targetDocument, storageKey, panelIds));
+  const [layout, setLayout] = React.useState<PersonalPortalLayout>(() => readLayout(props.targetDocument, storageKey, panelIds, props.defaultColumnAssignments));
   const [activeId, setActiveId] = React.useState<string>();
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),

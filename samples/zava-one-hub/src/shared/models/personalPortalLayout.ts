@@ -3,18 +3,18 @@ export const personalPortalColumnIds = ['personal-column-1', 'personal-column-2'
 export type PersonalPortalColumnId = typeof personalPortalColumnIds[number];
 export type PersonalPortalLayout = Readonly<Record<PersonalPortalColumnId, readonly string[]>>;
 
-export function createDefaultPersonalPortalLayout(panelIds: readonly string[]): PersonalPortalLayout {
+export function createDefaultPersonalPortalLayout(panelIds: readonly string[], columnAssignments: Readonly<Record<string, PersonalPortalColumnId>> = {}): PersonalPortalLayout {
   const columns: Record<PersonalPortalColumnId, string[]> = {
     'personal-column-1': [],
     'personal-column-2': [],
     'personal-column-3': []
   };
-  panelIds.forEach((panelId, index) => columns[personalPortalColumnIds[index % personalPortalColumnIds.length]].push(panelId));
+  panelIds.forEach((panelId, index) => columns[columnAssignments[panelId] || personalPortalColumnIds[index % personalPortalColumnIds.length]].push(panelId));
   return columns;
 }
 
-export function normalizePersonalPortalLayout(value: unknown, panelIds: readonly string[]): PersonalPortalLayout {
-  if (!value || typeof value !== 'object') return createDefaultPersonalPortalLayout(panelIds);
+export function normalizePersonalPortalLayout(value: unknown, panelIds: readonly string[], columnAssignments: Readonly<Record<string, PersonalPortalColumnId>> = {}): PersonalPortalLayout {
+  if (!value || typeof value !== 'object') return createDefaultPersonalPortalLayout(panelIds, columnAssignments);
   const allowed = new Set(panelIds);
   const seen = new Set<string>();
   const columns: Record<PersonalPortalColumnId, string[]> = {

@@ -34,7 +34,7 @@ const useStyles = makeStyles({
   markerDot: { fill: '#ffffff' },
   regionLabel: { fill: '#40545a', fontSize: '11px', fontWeight: tokens.fontWeightSemibold },
   officeList: { display: 'flex', gap: tokens.spacingHorizontalS, flexWrap: 'wrap' },
-  detail: { display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) auto', gap: tokens.spacingHorizontalL, padding: tokens.spacingHorizontalL, backgroundColor: tokens.colorNeutralBackground2, borderLeft: `4px solid ${tokens.colorPaletteTealBorderActive}`, borderRadius: tokens.borderRadiusMedium },
+  detail: { display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) auto', gap: tokens.spacingHorizontalL, padding: tokens.spacingHorizontalL, backgroundColor: tokens.colorNeutralBackground2, borderLeft: `4px solid ${tokens.colorPaletteTealBorderActive}`, borderRadius: tokens.borderRadiusMedium, '@container zava-experience (max-width: 420px)': { gridTemplateColumns: 'minmax(0, 1fr)' } },
   detailCopy: { display: 'grid', gap: tokens.spacingVerticalXXS },
   detailMeta: { display: 'flex', gap: tokens.spacingHorizontalS, flexWrap: 'wrap', color: tokens.colorNeutralForeground3, fontSize: tokens.fontSizeBase200 },
   time: { fontSize: tokens.fontSizeHero700, lineHeight: tokens.lineHeightHero700, fontWeight: tokens.fontWeightSemibold }

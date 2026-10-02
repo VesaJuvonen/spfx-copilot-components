@@ -11,13 +11,15 @@ const output = resolve(root, 'ux-review/evidence/phase-6-matrix.json');
 const evidence = JSON.parse(readFileSync(output, 'utf8'));
 const solution = JSON.parse(readFileSync(resolve(root, 'config/package-solution.json'), 'utf8')).solution;
 const screenshots = loadScreenshotEvidence(root);
+const responsive = JSON.parse(readFileSync(resolve(root, 'ux-review/evidence/responsive-matrix.json'), 'utf8'));
+assert.ok(responsive.states >= 4080 && responsive.failures === 0, 'Release evidence requires a full passing responsive matrix');
 const junit = readFileSync(resolve(root, 'jest-output/JUnit.xml'), 'utf8');
 const junitHeader = junit.match(/<testsuites\b[^>]*>/)?.[0];
 assert.ok(junitHeader, 'Jest JUnit report is missing its test summary');
 const testCount = Number(junitHeader.match(/\btests="(\d+)"/)?.[1]);
 const failures = Number(junitHeader.match(/\bfailures="(\d+)"/)?.[1]);
 const errors = Number(junitHeader.match(/\berrors="(\d+)"/)?.[1]);
-assert.ok(testCount >= 35 && failures === 0 && errors === 0, 'Release evidence requires all tests to pass');
+assert.ok(testCount >= 42 && failures === 0 && errors === 0, 'Release evidence requires all tests to pass');
 
 const packagePath = resolve(root, 'sharepoint/solution/zava-one-hub.sppkg');
 const appXml = execFileSync('tar', ['-xOf', packagePath, 'AppManifest.xml'], { encoding: 'utf8' });
@@ -36,6 +38,9 @@ Object.assign(evidence.validation, {
   jestSuites: [...junit.matchAll(/<testsuite\b/g)].length,
   jestTests: testCount,
   jestFailures: failures,
+  responsiveStates: responsive.states,
+  responsiveFailures: responsive.failures,
+  responsiveViewportWidths: responsive.viewportWidths,
   completeGalleryScreenshots: screenshots.gallery.length,
   publicationGalleryImages: screenshots.publication.length,
   publicationGalleryCaptureMode: 'rendered-element-and-authenticated-viewport',

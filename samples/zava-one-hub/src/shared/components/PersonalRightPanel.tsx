@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     boxShadow: tokens.shadow28,
     animationDuration: tokens.durationGentle,
     animationName: { from: { transform: 'translateX(24px)', opacity: 0 }, to: { transform: 'translateX(0)', opacity: 1 } },
-    '@media (max-width: 720px)': { width: 'min(340px, 88vw)' }
+    '@container zava-experience (max-width: 900px)': { width: '100%' }
   },
   header: { display: 'flex', alignItems: 'center', gap: tokens.spacingHorizontalS, padding: `${tokens.spacingVerticalL} ${tokens.spacingHorizontalL} ${tokens.spacingVerticalM}`, borderBottom: `1px solid ${tokens.colorNeutralStroke2}` },
   headerText: { display: 'inline-flex', alignItems: 'center', gap: tokens.spacingHorizontalS, flexGrow: 1, minWidth: 0 },

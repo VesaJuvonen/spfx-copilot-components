@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T17:41:55.256Z",
+  "generatedAt": "2026-10-02T08:51:40.651Z",
   "profile": {
     "spfx": "1.24.0-beta.5",
     "react": "18.3.1",
@@ -9,7 +9,7 @@
     "griffel": "1.7.8"
   },
   "catalog": {
-    "solutionVersion": "1.0.0.14",
+    "solutionVersion": "1.0.0.15",
     "businessCapabilities": 35,
     "featureWebParts": 35,
     "workspaceWebParts": 3,
@@ -21,8 +21,8 @@
     "sharePointFullPageWebParts": 3
   },
   "validation": {
-    "jestSuites": 9,
-    "jestTests": 35,
+    "jestSuites": 10,
+    "jestTests": 42,
     "jestFailures": 0,
     "lintWarnings": 0,
     "inlineIntentsRendered": 35,
@@ -59,8 +59,8 @@
     "publicationGalleryImages": 15,
     "publicationGalleryCaptureMode": "rendered-element-and-authenticated-viewport",
     "publicationGalleryMinimumWidth": 720,
-    "publicationGalleryMinimumHeight": 416,
-    "publicationGalleryMaximumHeight": 6198,
+    "publicationGalleryMinimumHeight": 490,
+    "publicationGalleryMaximumHeight": 5479,
     "publicationGalleryMatchesCurrentImplementation": true,
     "c35PublicationWorkflowStates": 5,
     "vacationResetPendingCount": 4,
@@ -79,8 +79,8 @@
     "fullscreenM365DocumentScrollHeight": 8470,
     "fullscreenComponentViewportHeight": 8470,
     "fullscreenM365ScrollOwnerCount": 1,
-    "sppkgAppManifestVersion": "1.0.0.14",
-    "sppkgFeatureVersion": "1.0.0.14",
+    "sppkgAppManifestVersion": "1.0.0.15",
+    "sppkgFeatureVersion": "1.0.0.15",
     "chartScopeChangesGeometry": true,
     "officeMarkerCount": 5,
     "officeListCount": 5,
@@ -88,7 +88,19 @@
     "publicationGalleryHasHorizontalClipping": false,
     "teamsPersonalAppCaptures": 3,
     "teamsWorkspaceHeaderHidden": true,
-    "sppkgEntries": 110
+    "sppkgEntries": 110,
+    "responsiveStates": 4080,
+    "responsiveFailures": 0,
+    "responsiveViewportWidths": [
+      320,
+      390,
+      560,
+      768,
+      1024,
+      1280,
+      1440,
+      1600
+    ]
   },
   "screenshots": [
     {
@@ -143,16 +155,16 @@
     {
       "path": "assets/screenshot-company-workspace.png",
       "width": 1600,
-      "height": 6198,
-      "bytes": 2175495,
-      "sha256": "f7f842ebd4287d79ef9aec59a03d0369a9c79dd1d7dbdaddd346c13d36d3cfd6"
+      "height": 5479,
+      "bytes": 2355621,
+      "sha256": "3cda85c4bae96a75fc9611e95a47cb144d5bcf3061fb57bea9ac4fc0811a62cd"
     },
     {
       "path": "assets/screenshot-personal.png",
       "width": 1600,
-      "height": 3995,
-      "bytes": 623509,
-      "sha256": "a4197fcd314a9c8a0cd3e0985befa9f774f6fc1a5f7b895ab4c39e2dd77e0704"
+      "height": 3722,
+      "bytes": 620414,
+      "sha256": "851e352920185e09ee289974e2ea22e31c922284516079177c96acd20c11442c"
     },
     {
       "path": "assets/screenshot-company-news.png",
@@ -206,16 +218,16 @@
     {
       "path": "assets/screenshot-vacation-receipt.png",
       "width": 720,
-      "height": 416,
-      "bytes": 24604,
-      "sha256": "fdff4743d56b2cdbc52f6203cb56628bba1d8318f818eadffcf84db91999977d"
+      "height": 590,
+      "bytes": 34348,
+      "sha256": "972abb7f9bf73759bdc855fc26e91699489542a86fee6f6ae6815df35c23810e"
     },
     {
       "path": "assets/screenshot-vacation-updated-list.png",
       "width": 720,
       "height": 586,
-      "bytes": 46452,
-      "sha256": "a3ba5513a1cdfbde034ed227f98d021f76b00d9075d4502889eed0a702da6c8e"
+      "bytes": 46424,
+      "sha256": "952ba565110b56681c3489c3afedcbb4e208c23dcbe9493f9395d36fd73f15e4"
     },
     {
       "path": "assets/screenshot-teams-combined.png",
@@ -242,13 +254,13 @@
   "artifacts": [
     {
       "path": "sharepoint/solution/zava-one-hub.sppkg",
-      "bytes": 6203364,
-      "sha256": "31f7646cf5f46d3f4160e61efb29b9db6d7a44191eb03b3fb25cb973bb60f2ed"
+      "bytes": 6205670,
+      "sha256": "61b8d5038ac39dc5ea4e469ba76c08e9c1a730e24a9b2dc186da5e76203671ac"
     },
     {
       "path": "teams/zava-one.zip",
       "bytes": 10263,
-      "sha256": "48178aabe1c8db4448f1613d65553cfc104c44927b804ec0f569007aa1e3bbb6"
+      "sha256": "f8b30748581ceedacbf1ebb25827d4d5e17aac9abf5cfdef050ef1cd7f60a762"
     },
     {
       "path": "teams/zavaOneWorkspace/TeamsSPFxApp.zip",

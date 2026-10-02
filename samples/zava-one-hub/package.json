@@ -15,6 +15,7 @@
     "check:media": "node scripts/validate-media-provenance.mjs && node scripts/generate-embedded-media.mjs --check",
     "check:package-output": "node scripts/validate-package-output.mjs",
     "check:publication": "node scripts/validate-publication.mjs",
+    "check:responsive": "node scripts/check-responsive.mjs",
     "check:teams-apps": "node scripts/validate-teams-apps.mjs",
     "check:react-baseline": "node scripts/validate-react-baseline.mjs",
     "check:reference-hosts": "node --test scripts/generated-text.test.mjs && node scripts/configure-reference-hosts.mjs --check",

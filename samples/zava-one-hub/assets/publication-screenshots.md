@@ -1,7 +1,8 @@
 # Publication screenshot audit
 
-The October 1 publication set contains **15 individually reviewed images**: 12 current light-theme
-captures from the local UX review harness and three authenticated Teams snapshots supplied by the
+The publication set contains **15 reviewed images**: 12 light-theme local images refreshed October 2
+for the responsive/default-layout/receipt updates,
+and three authenticated Teams snapshots supplied October 1 by the
 sample author. They complement the recaptured 39-state engineering gallery.
 
 Local images are captured from the rendered experience element, not an arbitrary viewport rectangle.
@@ -17,8 +18,8 @@ preserved. Every retained pixel was compared with its original snapshot and matc
 | Order | File | Pixels | State proved |
 | ---: | --- | --- | --- |
 | 100 | [preview.png](./preview.png) | 1600x778 | Searchable 35-capability explorer and safe prompt preview |
-| 101 | [screenshot-company-workspace.png](./screenshot-company-workspace.png) | 1600x6198 | Complete Combined workspace, Company tab, all modules |
-| 102 | [screenshot-personal.png](./screenshot-personal.png) | 1600x3995 | Complete Combined workspace, Personal tab, all modules |
+| 101 | [screenshot-company-workspace.png](./screenshot-company-workspace.png) | 1600x5479 | Complete Combined workspace, Company tab, balanced default columns |
+| 102 | [screenshot-personal.png](./screenshot-personal.png) | 1600x3722 | Complete Combined workspace, Personal tab, balanced default columns |
 | 103 | [screenshot-company-news.png](./screenshot-company-news.png) | 1600x1289 | Complete Editorial Company News composition |
 | 104 | [screenshot-recognition-compose.png](./screenshot-recognition-compose.png) | 720x681 | Praise recipient, message, value, and audience composer |
 | 105 | [screenshot-sales-performance.png](./screenshot-sales-performance.png) | 720x719 | EMEA metrics and actual/target bookings trend |
@@ -26,7 +27,7 @@ preserved. Every retained pixel was compared with its original snapshot and matc
 | 107 | [screenshot-vacation-approvals.png](./screenshot-vacation-approvals.png) | 720x660 | Four-request reset baseline before a decision |
 | 108 | [screenshot-vacation-detail.png](./screenshot-vacation-detail.png) | 720x632 | Dates, balance impact, coverage, and employee note |
 | 109 | [screenshot-vacation-decision.png](./screenshot-vacation-decision.png) | 720x490 | Explicit decision review before confirmation |
-| 110 | [screenshot-vacation-receipt.png](./screenshot-vacation-receipt.png) | 720x416 | Session-only simulated approval receipt |
+| 110 | [screenshot-vacation-receipt.png](./screenshot-vacation-receipt.png) | 720x590 | Polished shared session-only approval receipt |
 | 111 | [screenshot-vacation-updated-list.png](./screenshot-vacation-updated-list.png) | 720x586 | Three pending and three processed after approval |
 | 112 | [screenshot-teams-combined.png](./screenshot-teams-combined.png) | 1492x760 | Authenticated Combined personal app, Company selected, switcher retained, no duplicate header |
 | 113 | [screenshot-teams-company.png](./screenshot-teams-company.png) | 1487x760 | Authenticated Company personal app, no switcher or duplicate header |

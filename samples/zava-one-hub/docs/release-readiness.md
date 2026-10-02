@@ -78,14 +78,18 @@ git diff --check
 
 Stop `npm start` before a clean build. The current evidence records:
 
-- 35 tests passed, zero failed, including six Teams header/control regression tests;
+- 42 tests passed, zero failed, including Teams header/control, shared receipt, and saved/default layout regression tests;
 - three generated-text regression tests and a fresh Git-index checkout passed without regeneration;
 - 35 capability pairs and 75 unique SPFx component GUIDs;
 - 37 unique generated plugin functions and six conversation starters;
 - two host-specific bundles and 28 provenance-checked media assets;
 - 39 recaptured engineering screenshots and 15 reviewed publication screenshots;
 - three separately validated Teams personal-app ZIPs, without channel scopes;
-- a validated version `1.0.0.14`, 110-entry SPPKG.
+- 4,080 responsive browser states passed, including narrow desktop columns, dark mode, and submission journeys;
+- a validated version `1.0.0.15`, 110-entry SPPKG.
+
+The [responsive review](./responsive-review.md) records the device-width matrix, balanced default
+column measurements, shared confirmation UX, and remaining host/accessibility gates.
 
 Artifact hashes and measured sizes are authoritative in
 [`phase-6-matrix.json`](../ux-review/evidence/phase-6-matrix.json).

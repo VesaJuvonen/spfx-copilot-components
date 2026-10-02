@@ -66,6 +66,11 @@ Prefix each query with `http://127.0.0.1:4322/`.
 
 ## Screenshot and package evidence
 
+Use `npm run check:responsive` against the running review server to validate device widths, narrow
+desktop columns, configured views, poll results, submission flows, and workspace controls. Add
+`-- --quick` for the 320px smoke run or `-- --screenshots --record` for captures and a tracked passing
+summary. See the [responsive review](../docs/responsive-review.md) for full coverage.
+
 Use `npm run capture:publication` and `npm run capture:gallery` against the running UX review server.
 The capture runner requires installed Microsoft Edge and asserts the actual viewport, correct layout,
 image loading, complete rendered bounds, and no horizontal clipping. Set `ZAVA_UX_REVIEW_URL` if using

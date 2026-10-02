@@ -16,9 +16,10 @@ by [agentic-creation-rules.md](agentic-creation-rules.md).
 > two Copilot infrastructure entries bring the solution to 75 unique SPFx component GUIDs and 37
 > generated plugin functions in two host-specific bundles. The local harness has 35 unique inline
 > layouts, zero runtime/overflow/image failures, 39 recaptured engineering screenshots, and 15 reviewed
-> publication images referenced by `assets/sample.json`. Thirty-five Jest tests, 28-media provenance,
+> publication images referenced by `assets/sample.json`. Forty-two Jest tests, 4,080 responsive browser
+> states, 28-media provenance,
 > six conversation starters with Capability Explorer last, plugin validation, and the final
-> version `1.0.0.14`, 6,203,364-byte `.sppkg` audit pass. Evidence is in
+> version `1.0.0.15`, 6,205,670-byte `.sppkg` audit pass. Evidence is in
 > `ux-review/evidence/phase-6-matrix.json`. All 37
 > Workbench components reached Ready in the earlier host baseline. The sample author confirmed all
 > three separately packaged Teams personal apps work and supplied authenticated screenshots with no
@@ -489,7 +490,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 - [x] Add focused data-integrity tests for persona IDs, portrait references, news authors/media,
   learning IDs, catalog uniqueness, C35 decision/reset behavior, and Personal workflow fixture rules
   for business days, approval identity, equity estimates, room capacity, and IT issue scope (covered by
-  the initial 29-test suite; the final demo now has 35 passing tests).
+  the initial 29-test suite; the final demo now has 42 passing tests).
 - [ ] Extend integrity tests to C16/C30 cross-capability vacation projections and every specialist
   source contract before those deep acceptance gates close.
 
@@ -787,7 +788,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
   pin the package directly, rerender immediately on changes, and open the property pane from Advanced
   settings. Fixed Company/Personal workspaces do not expose a start-tab switch.
 - [x] Assert all 35 profiles are complete and reject page-author properties in the packaged 37-function
-  Copilot plugin; the current 35 tests pass and the generated plugin validator confirms the boundary.
+  Copilot plugin; the current 42 tests pass and the generated plugin validator confirms the boundary.
 - [x] Brand the agent as Zava One with deterministic manifest-safe icons: 192x192 white Z on Zava blue
   for `color.png`, and a padded white Z on a transparent 32x32 canvas for `outline.png`. Validate exact
   source-to-ZIP bytes, icon paths, display names, and `#075FCE` accent color during every build.
@@ -843,7 +844,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 - [ ] Complete the full-gallery multimodal/human review for repetition, density, crop, alignment,
   contrast, and keynote readability; representative Company/C06/C27/C34/C35 pixels are already reviewed.
 - [x] Validate bundle/media duplication and measured package thresholds before proceeding: two host-specific
-  bundles, 28 media assets, and a version `1.0.0.14`, 6,203,364-byte `.sppkg`.
+  bundles, 28 media assets, and a version `1.0.0.15`, 6,205,670-byte `.sppkg`.
 
 ## Phase 7 - Configuration Impact and Showcase Polish
 
@@ -858,6 +859,16 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 - [ ] Prove each retained setting changes actual composition, records, formatting, or navigation.
 
 ### Keynote finish
+
+- [x] Validate all 35 components, configured primary views, representative submission/detail flows,
+  poll results/change-vote, and workspace controls at phone/tablet/desktop and desktop-column widths,
+  including dark mode: 4,080 browser states, zero clipping/runtime/image failures.
+- [x] Replace viewport-only experience breakpoints with actual container sizing, reflow narrow rows
+  and form/card grids, and stack narrow personalization panels without squeezing dashboard content.
+- [x] Share the polished Praise-style receipt across submission/decision experiences, preserving
+  references, pending statuses, return/reset actions, and explicit fixture-only boundaries.
+- [x] Rebalance fresh Company and Personal defaults with measured card moves; preserve saved session
+  layouts and validate desktop column-height spread at 1280/1440/1600px.
 
 - [ ] Curate the final fixture narrative so news, events, learning, praise, vacation decisions, other
   approvals, offices, tasks, outcomes, and help tell one coherent Zava story with the approved persona
@@ -896,7 +907,7 @@ or authenticated-host evidence does not yet exist; they are not silently treated
 
 ### Local executable gates
 
-- [x] Increment the final App Catalog solution and feature versions to `1.0.0.14` while preserving solution,
+- [x] Increment the final App Catalog solution and feature versions to `1.0.0.15` while preserving solution,
   feature, component, and agent identities for upgrade deployment.
 - [x] Run catalog, React baseline, routing matrix, media, embedded media, gallery, publication, visual,
   clean test, production build, generated plugin, package-output, release-evidence, diagnostics, and

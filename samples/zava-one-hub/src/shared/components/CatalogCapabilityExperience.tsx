@@ -18,7 +18,6 @@ import {
   BookOpen24Regular,
   Building24Regular,
   Calendar24Regular,
-  CheckmarkCircle24Filled,
   ChevronRight20Regular,
   ClipboardTask24Regular,
   Clock24Regular,
@@ -37,6 +36,7 @@ import type { IZavaExperienceProps, IZavaModelContextSnapshot } from '../models/
 import { DecisionBarChart } from './DecisionBarChart';
 import { OfficeMap } from './OfficeMap';
 import { ResponsiveExpandButton } from './ResponsiveExpandButton';
+import { SubmissionReceipt } from './SubmissionReceipt';
 
 interface ICapabilityContent {
   metric: string;
@@ -95,9 +95,9 @@ const contentById: Readonly<Record<string, ICapabilityContent>> = {
 };
 
 const useStyles = makeStyles({
-  root: { width: '100%', minWidth: 0, boxSizing: 'border-box' },
+  root: { width: '100%', minWidth: 0, boxSizing: 'border-box', containerType: 'inline-size', containerName: 'zava-experience', overflowWrap: 'anywhere' },
   inline: { maxWidth: '720px', marginRight: 'auto', marginLeft: 'auto', padding: tokens.spacingHorizontalM },
-  frame: { display: 'grid', gap: tokens.spacingVerticalL, padding: tokens.spacingHorizontalL, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge, boxShadow: tokens.shadow4 },
+  frame: { display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', gap: tokens.spacingVerticalL, padding: tokens.spacingHorizontalL, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge, boxShadow: tokens.shadow4 },
   compactFrame: { gap: tokens.spacingVerticalS },
   strip: { height: '5px', marginTop: `calc(-1 * ${tokens.spacingHorizontalL})`, marginRight: `calc(-1 * ${tokens.spacingHorizontalL})`, marginLeft: `calc(-1 * ${tokens.spacingHorizontalL})`, backgroundImage: 'linear-gradient(90deg, #075fce 0%, #075fce 32%, #138a3d 32%, #138a3d 55%, #b32687 55%, #b32687 78%, #d84f38 78%)' },
   header: { display: 'flex', justifyContent: 'space-between', gap: tokens.spacingHorizontalL, alignItems: 'flex-start', flexWrap: 'wrap' },
@@ -106,13 +106,13 @@ const useStyles = makeStyles({
   title: { marginTop: 0, marginBottom: 0, fontSize: tokens.fontSizeBase600, lineHeight: tokens.lineHeightBase600, fontWeight: tokens.fontWeightSemibold },
   subtitle: { marginTop: 0, marginBottom: 0, color: tokens.colorNeutralForeground2, lineHeight: tokens.lineHeightBase300 },
   actions: { display: 'flex', gap: tokens.spacingHorizontalS, flexWrap: 'wrap', alignItems: 'center' },
-  toolbar: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: tokens.spacingHorizontalM, alignItems: 'end' },
+  toolbar: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: tokens.spacingHorizontalM, alignItems: 'end' },
   metricHero: { display: 'grid', gap: tokens.spacingVerticalS, padding: tokens.spacingHorizontalXL, color: tokens.colorNeutralForegroundOnBrand, backgroundImage: 'linear-gradient(130deg, #0f5f9e, #007f73)', borderRadius: tokens.borderRadiusLarge, boxShadow: tokens.shadow16 },
   metric: { fontSize: tokens.fontSizeHero900, lineHeight: tokens.lineHeightHero900, fontWeight: tokens.fontWeightSemibold },
   list: { display: 'grid', gap: tokens.spacingVerticalS },
-  tileGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: tokens.spacingHorizontalM },
+  tileGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: tokens.spacingHorizontalM },
   featureCard: { display: 'grid', gap: tokens.spacingVerticalS, minHeight: '130px', padding: tokens.spacingHorizontalL, color: tokens.colorNeutralForeground1, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge, textAlign: 'left', cursor: 'pointer', ':hover': { border: `1px solid ${tokens.colorBrandStroke1}`, boxShadow: tokens.shadow4 } },
-  serviceCatalog: { display: 'grid', gridTemplateColumns: 'minmax(220px, .9fr) minmax(260px, 1.1fr)', gap: tokens.spacingHorizontalL, alignItems: 'start', '@media (max-width: 620px)': { gridTemplateColumns: '1fr' } },
+  serviceCatalog: { display: 'grid', gridTemplateColumns: 'minmax(220px, .9fr) minmax(260px, 1.1fr)', gap: tokens.spacingHorizontalL, alignItems: 'start', '@container zava-experience (max-width: 620px)': { gridTemplateColumns: '1fr' } },
   serviceList: { display: 'grid', gap: tokens.spacingVerticalS },
   serviceCard: { display: 'grid', gridTemplateColumns: 'auto minmax(0, 1fr) auto', gap: tokens.spacingHorizontalM, alignItems: 'center', padding: tokens.spacingHorizontalM, color: tokens.colorNeutralForeground1, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge, textAlign: 'left', cursor: 'pointer', ':hover': { backgroundColor: tokens.colorNeutralBackground1Hover, border: `1px solid ${tokens.colorBrandStroke1}` }, ':focus-visible': { outline: `3px solid ${tokens.colorStrokeFocus2}`, outlineOffset: '2px' } },
   serviceCardSelected: { backgroundColor: tokens.colorBrandBackground2, border: `2px solid ${tokens.colorBrandStroke1}` },
@@ -124,7 +124,7 @@ const useStyles = makeStyles({
   knowledgeIcon: { display: 'grid', placeItems: 'center', width: '44px', height: '44px', color: tokens.colorBrandForeground1, backgroundColor: tokens.colorBrandBackground2, borderRadius: tokens.borderRadiusMedium },
   knowledgeMeta: { display: 'flex', gap: tokens.spacingHorizontalS, color: tokens.colorNeutralForeground3, fontSize: tokens.fontSizeBase200, flexWrap: 'wrap' },
   knowledgeDetail: { display: 'grid', gap: tokens.spacingVerticalM, padding: tokens.spacingHorizontalXL, backgroundColor: tokens.colorNeutralBackground2, borderLeft: `4px solid ${tokens.colorBrandStroke1}`, borderRadius: tokens.borderRadiusLarge },
-  knowledgeDetailMeta: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: tokens.spacingHorizontalM },
+  knowledgeDetailMeta: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: tokens.spacingHorizontalM },
   knowledgeDetailMetaItem: { display: 'grid', gap: tokens.spacingVerticalXXS },
   noticePanel: { display: 'grid', gridTemplateColumns: 'auto minmax(0, 1fr)', gap: tokens.spacingHorizontalM, padding: tokens.spacingHorizontalL, backgroundColor: tokens.colorPaletteYellowBackground1, borderLeft: `4px solid ${tokens.colorPaletteYellowBorder2}`, borderRadius: tokens.borderRadiusLarge },
   timelineList: { display: 'grid', gap: tokens.spacingVerticalS },
@@ -132,7 +132,7 @@ const useStyles = makeStyles({
   timelineDot: { width: '12px', height: '12px', marginTop: tokens.spacingVerticalXS, backgroundColor: tokens.colorBrandBackground, borderRadius: tokens.borderRadiusCircular },
   queueRow: { display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) auto', gap: tokens.spacingHorizontalM, alignItems: 'center', padding: tokens.spacingHorizontalM, color: tokens.colorNeutralForeground1, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusMedium, textAlign: 'left', cursor: 'pointer' },
   documentRow: { display: 'grid', gridTemplateColumns: 'auto minmax(0, 1fr) auto', gap: tokens.spacingHorizontalM, alignItems: 'center', padding: tokens.spacingHorizontalM, color: tokens.colorNeutralForeground1, backgroundColor: tokens.colorNeutralBackground2, borderRadius: tokens.borderRadiusMedium, textAlign: 'left', border: 0, cursor: 'pointer' },
-  peopleGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: tokens.spacingHorizontalM },
+  peopleGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 160px), 1fr))', gap: tokens.spacingHorizontalM },
   personCard: { display: 'grid', justifyItems: 'start', gap: tokens.spacingVerticalS, padding: tokens.spacingHorizontalL, color: tokens.colorNeutralForeground1, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge, textAlign: 'left', cursor: 'pointer' },
   row: { display: 'grid', gridTemplateColumns: 'auto minmax(0, 1fr) auto', gap: tokens.spacingHorizontalM, alignItems: 'center', padding: tokens.spacingHorizontalM, color: tokens.colorNeutralForeground1, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusMedium, textAlign: 'left', cursor: 'pointer', ':hover': { border: `1px solid ${tokens.colorBrandStroke1}`, backgroundColor: tokens.colorNeutralBackground1Hover }, ':focus-visible': { outline: `3px solid ${tokens.colorStrokeFocus2}`, outlineOffset: '2px' } },
   rowSelected: { border: `1px solid ${tokens.colorBrandStroke1}`, backgroundColor: tokens.colorBrandBackground2 },
@@ -147,7 +147,6 @@ const useStyles = makeStyles({
   map: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: tokens.spacingHorizontalM, minHeight: '220px', padding: tokens.spacingHorizontalXL, backgroundColor: tokens.colorNeutralBackground2, borderRadius: tokens.borderRadiusLarge },
   mapPoint: { alignSelf: 'center', minHeight: '64px' },
   review: { display: 'grid', gap: tokens.spacingVerticalM, padding: tokens.spacingHorizontalXL, backgroundColor: tokens.colorNeutralBackground2, borderRadius: tokens.borderRadiusLarge },
-  receipt: { display: 'grid', gap: tokens.spacingVerticalM, padding: tokens.spacingHorizontalXL, color: tokens.colorNeutralForegroundInverted, backgroundColor: tokens.colorPaletteGreenBackground3, borderRadius: tokens.borderRadiusLarge },
   source: { paddingTop: tokens.spacingVerticalS, borderTop: `1px solid ${tokens.colorNeutralStroke2}`, color: tokens.colorNeutralForeground3, fontSize: tokens.fontSizeBase200 },
   people: { display: 'flex', alignItems: 'center', gap: tokens.spacingHorizontalM },
   error: { color: tokens.colorPaletteRedForeground1, fontWeight: tokens.fontWeightSemibold }
@@ -381,11 +380,10 @@ export function CatalogCapabilityExperience(props: IZavaExperienceProps): React.
         )}
 
         {stage === 'receipt' && (
-          <div className={styles.receipt} role="status">
-            <CheckmarkCircle24Filled /><h3 className={styles.title}>Demo update recorded</h3>
-            <span>{selectedItem || capability.title}</span><span>Reference ZAVA-{capability.id}-2026 / Session only / No external submission</span>
-            <Button appearance="primary" onClick={reset}>Reset experience</Button>
-          </div>
+          <SubmissionReceipt eyebrow="Update recorded" title="Demo update recorded" description={selectedItem || capability.title}
+            details={[{ label: 'Reference', value: `ZAVA-${capability.id}-2026` }, { label: 'Status', value: 'Updated this session' }]}
+            note="Session only. No external submission."
+            actions={<Button appearance="primary" onClick={reset}>Reset experience</Button>} />
         )}
         {props.showSource !== false && <div className={styles.source}>{sourceText}</div>}
       </div>

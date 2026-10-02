@@ -16,7 +16,6 @@ import {
   DocumentText24Regular,
   ArrowLeft24Regular,
   ArrowRight24Regular,
-  CheckmarkCircle24Filled,
   Flag16Filled,
   Food24Regular,
   PlayCircle24Regular,
@@ -30,11 +29,12 @@ import { zavaNews } from '../mockData/news';
 import { getZavaPerson, zavaPeople } from '../mockData/personas';
 import type { IZavaExperienceProps, IZavaModelContextSnapshot } from '../models/zavaOne';
 import { ResponsiveExpandButton } from './ResponsiveExpandButton';
+import { SubmissionReceipt } from './SubmissionReceipt';
 
 const useStyles = makeStyles({
-  root: { width: '100%', minWidth: 0, boxSizing: 'border-box' },
+  root: { width: '100%', minWidth: 0, boxSizing: 'border-box', containerType: 'inline-size', containerName: 'zava-experience', overflowWrap: 'anywhere' },
   inline: { maxWidth: '720px', marginRight: 'auto', marginLeft: 'auto', padding: tokens.spacingHorizontalM },
-  frame: { display: 'grid', gap: tokens.spacingVerticalL, overflow: 'hidden', padding: tokens.spacingHorizontalL, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge, boxShadow: tokens.shadow4 },
+  frame: { display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', gap: tokens.spacingVerticalL, overflow: 'hidden', padding: tokens.spacingHorizontalL, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge, boxShadow: tokens.shadow4 },
   strip: { height: '5px', marginTop: `calc(-1 * ${tokens.spacingHorizontalL})`, marginRight: `calc(-1 * ${tokens.spacingHorizontalL})`, marginLeft: `calc(-1 * ${tokens.spacingHorizontalL})`, backgroundImage: 'linear-gradient(90deg, #075fce 0%, #075fce 32%, #138a3d 32%, #138a3d 55%, #b32687 55%, #b32687 78%, #d84f38 78%)' },
   header: { display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) auto', alignItems: 'start', gap: tokens.spacingHorizontalL },
   heading: { display: 'grid', gap: tokens.spacingVerticalXXS },
@@ -61,27 +61,26 @@ const useStyles = makeStyles({
   flag: { color: tokens.colorPaletteRedForeground1 },
   selected: { backgroundColor: tokens.colorBrandBackground2 },
   detail: { display: 'grid', gap: tokens.spacingVerticalM, padding: tokens.spacingHorizontalL, backgroundColor: tokens.colorNeutralBackground2, borderRadius: tokens.borderRadiusLarge },
-  learningRow: { display: 'grid', gridTemplateColumns: 'auto minmax(0, 1fr) auto', gap: tokens.spacingHorizontalM, alignItems: 'center', padding: tokens.spacingHorizontalM, backgroundColor: tokens.colorNeutralBackground2, borderRadius: tokens.borderRadiusMedium },
+  learningRow: { display: 'grid', gridTemplateColumns: 'auto minmax(0, 1fr) auto', gap: tokens.spacingHorizontalM, alignItems: 'center', padding: tokens.spacingHorizontalM, backgroundColor: tokens.colorNeutralBackground2, borderRadius: tokens.borderRadiusMedium, '@container zava-experience (max-width: 420px)': { gridTemplateColumns: 'auto minmax(0, 1fr)', '& > :last-child': { gridColumn: '2' } } },
   learningVideo: { display: 'grid', placeItems: 'center', width: '44px', height: '44px', color: tokens.colorBrandForeground1, backgroundColor: tokens.colorBrandBackground2, borderRadius: tokens.borderRadiusCircular },
   learningProgress: { display: 'grid', gap: tokens.spacingVerticalXXS, marginTop: tokens.spacingVerticalXS },
   learningDetail: { display: 'grid', gap: tokens.spacingVerticalM, padding: tokens.spacingHorizontalXL, backgroundColor: tokens.colorNeutralBackground2, borderRadius: tokens.borderRadiusLarge },
   newsRow: { display: 'grid', gridTemplateColumns: '72px minmax(0, 1fr)', gap: tokens.spacingHorizontalM, alignItems: 'center', padding: tokens.spacingHorizontalM, backgroundColor: tokens.colorNeutralBackground2, borderRadius: tokens.borderRadiusMedium },
   newsImage: { width: '72px', height: '56px', objectFit: 'cover', borderRadius: tokens.borderRadiusMedium },
-  expenseGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: tokens.spacingHorizontalM },
+  expenseGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 170px), 1fr))', gap: tokens.spacingHorizontalM },
   expenseCard: { display: 'grid', gap: tokens.spacingVerticalS, padding: tokens.spacingHorizontalL, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge },
   expenseSelected: { backgroundColor: tokens.colorBrandBackground2, border: `2px solid ${tokens.colorBrandStroke1}` },
   carouselHeader: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: tokens.spacingHorizontalM, flexWrap: 'wrap' },
   carouselControls: { display: 'flex', alignItems: 'center', gap: tokens.spacingHorizontalS },
-  reviewGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: tokens.spacingHorizontalM },
-  receipt: { display: 'grid', gap: tokens.spacingVerticalM, padding: tokens.spacingHorizontalXL, color: tokens.colorNeutralForegroundInverted, backgroundColor: tokens.colorPaletteGreenBackground3, borderRadius: tokens.borderRadiusLarge },
+  reviewGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 150px), 1fr))', gap: tokens.spacingHorizontalM },
   expenseIcon: { display: 'grid', placeItems: 'center', width: '44px', height: '44px', color: tokens.colorBrandForeground1, backgroundColor: tokens.colorBrandBackground2, borderRadius: tokens.borderRadiusCircular },
   amount: { fontSize: tokens.fontSizeBase600, fontWeight: tokens.fontWeightSemibold },
   shiftList: { display: 'grid', gap: tokens.spacingVerticalS },
-  shiftRow: { display: 'grid', gridTemplateColumns: '72px minmax(0, 1fr) auto', gap: tokens.spacingHorizontalM, alignItems: 'center', padding: tokens.spacingHorizontalM, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge },
+  shiftRow: { display: 'grid', gridTemplateColumns: '72px minmax(0, 1fr) auto', gap: tokens.spacingHorizontalM, alignItems: 'center', padding: tokens.spacingHorizontalM, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge, '@container zava-experience (max-width: 420px)': { gridTemplateColumns: '72px minmax(0, 1fr)', '& > :last-child': { gridColumn: '2' } } },
   shiftNext: { backgroundColor: tokens.colorBrandBackground2, border: `1px solid ${tokens.colorBrandStroke2}` },
   shiftTime: { fontVariantNumeric: 'tabular-nums', fontWeight: tokens.fontWeightSemibold },
   fileList: { display: 'grid', gap: tokens.spacingVerticalS },
-  fileRow: { display: 'grid', gridTemplateColumns: '40px minmax(0, 1fr) auto', gap: tokens.spacingHorizontalM, alignItems: 'center', padding: tokens.spacingHorizontalM, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge },
+  fileRow: { display: 'grid', gridTemplateColumns: '40px minmax(0, 1fr) auto', gap: tokens.spacingHorizontalM, alignItems: 'center', padding: tokens.spacingHorizontalM, backgroundColor: tokens.colorNeutralBackground1, border: `1px solid ${tokens.colorNeutralStroke2}`, borderRadius: tokens.borderRadiusLarge, '@container zava-experience (max-width: 420px)': { gridTemplateColumns: '40px minmax(0, 1fr)', '& > :last-child': { gridColumn: '2' } } },
   fileIcon: { display: 'grid', placeItems: 'center', width: '40px', height: '40px', color: tokens.colorBrandForeground1, backgroundColor: tokens.colorBrandBackground2, borderRadius: tokens.borderRadiusMedium },
   wordIcon: { color: '#ffffff', backgroundColor: '#185abd' },
   powerPointIcon: { color: '#ffffff', backgroundColor: '#c43e1c' },
@@ -216,7 +215,10 @@ export function ExpensesTravelExperience(props: IZavaExperienceProps): React.Rea
     {stage === 'open' && <><div className={styles.carouselHeader}><span className={styles.itemCopy}><strong>{openExpenses.length} open expenses</strong><span className={styles.secondary}>Showing {openExpenses.length ? offset + 1 : 0}-{Math.min(offset + 3, openExpenses.length)}</span></span><span className={styles.carouselControls}><Button appearance="subtle" icon={<ArrowLeft24Regular />} aria-label="Previous expenses" disabled={offset === 0} onClick={() => setOffset(Math.max(0, offset - 1))} /><Button appearance="subtle" icon={<ArrowRight24Regular />} aria-label="Next expenses" disabled={offset + 3 >= openExpenses.length} onClick={() => setOffset(Math.min(Math.max(0, openExpenses.length - 3), offset + 1))} /></span></div><div className={styles.expenseGrid}>{visibleExpenses.map((expense) => <article key={expense.id} className={styles.expenseCard}><span className={styles.expenseIcon}>{expense.icon}</span><strong>{expense.title}</strong><span className={styles.amount}>€{expense.amount.toFixed(2)}</span><Badge color={expense.status === 'Category review' ? 'warning' : 'success'}>{expense.status}</Badge></article>)}</div><Button appearance="primary" disabled={!openExpenses.length} onClick={() => setStage('create')}>Create expense report</Button></>}
     {stage === 'create' && <><Button appearance="subtle" icon={<ArrowLeft24Regular />} onClick={() => setStage('open')}>Back to open expenses</Button><Field label="Report name"><Input value={reportName} onChange={(_, data) => setReportName(data.value)} /></Field><div className={styles.list}>{openExpenses.map((expense) => <label key={expense.id} className={mergeClasses(styles.expenseCard, selectedIds.has(expense.id) && styles.expenseSelected)}><Checkbox checked={selectedIds.has(expense.id)} onChange={() => toggleExpense(expense.id)} label={`${expense.title} / €${expense.amount.toFixed(2)}`} /><Badge appearance="outline">{expense.status}</Badge></label>)}</div><Button appearance="primary" disabled={!selectedIds.size || !reportName.trim()} onClick={() => setStage('review')}>Review expense report</Button></>}
     {stage === 'review' && <div className={styles.detail}><Button appearance="subtle" icon={<ArrowLeft24Regular />} onClick={() => setStage('create')}>Edit report</Button><h3 className={styles.title}>{reportName}</h3><div className={styles.reviewGrid}><span className={styles.itemCopy}><span className={styles.secondary}>Expenses</span><strong>{selectedExpenses.length}</strong></span><span className={styles.itemCopy}><span className={styles.secondary}>Total</span><strong>€{total.toFixed(2)}</strong></span><span className={styles.itemCopy}><span className={styles.secondary}>Destination</span><strong>Manager approval</strong></span></div><Button appearance="primary" onClick={submit}>Submit expense report</Button></div>}
-    {stage === 'receipt' && <div className={styles.receipt} role="status"><CheckmarkCircle24Filled /><h3 className={styles.title}>Expense report submitted</h3><span>{reportName} / €{total.toFixed(2)} / {selectedExpenses.length} expenses</span><span>Reference EXP-2026-0942 / Pending manager approval</span><Button appearance="primary" onClick={() => { setSelectedIds(new Set()); setOffset(0); setStage('open'); }}>Back to open expenses</Button></div>}
+    {stage === 'receipt' && <SubmissionReceipt eyebrow="Report recorded" title="Expense report submitted" description={reportName}
+      details={[{ label: 'Total', value: `€${total.toFixed(2)}` }, { label: 'Expenses', value: selectedExpenses.length }, { label: 'Reference', value: 'EXP-2026-0942' }, { label: 'Status', value: 'Pending manager approval' }]}
+      note="Session-only demo report. No expenses were submitted to a finance service."
+      actions={<Button appearance="primary" onClick={() => { setSelectedIds(new Set()); setOffset(0); setStage('open'); }}>Back to open expenses</Button>} />}
   </PersonalFrame>;
 }
 
