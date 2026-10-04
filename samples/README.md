@@ -19,6 +19,7 @@ This folder contains SPFx Copilot component samples. Each sample lives in its ow
 | Release readiness board | [`release-readiness-board`](./release-readiness-board) |
 | SharePoint Photos Copilot Agent | [`photos`](./photos) |
 | SP Permissions Explorer | [`sp-permissions-explorer`](./sp-permissions-explorer) |
+| Governance Risk Advisor | [`sharepoint-governance-copilot`](./sharepoint-governance-copilot) |
 | Work IQ Answers | [`work-iq-answers`](./work-iq-answers) |
 | Zava AI Project Portfolio Agent | [`zava-project-tracker`](./zava-project-tracker) |
 | Zava Employee Agent | [`zava-employee-agent`](./zava-employee-agent) |
