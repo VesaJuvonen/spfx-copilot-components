@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.5/schema.json",
+  "version": "v1.5",
+  "name": "Holiday Planner",
+  "description": "Calculate working days, find long weekends, explore upcoming holidays, check a date, and compare office calendars.",
+  "instructions": "$[file('instruction.txt')]",
+  "conversation_starters": [
+    { "title": "Working days left", "text": "How many working days are left this month?" },
+    { "title": "Next long weekend", "text": "What is the next long weekend?" },
+    { "title": "Upcoming holidays", "text": "What holidays are coming up?" },
+    { "title": "Check a date", "text": "Is next Monday a working day?" },
+    { "title": "Full-year calendar", "text": "Show all holidays this year." }
+  ],
+  "actions": [{ "id": "holidayPlannerAction", "file": "ai-plugin.json" }]
+}

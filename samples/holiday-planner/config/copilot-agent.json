@@ -1,0 +1,16 @@
+{
+  "$schema": "../node_modules/@microsoft/spfx-heft-plugins/lib-commonjs/plugins/copilotAgentPlugin/copilot-agent.schema.json",
+  "agents": [
+    {
+      "name": { "default": "Holiday Planner" },
+      "description": { "default": "Calculate working days, find long weekends, explore holidays, check specific dates, and compare regional calendars." },
+      "components": [
+        "efc11f65-c702-477e-8c8d-91fa0ade01a1",
+        "5172da89-8ed4-4f8c-a792-17c974e5d5a2",
+        "6c447ab7-2468-4f9a-8a3f-2f45ddb4d27d",
+        "50d39f7f-43db-4e75-b815-ca19d824fb3b",
+        "4f51623f-7dc1-46a1-a4d9-8f9c64d7307f"
+      ]
+    }
+  ]
+}

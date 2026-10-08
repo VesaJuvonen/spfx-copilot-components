@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Holiday Planner</title>
+  <desc id="description">A working-day calculation beside a regional holiday calendar.</desc>
+  <rect width="1200" height="630" fill="#f4f7f4"/>
+  <rect x="38" y="34" width="1124" height="562" rx="16" fill="#ffffff" stroke="#dce4df" stroke-width="2"/>
+  <rect x="38" y="34" width="1124" height="78" rx="16" fill="#163d35"/>
+  <path d="M38 96h1124v16H38z" fill="#163d35"/>
+  <circle cx="79" cy="73" r="18" fill="#f4ca64"/>
+  <path d="M79 60v26M66 73h26" stroke="#163d35" stroke-width="4" stroke-linecap="round"/>
+  <text x="112" y="82" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">HOLIDAY PLANNER</text>
+  <text x="894" y="79" fill="#c8ded6" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="1">COPILOT COMPONENTS</text>
+  <text x="80" y="159" fill="#42645b" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="1.5">WORKING DAY CALCULATOR</text>
+  <text x="80" y="232" fill="#163d35" font-family="Segoe UI, Arial, sans-serif" font-size="58" font-weight="700">17</text>
+  <text x="153" y="230" fill="#163d35" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">working days</text>
+  <text x="80" y="268" fill="#677871" font-family="Segoe UI, Arial, sans-serif" font-size="17">October 1 – October 31 · India</text>
+  <rect x="80" y="299" width="506" height="122" rx="8" fill="#f6f8f6" stroke="#e2e8e4"/>
+  <path d="M206 299v122M333 299v122M460 299v122" stroke="#e2e8e4"/>
+  <text x="100" y="334" fill="#677871" font-family="Segoe UI, Arial, sans-serif" font-size="14">TOTAL DAYS</text>
+  <text x="100" y="378" fill="#163d35" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">31</text>
+  <text x="226" y="334" fill="#677871" font-family="Segoe UI, Arial, sans-serif" font-size="14">WEEKENDS</text>
+  <text x="226" y="378" fill="#163d35" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">9</text>
+  <text x="353" y="334" fill="#677871" font-family="Segoe UI, Arial, sans-serif" font-size="14">HOLIDAYS</text>
+  <text x="353" y="378" fill="#163d35" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">5</text>
+  <text x="480" y="334" fill="#677871" font-family="Segoe UI, Arial, sans-serif" font-size="14">WORKING</text>
+  <text x="480" y="378" fill="#147d64" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">17</text>
+  <text x="80" y="476" fill="#42645b" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="1.5">REGIONAL CALENDAR</text>
+  <text x="80" y="516" fill="#163d35" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600">India</text>
+  <text x="278" y="516" fill="#163d35" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600">United Kingdom</text>
+  <g font-family="Segoe UI, Arial, sans-serif" text-anchor="middle" font-size="14" fill="#42564f">
+    <text x="99" y="553">M</text><text x="145" y="553">T</text><text x="191" y="553">W</text><text x="237" y="553">T</text><text x="283" y="553">F</text><text x="329" y="553">S</text><text x="375" y="553">S</text>
+    <text x="476" y="553">M</text><text x="522" y="553">T</text><text x="568" y="553">W</text><text x="614" y="553">T</text><text x="660" y="553">F</text><text x="706" y="553">S</text><text x="752" y="553">S</text>
+  </g>
+  <g fill="#eef2ef" stroke="#e2e8e4">
+    <rect x="78" y="564" width="42" height="23" rx="4"/><rect x="124" y="564" width="42" height="23" rx="4"/><rect x="170" y="564" width="42" height="23" rx="4"/><rect x="216" y="564" width="42" height="23" rx="4"/><rect x="262" y="564" width="42" height="23" rx="4"/><rect x="308" y="564" width="42" height="23" rx="4"/><rect x="354" y="564" width="42" height="23" rx="4"/>
+    <rect x="455" y="564" width="42" height="23" rx="4"/><rect x="501" y="564" width="42" height="23" rx="4"/><rect x="547" y="564" width="42" height="23" rx="4"/><rect x="593" y="564" width="42" height="23" rx="4"/><rect x="639" y="564" width="42" height="23" rx="4"/><rect x="685" y="564" width="42" height="23" rx="4"/><rect x="731" y="564" width="42" height="23" rx="4"/>
+  </g>
+  <g fill="#e3b845"><circle cx="237" cy="575" r="9"/><circle cx="660" cy="575" r="9"/></g>
+  <rect x="820" y="144" width="300" height="420" rx="10" fill="#f8faf8" stroke="#dce4df"/>
+  <text x="850" y="184" fill="#163d35" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Plan around the year</text>
+  <text x="850" y="216" fill="#677871" font-family="Segoe UI, Arial, sans-serif" font-size="15">Compare offices. Find shared days off.</text>
+  <rect x="850" y="249" width="240" height="86" rx="8" fill="#e7f2ed"/>
+  <text x="870" y="281" fill="#42645b" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">NEXT LONG WEEKEND</text>
+  <text x="870" y="312" fill="#163d35" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700">4 days · bridge suggested</text>
+  <path d="M850 361h240" stroke="#dce4df"/>
+  <text x="850" y="397" fill="#42645b" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">HOLIDAY COMPARISON</text>
+  <circle cx="862" cy="432" r="6" fill="#147d64"/><text x="880" y="438" fill="#34483f" font-family="Segoe UI, Arial, sans-serif" font-size="16">3 shared dates</text>
+  <circle cx="862" cy="468" r="6" fill="#d7a626"/><text x="880" y="474" fill="#34483f" font-family="Segoe UI, Arial, sans-serif" font-size="16">8 location-specific</text>
+  <rect x="850" y="506" width="240" height="38" rx="6" fill="#163d35"/>
+  <text x="970" y="531" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Explore holidays</text>
+</svg>

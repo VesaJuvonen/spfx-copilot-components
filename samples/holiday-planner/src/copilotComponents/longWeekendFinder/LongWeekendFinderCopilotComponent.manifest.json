@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "5172da89-8ed4-4f8c-a792-17c974e5d5a2",
+  "alias": "LongWeekendFinderCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": { "availableDisplayModes": ["inline", "fullscreen"] },
+  "tools": [{
+    "name": "FindLongWeekends",
+    "description": { "default": "Find upcoming extended breaks of three or more days formed by weekends and fixed or optional holidays, including single bridge-day suggestions between two days off. Use for long weekends, bridge days, extended breaks, or holiday-adjacent weekends. Do not use for working-day counts or full holiday lists." },
+    "propertiesSchema": { "id": "$../../../lib/copilotComponents/longWeekendFinder/LongWeekendFinderCopilotComponentProperties.js:default;" }
+  }]
+}

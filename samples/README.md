@@ -8,6 +8,7 @@ This folder contains SPFx Copilot component samples. Each sample lives in its ow
 | Choice Relay | [`choice-relay`](./choice-relay) |
 | Copilot Readiness Action Centre | [`copilot-readiness-action-centre`](./copilot-readiness-action-centre) |
 | SharePoint Events Copilot Agent | [`events`](./events) |
+| Holiday Planner | [`holiday-planner`](./holiday-planner) |
 | Executive Sales & Revenue Dashboard | [`executive-sales-dashboard`](./executive-sales-dashboard) |
 | Kudos & Recognition Wall | [`kudos-recognition-wall`](./kudos-recognition-wall) |
 | M365 Service Health | [`m365-service-health`](./m365-service-health) |
@@ -18,6 +19,7 @@ This folder contains SPFx Copilot component samples. Each sample lives in its ow
 | Release readiness board | [`release-readiness-board`](./release-readiness-board) |
 | SharePoint Photos Copilot Agent | [`photos`](./photos) |
 | SP Permissions Explorer | [`sp-permissions-explorer`](./sp-permissions-explorer) |
+| Governance Risk Advisor | [`sharepoint-governance-copilot`](./sharepoint-governance-copilot) |
 | Work IQ Answers | [`work-iq-answers`](./work-iq-answers) |
 | Zava AI Project Portfolio Agent | [`zava-project-tracker`](./zava-project-tracker) |
 | Zava Employee Agent | [`zava-employee-agent`](./zava-employee-agent) |

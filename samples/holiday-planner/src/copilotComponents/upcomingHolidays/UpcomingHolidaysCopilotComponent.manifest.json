@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-component-manifest.schema.json",
+  "id": "6c447ab7-2468-4f9a-8a3f-2f45ddb4d27d",
+  "alias": "UpcomingHolidaysCopilotComponent",
+  "componentType": "CopilotComponent",
+  "copilotType": "Ux",
+  "version": "*",
+  "manifestVersion": 2,
+  "capabilities": { "availableDisplayModes": ["inline", "fullscreen"] },
+  "tools": [{
+    "name": "GetUpcomingHolidays",
+    "description": { "default": "Show fixed or optional holidays for a full year, month, date range, or upcoming period, optionally filtered by country and region. Fixed includes holidays previously classified as public or company. For all holidays this year or a given year, use view=year and pass year only if specified; this includes past holidays. For upcoming requests use view=upcoming. Omit country unless the user specifies it so the user's profile or browser location can supply the default. Do not use for working-day counts." },
+    "propertiesSchema": { "id": "$../../../lib/copilotComponents/upcomingHolidays/UpcomingHolidaysCopilotComponentProperties.js:default;" }
+  }]
+}

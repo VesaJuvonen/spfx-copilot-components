@@ -1,0 +1,19 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "useGulp": false,
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.14.0",
+    "sdksVersions": {},
+    "version": "1.24.0-beta.5",
+    "libraryName": "holiday-planner",
+    "libraryId": "1a41af73-fdb5-40fa-8562-73c3206d7cb1",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "holiday-planner",
+    "solutionShortDescription": "Holiday Planner Copilot Components",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "copilotComponent"
+  }
+}

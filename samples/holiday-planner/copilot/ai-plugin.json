@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+  "schema_version": "v2.4",
+  "namespace": "holidayPlanner",
+  "name_for_human": "Holiday Planner",
+  "description_for_human": "Holiday Planner for fixed and optional holidays and working days.",
+  "description_for_model": "Calculate working days, find long weekends, list fixed or optional holidays, answer specific date or named holiday questions, and compare regional holiday calendars. Each tool renders an interactive card in the conversation that carries the complete answer; tools return no text result, which is expected. Fixed includes holidays previously classified as public or company. CalculateWorkingDays handles numeric working-day questions. FindLongWeekends handles bridges and extended weekend windows. GetUpcomingHolidays supports full years (view=year, current year by default, including past holidays), whole months, date ranges, and upcoming dates (view=upcoming). GetHolidayDetails answers a specific date or holiday. CompareRegionalHolidays shows shared dates and working-day mismatches. Omit country unless explicitly requested so profile/browser defaults apply. Site configuration and delegated access are resolved automatically; never request site URLs or list IDs. Response tone and wording rules are defined in the agent instructions.",
+  "contact_email": "publisher@contoso.com"
+}
