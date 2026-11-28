@@ -97,14 +97,18 @@ const base='https://github.com/pnp/spfx-copilot-components',sample='samples/ms-e
   ...featured.map(({component,asset,alt})=>[asset,inlineCapture(component.id),alt]),
   ['leave-decision.png','leave-decision-detail.png','Synthetic assigned leave request with the requester portrait and the decision review']
 ];
-const thumbnails=gallery.map(([name,source,alt],i)=>{
+const thumbnails=[{
+  name:'workspace-contact.png',type:'image',order:99,
+  url:`${base}/raw/main/${sample}/review/evidence/workspace-contact.png`,
+  alt:'Microsoft home, HRweb, TechWeb and Business shown together in the four-workspace local sample contact sheet'
+},...gallery.map(([name,source,alt],i)=>{
   const b=load('review/evidence/screens/'+source);assert.equal(b.readUInt32BE(0),0x89504e47);assert(b.readUInt32BE(16)>=320&&b.readUInt32BE(20)>=160&&alt.length>24);publish('assets/'+name,b);
   return {name,type:'image',order:100+i,url:`${base}/raw/main/${sample}/assets/${name}`,alt};
-});
+})];
 const sourceUrl=`${base}/tree/main/${sample}`;
 const listing=[{name:'pnp-sp-dev-spfx-copilot-apps-ms-employee-hub',source:'pnp',title:'Microsoft Employee Hub',shortDescription:'Four employee workspaces and 30 intent-specific Copilot components over synthetic workplace, HR, IT and business records.',url:sourceUrl,downloadUrl:`https://pnp.github.io/download-partial/?url=${sourceUrl}`,longDescription:['Browse published stories, plan leave, track technology help and compare actual bookings with forecast movements. Focused tasks retain context on expansion.','Try an inline component: '+featured.map(({component:c})=>`${c.title}: "${c.examplePrompt}"`).join(' '),'The sample developer is Contoso. Five Teams personal apps and a separate Cowork connector accompany the SPFx solution. These local fixture captures are not authenticated host evidence.'],creationDateTime:'2026-11-28',updateDateTime:'2026-11-28',products:['SharePoint','Copilot','Teams'],metadata:[{key:'SAMPLE-TYPE',value:'SPFx-CopilotComponent'},{key:'CLIENT-SIDE-DEV',value:'React'},{key:'SPFX-VERSION',value:'1.24.2'}],thumbnails,authors:[{gitHubAccount:'VesaJuvonen',pictureUrl:'https://github.com/VesaJuvonen.png',name:'Vesa Juvonen'}],references:[{name:'Inline component and prompt index',description:'All 30 components, with a copyable example prompt, expected tool and inline screenshot for each.',url:`${base}/blob/main/${sample}/Employee-Hub-Demo-Prompts.md#inline-component-and-prompt-index`},{name:'SharePoint Framework overview',description:'The SPFx host model used by this sample.',url:'https://learn.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview'}]}];
 publish('assets/sample.json',JSON.stringify(listing,null,2)+'\n');
-assert.deepEqual(readdirSync(path.join(root,'assets')).filter(n=>n.endsWith('.png')).sort(),thumbnails.map(t=>t.name).sort());
+assert.deepEqual(readdirSync(path.join(root,'assets')).filter(n=>n.endsWith('.png')).sort(),gallery.map(([name])=>name).sort());
 const docs=['README.md','todo.md','Employee-Hub-Demo-Prompts.md','Employee-Hub-3-Minute-Demo.md','Employee-Hub-10-Minute-Demo.md','Employee-Hub-5-Minute-Tech-Demo.md','docs/designer-rehearsal.md','docs/pilot-install.md','employee-hub-plugin/README.md','teams/README.md'];
 for(const file of docs)for(const m of load(file).toString().matchAll(/\]\(([^) \n]+)\)/g)){
   if(/^(?:https?:|file:|#)/.test(m[1]))continue;
