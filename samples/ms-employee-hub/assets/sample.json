@@ -34,6 +34,13 @@
     ],
     "thumbnails": [
       {
+        "name": "workspace-contact.png",
+        "type": "image",
+        "order": 99,
+        "url": "https://github.com/pnp/spfx-copilot-components/raw/main/samples/ms-employee-hub/review/evidence/workspace-contact.png",
+        "alt": "Microsoft home, HRweb, TechWeb and Business shown together in the four-workspace local sample contact sheet"
+      },
+      {
         "name": "preview.png",
         "type": "image",
         "order": 100,
